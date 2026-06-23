@@ -12,7 +12,7 @@ export interface Stat {
 export interface SocialLink {
   name: string;
   url: string;
-  icon: "researchgate" | "scholar" | "facebook" | "email";
+  icon: "researchgate" | "scholar" | "facebook" | "email" | "linkedin";
 }
 
 export interface TimelineItem {
