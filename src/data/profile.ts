@@ -45,6 +45,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: "mailto:brtimsina05@gmail.com",
     icon: "email",
   },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/baburam-timsina-9a0b169b/",
+    icon: "linkedin",
+  },
 ];
 
 export const RESEARCH_STATS: Stat[] = [

@@ -274,7 +274,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn, scrollToSection } from "@/lib/utils";
-import { NAV_ITEMS, SITE_CONFIG } from "@/data/profile";
+import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/data/profile";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { SocialLinks } from "../common/SocialLinks";
 
@@ -297,31 +297,6 @@ export function Navbar() {
     setSearchQuery("");
   };
 
-  // Social links – including LinkedIn
-  const socialLinks = [
-    { name: "Email", icon: "email", url: "mailto:your@email.com" },
-    {
-      name: "ResearchGate",
-      icon: "researchgate",
-      url: "https://researchgate.net/your-profile",
-    },
-    {
-      name: "Google Scholar",
-      icon: "scholar",
-      url: "https://scholar.google.com/your-profile",
-    },
-    {
-      name: "Facebook",
-      icon: "facebook",
-      url: "https://facebook.com/your-profile",
-    },
-    {
-      name: "LinkedIn",
-      icon: "linkedin",
-      url: "https://www.linkedin.com/in/baburam-timsina-9a0b169b/",
-    },
-  ];
-
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -340,7 +315,7 @@ export function Navbar() {
                 Connect with me
               </span>
               <div className="flex items-center gap-3">
-                <SocialLinks links={socialLinks} size="sm" className="gap-3" />
+                <SocialLinks links={SOCIAL_LINKS} size="sm" className="gap-3" />
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -448,7 +423,7 @@ export function Navbar() {
                       Connect
                     </span>
                     <div className="flex items-center gap-3">
-                      <SocialLinks links={socialLinks} size="sm" />
+                      <SocialLinks links={SOCIAL_LINKS} size="sm" />
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
