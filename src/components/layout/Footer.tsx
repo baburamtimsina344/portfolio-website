@@ -16,79 +16,11 @@ export function Footer() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const quickLinks = NAV_ITEMS.filter((item) => item.id !== "home");
 
   return (
     <footer className="relative bg-slate-50 border-t border-slate-200">
       <div className="relative section-padding container-wide">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-          {/* Brand Column */}
-          <div className="lg:col-span-6 space-y-5">
-            <div>
-              <h3 className="font-serif text-2xl font-semibold text-slate-900 tracking-tight">
-                {SITE_CONFIG.name}
-              </h3>
-              <p className="mt-1.5 text-sm text-slate-500">
-                {SITE_CONFIG.title} &middot; {SITE_CONFIG.institution}
-              </p>
-            </div>
-
-            <p className="text-sm text-slate-500 leading-relaxed max-w-sm">
-              Advancing knowledge through rigorous research, thoughtful
-              teaching, and academic leadership.
-            </p>
-
-            <SocialLinks links={SOCIAL_LINKS} className="pt-1" size="sm" />
-          </div>
-
-          {/* Quick Links */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-              Navigate
-            </h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-sm text-slate-500 hover:text-[#4355DB] transition-colors duration-150"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-              Contact
-            </h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-slate-500">
-                <Mail className="h-4 w-4 mt-0.5 text-slate-400 shrink-0" />
-                <div className="space-y-1">
-                  {SITE_CONFIG.emails.map((email) => (
-                    <a
-                      key={email}
-                      href={`mailto:${email}`}
-                      className="block hover:text-[#1FB28E] transition-colors duration-150 break-all"
-                    >
-                      {email}
-                    </a>
-                  ))}
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3 text-sm text-slate-500">
-                <MapPin className="h-4 w-4 mt-0.5 text-slate-400 shrink-0" />
-                <span>{SITE_CONFIG.location}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        
 
         {/* Signature gradient hairline */}
         <div className="mt-10 h-px w-full bg-gradient-to-r from-[#4355DB]/40 via-[#1FB28E]/40 to-transparent" />
