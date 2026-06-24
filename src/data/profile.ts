@@ -1,3 +1,5 @@
+
+
 import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
@@ -17,10 +19,23 @@ export const NAV_ITEMS: NavItem[] = [
   { id: "about", label: "About" },
   { id: "news", label: "News" },
   { id: "publications", label: "Publications" },
-  { id: "knowledge-exchange", label: "Knowledge Exchange" },
-  { id: "teaching", label: "Teaching" },
-  { id: "editorial-roles", label: "Editorial Roles" },
-  { id: "leadership", label: "External / Leadership Roles" },
+  {
+    id: "knowledge-exchange",
+    label: "Knowledge Exchange",
+    path: "/knowledge-exchange",   // ✅ Added this line
+  },
+  { id: "teaching", 
+    label: "Teaching",
+    path:"/teaching"
+
+   },
+  { id: "editorial-roles", 
+    label: "Editorial Roles",
+    path:"/editorial-roles"
+   },
+  { id: "leadership", 
+    label: "External / Leadership Roles",
+  path:"/leadershipSection" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -83,21 +98,24 @@ export const EDUCATION: import("@/types").TimelineItem[] = [
     year: "2018",
     title: "Ph.D. in Management",
     organization: "Tribhuvan University, Nepal",
-    description: "Dissertation on entrepreneurship and sustainable business development in emerging economies.",
+    description:
+      "Dissertation on entrepreneurship and sustainable business development in emerging economies.",
   },
   {
     id: "masters",
     year: "2012",
     title: "Master of Business Administration (MBA)",
     organization: "Tribhuvan University, Nepal",
-    description: "Specialization in Strategic Management and Organizational Development.",
+    description:
+      "Specialization in Strategic Management and Organizational Development.",
   },
   {
     id: "bachelors",
     year: "2008",
     title: "Bachelor of Business Studies (BBS)",
     organization: "Tribhuvan University, Nepal",
-    description: "Foundation in business administration, economics, and accounting.",
+    description:
+      "Foundation in business administration, economics, and accounting.",
   },
 ];
 
@@ -107,28 +125,32 @@ export const EXPERIENCE: import("@/types").TimelineItem[] = [
     year: "2020 – Present",
     title: "Associate Professor",
     organization: "School of Management, Tribhuvan University",
-    description: "Leading research initiatives, supervising graduate students, and teaching advanced management courses.",
+    description:
+      "Leading research initiatives, supervising graduate students, and teaching advanced management courses.",
   },
   {
     id: "exp2",
     year: "2015 – 2020",
     title: "Assistant Professor",
     organization: "School of Management, Tribhuvan University",
-    description: "Conducted research on entrepreneurship and SME development; published in peer-reviewed journals.",
+    description:
+      "Conducted research on entrepreneurship and SME development; published in peer-reviewed journals.",
   },
   {
     id: "exp3",
     year: "2012 – 2015",
     title: "Lecturer",
     organization: "School of Management, Tribhuvan University",
-    description: "Taught undergraduate and graduate courses in management and research methodology.",
+    description:
+      "Taught undergraduate and graduate courses in management and research methodology.",
   },
   {
     id: "exp4",
     year: "2010 – 2012",
     title: "Research Associate",
     organization: "Centre for Economic Development and Administration (CEDA)",
-    description: "Contributed to policy research projects on economic development and business environment.",
+    description:
+      "Contributed to policy research projects on economic development and business environment.",
   },
 ];
 
