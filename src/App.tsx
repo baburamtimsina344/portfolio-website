@@ -1,32 +1,4 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { TooltipProvider } from "@/components/ui/tooltip";
-// import { MainLayout } from "@/layouts/MainLayout";
-// import { SEO } from "@/components/common/SEO";
-// import KnowledgeExchange from "./sections/KnowledgeExchangeSection";
 
-// function HomePage() {
-//   return (
-//     <>
-//       <SEO />
-//       <MainLayout />
-//     </>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <TooltipProvider>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/" element={<HomePage />} />
-//         </Routes>
-//          <Routes>
-//           <Route path="/knowledge-exchange" element={<KnowledgeExchange/>} />
-//         </Routes>
-//       </BrowserRouter>
-//     </TooltipProvider>
-//   );
-// }
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -38,9 +10,11 @@ import { HeroSection } from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
 import { NewsSection } from "./sections/NewsSection";
 import { PublicationsSection } from "./sections/PublicationsSection";
-import { TeachingSection } from "./sections/TeachingSection";
-import { EditorialRolesSection } from "./sections/EditorialRolesSection";
-import { LeadershipSection } from "./sections/LeadershipSection";
+import TeachingSection from "./sections/TeachingSection";
+
+
+import  EditorialRolesSection  from "./sections/EditorialRolesSection";
+import  LeadershipSection  from "./sections/LeadershipSection";
 import { ContactSection } from "./sections/ContactSection";
 import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -84,15 +58,15 @@ function HomeContent() {
       <Suspense fallback={<SectionFallback />}>
         <PublicationsSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback />}>
+      {/* <Suspense fallback={<SectionFallback />}>
         <TeachingSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
+      </Suspense> */}
+      {/* <Suspense fallback={<SectionFallback />}>
         <EditorialRolesSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
+      </Suspense> */}
+      {/* <Suspense fallback={<SectionFallback />}>
         <LeadershipSection />
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<SectionFallback />}>
         <ContactSection />
       </Suspense>
@@ -107,6 +81,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainLayout><HomeContent /></MainLayout>} />
           <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} />
+          <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
+          <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
+          <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -283,7 +283,6 @@ export function HeroSection() {
                                         About
                                     </span>
                                 </div>
-<<<<<<< HEAD
                                <div className="border-l-4 border-blue-600 pl-5">
     <p className="text-slate-700 leading-8 text-base sm:text-lg font-medium">
         With a deep commitment to
@@ -293,13 +292,6 @@ export function HeroSection() {
         learning environments that inspire innovation, growth, and lifelong learning.
     </p>
 </div>
-=======
-                                <p className="text-[#4a5a6a]/80 leading-relaxed text-sm sm:text-base">
-                                    With a deep commitment to academic excellence and institutional leadership,
-                                    I have dedicated my career to advancing education, mentoring future
-                                    educators, and fostering transformative learning environments.
-                                </p>
->>>>>>> 3a65e851bc07cbf279eeaa5a3b08beaee085fd34
                                 <motion.a
                                     href="#about"
                                     className="inline-flex items-center gap-2 text-sm font-medium text-[#1f4567]/80 hover:text-[#1f4567] transition-colors duration-300 group"
