@@ -7,7 +7,7 @@ import { AboutSection } from "@/sections/AboutSection";
 
 const NewsSection = lazy(() => import("@/sections/NewsSection").then((m) => ({ default: m.NewsSection })));
 const PublicationsSection = lazy(() => import("@/sections/PublicationsSection").then((m) => ({ default: m.PublicationsSection })));
-const KnowledgeExchangeSection = lazy(() => import("@/sections/KnowledgeExchangeSection").then((m) => ({ default: m.KnowledgeExchangeSection })));
+const KnowledgeExchangeSection = lazy(() => import("@/sections/KnowledgeExchangeSection"));
 const TeachingSection = lazy(() => import("@/sections/TeachingSection").then((m) => ({ default: m.TeachingSection })));
 const EditorialRolesSection = lazy(() => import("@/sections/EditorialRolesSection").then((m) => ({ default: m.EditorialRolesSection })));
 const LeadershipSection = lazy(() => import("@/sections/LeadershipSection").then((m) => ({ default: m.LeadershipSection })));
@@ -40,9 +40,9 @@ export function MainLayout() {
         <Suspense fallback={<SectionFallback />}>
           <PublicationsSection />
         </Suspense>
-        <Suspense fallback={<SectionFallback />}>
+        {/* <Suspense fallback={<SectionFallback />}>
           <KnowledgeExchangeSection />
-        </Suspense>
+        </Suspense> */}
         <Suspense fallback={<SectionFallback />}>
           <TeachingSection />
         </Suspense>
