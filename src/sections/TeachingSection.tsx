@@ -303,7 +303,7 @@ export default function TeachingSection() {
       {/* ── Hero ── */}
       <div
         className="relative h-[600px] overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/libary.jpg')" }}
+        style={{ backgroundImage: "url('/images/tech.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-transparent" />
         <div className="absolute bottom-3 left-3 z-10 bg-black/30 text-white text-xs px-2 py-1 rounded">
