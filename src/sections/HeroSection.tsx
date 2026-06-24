@@ -43,6 +43,7 @@ export function HeroSection() {
 
     return (
         <section
+        id="home"
             ref={containerRef}
             className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#f8f9fa] via-[#f0f2f5] to-[#e8ecf0] p-16"
             style={{ opacity, scale }}
