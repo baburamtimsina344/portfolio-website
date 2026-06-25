@@ -393,14 +393,16 @@ export function AboutSection() {
                 ))}
               </div>
 
-              <motion.a
-                href="#experience"
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#0F7A5A] hover:bg-[#0B6A4E] text-white font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95"
-                whileHover={{ x: 4 }}
-              >
-                More About Me
-                <ChevronRight className="w-4 h-4" />
-              </motion.a>
+             <motion.a
+  href="https://www.linkedin.com/in/baburam-timsina-9a0b169b/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#0F7A5A] hover:bg-[#0B6A4E] text-white font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95"
+  whileHover={{ x: 4 }}
+>
+  More About Me
+  <ChevronRight className="w-4 h-4" />
+</motion.a>
             </div>
           </motion.div>
 
