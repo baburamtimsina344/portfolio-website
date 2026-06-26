@@ -553,7 +553,7 @@ export default function TeachingSection() {
               className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
               Teaching & <br />
-              <span className="text-[#D4AF37]">Mentorship</span>
+              <span className="text-[#00B894 ]">Mentorship</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -674,7 +674,7 @@ export default function TeachingSection() {
                     key={i}
                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
                   >
-                    <Award className="h-5 w-5 text-[#D4AF37] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <Award className="h-5 w-5 text-[#00B894 ] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -688,7 +688,7 @@ export default function TeachingSection() {
       <div className="bg-[#0B2545] mt-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
           <h3 className="font-serif text-2xl font-bold text-white mb-8 text-center md:text-left">
-            Explore <span className="text-[#D4AF37]">Teaching Areas</span>
+            Explore <span className="text-[#00B894 ]">Teaching Areas</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
@@ -697,8 +697,8 @@ export default function TeachingSection() {
                 className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/15 hover:border-[#0F7A5A]/30 group"
               >
                 <div className="p-6">
-                  <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#D4AF37] flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+                  <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#00B894 ] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#00B894 ]" />
                     {cat.title}
                   </div>
                   <ul className="space-y-2">
