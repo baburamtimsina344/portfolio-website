@@ -452,7 +452,7 @@ const GlobalStyles = () => (
             --navy-mid:   #0F2F56;
             --navy-light: #1A4080;
             --royal:      #1A5CB8;
-            --gold:       #D4AF37;
+            --gold:       #00B894 ;
             --gold-light: #E8CC6A;
             --gold-pale:  #F5E6A3;
             --white:      #FFFFFF;
