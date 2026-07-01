@@ -1,72 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import { ArrowUp, Mail, MapPin } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-// import { SocialLinks } from "@/components/common/SocialLinks";
-// import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/data/profile";
-// import { scrollToSection } from "@/lib/utils";
-
-// export function Footer() {
-//   const [showBackToTop, setShowBackToTop] = useState(false);
-//   const currentYear = new Date().getFullYear();
-
-//   useEffect(() => {
-//     const handleScroll = () => setShowBackToTop(window.scrollY > 500);
-//     window.addEventListener("scroll", handleScroll, { passive: true });
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-
-//   return (
-//     <footer className="relative bg-slate-50 border-t border-slate-200">
-//       <div className="relative section-padding container-wide">
-        
-
-//         {/* Signature gradient hairline */}
-//         <div className="mt-10 h-px w-full bg-gradient-to-r from-[#4355DB]/40 via-[#1FB28E]/40 to-transparent" />
-
-//         {/* Bottom Bar */}
-//         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-slate-400">
-//           <p>
-//             &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
-//           </p>
-//           <div className="flex items-center gap-5">
-//             <button className="hover:text-slate-600 transition-colors duration-150">
-//               Privacy Policy
-//             </button>
-//             <button className="hover:text-slate-600 transition-colors duration-150">
-//               Terms of Use
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Back to Top Button */}
-//       <AnimatePresence>
-//         {showBackToTop && (
-//           <motion.div
-//             initial={{ opacity: 0, y: 10 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             exit={{ opacity: 0, y: 10 }}
-//             transition={{ duration: 0.2 }}
-//             className="fixed bottom-6 right-6 z-50"
-//           >
-//             <Button
-//               size="icon"
-//               variant="secondary"
-//               className="h-11 w-11 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 shadow-md"
-//               onClick={() => scrollToSection("home")}
-//               aria-label="Back to top"
-//             >
-//               <ArrowUp className="h-4.5 w-4.5" />
-//             </Button>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </footer>
-//   );
-// }
-
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp, Mail, MapPin, ExternalLink } from "lucide-react";
@@ -106,7 +37,7 @@ export function Footer() {
       {/* ── Top divider ── */}
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0, height: 1,
-        background: "linear-gradient(90deg, transparent, rgba(138,154,91,0.50), rgba(11,37,69,0.20), transparent)",
+        background: "linear-gradient(90deg, transparent, rgba(0,184,148,0.50), rgba(11,37,69,0.20), transparent)",
       }} />
 
       {/* ── Background Orbs ── */}
@@ -114,7 +45,7 @@ export function Footer() {
         <div style={{
           position: "absolute", top: "-30%", right: "-8%",
           width: 520, height: 520, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(138,154,91,0.09) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(0,184,148,0.09) 0%, transparent 65%)",
         }} />
         <div style={{
           position: "absolute", bottom: "-40%", left: "-10%",
@@ -124,7 +55,7 @@ export function Footer() {
         {/* Dot grid */}
         <div style={{
           position: "absolute", inset: 0, opacity: 0.025,
-          backgroundImage: "radial-gradient(circle, rgba(138,154,91,0.6) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(0,184,148,0.6) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }} />
       </div>
@@ -156,31 +87,29 @@ export function Footer() {
               marginBottom: 20,
               padding: "5px 14px",
               borderRadius: 100,
-              background: "rgba(138,154,91,0.10)",
-              border: "1px solid rgba(138,154,91,0.24)",
+              background: "rgba(0,184,148,0.10)",
+              border: "1px solid rgba(0,184,148,0.24)",
             }}>
-              <div style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#8A9A5B" }} />
+              <div style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#00B894" }} />
               <span style={{
                 fontSize: 9.5, fontWeight: 700,
                 letterSpacing: "0.22em", textTransform: "uppercase",
-                color: "#8A9A5B", fontFamily: "Inter, sans-serif",
+                color: "#00B894", fontFamily: "Inter, sans-serif",
               }}>
                 Professor Portfolio
               </span>
             </div>
 
             {/* Name */}
-            <h2
-              className="font-display"
-              style={{
-                fontSize: "clamp(22px, 2.5vw, 28px)",
-                fontWeight: 700,
-                color: "#FFFFFF",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.15,
-                margin: "0 0 10px 0",
-              }}
-            >
+            <h2 style={{
+              fontSize: "clamp(22px, 2.5vw, 28px)",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.15,
+              margin: "0 0 10px 0",
+              fontFamily: "Inter, sans-serif",
+            }}>
               {SITE_CONFIG.name}
             </h2>
 
@@ -195,14 +124,16 @@ export function Footer() {
               {SITE_CONFIG.title ?? "Professor & Academic Leader"}
             </p>
 
-            {/* Sage green rule */}
+            {/* Green rule */}
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
-              <div style={{ height: 1, width: 48, background: "linear-gradient(to right, #8A9A5B, rgba(138,154,91,0.20))" }} />
-              <div style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#8A9A5B", opacity: 0.7 }} />
+              <div style={{ height: 1, width: 48, background: "linear-gradient(to right, #00B894, rgba(0,184,148,0.20))" }} />
+              <div style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#00B894", opacity: 0.7 }} />
             </div>
 
-            {/* Social Links */}
-            <SocialLinks links={SOCIAL_LINKS} />
+            {/* Social Links – white icons */}
+            <div className="[&_svg]:text-white">
+              <SocialLinks links={SOCIAL_LINKS} />
+            </div>
           </motion.div>
 
           {/* ── Col 2: Quick Links ── */}
@@ -210,12 +141,12 @@ export function Footer() {
             <p style={{
               fontSize: 10, fontWeight: 700,
               letterSpacing: "0.20em", textTransform: "uppercase",
-              color: "#8A9A5B",
+              color: "#00B894",
               margin: "0 0 20px 0",
               fontFamily: "Inter, sans-serif",
               display: "flex", alignItems: "center", gap: 8,
             }}>
-              <span style={{ width: 16, height: 1.5, background: "#8A9A5B", display: "inline-block", borderRadius: 1 }} />
+              <span style={{ width: 16, height: 1.5, background: "#00B894", display: "inline-block", borderRadius: 1 }} />
               Quick Links
             </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 4 }}>
@@ -245,7 +176,7 @@ export function Footer() {
                   >
                     <span style={{
                       width: 5, height: 5, borderRadius: "50%",
-                      background: "rgba(138,154,91,0.40)",
+                      background: "rgba(0,184,148,0.40)",
                       flexShrink: 0,
                       transition: "background 0.2s",
                     }} />
@@ -261,12 +192,12 @@ export function Footer() {
             <p style={{
               fontSize: 10, fontWeight: 700,
               letterSpacing: "0.20em", textTransform: "uppercase",
-              color: "#8A9A5B",
+              color: "#00B894",
               margin: "0 0 20px 0",
               fontFamily: "Inter, sans-serif",
               display: "flex", alignItems: "center", gap: 8,
             }}>
-              <span style={{ width: 16, height: 1.5, background: "#8A9A5B", display: "inline-block", borderRadius: 1 }} />
+              <span style={{ width: 16, height: 1.5, background: "#00B894", display: "inline-block", borderRadius: 1 }} />
               Contact
             </p>
 
@@ -275,11 +206,11 @@ export function Footer() {
               <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                 <div style={{
                   width: 30, height: 30, borderRadius: 9, flexShrink: 0,
-                  background: "rgba(138,154,91,0.10)",
-                  border: "1px solid rgba(138,154,91,0.20)",
+                  background: "rgba(0,184,148,0.10)",
+                  border: "1px solid rgba(0,184,148,0.20)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <MapPin style={{ width: 13, height: 13, color: "#8A9A5B" }} />
+                  <MapPin style={{ width: 13, height: 13, color: "#00B894" }} />
                 </div>
                 <div>
                   <p style={{
@@ -290,7 +221,8 @@ export function Footer() {
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}>
-Kirtipur, Nepal                  </p>
+                    Kirtipur, Nepal
+                  </p>
                   <p style={{
                     fontSize: 13, fontWeight: 400,
                     color: "rgba(255,255,255,0.70)",
@@ -312,11 +244,11 @@ Kirtipur, Nepal                  </p>
                 <div key={email} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                   <div style={{
                     width: 30, height: 30, borderRadius: 9, flexShrink: 0,
-                    background: "rgba(138,154,91,0.10)",
-                    border: "1px solid rgba(138,154,91,0.20)",
+                    background: "rgba(0,184,148,0.10)",
+                    border: "1px solid rgba(0,184,148,0.20)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                   }}>
-                    <Mail style={{ width: 13, height: 13, color: "#8A9A5B" }} />
+                    <Mail style={{ width: 13, height: 13, color: "#00B894" }} />
                   </div>
                   <div style={{ paddingTop: 2 }}>
                     <p style={{
@@ -340,7 +272,7 @@ Kirtipur, Nepal                  </p>
                         lineHeight: 1.5,
                         transition: "color 0.2s",
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#8A9A5B")}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#00B894")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.70)")}
                     >
                       {email}
@@ -356,12 +288,12 @@ Kirtipur, Nepal                  </p>
             <p style={{
               fontSize: 10, fontWeight: 700,
               letterSpacing: "0.20em", textTransform: "uppercase",
-              color: "#8A9A5B",
+              color: "#00B894",
               margin: "0 0 20px 0",
               fontFamily: "Inter, sans-serif",
               display: "flex", alignItems: "center", gap: 8,
             }}>
-              <span style={{ width: 16, height: 1.5, background: "#8A9A5B", display: "inline-block", borderRadius: 1 }} />
+              <span style={{ width: 16, height: 1.5, background: "#00B894", display: "inline-block", borderRadius: 1 }} />
               Resources
             </p>
 
@@ -375,7 +307,7 @@ Kirtipur, Nepal                  </p>
               style={{
                 display: "block",
                 background: "rgba(255,255,255,0.06)",
-                border: "1.5px solid rgba(138,154,91,0.22)",
+                border: "1.5px solid rgba(0,184,148,0.22)",
                 borderRadius: 18,
                 padding: "20px 22px",
                 textDecoration: "none",
@@ -388,12 +320,12 @@ Kirtipur, Nepal                  </p>
               {/* Top accent */}
               <div style={{
                 position: "absolute", top: 0, left: 0, right: 0, height: 2,
-                background: "linear-gradient(90deg, #8A9A5B, rgba(138,154,91,0.15))",
+                background: "linear-gradient(90deg, #00B894, rgba(0,184,148,0.15))",
               }} />
               <p style={{
                 fontSize: 10, fontWeight: 700,
                 letterSpacing: "0.16em", textTransform: "uppercase",
-                color: "#8A9A5B",
+                color: "#00B894",
                 margin: "0 0 6px 0",
                 fontFamily: "Inter, sans-serif",
               }}>
@@ -412,7 +344,7 @@ Kirtipur, Nepal                  </p>
                 display: "inline-flex", alignItems: "center", gap: 6,
                 padding: "6px 14px",
                 borderRadius: 100,
-                background: "linear-gradient(135deg, #8A9A5B, #A8B87A)",
+                background: "linear-gradient(135deg, #00B894, #66D9A0)",
                 fontSize: 11.5, fontWeight: 700,
                 color: "#0B2545",
                 letterSpacing: "0.04em",
@@ -437,7 +369,7 @@ Kirtipur, Nepal                  </p>
                 textDecoration: "none",
                 transition: "border-color 0.2s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(138,154,91,0.30)")}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(0,184,148,0.30)")}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
             >
               <span style={{
@@ -447,7 +379,7 @@ Kirtipur, Nepal                  </p>
               }}>
                 Google Scholar Profile
               </span>
-              <ExternalLink style={{ width: 12, height: 12, color: "rgba(138,154,91,0.60)" }} />
+              <ExternalLink style={{ width: 12, height: 12, color: "rgba(0,184,148,0.60)" }} />
             </motion.a>
           </motion.div>
 
@@ -456,7 +388,7 @@ Kirtipur, Nepal                  </p>
         {/* ── Divider ── */}
         <div style={{
           height: 1,
-          background: "linear-gradient(90deg, transparent, rgba(138,154,91,0.30), rgba(255,255,255,0.08), transparent)",
+          background: "linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(255,255,255,0.08), transparent)",
         }} />
 
         {/* ── Bottom Bar ── */}
@@ -529,14 +461,14 @@ Kirtipur, Nepal                  </p>
                 width: 44, height: 44,
                 borderRadius: "50%",
                 background: "linear-gradient(135deg, #0B2545, #1A3A6B)",
-                border: "1.5px solid rgba(138,154,91,0.40)",
+                border: "1.5px solid rgba(0,184,148,0.40)",
                 boxShadow: "0 6px 20px rgba(11,37,69,0.40)",
                 cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 transition: "box-shadow 0.22s",
               }}
             >
-              <ArrowUp style={{ width: 18, height: 18, color: "#8A9A5B" }} />
+              <ArrowUp style={{ width: 18, height: 18, color: "#00B894" }} />
             </motion.button>
           </motion.div>
         )}

@@ -71,8 +71,6 @@ const websites = [
 const categories = [
   {
     title: "Journal Editing",
-    accent: "#0F7A5A",
-    border: "#0F7A5A",
     items: [
       "Research in Applied Linguistics",
       "Review of Education",
@@ -81,8 +79,6 @@ const categories = [
   },
   {
     title: "Teacher Education",
-    accent: "#0F7A5A",
-    border: "#0F7A5A",
     items: [
       "International Education and Lifelong Learning",
       "TESOL Graphics",
@@ -91,8 +87,6 @@ const categories = [
   },
   {
     title: "Research",
-    accent: "#0F7A5A",
-    border: "#0F7A5A",
     items: [
       "Google Scholar — 3,670 Citations, h-index 36",
       "ResearchCode — 2,792 R-Score, 2,885 Citations",
@@ -100,8 +94,6 @@ const categories = [
   },
   {
     title: "Researcher Development",
-    accent: "#0F7A5A",
-    border: "#0F7A5A",
     items: [
       "BERA",
       "What We're Doing",
@@ -114,6 +106,25 @@ const categories = [
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
 export default function KnowledgeExchange() {
+  // ── Animation variants ──
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+  };
+
+  const listItemVariants = {
+    hidden: { opacity: 0, x: -12 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: "easeOut" } },
+  };
+
   return (
     <div
       id="knowledge-exchange"
@@ -125,22 +136,22 @@ export default function KnowledgeExchange() {
         style={{ backgroundImage: "url('/images/col.jpg')" }}
       >
         {/* Overlay with green gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/80 via-[#0F7A5A]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/80 via-[#0F7A5A]/40 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-16">
           <div className="max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
               Knowledge <br />
-              <span className="text-[#00B894 ]">Exchange</span>
+              <span className="text-[#00B894]">Exchange</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="mt-4 text-lg text-white/80 max-w-xl"
             >
               Sharing insights, research, and resources with the academic
@@ -153,11 +164,11 @@ export default function KnowledgeExchange() {
         </div>
       </div>
 
-      {/* ── Header + Nav ── */}
+      {/* ── Header + Nav (sticky) ── */}
       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
           <div className="py-3 md:py-4 flex-shrink-0">
-            <h2 className="font-serif text-2xl font-bold text-[#0B2545] tracking-tight">
+            <h2 className="text-2xl font-bold text-[#0B2545] tracking-tight">
               Knowledge <span className="text-[#0F7A5A]">Exchange</span>
             </h2>
           </div>
@@ -179,19 +190,26 @@ export default function KnowledgeExchange() {
       </div>
 
       {/* ── Main content ── */}
-      <main className="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16">
+      <motion.main
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-40px" }}
+        className="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16"
+      >
         <div className="space-y-16">
-          {/* Newspaper */}
-          <section>
-            <h3 className="font-serif text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+          {/* Newspaper section */}
+          <motion.section variants={itemVariants}>
+            <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
               Newspaper
             </h3>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="divide-y divide-[#0F7A5A]/10">
                 {newspaper.map((item, i) => (
-                  <li
+                  <motion.li
                     key={i}
+                    variants={listItemVariants}
                     className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
                   >
                     <div className="flex items-start gap-4">
@@ -214,23 +232,24 @@ export default function KnowledgeExchange() {
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-          </section>
+          </motion.section>
 
-          {/* Blog posts */}
-          <section>
-            <h3 className="font-serif text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+          {/* Blog posts section */}
+          <motion.section variants={itemVariants}>
+            <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
               Blog Posts
             </h3>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="divide-y divide-[#0F7A5A]/10">
                 {blogPosts.map((item, i) => (
-                  <li
+                  <motion.li
                     key={i}
+                    variants={listItemVariants}
                     className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
                   >
                     <div className="flex items-start gap-4">
@@ -253,23 +272,24 @@ export default function KnowledgeExchange() {
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-          </section>
+          </motion.section>
 
-          {/* Websites */}
-          <section>
-            <h3 className="font-serif text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+          {/* Websites section */}
+          <motion.section variants={itemVariants}>
+            <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
               Websites
             </h3>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="divide-y divide-[#0F7A5A]/10">
                 {websites.map((item, i) => (
-                  <li
+                  <motion.li
                     key={i}
+                    variants={listItemVariants}
                     className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
                   >
                     <div className="flex items-start gap-4">
@@ -288,29 +308,37 @@ export default function KnowledgeExchange() {
                         </p>
                       </div>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-          </section>
+          </motion.section>
         </div>
-      </main>
+      </motion.main>
 
-      {/* ── Category footer ── */}
-      <div className="bg-[#0B2545] mt-12">
+      {/* ── Category Footer (now with matching green background) ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="bg-[#0B5E4A] mt-12" // changed from navy to dark green
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
-          <h3 className="font-serif text-2xl font-bold text-white mb-8 text-center md:text-left">
-            Explore <span className="text-[#00B894 ]">Topics</span>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
+            Explore <span className="text-[#A8E6CF]">Topics</span> {/* lighter green for contrast */}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/15 hover:border-[#0F7A5A]/30 group"
+                whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(168,230,207,0.2)" }}
+                transition={{ duration: 0.3 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
               >
                 <div className="p-6">
-                  <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#00B894 ] flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#00B894 ]" />
+                  <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
                     {cat.title}
                   </div>
                   <ul className="space-y-2">
@@ -324,11 +352,11 @@ export default function KnowledgeExchange() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
