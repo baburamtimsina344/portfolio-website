@@ -477,8 +477,6 @@ import {
     Lock,
     Unlock,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
     Dialog,
     DialogContent,
@@ -764,12 +762,15 @@ function PublicationCard({
 
                 {/* Authors */}
                 <p style={{
-                    fontSize: 12.5, fontWeight: 500,
-                    color: 'var(--gray-600)',
-                    fontFamily: 'Inter, sans-serif',
-                    marginBottom: 6,
-                    lineHeight: 1.5,
-                }}>
+                                            fontSize: 'clamp(14px, 1.6vw, 16px)',
+                                            lineHeight: 1.8,
+                                            color: 'var(--text-secondary)',
+                                            margin: 0,
+                                            fontWeight: 500,
+                                            fontFamily: 'Inter, sans-serif',
+                                            letterSpacing: '0.3px',
+                                             textAlign: 'justify',
+                                        }}>
                     {pub.authors}
                 </p>
 

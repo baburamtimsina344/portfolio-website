@@ -756,17 +756,15 @@ export function NewsSection() {
 
                                             {/* Excerpt */}
                                             <p style={{
-                                                fontSize: 13.5, lineHeight: 1.78,
-                                                color: 'var(--gray-600)',
-                                                fontWeight: 300,
-                                                fontFamily: 'Inter, sans-serif',
-                                                flex: 1,
-                                                display: '-webkit-box',
-                                                WebkitLineClamp: 4,
-                                                WebkitBoxOrient: 'vertical',
-                                                overflow: 'hidden',
-                                                marginBottom: 20,
-                                            }}>
+                                            fontSize: 'clamp(14px, 1.6vw, 16px)',
+                                            lineHeight: 1.8,
+                                            color: 'var(--text-secondary)',
+                                            margin: 0,
+                                            fontWeight: 500,
+                                            fontFamily: 'Inter, sans-serif',
+                                            letterSpacing: '0.3px',
+                                             textAlign: 'justify',
+                                        }}>
                                                 {item.excerpt}
                                             </p>
 

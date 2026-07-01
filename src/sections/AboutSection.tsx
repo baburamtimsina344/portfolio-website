@@ -526,11 +526,14 @@ export function AboutSection() {
                                     <BookOpen style={{ width: 16, height: 16, color: 'var(--gold)' }} />
                                 </div>
                                 <span style={{
-                                    fontSize: 10.5, fontWeight: 700,
-                                    letterSpacing: '0.20em', textTransform: 'uppercase',
-                                    color: 'rgba(11,37,69,0.40)',
-                                    fontFamily: 'Inter, sans-serif',
-                                }}>
+                                            fontSize: 'clamp(14px, 1.6vw, 16px)',
+                                            lineHeight: 1.8,
+                                            color: 'var(--text-secondary)',
+                                            margin: 0,
+                                            fontWeight: 500,
+                                            fontFamily: 'Inter, sans-serif',
+                                            letterSpacing: '0.3px',
+                                        }}>
                                     Biography
                                 </span>
                             </div>
@@ -565,13 +568,15 @@ export function AboutSection() {
                                 marginBottom: 28,
                             }}>
                                 <p style={{
-                                    fontSize: 'clamp(13.5px, 1.5vw, 15px)',
-                                    lineHeight: 1.80,
-                                    color: 'var(--gray-600)',
-                                    margin: 0,
-                                    fontWeight: 300,
-                                    fontFamily: 'Inter, sans-serif',
-                                }}>
+                                            fontSize: 'clamp(14px, 1.6vw, 16px)',
+                                            lineHeight: 1.8,
+                                            color: 'var(--text-secondary)',
+                                            margin: 0,
+                                            fontWeight: 500,
+                                            fontFamily: 'Inter, sans-serif',
+                                            letterSpacing: '0.3px',
+                                             textAlign: 'justify',
+                                        }}>
                                     {BIOGRAPHY}
                                 </p>
                             </div>
@@ -692,13 +697,15 @@ export function AboutSection() {
                             </h3>
 
                             <p style={{
-                                fontSize: 'clamp(13px, 1.4vw, 14.5px)',
-                                lineHeight: 1.75,
-                                color: 'var(--gray-600)',
-                                fontWeight: 300,
-                                fontFamily: 'Inter, sans-serif',
-                                margin: '0 0 20px 0',
-                            }}>
+                                            fontSize: 'clamp(14px, 1.6vw, 16px)',
+                                            lineHeight: 1.8,
+                                            color: 'var(--text-secondary)',
+                                            margin: 0,
+                                            fontWeight: 500,
+                                            fontFamily: 'Inter, sans-serif',
+                                            letterSpacing: '0.3px',
+                                             textAlign: 'justify',
+                                        }}>
                                 Dr. Timsina delivered a keynote presentation on sustainable
                                 entrepreneurship and SME development in South Asian economies at the
                                 International Conference on Sustainable Business, Kathmandu.
