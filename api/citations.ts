@@ -1,7 +1,7 @@
 // api/citations.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
   try {
     const orcid = '0009-0001-9593-4222'
     const url = `https://api.openalex.org/authors/https://orcid.org/${orcid}`

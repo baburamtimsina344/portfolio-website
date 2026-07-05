@@ -4,7 +4,7 @@ import * as cheerio from 'cheerio'
 
 const PROFILE_URL = 'https://www.researchgate.net/profile/Baburam-Timsina-3'
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
   try {
     const { data: html } = await axios.get(PROFILE_URL, {
       headers: {
