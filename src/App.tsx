@@ -19,6 +19,8 @@ import { ContactSection } from "./sections/ContactSection";
 import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { scrollToSection } from "@/lib/utils";
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 function SectionFallback() {
   return (
@@ -84,7 +86,8 @@ export default function App() {
           <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
           <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
           <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} />
-
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
