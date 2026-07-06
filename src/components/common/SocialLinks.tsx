@@ -58,7 +58,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Share2, GraduationCap, BookOpen } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa"; // <-- import
+import { FaLinkedin, FaOrcid } from "react-icons/fa"; // <-- import
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import type { SocialLink } from "@/types";
@@ -68,7 +68,8 @@ const iconMap = {
   scholar: GraduationCap,
   facebook: Share2,
   email: Mail,
-  linkedin: FaLinkedin, // <-- added
+  linkedin: FaLinkedin,
+  orcid: FaOrcid, // <-- added
 };
 
 interface SocialLinksProps {

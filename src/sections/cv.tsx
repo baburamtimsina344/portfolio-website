@@ -3,7 +3,8 @@
 
 export default function CV() {
   return (
-    <section id="awards" className="py-32 px-6">
+    <div  id="cv">
+    <section id="cv" className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-8">
          CV
@@ -12,5 +13,6 @@ export default function CV() {
         
       </div>
     </section>
+    </div>
   )
 }

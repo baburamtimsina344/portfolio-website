@@ -413,7 +413,7 @@ export default function ProfessionalAchievements() {
 
   return (
     <div
-      id="professional-achievements"
+      id="editorial-roles"
       className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
     >
       {/* ── Hero ── */}

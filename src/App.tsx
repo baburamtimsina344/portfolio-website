@@ -14,7 +14,6 @@ import TeachingSection from "./sections/TeachingSection";
 
 
 import  EditorialRolesSection  from "./sections/EditorialRolesSection";
-import  LeadershipSection  from "./sections/LeadershipSection";
 import { ContactSection } from "./sections/ContactSection";
 import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";

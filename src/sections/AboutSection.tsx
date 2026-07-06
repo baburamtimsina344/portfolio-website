@@ -77,7 +77,7 @@ export function AboutSection() {
         <section
             ref={containerRef}
             id="about"
-            aria-label="About Mr. Baburam Timsina"
+            aria-label="About Baburam Timsina"
             style={{
                 position: 'relative',
                 padding: 'clamp(72px, 10vw, 120px) 0',
@@ -217,7 +217,7 @@ export function AboutSection() {
                                     WebkitTextFillColor: 'transparent',
                                     backgroundClip: 'text',
                                 }}>
-                                    Mr. Timsina
+                                    Timsina
                                 </span>
                             </h3>
 
@@ -394,7 +394,7 @@ export function AboutSection() {
                                 letterSpacing: '0.3px',
                                 textAlign: 'justify',
                             }}>
-                                Mr. Timsina delivered a keynote presentation on sustainable
+                                Timsina delivered a keynote presentation on sustainable
                                 entrepreneurship and SME development in South Asian economies at the
                                 International Conference on Sustainable Business, Kathmandu.
                             </p>

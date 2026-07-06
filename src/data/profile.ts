@@ -3,10 +3,10 @@
 import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
-  name: "Mr. Baburam Timsina",
+  name: "Baburam Timsina",
   title: "Academic Researcher | Educator | Scholar",
   description:
-    "Mr. Baburam Timsina is an academic researcher, educator, and scholar specializing in management, entrepreneurship, and sustainable development at Tribhuvan University, Nepal.",
+    "Baburam Timsina is an academic researcher, educator, and scholar specializing in management, entrepreneurship, and sustainable development at Tribhuvan University, Nepal.",
   url: "https://baburamtimsina.edu.np",
   ogImage: "/og-image.jpg",
   emails: ["brtimsina05@gmail.com", "baburam.timsina@som.tu.edu.np"],
@@ -41,14 +41,15 @@ export const NAV_ITEMS: NavItem[] = [
     label: "Awards & Certifications  ",
     path:"/awards&certifications"
    },
-   { id: "cv ", 
-    label: "CV  ",
+   { id: "cv", 
+    label: "CV",
     path:"/cv"
    },
   // { id: "leadership", 
   //   label: "External / Leadership Roles",
   // path:"/leadershipSection" },
-  { id: "contact", label: "Contact" },
+  { id: "contact",
+    label: "Contact" },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -63,8 +64,13 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "scholar",
   },
   {
+    name: "ORCID",
+    url: "https://orcid.org/0009-0001-9593-4222", // TODO: replace with actual ORCID iD
+    icon: "orcid",
+  },
+  {
     name: "Facebook",
-    url: "https://www.facebook.com/",
+    url: "https://www.facebook.com/babusri.timsina", // TODO: replace with actual profile URL
     icon: "facebook",
   },
   {
@@ -78,7 +84,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "linkedin",
   },
 ];
-
 export const RESEARCH_STATS: Stat[] = [
   { label: "Publications", value: "45+" },
   { label: "Citations", value: "850+" },

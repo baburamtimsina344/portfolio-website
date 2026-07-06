@@ -1923,7 +1923,7 @@ function ProfileImage() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 2, borderRadius: 24, boxShadow: 'inset 0 0 0 1px rgba(0,184,148,0.20)', pointerEvents: 'none' }} />
         <motion.img
           src="/images/profile.jpg"
-          alt="Mr. Baburam Timsina — Professor and Academic Leader"
+          alt="Baburam Timsina — Professor and Academic Leader"
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
@@ -2114,7 +2114,7 @@ export function HeroSection() {
       <section
         id="home"
         ref={containerRef}
-        aria-label="Hero — Mr. Baburam Timsina"
+        aria-label="Hero — Baburam Timsina"
         style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', background: 'var(--off-white)' }}
       >
         <motion.div style={{ opacity, y, position: 'absolute', inset: 0 }}>
@@ -2145,8 +2145,24 @@ export function HeroSection() {
                     transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
                     style={{ fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.02em', margin: 0 }}
                   >
-                    <span style={{ color: 'var(--navy)', display: 'block' }}>Mr. Baburam</span>
-                    <span className="name-underline" style={{ background: 'linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'inline-block', paddingBottom: 6 }}>Timsina</span>
+                    <div className="flex items-center gap-2">
+  <span className="text-[var(--navy)]">
+    Baburam
+  </span>
+
+  <span
+    className="name-underline inline-block pb-1"
+    style={{
+      background:
+        'linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+    }}
+  >
+    Timsina
+  </span>
+</div>
                   </motion.h1>
                   <motion.p variants={fadeInUp} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 14, fontSize: 13, color: 'var(--gray-400)' }}>
                     <MapPin style={{ width: 13, height: 13, color: 'var(--green)' }} />

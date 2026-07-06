@@ -964,7 +964,7 @@ function PublicationCard({
                     <motion.a
                         href={
                            
-                                 `https://www.researchgate.net/profile/Baburam-Timsina-3`
+                                 `https://scholar.google.com/citations?hl=en&authuser=1&user=st9Ym1kAAAAJ`
                         }
                         target="_blank"
                         rel="noopener noreferrer"
