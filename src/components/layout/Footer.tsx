@@ -298,62 +298,7 @@ export function Footer() {
             </p>
 
             {/* CV Card */}
-            <motion.a
-              href="/cv.pdf"
-              download
-              whileHover={{ y: -3, boxShadow: "0 16px 40px rgba(11,37,69,0.40)" }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.25 }}
-              style={{
-                display: "block",
-                background: "rgba(255,255,255,0.06)",
-                border: "1.5px solid rgba(0,184,148,0.22)",
-                borderRadius: 18,
-                padding: "20px 22px",
-                textDecoration: "none",
-                marginBottom: 12,
-                position: "relative",
-                overflow: "hidden",
-                transition: "box-shadow 0.25s",
-              }}
-            >
-              {/* Top accent */}
-              <div style={{
-                position: "absolute", top: 0, left: 0, right: 0, height: 2,
-                background: "linear-gradient(90deg, #00B894, rgba(0,184,148,0.15))",
-              }} />
-              <p style={{
-                fontSize: 10, fontWeight: 700,
-                letterSpacing: "0.16em", textTransform: "uppercase",
-                color: "#00B894",
-                margin: "0 0 6px 0",
-                fontFamily: "Inter, sans-serif",
-              }}>
-                Curriculum Vitae
-              </p>
-              <p style={{
-                fontSize: 13.5, fontWeight: 600,
-                color: "#FFFFFF",
-                margin: "0 0 12px 0",
-                fontFamily: "Inter, sans-serif",
-                lineHeight: 1.4,
-              }}>
-                Download Full CV
-              </p>
-              <div style={{
-                display: "inline-flex", alignItems: "center", gap: 6,
-                padding: "6px 14px",
-                borderRadius: 100,
-                background: "linear-gradient(135deg, #00B894, #66D9A0)",
-                fontSize: 11.5, fontWeight: 700,
-                color: "#0B2545",
-                letterSpacing: "0.04em",
-                fontFamily: "Inter, sans-serif",
-              }}>
-                <ExternalLink style={{ width: 11, height: 11 }} />
-                Download PDF
-              </div>
-            </motion.a>
+           
 
             {/* Google Scholar quick link */}
             <motion.a

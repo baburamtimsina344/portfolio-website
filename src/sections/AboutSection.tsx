@@ -7,7 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 
 // ─── Content ─────────────────────────────────────────────────────────
 const BIOGRAPHY =
-    "Dr. Baburam Timsina is a distinguished academic researcher, educator, and scholar at the School of Management, Tribhuvan University, Nepal. With extensive expertise in management sciences, entrepreneurship, sustainable development, and organizational behavior, he has contributed significantly to advancing knowledge in business education and research in South Asia. His scholarly work spans empirical research in small and medium enterprises, innovation ecosystems, sustainable business practices, and policy-oriented studies that bridge academia with real-world impact. Dr. Timsina is committed to fostering evidence-based decision-making among policymakers, industry leaders, and the next generation of business professionals."
+    "Advancing scholarship through research, leadership, and academic service, I am committed to fostering transformative learning and evidence-based practices in higher education.Based in Kathmandu, Nepal, I serve as Scholar and Educator at Tribhuvan University while pursuing doctoral research in higher education and leadership. My scholarly work explores the intersection of higher education, leadership, organizational behavior, governance, and corporate social responsibility, particularly within emerging economies.My research investigates how educational institutions, governance structures, service quality, ethical practices, and leadership approaches influence organizational effectiveness and individual decision-making. Through interdisciplinary and collaborative scholarship, I seek to contribute to the development of responsive, inclusive, and sustainable educational systems.Beyond research and teaching, I actively contribute to the academic community through editorial leadership, peer review, and scholarly networking. I currently serve as Chair of the Journal Management Committee (JMC) at MSSRNPRESS.ORG and as an editorial board member of several peer-reviewed journals.My broader academic mission is to bridge research, policy, and practice to strengthen higher education systems and promote impactful scholarship at both national and international levels."
 
 const RESEARCH_INTERESTS = [
     'Sustainable Development',
@@ -77,7 +77,7 @@ export function AboutSection() {
         <section
             ref={containerRef}
             id="about"
-            aria-label="About Dr. Baburam Timsina"
+            aria-label="About Mr. Baburam Timsina"
             style={{
                 position: 'relative',
                 padding: 'clamp(72px, 10vw, 120px) 0',
@@ -217,12 +217,12 @@ export function AboutSection() {
                                     WebkitTextFillColor: 'transparent',
                                     backgroundClip: 'text',
                                 }}>
-                                    Dr. Timsina
+                                    Mr. Timsina
                                 </span>
                             </h3>
 
                             {/* Bio text */}
-                            <div style={{
+                            {/* <div style={{
                                 borderLeft: '2.5px solid rgba(0,184,148,0.30)',
                                 paddingLeft: 18,
                                 marginBottom: 28,
@@ -236,13 +236,30 @@ export function AboutSection() {
                                     fontFamily: 'Inter, sans-serif',
                                     letterSpacing: '0.3px',
                                     textAlign: 'justify',
-                                }}>
-                                    {BIOGRAPHY}
-                                </p>
-                            </div>
+                                }}> */}
+
+                          <div className="
+  border-l-[2.5px] border-green-400/30 
+  pl-5 mb-7 
+  transition-all duration-300 
+  hover:border-green-500/60 hover:pl-6
+">
+  <p className="
+    text-[clamp(12px,1.2vw,14px)] 
+    leading-relaxed 
+    text-slate-700 
+    font-medium 
+    tracking-[0.2px] 
+    text-justify 
+    m-0
+  ">
+    {BIOGRAPHY}
+  </p>
+</div>
+                                  
 
                             {/* Research Interest Tags */}
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
+                            {/* <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
                                 {RESEARCH_INTERESTS.map((interest) => (
                                     <motion.span
                                         key={interest}
@@ -264,34 +281,45 @@ export function AboutSection() {
                                         {interest}
                                     </motion.span>
                                 ))}
-                            </div>
+                            </div> */}
 
                             {/* CTA Button */}
-                            <motion.a
-                                href="https://www.linkedin.com/in/baburam-timsina-9a0b169b/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(11,37,69,0.28)' }}
-                                whileTap={{ scale: 0.97 }}
-                                transition={{ duration: 0.25 }}
-                                style={{
-                                    display: 'inline-flex', alignItems: 'center', gap: 8,
-                                    padding: '11px 24px',
-                                    borderRadius: 100,
-                                    background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)',
-                                    border: '1px solid rgba(0,184,148,0.22)',
-                                    color: '#FFFFFF',
-                                    fontSize: 13, fontWeight: 600,
-                                    letterSpacing: '0.02em',
-                                    textDecoration: 'none',
-                                    fontFamily: 'Inter, sans-serif',
-                                    boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
-                                    transition: 'box-shadow 0.25s',
-                                }}
-                            >
-                                More About Me
-                                <ChevronRight style={{ width: 15, height: 15, opacity: 0.8 }} />
-                            </motion.a>
+                           <div
+    style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: 20, // optional
+    }}
+>
+    <motion.a
+        href="https://www.linkedin.com/in/baburam-timsina-9a0b169b/"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(11,37,69,0.28)' }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.25 }}
+        style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            padding: '11px 24px',
+            borderRadius: 100,
+            background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)',
+            border: '1px solid rgba(0,184,148,0.22)',
+            color: '#FFFFFF',
+            fontSize: 13,
+            fontWeight: 600,
+            letterSpacing: '0.02em',
+            textDecoration: 'none',
+            fontFamily: 'Inter, sans-serif',
+            boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
+            transition: 'box-shadow 0.25s',
+        }}
+    >
+        More About Me
+        <ChevronRight style={{ width: 15, height: 15, opacity: 0.8 }} />
+    </motion.a>
+</div>
                         </motion.div>
                     </motion.div>
 
@@ -366,7 +394,7 @@ export function AboutSection() {
                                 letterSpacing: '0.3px',
                                 textAlign: 'justify',
                             }}>
-                                Dr. Timsina delivered a keynote presentation on sustainable
+                                Mr. Timsina delivered a keynote presentation on sustainable
                                 entrepreneurship and SME development in South Asian economies at the
                                 International Conference on Sustainable Business, Kathmandu.
                             </p>

@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, ChevronLeft, ChevronRight, Newspaper } from "lucide-react";
+import {ArrowRight, ChevronLeft, ChevronRight, Newspaper } from "lucide-react";
 import { NEWS_ITEMS, NEWS_CATEGORY_LABELS } from "@/data/news";
-import { formatDate } from "@/lib/utils";
 import useEmblaCarousel from 'embla-carousel-react';
 import { useState, useCallback, useEffect, useRef } from 'react';
 
@@ -139,7 +138,7 @@ export function NewsSection() {
                             letterSpacing: '0.22em', textTransform: 'uppercase',
                             color: 'var(--navy)', fontFamily: 'Inter, sans-serif',
                         }}>
-                            News & Events
+                            Research
                         </span>
                         <Newspaper style={{ width: 12, height: 12, color: 'var(--green)' }} />
                     </div>
@@ -154,16 +153,15 @@ export function NewsSection() {
                         margin: 0,
                         fontFamily: 'Inter, sans-serif',
                     }}>
-                        Latest{' '}
+                      Core  Research Areas
                         <span style={{
                             background: 'linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
                         }}>
-                            News
                         </span>
-                        {' '}&amp; Updates
+                         {/* Research Areas */}
                     </h2>
 
                     {/* Green rule */}
@@ -286,16 +284,7 @@ export function NewsSection() {
                                                 }}>
                                                     {NEWS_CATEGORY_LABELS[item.category]}
                                                 </span>
-                                                <span style={{
-                                                    marginLeft: 'auto',
-                                                    display: 'flex', alignItems: 'center', gap: 5,
-                                                    fontSize: 11.5, fontWeight: 500,
-                                                    color: 'var(--gray-400)',
-                                                    fontFamily: 'Inter, sans-serif',
-                                                }}>
-                                                    <Calendar style={{ width: 12, height: 12, color: 'var(--green)' }} />
-                                                    {formatDate(item.date)}
-                                                </span>
+                                               
                                             </div>
 
                                             {/* Divider */}
