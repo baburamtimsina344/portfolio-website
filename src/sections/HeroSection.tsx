@@ -1923,7 +1923,7 @@ function ProfileImage() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 2, borderRadius: 24, boxShadow: 'inset 0 0 0 1px rgba(0,184,148,0.20)', pointerEvents: 'none' }} />
         <motion.img
           src="/images/profile.jpg"
-          alt="Dr. Baburam Timsina — Professor and Academic Leader"
+          alt="Mr. Baburam Timsina — Professor and Academic Leader"
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
@@ -1979,124 +1979,11 @@ interface OrcidData {
   error: string | null
 }
 
-function useOrcidData(orcidId: string): OrcidData {
-  const [data, setData] = useState<OrcidData>({
-    name: '', email: '', keywords: '', country: '', biography: '',
-    worksCount: 0, activitiesCount: 0, loading: true, error: null,
-  })
 
-  useEffect(() => {
-    async function fetchOrcid() {
-      try {
-        const res = await fetch(`https://pub.orcid.org/v3.0/${orcidId}`, {
-          headers: { Accept: 'application/json' },
-        })
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        const json = await res.json()
 
-        let name = ''
-        if (json.person?.name?.givenNames?.value && json.person?.name?.familyName?.value) {
-          name = `${json.person.name.givenNames.value} ${json.person.name.familyName.value}`
-        } else if (json.person?.name?.creditName?.value) {
-          name = json.person.name.creditName.value
-        }
 
-        let email = ''
-        if (json.person?.emails?.email?.length) {
-          const primary = json.person.emails.email.find((e: any) => e.primary === true)
-          email = primary?.value || json.person.emails.email[0]?.value || ''
-        }
+  
 
-        let keywords = ''
-        if (json.person?.keywords?.keyword?.length) {
-          keywords = json.person.keywords.keyword.map((k: any) => k.value).join(', ')
-        }
-
-        let country = ''
-        if (json.person?.addresses?.address?.length) {
-          const primary = json.person.addresses.address.find((a: any) => a.primary === true)
-          country = primary?.country?.value || json.person.addresses.address[0]?.country?.value || ''
-        }
-
-        let biography = ''
-        if (json.person?.biography?.value) {
-          biography = json.person.biography.value
-        }
-
-        let worksCount = 0
-        if (json['activities-summary']?.works?.group) {
-          worksCount = json['activities-summary'].works.group.length
-        }
-
-        let activitiesCount = 0
-        const summary = json['activities-summary'] || {}
-        activitiesCount += summary.employments?.employment?.length || 0
-        activitiesCount += summary.educations?.education?.length || 0
-        activitiesCount += summary.qualifications?.qualification?.length || 0
-        activitiesCount += summary.memberships?.membership?.length || 0
-        activitiesCount += summary.services?.service?.length || 0
-
-        setData({ name, email, keywords, country, biography, worksCount, activitiesCount, loading: false, error: null })
-      } catch (err) {
-        setData(prev => ({ ...prev, loading: false, error: err instanceof Error ? err.message : 'Unknown error' }))
-      }
-    }
-    fetchOrcid()
-  }, [orcidId])
-
-  return data
-}
-
-function OrcidProfileCard({ orcidId }: { orcidId: string }) {
-  const { worksCount, activitiesCount, loading, error } = useOrcidData(orcidId)
-
-  if (loading) {
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, padding: 20, borderRadius: 18, background: '#fff', border: '1.5px solid rgba(166,166,166,0.22)', minHeight: 100 }}>
-        <div style={{ width: 20, height: 20, borderRadius: '50%', border: '2px solid var(--gray-200)', borderTopColor: 'var(--green)', animation: 'spin 0.8s linear infinite' }} />
-        <span style={{ fontSize: 13, color: 'var(--gray-400)' }}>Loading ORCID…</span>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div style={{ padding: 18, borderRadius: 18, background: '#FFF5F5', border: '1.5px solid rgba(229,62,62,0.22)' }}>
-        <span style={{ fontSize: 13, color: 'var(--gray-600)' }}>⚠️ {error}</span>
-      </div>
-    )
-  }
-
-  return (
-    <motion.a
-      href={`https://orcid.org/${orcidId}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="accent-shimmer"
-      whileHover={{ y: -5, boxShadow: '0 16px 48px rgba(11,37,69,0.16)' }}
-      transition={{ duration: 0.32 }}
-      style={{ display: 'flex', flexDirection: 'column', gap: 14, padding: '18px 16px', borderRadius: 18, background: '#FFFFFF', border: '1.5px solid rgba(166,166,166,0.22)', boxShadow: '0 2px 12px rgba(11,37,69,0.07)', textDecoration: 'none', cursor: 'pointer' }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg, #A6C74A, #6C8C2A)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 3px 10px rgba(0,0,0,0.18)' }}>
-          <Fingerprint style={{ width: 16, height: 16, color: '#fff' }} />
-        </div>
-        <span style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--navy)', flex: 1 }}>ORCID</span>
-        <ExternalLink style={{ width: 13, height: 13, color: 'var(--gray-400)' }} />
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px 6px', borderRadius: 12, background: 'var(--gray-50)', border: '1px solid var(--gray-100)' }}>
-          <span style={{ fontSize: 17, fontWeight: 700, color: 'var(--navy)' }}>{worksCount}</span>
-          <span style={{ fontSize: 9.5, fontWeight: 500, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--gray-400)', marginTop: 4 }}>Works</span>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px 6px', borderRadius: 12, background: 'var(--gray-50)', border: '1px solid var(--gray-100)' }}>
-          <span style={{ fontSize: 17, fontWeight: 700, color: 'var(--navy)' }}>{activitiesCount}</span>
-          <span style={{ fontSize: 9.5, fontWeight: 500, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--gray-400)', marginTop: 4 }}>Activities</span>
-        </div>
-      </div>
-    </motion.a>
-  )
-}
 
 // ─── Academic Profile Cards (manually maintained data) ──────────────
 //
@@ -2176,9 +2063,7 @@ function AcademicProfileCards() {
           </div>
         </motion.a>
       ))}
-      <div style={{ gridColumn: '1 / -1', marginTop: 4 }}>
-        <OrcidProfileCard orcidId="0009-0001-9593-4222" />
-      </div>
+      
     </motion.div>
   )
 }
@@ -2229,7 +2114,7 @@ export function HeroSection() {
       <section
         id="home"
         ref={containerRef}
-        aria-label="Hero — Dr. Baburam Timsina"
+        aria-label="Hero — Mr. Baburam Timsina"
         style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', background: 'var(--off-white)' }}
       >
         <motion.div style={{ opacity, y, position: 'absolute', inset: 0 }}>
@@ -2260,7 +2145,7 @@ export function HeroSection() {
                     transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
                     style={{ fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.02em', margin: 0 }}
                   >
-                    <span style={{ color: 'var(--navy)', display: 'block' }}>Dr. Baburam</span>
+                    <span style={{ color: 'var(--navy)', display: 'block' }}>Mr. Baburam</span>
                     <span className="name-underline" style={{ background: 'linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'inline-block', paddingBottom: 6 }}>Timsina</span>
                   </motion.h1>
                   <motion.p variants={fadeInUp} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 14, fontSize: 13, color: 'var(--gray-400)' }}>
@@ -2287,10 +2172,10 @@ export function HeroSection() {
                     <Quote style={{ width: 18, height: 18, color: 'var(--green)' }} />
                   </div>
                   <motion.blockquote variants={fadeInUp} style={{ margin: 0, paddingLeft: 16 }}>
-                    <p style={{ fontSize: 'clamp(17px, 2.2vw, 22px)', lineHeight: 1.65, color: 'rgba(11,37,69,0.88)', fontStyle: 'italic', fontWeight: 400, margin: 0 }}>&ldquo;I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.&rdquo;</p>
+                    <p style={{ fontSize: 'clamp(17px, 2.2vw, 22px)', lineHeight: 1.65, color: 'rgba(11,37,69,0.88)', fontStyle: 'italic', fontWeight: 400, margin: 0 }}>&ldquo;Advancing scholarship in higher education, educational leadership, and institutional transformation through research, teaching, and academic service.&rdquo;</p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
                       <div style={{ height: 1, flex: 1, background: 'linear-gradient(to right, rgba(0,184,148,0.45), transparent)' }} />
-                      <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--green)' }}>— Isaiah 41:18</span>
+                      {/* <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--green)' }}>— Isaiah 41:18</span> */}
                     </div>
                   </motion.blockquote>
                 </motion.div>

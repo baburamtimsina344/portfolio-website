@@ -3,10 +3,10 @@
 import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
-  name: "Dr. Baburam Timsina",
+  name: "Mr. Baburam Timsina",
   title: "Academic Researcher | Educator | Scholar",
   description:
-    "Dr. Baburam Timsina is an academic researcher, educator, and scholar specializing in management, entrepreneurship, and sustainable development at Tribhuvan University, Nepal.",
+    "Mr. Baburam Timsina is an academic researcher, educator, and scholar specializing in management, entrepreneurship, and sustainable development at Tribhuvan University, Nepal.",
   url: "https://baburamtimsina.edu.np",
   ogImage: "/og-image.jpg",
   emails: ["brtimsina05@gmail.com", "baburam.timsina@som.tu.edu.np"],
@@ -17,25 +17,37 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS: NavItem[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "news", label: "News" },
+  { id: "news", label: "Research" }, //pahila news page ho yo
   { id: "publications", label: "Publications" },
-  {
-    id: "knowledge-exchange",
-    label: "Knowledge Exchange",
-    path: "/knowledge-exchange",   // ✅ Added this line
-  },
+  // {
+  //   id: "knowledge-exchange",
+  //   label: "Knowledge Exchange",
+  //   path: "/knowledge-exchange",   // ✅ Added this line
+  // },
   { id: "teaching", 
     label: "Teaching",
     path:"/teaching"
 
    },
   { id: "editorial-roles", 
-    label: "Editorial Roles",
+    label: "Editorial & Academic Service ",
     path:"/editorial-roles"
    },
-  { id: "leadership", 
-    label: "External / Leadership Roles",
-  path:"/leadershipSection" },
+   { id: "projects", 
+    label: "Projects ",
+    path:"/projects"
+   },
+   { id: "awards&certifications ", 
+    label: "Awards & Certifications  ",
+    path:"/awards&certifications"
+   },
+   { id: "cv ", 
+    label: "CV  ",
+    path:"/cv"
+   },
+  // { id: "leadership", 
+  //   label: "External / Leadership Roles",
+  // path:"/leadershipSection" },
   { id: "contact", label: "Contact" },
 ];
 

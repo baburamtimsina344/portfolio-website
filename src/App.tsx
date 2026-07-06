@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { MainLayout } from "@/layouts/MainLayout";
 import { SEO } from "@/components/common/SEO";
 import { Skeleton } from "@/components/ui/skeleton";
-import KnowledgeExchange from "./sections/KnowledgeExchangeSection";
+// import KnowledgeExchange from "./sections/KnowledgeExchangeSection";
 import { HeroSection } from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
 import { NewsSection } from "./sections/NewsSection";
@@ -21,6 +21,9 @@ import { useLocation } from "react-router-dom";
 import { scrollToSection } from "@/lib/utils";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import Projects from "./sections/Projects";
+import AwardsAndCertifications from "./sections/awards&certifications";
+import CV from "./sections/cv";
 
 function SectionFallback() {
   return (
@@ -82,10 +85,14 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout><HomeContent /></MainLayout>} />
-          <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} />
+          {/* <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} /> */}
           <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
           <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
-          <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} />
+                    <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
+                    <Route path="/awards&certifications" element={<MainLayout><AwardsAndCertifications /></MainLayout>} />
+                    <Route path="/cv" element={<MainLayout><CV /></MainLayout>} />
+
+          {/* <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>

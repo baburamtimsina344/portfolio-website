@@ -1,362 +1,756 @@
-import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+// // import { ChevronRight } from "lucide-react";
+// // import { motion } from "framer-motion";
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
-const navLinks = ["Newspaper", "Blog posts", "Websites"];
+// // // ─── DATA ────────────────────────────────────────────────────────────────────
+// // const navLinks = ["Newspaper", "Blog posts", "Websites"];
 
-const newspaper = [
-  {
-    text: "How can schools in poor areas attract more teachers?",
-    date: "11 March 2024",
-    publication: "Schools Week",
-  },
-];
+// // const newspaper = [
+// //   {
+// //     text: "How can schools in poor areas attract more teachers?",
+// //     date: "11 March 2024",
+// //     publication: "Schools Week",
+// //   },
+// // ];
 
-const blogPosts = [
-  {
-    text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 1)",
-    date: "June 2022",
-    publication: "HE Education Research Census",
-  },
-  {
-    text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 2)",
-    date: "June 2022",
-    publication: "HE Education Research Census",
-  },
-  {
-    text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 1)",
-    date: "July 2022",
-    publication: "BERA Blog (Reprint)",
-  },
-  {
-    text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 2)",
-    date: "July 2022",
-    publication: "BERA Blog (Reprint)",
-  },
-  {
-    text: "ECR Network Presents: Reflexivity in conducting qualitative educational research (with Muna Abuloushi, Nour Bemlakhdar, Rachel Wicaksono)",
-    date: "Forthcoming",
-    publication: "BERA Blog",
-  },
-  {
-    text: "Don't be cruel: how to write a fair peer review report (with Shannon Mason)",
-    date: "August 2022",
-    publication: "Times Higher Education Campus",
-  },
-  {
-    text: "It Takes More Than Financial Incentives: Strategies for Recruiting and Retaining Teachers in Schools (with Violeta Negrea)",
-    date: "June 2024",
-    publication: "HKU SCAFE Blog",
-  },
-];
+// // const blogPosts = [
+// //   {
+// //     text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 1)",
+// //     date: "June 2022",
+// //     publication: "HE Education Research Census",
+// //   },
+// //   {
+// //     text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 2)",
+// //     date: "June 2022",
+// //     publication: "HE Education Research Census",
+// //   },
+// //   {
+// //     text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 1)",
+// //     date: "July 2022",
+// //     publication: "BERA Blog (Reprint)",
+// //   },
+// //   {
+// //     text: "Supporting doctoral students and early career researchers in journal peer review in educational research: Issues and suggestions (Part 2)",
+// //     date: "July 2022",
+// //     publication: "BERA Blog (Reprint)",
+// //   },
+// //   {
+// //     text: "ECR Network Presents: Reflexivity in conducting qualitative educational research (with Muna Abuloushi, Nour Bemlakhdar, Rachel Wicaksono)",
+// //     date: "Forthcoming",
+// //     publication: "BERA Blog",
+// //   },
+// //   {
+// //     text: "Don't be cruel: how to write a fair peer review report (with Shannon Mason)",
+// //     date: "August 2022",
+// //     publication: "Times Higher Education Campus",
+// //   },
+// //   {
+// //     text: "It Takes More Than Financial Incentives: Strategies for Recruiting and Retaining Teachers in Schools (with Violeta Negrea)",
+// //     date: "June 2024",
+// //     publication: "HKU SCAFE Blog",
+// //   },
+// // ];
 
-const websites = [
-  {
-    name: "TESOLgraphics website",
-    description:
-      "An online resource with infographic summaries of secondary research in language education for practitioners and teachers.",
-  },
-  {
-    name: "Scholarly Peers website",
-    description:
-      "An online space with resources, blog posts, and podcasts about journal peer review for doctoral students and early career researchers.",
-  },
-  {
-    name: "Thesis by Publication website",
-    description:
-      "A collection of resources for supporting doctoral researchers to publish during their candidature.",
-  },
-];
+// // const websites = [
+// //   {
+// //     name: "TESOLgraphics website",
+// //     description:
+// //       "An online resource with infographic summaries of secondary research in language education for practitioners and teachers.",
+// //   },
+// //   {
+// //     name: "Scholarly Peers website",
+// //     description:
+// //       "An online space with resources, blog posts, and podcasts about journal peer review for doctoral students and early career researchers.",
+// //   },
+// //   {
+// //     name: "Thesis by Publication website",
+// //     description:
+// //       "A collection of resources for supporting doctoral researchers to publish during their candidature.",
+// //   },
+// // ];
 
-const categories = [
-  {
-    title: "Journal Editing",
-    items: [
-      "Research in Applied Linguistics",
-      "Review of Education",
-      "Innovation in Language Learning and Teaching",
-    ],
-  },
-  {
-    title: "Teacher Education",
-    items: [
-      "International Education and Lifelong Learning",
-      "TESOL Graphics",
-      "TESOL International",
-    ],
-  },
-  {
-    title: "Research",
-    items: [
-      "Google Scholar — 3,670 Citations, h-index 36",
-      "ResearchCode — 2,792 R-Score, 2,885 Citations",
-    ],
-  },
-  {
-    title: "Researcher Development",
-    items: [
-      "BERA",
-      "What We're Doing",
-      "Scholarly Peers Podcast",
-      "Thesis by Publication",
-      "Ready to Publish",
-    ],
-  },
-];
+// // const categories = [
+// //   {
+// //     title: "Journal Editing",
+// //     items: [
+// //       "Research in Applied Linguistics",
+// //       "Review of Education",
+// //       "Innovation in Language Learning and Teaching",
+// //     ],
+// //   },
+// //   {
+// //     title: "Teacher Education",
+// //     items: [
+// //       "International Education and Lifelong Learning",
+// //       "TESOL Graphics",
+// //       "TESOL International",
+// //     ],
+// //   },
+// //   {
+// //     title: "Research",
+// //     items: [
+// //       "Google Scholar — 3,670 Citations, h-index 36",
+// //       "ResearchCode — 2,792 R-Score, 2,885 Citations",
+// //     ],
+// //   },
+// //   {
+// //     title: "Researcher Development",
+// //     items: [
+// //       "BERA",
+// //       "What We're Doing",
+// //       "Scholarly Peers Podcast",
+// //       "Thesis by Publication",
+// //       "Ready to Publish",
+// //     ],
+// //   },
+// // ];
 
-// ─── COMPONENT ────────────────────────────────────────────────────────────────
-export default function KnowledgeExchange() {
-  // ── Animation variants ──
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
-    },
-  };
+// // // ─── COMPONENT ────────────────────────────────────────────────────────────────
+// // export default function KnowledgeExchange() {
+// //   // ── Animation variants ──
+// //   const containerVariants = {
+// //     hidden: { opacity: 0 },
+// //     visible: {
+// //       opacity: 1,
+// //       transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+// //     },
+// //   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-  };
+// //   const itemVariants = {
+// //     hidden: { opacity: 0, y: 20 },
+// //     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+// //   };
 
-  const listItemVariants = {
-    hidden: { opacity: 0, x: -12 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: "easeOut" } },
-  };
+// //   const listItemVariants = {
+// //     hidden: { opacity: 0, x: -12 },
+// //     visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: "easeOut" } },
+// //   };
 
-  return (
-    <div
-      id="knowledge-exchange"
-      className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
-    >
-      {/* ── Hero ── */}
-      <div
-        className="relative h-[500px] lg:h-[600px] overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/col.jpg')" }}
-      >
-        {/* Overlay with green gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/80 via-[#0F7A5A]/40 to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-16">
-          <div className="max-w-2xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-            >
-              Knowledge <br />
-              <span className="text-[#00B894]">Exchange</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-4 text-lg text-white/80 max-w-xl"
-            >
-              Sharing insights, research, and resources with the academic
-              community.
-            </motion.p>
-          </div>
-        </div>
-        <div className="absolute bottom-3 left-3 z-10 bg-black/40 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
-          Knowledge Exchange
-        </div>
-      </div>
+// //   return (
+// //     <div
+// //       id="knowledge-exchange"
+// //       className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
+// //     >
+// //       {/* ── Hero ── */}
+// //       <div
+// //         className="relative h-[500px] lg:h-[600px] overflow-hidden bg-cover bg-center"
+// //         style={{ backgroundImage: "url('/images/col.jpg')" }}
+// //       >
+// //         {/* Overlay with green gradient */}
+// //         <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/80 via-[#0F7A5A]/40 to-transparent" />
+// //         <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-16">
+// //           <div className="max-w-2xl">
+// //             <motion.h1
+// //               initial={{ opacity: 0, y: 30 }}
+// //               animate={{ opacity: 1, y: 0 }}
+// //               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+// //               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+// //             >
+// //               Knowledge <br />
+// //               <span className="text-[#00B894]">Exchange</span>
+// //             </motion.h1>
+// //             <motion.p
+// //               initial={{ opacity: 0, y: 20 }}
+// //               animate={{ opacity: 1, y: 0 }}
+// //               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+// //               className="mt-4 text-lg text-white/80 max-w-xl"
+// //             >
+// //               Sharing insights, research, and resources with the academic
+// //               community.
+// //             </motion.p>
+// //           </div>
+// //         </div>
+// //         <div className="absolute bottom-3 left-3 z-10 bg-black/40 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+// //           Knowledge Exchange
+// //         </div>
+// //       </div>
 
-      {/* ── Header + Nav (sticky) ── */}
-      <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
-          <div className="py-3 md:py-4 flex-shrink-0">
-            <h2 className="text-2xl font-bold text-[#0B2545] tracking-tight">
-              Knowledge <span className="text-[#0F7A5A]">Exchange</span>
-            </h2>
-          </div>
-          <nav className="flex flex-wrap items-center gap-2 md:gap-4 border-t md:border-t-0 pt-3 md:pt-0 border-[#0F7A5A]/10">
-            {navLinks.map((link) => (
-              <button
-                key={link}
-                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
-              >
-                {link}
-                <ChevronRight
-                  size={16}
-                  className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
-                />
-              </button>
-            ))}
-          </nav>
-        </div>
-      </div>
+// //       {/* ── Header + Nav (sticky) ── */}
+// //       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
+// //         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
+// //           <div className="py-3 md:py-4 flex-shrink-0">
+// //             <h2 className="text-2xl font-bold text-[#0B2545] tracking-tight">
+// //               Knowledge <span className="text-[#0F7A5A]">Exchange</span>
+// //             </h2>
+// //           </div>
+// //           <nav className="flex flex-wrap items-center gap-2 md:gap-4 border-t md:border-t-0 pt-3 md:pt-0 border-[#0F7A5A]/10">
+// //             {navLinks.map((link) => (
+// //               <button
+// //                 key={link}
+// //                 className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+// //               >
+// //                 {link}
+// //                 <ChevronRight
+// //                   size={16}
+// //                   className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
+// //                 />
+// //               </button>
+// //             ))}
+// //           </nav>
+// //         </div>
+// //       </div>
 
-      {/* ── Main content ── */}
-      <motion.main
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-40px" }}
-        className="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16"
-      >
-        <div className="space-y-16">
-          {/* Newspaper section */}
-          <motion.section variants={itemVariants}>
-            <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
-              <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
-              Newspaper
-            </h3>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
-              <ul className="divide-y divide-[#0F7A5A]/10">
-                {newspaper.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    variants={listItemVariants}
-                    className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F7A5A]/10 text-[#0F7A5A] flex items-center justify-center text-sm font-bold group-hover:bg-[#0F7A5A] group-hover:text-white transition-all">
-                        {i + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <a
-                          href="#"
-                          className="text-base font-semibold text-[#0B2545] hover:text-[#0F7A5A] transition-colors inline"
-                        >
-                          {item.text}
-                        </a>
-                        <div className="text-xs text-[#4A5A6A]/70 mt-1.5 flex flex-wrap items-center gap-2">
-                          <span>{item.date}</span>
-                          <span className="w-1 h-1 rounded-full bg-[#0F7A5A]/40" />
-                          <span className="font-medium text-[#0F7A5A]">
-                            {item.publication}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </motion.section>
+// //       {/* ── Main content ── */}
+// //       <motion.main
+// //         variants={containerVariants}
+// //         initial="hidden"
+// //         whileInView="visible"
+// //         viewport={{ once: true, margin: "-40px" }}
+// //         className="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16"
+// //       >
+// //         <div className="space-y-16">
+// //           {/* Newspaper section */}
+// //           <motion.section variants={itemVariants}>
+// //             <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+// //               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
+// //               Newspaper
+// //             </h3>
+// //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
+// //               <ul className="divide-y divide-[#0F7A5A]/10">
+// //                 {newspaper.map((item, i) => (
+// //                   <motion.li
+// //                     key={i}
+// //                     variants={listItemVariants}
+// //                     className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
+// //                   >
+// //                     <div className="flex items-start gap-4">
+// //                       <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F7A5A]/10 text-[#0F7A5A] flex items-center justify-center text-sm font-bold group-hover:bg-[#0F7A5A] group-hover:text-white transition-all">
+// //                         {i + 1}
+// //                       </span>
+// //                       <div className="flex-1 min-w-0">
+// //                         <a
+// //                           href="#"
+// //                           className="text-base font-semibold text-[#0B2545] hover:text-[#0F7A5A] transition-colors inline"
+// //                         >
+// //                           {item.text}
+// //                         </a>
+// //                         <div className="text-xs text-[#4A5A6A]/70 mt-1.5 flex flex-wrap items-center gap-2">
+// //                           <span>{item.date}</span>
+// //                           <span className="w-1 h-1 rounded-full bg-[#0F7A5A]/40" />
+// //                           <span className="font-medium text-[#0F7A5A]">
+// //                             {item.publication}
+// //                           </span>
+// //                         </div>
+// //                       </div>
+// //                     </div>
+// //                   </motion.li>
+// //                 ))}
+// //               </ul>
+// //             </div>
+// //           </motion.section>
 
-          {/* Blog posts section */}
-          <motion.section variants={itemVariants}>
-            <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
-              <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
-              Blog Posts
-            </h3>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
-              <ul className="divide-y divide-[#0F7A5A]/10">
-                {blogPosts.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    variants={listItemVariants}
-                    className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F7A5A]/10 text-[#0F7A5A] flex items-center justify-center text-sm font-bold group-hover:bg-[#0F7A5A] group-hover:text-white transition-all">
-                        {i + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <a
-                          href="#"
-                          className="text-base font-semibold text-[#0B2545] hover:text-[#0F7A5A] transition-colors inline"
-                        >
-                          {item.text}
-                        </a>
-                        <div className="text-xs text-[#4A5A6A]/70 mt-1.5 flex flex-wrap items-center gap-2">
-                          <span>{item.date}</span>
-                          <span className="w-1 h-1 rounded-full bg-[#0F7A5A]/40" />
-                          <span className="font-medium text-[#0F7A5A]">
-                            {item.publication}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </motion.section>
+// //           {/* Blog posts section */}
+// //           <motion.section variants={itemVariants}>
+// //             <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+// //               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
+// //               Blog Posts
+// //             </h3>
+// //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
+// //               <ul className="divide-y divide-[#0F7A5A]/10">
+// //                 {blogPosts.map((item, i) => (
+// //                   <motion.li
+// //                     key={i}
+// //                     variants={listItemVariants}
+// //                     className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
+// //                   >
+// //                     <div className="flex items-start gap-4">
+// //                       <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F7A5A]/10 text-[#0F7A5A] flex items-center justify-center text-sm font-bold group-hover:bg-[#0F7A5A] group-hover:text-white transition-all">
+// //                         {i + 1}
+// //                       </span>
+// //                       <div className="flex-1 min-w-0">
+// //                         <a
+// //                           href="#"
+// //                           className="text-base font-semibold text-[#0B2545] hover:text-[#0F7A5A] transition-colors inline"
+// //                         >
+// //                           {item.text}
+// //                         </a>
+// //                         <div className="text-xs text-[#4A5A6A]/70 mt-1.5 flex flex-wrap items-center gap-2">
+// //                           <span>{item.date}</span>
+// //                           <span className="w-1 h-1 rounded-full bg-[#0F7A5A]/40" />
+// //                           <span className="font-medium text-[#0F7A5A]">
+// //                             {item.publication}
+// //                           </span>
+// //                         </div>
+// //                       </div>
+// //                     </div>
+// //                   </motion.li>
+// //                 ))}
+// //               </ul>
+// //             </div>
+// //           </motion.section>
 
-          {/* Websites section */}
-          <motion.section variants={itemVariants}>
-            <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
-              <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
-              Websites
-            </h3>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
-              <ul className="divide-y divide-[#0F7A5A]/10">
-                {websites.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    variants={listItemVariants}
-                    className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F7A5A]/10 text-[#0F7A5A] flex items-center justify-center text-sm font-bold group-hover:bg-[#0F7A5A] group-hover:text-white transition-all">
-                        {i + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <a
-                          href="#"
-                          className="text-base font-semibold text-[#0B2545] hover:text-[#0F7A5A] transition-colors inline"
-                        >
-                          {item.name}
-                        </a>
-                        <p className="text-sm text-[#4A5A6A]/80 leading-relaxed mt-1.5">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </motion.section>
-        </div>
-      </motion.main>
+// //           {/* Websites section */}
+// //           <motion.section variants={itemVariants}>
+// //             <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+// //               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
+// //               Websites
+// //             </h3>
+// //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
+// //               <ul className="divide-y divide-[#0F7A5A]/10">
+// //                 {websites.map((item, i) => (
+// //                   <motion.li
+// //                     key={i}
+// //                     variants={listItemVariants}
+// //                     className="p-6 hover:bg-[#0F7A5A]/5 transition-colors group"
+// //                   >
+// //                     <div className="flex items-start gap-4">
+// //                       <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F7A5A]/10 text-[#0F7A5A] flex items-center justify-center text-sm font-bold group-hover:bg-[#0F7A5A] group-hover:text-white transition-all">
+// //                         {i + 1}
+// //                       </span>
+// //                       <div className="flex-1 min-w-0">
+// //                         <a
+// //                           href="#"
+// //                           className="text-base font-semibold text-[#0B2545] hover:text-[#0F7A5A] transition-colors inline"
+// //                         >
+// //                           {item.name}
+// //                         </a>
+// //                         <p className="text-sm text-[#4A5A6A]/80 leading-relaxed mt-1.5">
+// //                           {item.description}
+// //                         </p>
+// //                       </div>
+// //                     </div>
+// //                   </motion.li>
+// //                 ))}
+// //               </ul>
+// //             </div>
+// //           </motion.section>
+// //         </div>
+// //       </motion.main>
 
-      {/* ── Category Footer (now with matching green background) ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-[#0B5E4A] mt-12" // changed from navy to dark green
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
-            Explore <span className="text-[#A8E6CF]">Topics</span> {/* lighter green for contrast */}
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((cat, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(168,230,207,0.2)" }}
-                transition={{ duration: 0.3 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
-              >
-                <div className="p-6">
-                  <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
-                    {cat.title}
-                  </div>
-                  <ul className="space-y-2">
-                    {cat.items.map((item, j) => (
-                      <li
-                        key={j}
-                        className="text-sm text-white/80 hover:text-white transition-colors border-b border-white/5 py-2 last:border-0"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
-}
+// //       {/* ── Category Footer (now with matching green background) ── */}
+// //       <motion.div
+// //         initial={{ opacity: 0, y: 30 }}
+// //         whileInView={{ opacity: 1, y: 0 }}
+// //         viewport={{ once: true }}
+// //         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+// //         className="bg-[#0B5E4A] mt-12" // changed from navy to dark green
+// //       >
+// //         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+// //           <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
+// //             Explore <span className="text-[#A8E6CF]">Topics</span> {/* lighter green for contrast */}
+// //           </h3>
+// //           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+// //             {categories.map((cat, i) => (
+// //               <motion.div
+// //                 key={i}
+// //                 whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(168,230,207,0.2)" }}
+// //                 transition={{ duration: 0.3 }}
+// //                 className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
+// //               >
+// //                 <div className="p-6">
+// //                   <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
+// //                     <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
+// //                     {cat.title}
+// //                   </div>
+// //                   <ul className="space-y-2">
+// //                     {cat.items.map((item, j) => (
+// //                       <li
+// //                         key={j}
+// //                         className="text-sm text-white/80 hover:text-white transition-colors border-b border-white/5 py-2 last:border-0"
+// //                       >
+// //                         {item}
+// //                       </li>
+// //                     ))}
+// //                   </ul>
+// //                 </div>
+// //               </motion.div>
+// //             ))}
+// //           </div>
+// //         </div>
+// //       </motion.div>
+// //     </div>
+// //   );
+// // }
+
+
+
+// import { ChevronRight } from "lucide-react";
+// import { motion } from "framer-motion";
+// import { CheckCircle, Award, Users, BookOpen, Briefcase, Calendar } from "lucide-react";
+
+// // ─── DATA ────────────────────────────────────────────────────────────────────
+// const navLinks = ["Certifications", "Awards & Memberships", "Professional Development"];
+
+// // Certifications (LinkedIn Learning, 2020)
+// const certifications = [
+//   "Advice for Leaders During a Crisis",
+//   "Counterintuitive Leadership Strategies for a VUCA Environment",
+//   "Digital Transformation in Practice: Virtual Collaboration Tools",
+//   "Managing Stress for Positive Change",
+//   "Master In-Demand Professional Soft Skills",
+//   "Recharge Your Energy for Peak Performance",
+//   "Teamwork Foundations",
+//   "Digital Networking Strategies",
+//   "Leading in Crisis",
+//   "Recession-Proof Career Strategies",
+// ];
+
+// // Awards & Memberships
+// const award = {
+//   title: "Dean's Award",
+//   institution: "Institute of Advanced Communication, Education, and Research (IACER), Pokhara University",
+//   description: "Awarded in recognition of outstanding academic performance.",
+// };
+
+// const associations = [
+//   {
+//     name: "Nepal English Language Teachers' Association (NELTA)",
+//     status: "Life Member",
+//     focus: "English Language Education & Professional Development",
+//   },
+//   {
+//     name: "Management Association of Nepal (MAN)",
+//     status: "Life Member",
+//     focus: "Management Education, Leadership & Research",
+//   },
+//   {
+//     name: "Human Resources Society Nepal (HRSN)",
+//     status: "Life Member",
+//     focus: "Human Resource Management & Organizational Development",
+//   },
+// ];
+
+// // Professional Development
+// const internationalCourses = [
+//   "Higher Education Leadership – MRU University (2023)",
+//   "Conflict Resolution – Duke University (2022)",
+//   "Strategic Management – King's College London (2021)",
+//   "Professional Communication and Leadership Courses – LinkedIn Learning (2024)",
+//   "50+ short courses and crash certifications from leading global learning platforms.",
+// ];
+
+// const conferences = {
+//   description:
+//     "Participated in and contributed to over 100 scholarly conferences, seminars, workshops, webinars, and academic forums. Engaged in interdisciplinary discussions on higher education, leadership, organizational behavior, sustainability, research methodology, and educational innovation. Participated in multiple international conferences on Sustainability and Artificial Intelligence in Education through the Whova Conference Platform (2020–2024).",
+// };
+
+// const resourcePersonTopics = [
+//   "Public Speaking and Communication Skills",
+//   "Leadership Development",
+//   "Research and Academic Writing",
+//   "Professional and Personal Growth",
+//   "Higher Education and Institutional Leadership",
+// ];
+
+// const statistics = {
+//   events: "100+",
+//   certifications: "50+",
+//   platforms: "5+",
+//   engagements: "Multiple",
+// };
+
+// // Footer categories
+// const categories = [
+//   {
+//     title: "Certifications",
+//     items: certifications.slice(0, 4), // show first 4
+//   },
+//   {
+//     title: "Awards",
+//     items: [award.title],
+//   },
+//   {
+//     title: "Memberships",
+//     items: associations.map((a) => a.name),
+//   },
+//   {
+//     title: "Development",
+//     items: [
+//       "International Courses",
+//       "100+ Conferences",
+//       "Resource Person",
+//       "Curriculum Innovation",
+//     ],
+//   },
+// ];
+
+// // ─── COMPONENT ────────────────────────────────────────────────────────────────
+// export default function KnowledgeExchange() {
+//   // ── Animation variants ──
+//   const containerVariants = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+//     },
+//   };
+
+//   const itemVariants = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+//   };
+
+//   const listItemVariants = {
+//     hidden: { opacity: 0, x: -12 },
+//     visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: "easeOut" } },
+//   };
+
+//   return (
+//     <div
+//       id="knowledge-exchange"
+//       className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
+//     >
+//       {/* ── Hero ── */}
+//       <div
+//         className="relative h-[500px] lg:h-[600px] overflow-hidden bg-cover bg-center"
+//         style={{ backgroundImage: "url('/images/col.jpg')" }}
+//       >
+//         <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/80 via-[#0F7A5A]/40 to-transparent" />
+//         <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-16">
+//           <div className="max-w-2xl">
+//             <motion.h1
+//               initial={{ opacity: 0, y: 30 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+//               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+//             >
+//               Professional <br />
+//               <span className="text-[#00B894]">Achievements</span>
+//             </motion.h1>
+//             <motion.p
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+//               className="mt-4 text-lg text-white/80 max-w-xl"
+//             >
+//               Certifications, awards, memberships, and ongoing professional development.
+//             </motion.p>
+//           </div>
+//         </div>
+//         <div className="absolute bottom-3 left-3 z-10 bg-black/40 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+//           Achievements
+//         </div>
+//       </div>
+
+//       {/* ── Header + Nav (sticky) ── */}
+//       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
+//         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
+//           <div className="py-3 md:py-4 flex-shrink-0">
+//             <h2 className="text-2xl font-bold text-[#0B2545] tracking-tight">
+//               Knowledge <span className="text-[#0F7A5A]">Exchange</span>
+//             </h2>
+//           </div>
+//           <nav className="flex flex-wrap items-center gap-2 md:gap-4 border-t md:border-t-0 pt-3 md:pt-0 border-[#0F7A5A]/10">
+//             {navLinks.map((link) => (
+//               <button
+//                 key={link}
+//                 className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+//               >
+//                 {link}
+//                 <ChevronRight
+//                   size={16}
+//                   className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
+//                 />
+//               </button>
+//             ))}
+//           </nav>
+//         </div>
+//       </div>
+
+//       {/* ── Main content ── */}
+//       <motion.main
+//         variants={containerVariants}
+//         initial="hidden"
+//         whileInView="visible"
+//         viewport={{ once: true, margin: "-40px" }}
+//         className="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16"
+//       >
+//         <div className="space-y-16">
+//           {/* ── 1. Certifications ── */}
+//           <motion.section variants={itemVariants}>
+//             <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+//               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
+//               Professional Certifications
+//               <span className="text-sm font-normal text-[#4A5A6A]/70 ml-2">(LinkedIn Learning, 2020)</span>
+//             </h3>
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
+//               <ul className="divide-y divide-[#0F7A5A]/10">
+//                 {certifications.map((item, i) => (
+//                   <motion.li
+//                     key={i}
+//                     variants={listItemVariants}
+//                     className="p-5 hover:bg-[#0F7A5A]/5 transition-colors group flex items-start gap-4"
+//                   >
+//                     <CheckCircle className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+//                     <span className="text-[#0B2545] group-hover:text-[#0F7A5A] transition-colors">{item}</span>
+//                   </motion.li>
+//                 ))}
+//               </ul>
+//             </div>
+//           </motion.section>
+
+//           {/* ── 2. Awards & Memberships ── */}
+//           <motion.section variants={itemVariants}>
+//             <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+//               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
+//               Awards & Memberships
+//             </h3>
+
+//             {/* Dean's Award */}
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300 mb-6">
+//               <div className="flex items-start gap-4">
+//                 <Award className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
+//                 <div>
+//                   <h4 className="text-lg font-semibold text-[#0B2545]">{award.title}</h4>
+//                   <p className="text-sm text-[#4A5A6A]/80">{award.institution}</p>
+//                   <p className="text-sm text-[#4A5A6A] mt-1">{award.description}</p>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Associations */}
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300">
+//               <ul className="divide-y divide-[#0F7A5A]/10">
+//                 {associations.map((assoc, i) => (
+//                   <motion.li
+//                     key={i}
+//                     variants={listItemVariants}
+//                     className="p-5 hover:bg-[#0F7A5A]/5 transition-colors"
+//                   >
+//                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+//                       <div className="flex items-start gap-3 flex-1">
+//                         <Users className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
+//                         <div>
+//                           <span className="font-semibold text-[#0B2545]">{assoc.name}</span>
+//                           <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0F7A5A]/10 text-[#0F7A5A]">
+//                             {assoc.status}
+//                           </span>
+//                           <p className="text-sm text-[#4A5A6A]/80 mt-0.5">{assoc.focus}</p>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </motion.li>
+//                 ))}
+//               </ul>
+//             </div>
+//           </motion.section>
+
+//           {/* ── 3. Professional Development ── */}
+//           <motion.section variants={itemVariants}>
+//             <h3 className="text-2xl font-bold text-[#0B2545] mb-6 flex items-center gap-3">
+//               <span className="w-1 h-8 bg-[#0F7A5A] rounded-full" />
+//               Professional Development & Engagements
+//             </h3>
+
+//             {/* International Courses */}
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 overflow-hidden hover:shadow-[#0B2545]/10 transition-all duration-300 mb-6">
+//               <div className="p-6">
+//                 <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+//                   <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
+//                   International Courses & Certifications
+//                 </h4>
+//                 <ul className="space-y-3">
+//                   {internationalCourses.map((course, i) => (
+//                     <motion.li
+//                       key={i}
+//                       variants={listItemVariants}
+//                       className="flex items-start gap-3 text-[#4A5A6A] hover:text-[#0B2545] transition-colors"
+//                     >
+//                       <CheckCircle className="h-4 w-4 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
+//                       <span>{course}</span>
+//                     </motion.li>
+//                   ))}
+//                 </ul>
+//               </div>
+//             </div>
+
+//             {/* Conferences & Scholarly Events */}
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300 mb-6">
+//               <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+//                 <Calendar className="h-5 w-5 text-[#0F7A5A]" />
+//                 Conferences, Workshops & Scholarly Events
+//               </h4>
+//               <p className="text-[#4A5A6A] leading-relaxed">{conferences.description}</p>
+//             </div>
+
+//             {/* Resource Person */}
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300 mb-6">
+//               <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+//                 <Briefcase className="h-5 w-5 text-[#0F7A5A]" />
+//                 Resource Person & Invited Engagements
+//               </h4>
+//               <p className="text-[#4A5A6A] leading-relaxed mb-3">
+//                 Served as Resource Person, Facilitator, Judge, and Invited Speaker in various academic and professional development programs focusing on:
+//               </p>
+//               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+//                 {resourcePersonTopics.map((topic, i) => (
+//                   <li key={i} className="flex items-start gap-2 text-sm text-[#4A5A6A]">
+//                     <span className="text-[#0F7A5A]">•</span>
+//                     <span>{topic}</span>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </div>
+
+//             {/* Curriculum Innovation & Evaluation Statistics */}
+//             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+//               <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+//                 <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
+//                 Curriculum Innovation & Evaluation Statistics
+//               </h4>
+//               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+//                 <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
+//                   <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.events}</p>
+//                   <p className="text-xs text-[#4A5A6A]">Scholarly Events</p>
+//                 </div>
+//                 <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
+//                   <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.certifications}</p>
+//                   <p className="text-xs text-[#4A5A6A]">Certifications Earned</p>
+//                 </div>
+//                 <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
+//                   <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.platforms}</p>
+//                   <p className="text-xs text-[#4A5A6A]">International Platforms</p>
+//                 </div>
+//                 <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
+//                   <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.engagements}</p>
+//                   <p className="text-xs text-[#4A5A6A]">Facilitation Engagements</p>
+//                 </div>
+//               </div>
+//             </div>
+//           </motion.section>
+//         </div>
+//       </motion.main>
+
+//       {/* ── Category Footer ── */}
+//       <motion.div
+//         initial={{ opacity: 0, y: 30 }}
+//         whileInView={{ opacity: 1, y: 0 }}
+//         viewport={{ once: true }}
+//         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+//         className="bg-[#0B5E4A] mt-12"
+//       >
+//         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+//           <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
+//             Explore <span className="text-[#A8E6CF]">Highlights</span>
+//           </h3>
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+//             {categories.map((cat, i) => (
+//               <motion.div
+//                 key={i}
+//                 whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(168,230,207,0.2)" }}
+//                 transition={{ duration: 0.3 }}
+//                 className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
+//               >
+//                 <div className="p-6">
+//                   <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
+//                     <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
+//                     {cat.title}
+//                   </div>
+//                   <ul className="space-y-2">
+//                     {cat.items.map((item, j) => (
+//                       <li
+//                         key={j}
+//                         className="text-sm text-white/80 hover:text-white transition-colors border-b border-white/5 py-2 last:border-0"
+//                       >
+//                         {item}
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </motion.div>
+//     </div>
+//   );
+// }
