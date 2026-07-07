@@ -75,3 +75,62 @@ CREATE POLICY "Enable read access for all users" ON publications
 -- Allow authenticated users to insert, update, delete publications
 CREATE POLICY "Enable all operations for authenticated users" ON publications
     FOR ALL USING (auth.role() = 'authenticated');
+
+
+
+
+
+
+
+-- ─────────────────────────────────────────────────────────────
+-- Visitor Analytics schema
+-- Run this once in the Supabase SQL editor for your project.
+-- ─────────────────────────────────────────────────────────────
+
+-- Single-row table holding the running total (seeded at 10,000)
+create table if not exists visitor_totals (
+  id int primary key default 1,
+  total_count bigint not null default 10000,
+  updated_at timestamptz not null default now()
+);
+
+insert into visitor_totals (id, total_count)
+values (1, 10000)
+on conflict (id) do nothing;
+
+-- Per-country visit counts
+create table if not exists country_visits (
+  country_code text primary key,
+  country_name text not null,
+  visit_count bigint not null default 0,
+  last_visit_at timestamptz not null default now()
+);
+
+-- Atomic increment: bumps the total AND the country's count in one call
+create or replace function increment_visit(p_country_code text, p_country_name text)
+returns void as $$
+begin
+  update visitor_totals
+  set total_count = total_count + 1, updated_at = now()
+  where id = 1;
+
+  insert into country_visits (country_code, country_name, visit_count, last_visit_at)
+  values (p_country_code, p_country_name, 1, now())
+  on conflict (country_code)
+  do update set
+    visit_count = country_visits.visit_count + 1,
+    last_visit_at = now(),
+    country_name = excluded.country_name;
+end;
+$$ language plpgsql;
+
+-- Optional: enable Row Level Security and allow public read (writes go through
+-- the API route using the service role key, so they bypass RLS).
+alter table visitor_totals enable row level security;
+alter table country_visits enable row level security;
+
+create policy "Public read access - totals"
+  on visitor_totals for select using (true);
+
+create policy "Public read access - countries"
+  on country_visits for select using (true);
