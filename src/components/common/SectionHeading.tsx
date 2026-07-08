@@ -13,15 +13,15 @@ export function SectionHeading({ label, title, subtitle, className, align = "lef
   return (
     <ScrollReveal className={cn("mb-12 md:mb-16", align === "center" && "text-center", className)}>
       {label && (
-        <span className="inline-block text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+        <span className="type-kicker inline-block text-primary mb-3">
           {label}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight">
+      <h2 className="type-section-title text-foreground">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+        <p className="type-body mt-4 text-muted-foreground max-w-2xl">
           {subtitle}
         </p>
       )}

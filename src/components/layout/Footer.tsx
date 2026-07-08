@@ -1,20 +1,299 @@
+// // import { useEffect, useState } from "react";
+// // import { motion, AnimatePresence } from "framer-motion";
+// // import { ArrowUp } from "lucide-react";
+// // import { SITE_CONFIG } from "@/data/profile";
+// // import { scrollToSection } from "@/lib/utils";
+// // import { VisitorMap } from "@/sections/VisitorMap";
+
+// // export function Footer() {
+// //   const [showBackToTop, setShowBackToTop] = useState(false);
+// //   const currentYear = new Date().getFullYear();
+
+// //   useEffect(() => {
+// //     const handleScroll = () => setShowBackToTop(window.scrollY > 500);
+// //     window.addEventListener("scroll", handleScroll, { passive: true });
+// //     return () => window.removeEventListener("scroll", handleScroll);
+// //   }, []);
+
+// //   return (
+// //     <footer
+// //       style={{
+// //         position: "relative",
+// //         background: "linear-gradient(135deg, #0B2545 0%, #1A3A6B 55%, #0B2545 100%)",
+// //         overflow: "hidden",
+// //       }}
+// //     >
+// //       <VisitorMap/>
+// //       <div
+// //         style={{
+// //           position: "relative",
+// //           zIndex: 2,
+// //           maxWidth: 1200,
+// //           margin: "0 auto",
+// //           padding: "clamp(32px, 4vw, 56px) clamp(20px, 5vw, 56px) 0",
+// //         }}
+// //       >
+// //         {/* Divider */}
+// //         <div
+// //           style={{
+// //             height: 1,
+// //             background:
+// //               "linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(255,255,255,0.08), transparent)",
+// //           }}
+// //         />
+
+// //         {/* Bottom Bar */}
+// //         <div
+// //           style={{
+// //             display: "flex",
+// //             flexWrap: "wrap",
+// //             alignItems: "center",
+// //             justifyContent: "space-between",
+// //             gap: 14,
+// //             padding: "clamp(14px, 2vw, 20px) 0",
+// //           }}
+// //         >
+// //           <p
+// //             style={{
+// //               fontSize: 12,
+// //               color: "rgba(255,255,255,0.35)",
+// //               margin: 0,
+// //               fontFamily: "var(--font-app)",
+// //               fontWeight: 400,
+// //             }}
+// //           >
+// //             &copy; {currentYear}{" "}
+// //             <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 500 }}>
+// //               {SITE_CONFIG.name}
+// //             </span>
+// //             . All rights reserved.
+// //           </p>
+
+// //           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+// //             {["Privacy Policy", "Terms of Use"].map((label, i) => (
+// //               <motion.button
+// //                 key={label}
+// //                 transition={{ duration: 0.15 }}
+// //                 style={{
+// //                   background: "none",
+// //                   border: "none",
+// //                   cursor: "pointer",
+// //                   padding: "5px 12px",
+// //                   fontSize: 11.5,
+// //                   color: "rgba(255,255,255,0.35)",
+// //                   fontFamily: "var(--font-app)",
+// //                   fontWeight: 400,
+// //                   transition: "color 0.2s",
+// //                   borderRight:
+// //                     i === 0 ? "1px solid rgba(255,255,255,0.12)" : "none",
+// //                 }}
+// //                 onMouseEnter={(e) =>
+// //                   (e.currentTarget.style.color = "rgba(255,255,255,0.75)")
+// //                 }
+// //                 onMouseLeave={(e) =>
+// //                   (e.currentTarget.style.color = "rgba(255,255,255,0.35)")
+// //                 }
+// //               >
+// //                 {label}
+// //               </motion.button>
+// //             ))}
+// //           </div>
+// //         </div>
+// //       </div>
+
+// //       {/* Back to Top Button */}
+// //       <AnimatePresence>
+// //         {showBackToTop && (
+// //           <motion.div
+// //             initial={{ opacity: 0, y: 12 }}
+// //             animate={{ opacity: 1, y: 0 }}
+// //             exit={{ opacity: 0, y: 12 }}
+// //             transition={{ duration: 0.25 }}
+// //             style={{ position: "fixed", bottom: 28, right: 28, zIndex: 50 }}
+// //           >
+// //             <motion.button
+// //               whileHover={{ y: -3, boxShadow: "0 12px 32px rgba(11,37,69,0.35)" }}
+// //               whileTap={{ scale: 0.93 }}
+// //               transition={{ duration: 0.22 }}
+// //               onClick={() => scrollToSection("home")}
+// //               aria-label="Back to top"
+// //               style={{
+// //                 width: 44,
+// //                 height: 44,
+// //                 borderRadius: "50%",
+// //                 background: "linear-gradient(135deg, #0B2545, #1A3A6B)",
+// //                 border: "1.5px solid rgba(0,184,148,0.40)",
+// //                 boxShadow: "0 6px 20px rgba(11,37,69,0.40)",
+// //                 cursor: "pointer",
+// //                 display: "flex",
+// //                 alignItems: "center",
+// //                 justifyContent: "center",
+// //                 transition: "box-shadow 0.22s",
+// //               }}
+// //             >
+// //               <ArrowUp style={{ width: 18, height: 18, color: "#00B894" }} />
+// //             </motion.button>
+// //           </motion.div>
+// //         )}
+// //       </AnimatePresence>
+// //     </footer>
+// //   );
+// // }
+
+
+
+// import { useEffect, useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { ArrowUp } from "lucide-react";
+// import { SITE_CONFIG } from "@/data/profile";
+// import { scrollToSection } from "@/lib/utils";
+// import { BRAND_GRADIENT } from "@/lib/theme";
+// import { VisitorMap } from "@/sections/VisitorMap";
+
+// export function Footer() {
+//   const [showBackToTop, setShowBackToTop] = useState(false);
+//   const currentYear = new Date().getFullYear();
+
+//   useEffect(() => {
+//     const handleScroll = () => setShowBackToTop(window.scrollY > 500);
+//     window.addEventListener("scroll", handleScroll, { passive: true });
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return (
+//     <footer
+//       style={{
+//         position: "relative",
+//         background: BRAND_GRADIENT,
+//         overflow: "hidden",
+//       }}
+//     >
+//       <VisitorMap/>
+//       <div
+//         style={{
+//           position: "relative",
+//           zIndex: 2,
+//           maxWidth: 1200,
+//           margin: "0 auto",
+//           padding: "clamp(32px, 4vw, 56px) clamp(20px, 5vw, 56px) 0",
+//         }}
+//       >
+//         {/* Divider */}
+//         <div
+//           style={{
+//             height: 1,
+//             background:
+//               "linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(255,255,255,0.08), transparent)",
+//           }}
+//         />
+
+//         {/* Bottom Bar */}
+//         <div
+//           style={{
+//             display: "flex",
+//             flexWrap: "wrap",
+//             alignItems: "center",
+//             justifyContent: "space-between",
+//             gap: 14,
+//             padding: "clamp(14px, 2vw, 20px) 0",
+//           }}
+//         >
+//           <p
+//             style={{
+//               fontSize: 12,
+//               color: "rgba(255,255,255,0.35)",
+//               margin: 0,
+//               fontFamily: "var(--font-app)",
+//               fontWeight: 400,
+//             }}
+//           >
+//             &copy; {currentYear}{" "}
+//             <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 500 }}>
+//               {SITE_CONFIG.name}
+//             </span>
+//             . All rights reserved.
+//           </p>
+
+//           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+//             {["Privacy Policy", "Terms of Use"].map((label, i) => (
+//               <motion.button
+//                 key={label}
+//                 transition={{ duration: 0.15 }}
+//                 style={{
+//                   background: "none",
+//                   border: "none",
+//                   cursor: "pointer",
+//                   padding: "5px 12px",
+//                   fontSize: 11.5,
+//                   color: "rgba(255,255,255,0.35)",
+//                   fontFamily: "var(--font-app)",
+//                   fontWeight: 400,
+//                   transition: "color 0.2s",
+//                   borderRight:
+//                     i === 0 ? "1px solid rgba(255,255,255,0.12)" : "none",
+//                 }}
+//                 onMouseEnter={(e) =>
+//                   (e.currentTarget.style.color = "rgba(255,255,255,0.75)")
+//                 }
+//                 onMouseLeave={(e) =>
+//                   (e.currentTarget.style.color = "rgba(255,255,255,0.35)")
+//                 }
+//               >
+//                 {label}
+//               </motion.button>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Back to Top Button */}
+//       <AnimatePresence>
+//         {showBackToTop && (
+//           <motion.div
+//             initial={{ opacity: 0, y: 12 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             exit={{ opacity: 0, y: 12 }}
+//             transition={{ duration: 0.25 }}
+//             style={{ position: "fixed", bottom: 28, right: 28, zIndex: 50 }}
+//           >
+//             <motion.button
+//               whileHover={{ y: -3, boxShadow: "0 12px 32px rgba(11,37,69,0.35)" }}
+//               whileTap={{ scale: 0.93 }}
+//               transition={{ duration: 0.22 }}
+//               onClick={() => scrollToSection("home")}
+//               aria-label="Back to top"
+//               style={{
+//                 width: 44,
+//                 height: 44,
+//                 borderRadius: "50%",
+//                 background: "linear-gradient(135deg, #0B2545, #1A3A6B)",
+//                 border: "1.5px solid rgba(0,184,148,0.40)",
+//                 boxShadow: "0 6px 20px rgba(11,37,69,0.40)",
+//                 cursor: "pointer",
+//                 display: "flex",
+//                 alignItems: "center",
+//                 justifyContent: "center",
+//                 transition: "box-shadow 0.22s",
+//               }}
+//             >
+//               <ArrowUp style={{ width: 18, height: 18, color: "#00B894" }} />
+//             </motion.button>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </footer>
+//   );
+// }
+
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp, Mail, MapPin, ExternalLink } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUp, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import { SITE_CONFIG, SOCIAL_LINKS } from "@/data/profile";
 import { SocialLinks } from "@/components/common/SocialLinks";
-import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/data/profile";
 import { scrollToSection } from "@/lib/utils";
+import { VisitorMap } from "@/sections/VisitorMap";
 
-// ─── Animation Variants ──────────────────────────────────────────────
-const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.70, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } },
-};
+const footerLinks = ["Privacy Policy", "Terms of Use"];
 
 export function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -27,366 +306,64 @@ export function Footer() {
   }, []);
 
   return (
-    <footer
-      style={{
-        position: "relative",
-        background: "linear-gradient(135deg, #0B2545 0%, #1A3A6B 55%, #0B2545 100%)",
-        overflow: "hidden",
-      }}
-    >
-      {/* ── Top divider ── */}
-      <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, height: 1,
-        background: "linear-gradient(90deg, transparent, rgba(0,184,148,0.50), rgba(11,37,69,0.20), transparent)",
-      }} />
+    <footer className="relative overflow-hidden border-t nav-surface">
+      <div className="absolute inset-x-0 top-0 h-0.5 dashboard-accent-line" aria-hidden="true" />
+      <VisitorMap />
 
-      {/* ── Background Orbs ── */}
-      <div aria-hidden="true" style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
-        <div style={{
-          position: "absolute", top: "-30%", right: "-8%",
-          width: 520, height: 520, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,184,148,0.09) 0%, transparent 65%)",
-        }} />
-        <div style={{
-          position: "absolute", bottom: "-40%", left: "-10%",
-          width: 480, height: 480, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(26,92,184,0.14) 0%, transparent 70%)",
-        }} />
-        {/* Dot grid */}
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.025,
-          backgroundImage: "radial-gradient(circle, rgba(0,184,148,0.6) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }} />
-      </div>
-
-      {/* ── Main Footer Content ── */}
-      <div style={{
-        position: "relative", zIndex: 2,
-        maxWidth: 1200, margin: "0 auto",
-        padding: "clamp(56px, 7vw, 88px) clamp(20px, 5vw, 56px) 0",
-      }}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
-            gap: "clamp(36px, 5vw, 60px)",
-            paddingBottom: "clamp(48px, 6vw, 72px)",
-          }}
-        >
-
-          {/* ── Col 1: Brand ── */}
-          <motion.div variants={fadeInUp} style={{ gridColumn: "span 1" }}>
-            {/* Eyebrow */}
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              marginBottom: 20,
-              padding: "5px 14px",
-              borderRadius: 100,
-              background: "rgba(0,184,148,0.10)",
-              border: "1px solid rgba(0,184,148,0.24)",
-            }}>
-              <div style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#00B894" }} />
-              <span style={{
-                fontSize: 9.5, fontWeight: 700,
-                letterSpacing: "0.22em", textTransform: "uppercase",
-                color: "#00B894", fontFamily: "Inter, sans-serif",
-              }}>
-                Professor Portfolio
-              </span>
-            </div>
-
-            {/* Name */}
-            <h2 style={{
-              fontSize: "clamp(22px, 2.5vw, 28px)",
-              fontWeight: 700,
-              color: "#FFFFFF",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.15,
-              margin: "0 0 10px 0",
-              fontFamily: "Inter, sans-serif",
-            }}>
-              {SITE_CONFIG.name}
-            </h2>
-
-            {/* Title */}
-            <p style={{
-              fontSize: 13, fontWeight: 400,
-              color: "rgba(255,255,255,0.55)",
-              margin: "0 0 22px 0",
-              lineHeight: 1.6,
-              fontFamily: "Inter, sans-serif",
-            }}>
-              {SITE_CONFIG.title ?? "Professor & Academic Leader"}
-            </p>
-
-            {/* Green rule */}
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
-              <div style={{ height: 1, width: 48, background: "linear-gradient(to right, #00B894, rgba(0,184,148,0.20))" }} />
-              <div style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#00B894", opacity: 0.7 }} />
-            </div>
-
-            {/* Social Links – white icons */}
-            <div className="[&_svg]:text-white">
-              <SocialLinks links={SOCIAL_LINKS} />
-            </div>
-          </motion.div>
-
-          {/* ── Col 2: Quick Links ── */}
-          <motion.div variants={fadeInUp}>
-            <p style={{
-              fontSize: 10, fontWeight: 700,
-              letterSpacing: "0.20em", textTransform: "uppercase",
-              color: "#00B894",
-              margin: "0 0 20px 0",
-              fontFamily: "Inter, sans-serif",
-              display: "flex", alignItems: "center", gap: 8,
-            }}>
-              <span style={{ width: 16, height: 1.5, background: "#00B894", display: "inline-block", borderRadius: 1 }} />
-              Quick Links
-            </p>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 4 }}>
-              {NAV_ITEMS.map((item) => (
-                <li key={item.id}>
-                  <motion.button
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.18 }}
-                    onClick={() => scrollToSection(item.id)}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      cursor: "pointer",
-                      padding: "7px 0",
-                      fontSize: 13.5,
-                      fontWeight: 400,
-                      color: "rgba(255,255,255,0.62)",
-                      fontFamily: "Inter, sans-serif",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 8,
-                      transition: "color 0.2s",
-                      textAlign: "left",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.62)")}
-                  >
-                    <span style={{
-                      width: 5, height: 5, borderRadius: "50%",
-                      background: "rgba(0,184,148,0.40)",
-                      flexShrink: 0,
-                      transition: "background 0.2s",
-                    }} />
-                    {item.label}
-                  </motion.button>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* ── Col 3: Contact ── */}
-          <motion.div variants={fadeInUp}>
-            <p style={{
-              fontSize: 10, fontWeight: 700,
-              letterSpacing: "0.20em", textTransform: "uppercase",
-              color: "#00B894",
-              margin: "0 0 20px 0",
-              fontFamily: "Inter, sans-serif",
-              display: "flex", alignItems: "center", gap: 8,
-            }}>
-              <span style={{ width: 16, height: 1.5, background: "#00B894", display: "inline-block", borderRadius: 1 }} />
-              Contact
-            </p>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              {/* Location */}
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                <div style={{
-                  width: 30, height: 30, borderRadius: 9, flexShrink: 0,
-                  background: "rgba(0,184,148,0.10)",
-                  border: "1px solid rgba(0,184,148,0.20)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <MapPin style={{ width: 13, height: 13, color: "#00B894" }} />
-                </div>
-                <div>
-                  <p style={{
-                    fontSize: 11, fontWeight: 600,
-                    color: "rgba(255,255,255,0.35)",
-                    margin: "0 0 3px 0",
-                    fontFamily: "Inter, sans-serif",
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                  }}>
-                    Kirtipur, Nepal
-                  </p>
-                  <p style={{
-                    fontSize: 13, fontWeight: 400,
-                    color: "rgba(255,255,255,0.70)",
-                    margin: 0,
-                    fontFamily: "Inter, sans-serif",
-                    lineHeight: 1.55,
-                  }}>
-                    {SITE_CONFIG.institution}
-                    <br />
-                    <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 12 }}>
-                      {SITE_CONFIG.location}
-                    </span>
-                  </p>
-                </div>
+      <div className="relative z-10 border-t nav-subtle-surface">
+        <div className="container mx-auto px-3 py-6 sm:px-6 sm:py-7 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#0F7A5A] to-[#0B6A4E] shadow-md">
+                <Sparkles className="h-5 w-5 text-white" aria-hidden="true" />
               </div>
-
-              {/* Emails */}
-              {SITE_CONFIG.emails?.map((email) => (
-                <div key={email} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                  <div style={{
-                    width: 30, height: 30, borderRadius: 9, flexShrink: 0,
-                    background: "rgba(0,184,148,0.10)",
-                    border: "1px solid rgba(0,184,148,0.20)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    <Mail style={{ width: 13, height: 13, color: "#00B894" }} />
-                  </div>
-                  <div style={{ paddingTop: 2 }}>
-                    <p style={{
-                      fontSize: 11, fontWeight: 600,
-                      color: "rgba(255,255,255,0.35)",
-                      margin: "0 0 3px 0",
-                      fontFamily: "Inter, sans-serif",
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                    }}>
-                      Email
-                    </p>
-                    <a
-                      href={`mailto:${email}`}
-                      style={{
-                        fontSize: 13,
-                        color: "rgba(255,255,255,0.70)",
-                        textDecoration: "none",
-                        fontFamily: "Inter, sans-serif",
-                        wordBreak: "break-all",
-                        lineHeight: 1.5,
-                        transition: "color 0.2s",
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#00B894")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.70)")}
-                    >
-                      {email}
-                    </a>
-                  </div>
-                </div>
-              ))}
+              <div className="min-w-0">
+                <p className="type-card-title text-[#0B2545]">{SITE_CONFIG.name}</p>
+                <p className="type-caption mt-1 max-w-2xl text-[#4A5A6A]">
+                  Academic portfolio for research, teaching, scholarly service, and professional engagement.
+                </p>
+              </div>
             </div>
-          </motion.div>
 
-          {/* ── Col 4: CV Download CTA ── */}
-          <motion.div variants={fadeInUp}>
-            <p style={{
-              fontSize: 10, fontWeight: 700,
-              letterSpacing: "0.20em", textTransform: "uppercase",
-              color: "#00B894",
-              margin: "0 0 20px 0",
-              fontFamily: "Inter, sans-serif",
-              display: "flex", alignItems: "center", gap: 8,
-            }}>
-              <span style={{ width: 16, height: 1.5, background: "#00B894", display: "inline-block", borderRadius: 1 }} />
-              Resources
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:justify-end">
+              <a
+                className="footer-link w-fit"
+                href={`mailto:${SITE_CONFIG.emails[0]}`}
+                aria-label={`Email ${SITE_CONFIG.name}`}
+              >
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                Contact
+              </a>
+              <SocialLinks links={SOCIAL_LINKS} size="sm" className="gap-3" />
+            </div>
+          </div>
+
+          <div className="mt-6 h-px bg-linear-to-r from-transparent via-[#0F7A5A]/20 to-transparent" />
+
+          <div className="flex flex-col gap-4 pt-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="type-caption text-[#4A5A6A]">
+              &copy; {currentYear} <span className="font-semibold text-[#0B2545]">{SITE_CONFIG.name}</span>. All rights reserved.
             </p>
 
-            {/* CV Card */}
-           
-
-            {/* Google Scholar quick link */}
-            <motion.a
-              href="#"
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.18 }}
-              style={{
-                display: "flex", alignItems: "center", justifyContent: "space-between",
-                padding: "12px 16px",
-                borderRadius: 12,
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                textDecoration: "none",
-                transition: "border-color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(0,184,148,0.30)")}
-              onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
-            >
-              <span style={{
-                fontSize: 12.5, fontWeight: 500,
-                color: "rgba(255,255,255,0.60)",
-                fontFamily: "Inter, sans-serif",
-              }}>
-                Google Scholar Profile
-              </span>
-              <ExternalLink style={{ width: 12, height: 12, color: "rgba(0,184,148,0.60)" }} />
-            </motion.a>
-          </motion.div>
-
-        </motion.div>
-
-        {/* ── Divider ── */}
-        <div style={{
-          height: 1,
-          background: "linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(255,255,255,0.08), transparent)",
-        }} />
-
-        {/* ── Bottom Bar ── */}
-        <div style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 14,
-          padding: "clamp(18px, 2.5vw, 24px) 0",
-        }}>
-          <p style={{
-            fontSize: 12,
-            color: "rgba(255,255,255,0.35)",
-            margin: 0,
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 400,
-          }}>
-            &copy; {currentYear}{" "}
-            <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 500 }}>
-              {SITE_CONFIG.name}
-            </span>
-            . All rights reserved.
-          </p>
-
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            {["Privacy Policy", "Terms of Use"].map((label, i) => (
-              <motion.button
+            <div className="flex flex-wrap items-center gap-1">
+              {footerLinks.map((label) => (
+                <motion.button
                 key={label}
+                type="button"
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.15 }}
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: "5px 12px",
-                  fontSize: 11.5,
-                  color: "rgba(255,255,255,0.35)",
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 400,
-                  transition: "color 0.2s",
-                  borderRight: i === 0 ? "1px solid rgba(255,255,255,0.12)" : "none",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+                className="footer-link"
               >
+                <ShieldCheck className="h-4 w-4" aria-hidden="true" />
                 {label}
               </motion.button>
             ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ── Back to Top Button ── */}
       <AnimatePresence>
         {showBackToTop && (
           <motion.div
@@ -394,26 +371,17 @@ export function Footer() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.25 }}
-            style={{ position: "fixed", bottom: 28, right: 28, zIndex: 50 }}
+            className="fixed bottom-6 right-6 z-50"
           >
             <motion.button
-              whileHover={{ y: -3, boxShadow: "0 12px 32px rgba(11,37,69,0.35)" }}
+              whileHover={{ y: -3 }}
               whileTap={{ scale: 0.93 }}
               transition={{ duration: 0.22 }}
               onClick={() => scrollToSection("home")}
               aria-label="Back to top"
-              style={{
-                width: 44, height: 44,
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #0B2545, #1A3A6B)",
-                border: "1.5px solid rgba(0,184,148,0.40)",
-                boxShadow: "0 6px 20px rgba(11,37,69,0.40)",
-                cursor: "pointer",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                transition: "box-shadow 0.22s",
-              }}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#0F7A5A]/20 bg-white/95 text-[#0B2545] shadow-lg shadow-[#0B2545]/10 backdrop-blur-md transition-all duration-200 hover:border-[#0F7A5A]/35 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/30"
             >
-              <ArrowUp style={{ width: 18, height: 18, color: "#00B894" }} />
+              <ArrowUp className="h-5 w-5" aria-hidden="true" />
             </motion.button>
           </motion.div>
         )}

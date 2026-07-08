@@ -23,6 +23,7 @@ import Admin from "./pages/Admin";
 import Projects from "./sections/Projects";
 import AwardsAndCertifications from "./sections/awards&certifications";
 import CV from "./sections/cv";
+import { VisitorMap } from "./sections/VisitorMap";
 
 function SectionFallback() {
   return (
@@ -90,6 +91,7 @@ export default function App() {
                     <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
                     <Route path="/awards&certifications" element={<MainLayout><AwardsAndCertifications /></MainLayout>} />
                     <Route path="/cv" element={<MainLayout><CV /></MainLayout>} />
+                    <Route path="/visitorMap" element={<MainLayout><VisitorMap /></MainLayout>} />
 
           {/* <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} /> */}
           <Route path="/login" element={<Login />} />
