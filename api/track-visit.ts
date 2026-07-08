@@ -11,20 +11,57 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseKey, {
   auth: { persistSession: false },
 })
 
-function getClientIp(req: VercelRequest) {
-  const forwarded = req.headers['x-forwarded-for']
-  if (typeof forwarded === 'string') return forwarded.split(',')[0]?.trim() || ''
-  if (Array.isArray(forwarded)) return forwarded[0]?.split(',')[0]?.trim() || ''
+const COUNTRY_NAMES = new Intl.DisplayNames(['en'], { type: 'region' })
 
-  const realIp = req.headers['x-real-ip']
-  if (typeof realIp === 'string') return realIp
-  if (Array.isArray(realIp)) return realIp[0] || ''
+function getHeaderValue(value: string | string[] | undefined) {
+  if (typeof value === 'string') return value.trim()
+  if (Array.isArray(value)) return value[0]?.trim() || ''
+  return ''
+}
+
+function normalizeCountryCode(value: string) {
+  const countryCode = value.trim().toUpperCase()
+  return /^[A-Z]{2}$/.test(countryCode) && countryCode !== 'XX' ? countryCode : 'XX'
+}
+
+function countryNameFromCode(countryCode: string) {
+  return COUNTRY_NAMES.of(countryCode) || 'Unknown'
+}
+
+function getClientIp(req: VercelRequest) {
+  const forwarded = getHeaderValue(req.headers['x-forwarded-for'])
+  if (forwarded) return forwarded.split(',')[0]?.trim() || ''
+
+  const realIp = getHeaderValue(req.headers['x-real-ip'])
+  if (realIp) return realIp
 
   return ''
 }
 
 function isLocalIp(ip: string) {
-  return !ip || ip === '127.0.0.1' || ip === '::1' || ip.startsWith('10.') || ip.startsWith('192.168.')
+  return (
+    !ip ||
+    ip === '127.0.0.1' ||
+    ip === '::1' ||
+    ip.startsWith('10.') ||
+    ip.startsWith('192.168.') ||
+    /^172\.(1[6-9]|2\d|3[0-1])\./.test(ip)
+  )
+}
+
+function getCountryFromHeaders(req: VercelRequest) {
+  const countryCode = normalizeCountryCode(
+    getHeaderValue(req.headers['x-vercel-ip-country']) ||
+      getHeaderValue(req.headers['cf-ipcountry']) ||
+      getHeaderValue(req.headers['x-country-code'])
+  )
+
+  if (countryCode === 'XX') return null
+
+  return {
+    countryCode,
+    countryName: countryNameFromCode(countryCode),
+  }
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -35,15 +72,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const ip = getClientIp(req)
-    let countryCode = 'XX'
-    let countryName = 'Unknown'
+    const headerCountry = getCountryFromHeaders(req)
+    let countryCode = headerCountry?.countryCode ?? 'XX'
+    let countryName = headerCountry?.countryName ?? 'Unknown'
 
-    if (!isLocalIp(ip)) {
+    if (countryCode === 'XX' && !isLocalIp(ip)) {
       try {
         const geoRes = await fetch(`https://ipwho.is/${ip}`)
         const geo = await geoRes.json()
         if (geo?.success !== false) {
-          countryCode = geo.country_code || 'XX'
+          countryCode = normalizeCountryCode(geo.country_code || 'XX')
           countryName = geo.country || 'Unknown'
         }
       } catch {
