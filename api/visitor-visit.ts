@@ -12,6 +12,8 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseKey, {
 })
 
 export default async function handler(_req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Cache-Control', 'no-store')
+
   try {
     const [{ data: totals, error: totalsErr }, { data: countries, error: countriesErr }] =
       await Promise.all([

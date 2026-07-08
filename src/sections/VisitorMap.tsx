@@ -216,24 +216,41 @@ export function VisitorMap() {
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#0F7A5A]/20 to-transparent" aria-hidden="true" />
       <div className="container mx-auto max-w-7xl">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
-          <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0F7A5A]/20 bg-white px-3 py-1.5 text-[#0F7A5A] shadow-soft">
-                <Radio className="h-4 w-4" aria-hidden="true" />
-                <span className="type-kicker">Live Global Reach</span>
-              </div>
-              <h2 className="type-section-title text-[#0B2545]">Visitor analytics</h2>
-              <p className="type-body mt-3 max-w-2xl text-[#4A5A6A]">
+        <div className="mb-8 flex flex-col items-center gap-5 text-center">
+  <div className="max-w-2xl">
+    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0F7A5A]/20 bg-white px-3 py-1.5 text-[#0F7A5A] shadow-soft">
+      <Radio className="h-4 w-4" aria-hidden="true" />
+      <span className="type-kicker">Live Global Reach</span>
+    </div>
+    <h2
+      style={{
+        fontSize: 'clamp(30px, 4.5vw, 48px)',
+        fontWeight: 700,
+        letterSpacing: 'var(--tracking-normal)',
+        lineHeight: 1.1,
+        color: 'var(--navy)',
+        margin: 0,
+        fontFamily: 'var(--font-app)',
+      }}
+    >
+      Visitor{' '}
+      <span
+        style={{
+          background: 'linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+        }}
+      >
+        Analytics
+      </span>
+    </h2>
+              {/* <p className="type-body mt-3 max-w-2xl text-[#4A5A6A]">
                 A real-time view of audience reach across regions, powered by Supabase and presented as a focused analytics dashboard.
-              </p>
+              </p> */}
             </div>
 
-            <div className="flex w-fit items-center gap-2 rounded-lg border border-[#0F7A5A]/15 bg-white px-3 py-2 shadow-soft">
-              <span className={`h-2.5 w-2.5 rounded-full ${hasError ? "bg-red-500" : loaded ? "bg-[#0F7A5A]" : "animate-pulse bg-[#C9A84C]"}`} />
-              <span className="type-caption font-semibold text-[#4A5A6A]">
-                {hasError ? "Data delayed" : loaded ? "Data synced" : "Syncing"}
-              </span>
-            </div>
+            
           </div>
 
           <motion.div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
@@ -253,11 +270,11 @@ export function VisitorMap() {
               <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="type-label text-[#0F7A5A]">Audience map</p>
-                  <h3 className="type-card-title mt-1 text-[#0B2545]">Global visitor footprint</h3>
+                  {/* <h3 className="type-card-title mt-1 text-[#0B2545]">Global visitor footprint</h3> */}
                 </div>
                 <div className="flex flex-wrap items-center gap-3 rounded-lg border border-[#0F7A5A]/10 bg-[#F8F9FA] px-3 py-2">
-                  <span className="flex items-center gap-2 type-caption text-[#4A5A6A]"><span className="h-2.5 w-2.5 rounded-full bg-[#00B894]" /> Visitor hub</span>
-                  <span className="flex items-center gap-2 type-caption text-[#4A5A6A]"><span className="h-2.5 w-2.5 rounded-full border border-[#00B894] bg-[#00B894]/20" /> Visit volume</span>
+                  {/* <span className="flex items-center gap-2 type-caption text-[#4A5A6A]"><span className="h-2.5 w-2.5 rounded-full bg-[#00B894]" /> Visitor hub</span> */}
+                  {/* <span className="flex items-center gap-2 type-caption text-[#4A5A6A]"><span className="h-2.5 w-2.5 rounded-full border border-[#00B894] bg-[#00B894]/20" /> Visit volume</span> */}
                 </div>
               </div>
 
