@@ -136,7 +136,7 @@ export function NewsSection() {
                         <span style={{
                             fontSize: 10.5, fontWeight: 700,
                             letterSpacing: '0.22em', textTransform: 'uppercase',
-                            color: 'var(--navy)', fontFamily: 'Inter, sans-serif',
+                            color: 'var(--navy)', fontFamily: 'var(--font-app)',
                         }}>
                             Research
                         </span>
@@ -147,11 +147,11 @@ export function NewsSection() {
                     <h2 style={{
                         fontSize: 'clamp(30px, 4.5vw, 48px)',
                         fontWeight: 700,
-                        letterSpacing: '-0.02em',
+                        letterSpacing: 'var(--tracking-normal)',
                         lineHeight: 1.1,
                         color: 'var(--navy)',
                         margin: 0,
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'var(--font-app)',
                     }}>
                       Core  Research Areas
                         <span style={{
@@ -266,7 +266,7 @@ export function NewsSection() {
                                                         color: '#FFFFFF',
                                                         borderRadius: 100,
                                                         border: '1px solid rgba(0,184,148,0.20)',
-                                                        fontFamily: 'Inter, sans-serif',
+                                                        fontFamily: 'var(--font-app)',
                                                         boxShadow: '0 2px 8px rgba(11,37,69,0.22)',
                                                     }}>
                                                         Featured
@@ -280,7 +280,7 @@ export function NewsSection() {
                                                     color: 'var(--navy)',
                                                     borderRadius: 100,
                                                     border: '1px solid rgba(0,184,148,0.22)',
-                                                    fontFamily: 'Inter, sans-serif',
+                                                    fontFamily: 'var(--font-app)',
                                                 }}>
                                                     {NEWS_CATEGORY_LABELS[item.category]}
                                                 </span>
@@ -300,14 +300,14 @@ export function NewsSection() {
                                                     fontWeight: 700,
                                                     color: 'var(--navy)',
                                                     lineHeight: 1.35,
-                                                    letterSpacing: '-0.01em',
+                                                    letterSpacing: 'var(--tracking-normal)',
                                                     marginBottom: 12,
                                                     display: '-webkit-box',
                                                     WebkitLineClamp: 3,
                                                     WebkitBoxOrient: 'vertical',
                                                     overflow: 'hidden',
                                                     transition: 'color 0.25s',
-                                                    fontFamily: 'Inter, sans-serif',
+                                                    fontFamily: 'var(--font-app)',
                                                 }}
                                             >
                                                 {item.title}
@@ -320,7 +320,7 @@ export function NewsSection() {
                                                 color: 'var(--text-secondary)',
                                                 margin: 0,
                                                 fontWeight: 500,
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                                 letterSpacing: '0.3px',
                                                 textAlign: 'justify',
                                             }}>
@@ -343,7 +343,7 @@ export function NewsSection() {
                                                         letterSpacing: '0.08em', textTransform: 'uppercase',
                                                         color: 'var(--navy)',
                                                         textDecoration: 'none',
-                                                        fontFamily: 'Inter, sans-serif',
+                                                        fontFamily: 'var(--font-app)',
                                                         borderBottom: '1.5px solid rgba(0,184,148,0.40)',
                                                         paddingBottom: 2,
                                                         transition: 'color 0.22s, border-color 0.22s',

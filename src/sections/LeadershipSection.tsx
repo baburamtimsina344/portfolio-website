@@ -118,7 +118,7 @@ export default function LeadershipSection() {
   return (
     <div
       id="leadership"
-      className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
+      className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
     >
       {/* ── Hero ── */}
       <div
@@ -157,7 +157,7 @@ export default function LeadershipSection() {
       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
           <div className="py-3 md:py-4 flex-shrink-0">
-            <h2 className="text-2xl font-bold text-[#0B2545] tracking-tight">
+            <h2 className="text-2xl font-bold text-[#0B2545]">
               Leadership <span className="text-[#0F7A5A]">Roles</span>
             </h2>
           </div>

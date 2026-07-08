@@ -103,7 +103,7 @@
 //   return (
 //     <section
 //       id="projects"
-//       className="py-24 px-6 bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
+//       className="py-24 px-6 bg-[#F8F9FA] text-[#0B2545] font-sans"
 //     >
 //       <div className="max-w-7xl mx-auto">
 //         {/* ── Section Header ── */}
@@ -443,7 +443,7 @@ export default function AwardsAndCertifications() {
   return (
     <section
       id="projects"
-      className="bg-[#F8F9FA] text-[#0B2545] font-['Inter',system-ui,sans-serif]"
+      className="bg-[#F8F9FA] text-[#0B2545] font-sans"
     >
       {/* ── Hero Banner ── */}
       <div

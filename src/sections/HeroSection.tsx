@@ -45,7 +45,7 @@
 // //         * { box-sizing: border-box; }
 
 // //         body {
-// //             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+// //             font-family: var(--font-app);
 // //             background-color: var(--off-white);
 // //             color: var(--navy);
 // //             -webkit-font-smoothing: antialiased;
@@ -366,7 +366,7 @@
 // //                     <span style={{
 // //                         fontSize: 10, fontWeight: 600, letterSpacing: '0.14em',
 // //                         textTransform: 'uppercase', color: '#FFFFFF',
-// //                         fontFamily: 'Inter, sans-serif',
+// //                         fontFamily: 'var(--font-app)',
 // //                     }}>
 // //                         Academic Leader
 // //                     </span>
@@ -488,7 +488,7 @@
 // //                         <span style={{
 // //                             fontSize: 12.5, fontWeight: 600,
 // //                             color: 'var(--navy)', flex: 1,
-// //                             fontFamily: 'Inter, sans-serif',
+// //                             fontFamily: 'var(--font-app)',
 // //                         }}>
 // //                             {p.name}
 // //                         </span>
@@ -508,7 +508,7 @@
 // //                                 <span style={{
 // //                                     fontSize: 17, fontWeight: 700,
 // //                                     color: 'var(--navy)', lineHeight: 1,
-// //                                     fontFamily: 'Inter, sans-serif',
+// //                                     fontFamily: 'var(--font-app)',
 // //                                 }}>
 // //                                     {s.value}
 // //                                 </span>
@@ -516,7 +516,7 @@
 // //                                     fontSize: 9.5, fontWeight: 500,
 // //                                     letterSpacing: '0.10em', textTransform: 'uppercase',
 // //                                     color: 'var(--gray-400)', marginTop: 4,
-// //                                     fontFamily: 'Inter, sans-serif',
+// //                                     fontFamily: 'var(--font-app)',
 // //                                 }}>
 // //                                     {s.label}
 // //                                 </span>
@@ -552,7 +552,7 @@
 // //                     fontSize: 13.5, fontWeight: 600,
 // //                     letterSpacing: '0.02em',
 // //                     textDecoration: 'none',
-// //                     fontFamily: 'Inter, sans-serif',
+// //                     fontFamily: 'var(--font-app)',
 // //                     boxShadow: '0 4px 20px rgba(11,37,69,0.30)',
 // //                     transition: 'box-shadow 0.25s',
 // //                 }}
@@ -578,7 +578,7 @@
 // //                     fontSize: 13.5, fontWeight: 600,
 // //                     letterSpacing: '0.02em',
 // //                     textDecoration: 'none',
-// //                     fontFamily: 'Inter, sans-serif',
+// //                     fontFamily: 'var(--font-app)',
 // //                     transition: 'box-shadow 0.25s, border-color 0.25s',
 // //                 }}
 // //             >
@@ -662,7 +662,7 @@
 // //                                         <span style={{
 // //                                             fontSize: 10.5, fontWeight: 600,
 // //                                             letterSpacing: '0.18em', textTransform: 'uppercase',
-// //                                             color: 'var(--navy)', fontFamily: 'Inter, sans-serif',
+// //                                             color: 'var(--navy)', fontFamily: 'var(--font-app)',
 // //                                         }}>
 // //                                             Professor · Director · HOD
 // //                                         </span>
@@ -678,9 +678,9 @@
 // //                                             fontSize: 'clamp(36px, 6vw, 60px)',
 // //                                             fontWeight: 700,
 // //                                             lineHeight: 1.08,
-// //                                             letterSpacing: '-0.02em',
+// //                                             letterSpacing: 'var(--tracking-normal)',
 // //                                             margin: 0,
-// //                                             fontFamily: 'Inter, sans-serif',
+// //                                             fontFamily: 'var(--font-app)',
 // //                                         }}
 // //                                     >
 // //                                         <span style={{ color: 'var(--navy)', display: 'block' }}>Dr. Baburam</span>
@@ -706,7 +706,7 @@
 // //                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
 // //                                             gap: 6, marginTop: 14,
 // //                                             fontSize: 13, color: 'var(--gray-400)',
-// //                                             fontFamily: 'Inter, sans-serif',
+// //                                             fontFamily: 'var(--font-app)',
 // //                                         }}
 // //                                     >
 // //                                         <MapPin style={{ width: 13, height: 13, color: 'var(--green)', flexShrink: 0 }} />
@@ -756,7 +756,7 @@
 // //                                     <div style={{
 // //                                         position: 'absolute', top: -20, right: -20, opacity: 0.04,
 // //                                         fontSize: 160, lineHeight: 1,
-// //                                         fontFamily: 'Georgia, serif', color: 'var(--green)',
+// //                                         fontFamily: 'var(--font-app)', color: 'var(--green)',
 // //                                         pointerEvents: 'none', userSelect: 'none',
 // //                                     }}>
 // //                                         &ldquo;
@@ -782,7 +782,7 @@
 // //                                                 fontStyle: 'italic',
 // //                                                 fontWeight: 400,
 // //                                                 margin: 0,
-// //                                                 fontFamily: 'Inter, sans-serif',
+// //                                                 fontFamily: 'var(--font-app)',
 // //                                             }}
 // //                                         >
 // //                                             &ldquo;I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.&rdquo;
@@ -799,7 +799,7 @@
 // //                                                 fontSize: 11, fontWeight: 600,
 // //                                                 letterSpacing: '0.14em', textTransform: 'uppercase',
 // //                                                 color: 'var(--green)',
-// //                                                 fontFamily: 'Inter, sans-serif',
+// //                                                 fontFamily: 'var(--font-app)',
 // //                                             }}>
 // //                                                 — Isaiah 41:18
 // //                                             </span>
@@ -840,7 +840,7 @@
 // //                                             fontSize: 12, fontWeight: 800,
 // //                                             letterSpacing: '0.22em', textTransform: 'uppercase',
 // //                                             color: 'var(--text-primary)',
-// //                                             fontFamily: 'Inter, sans-serif',
+// //                                             fontFamily: 'var(--font-app)',
 // //                                             backgroundImage: 'linear-gradient(135deg, var(--text-primary), var(--navy-light))',
 // //                                             backgroundClip: 'text',
 // //                                             WebkitBackgroundClip: 'text',
@@ -862,7 +862,7 @@
 // //                                             color: 'var(--text-secondary)',
 // //                                             margin: 0,
 // //                                             fontWeight: 500,
-// //                                             fontFamily: 'Inter, sans-serif',
+// //                                             fontFamily: 'var(--font-app)',
 // //                                             letterSpacing: '0.3px',
 // //                                         }}>
 // //                                             With a deep commitment to{' '}
@@ -885,7 +885,7 @@
 // //                                             fontSize: 13, fontWeight: 700,
 // //                                             color: 'var(--text-primary)',
 // //                                             textDecoration: 'none',
-// //                                             fontFamily: 'Inter, sans-serif',
+// //                                             fontFamily: 'var(--font-app)',
 // //                                             letterSpacing: '0.04em',
 // //                                             textTransform: 'uppercase',
 // //                                             transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
@@ -974,8 +974,8 @@
 // //                                                         lineHeight: 1,
 // //                                                         color: stat.accent ? 'var(--green)' : 'var(--text-primary)',
 // //                                                         textShadow: stat.accent ? '0 2px 8px rgba(0,0,0,0.20)' : 'none',
-// //                                                         letterSpacing: '-0.5px',
-// //                                                         fontFamily: 'Inter, sans-serif',
+// //                                                         letterSpacing: 'var(--tracking-normal)',
+// //                                                         fontFamily: 'var(--font-app)',
 // //                                                     }}
 // //                                                 >
 // //                                                     {stat.value}
@@ -987,7 +987,7 @@
 // //                                                     textTransform: 'uppercase',
 // //                                                     color: stat.accent ? 'rgba(255,255,255,0.75)' : 'var(--text-tertiary)',
 // //                                                     marginTop: 10,
-// //                                                     fontFamily: 'Inter, sans-serif',
+// //                                                     fontFamily: 'var(--font-app)',
 // //                                                     opacity: stat.accent ? 0.95 : 1,
 // //                                                 }}>
 // //                                                     {stat.label}
@@ -1020,7 +1020,7 @@
 // //                         fontSize: 9, fontWeight: 600, letterSpacing: '0.25em',
 // //                         textTransform: 'uppercase',
 // //                         color: 'rgba(11,37,69,0.30)',
-// //                         fontFamily: 'Inter, sans-serif',
+// //                         fontFamily: 'var(--font-app)',
 // //                     }}>
 // //                         Scroll
 // //                     </span>
@@ -1090,7 +1090,7 @@
 //     * { box-sizing: border-box; }
 
 //     body {
-//       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+//       font-family: var(--font-app);
 //       background-color: var(--off-white);
 //       color: var(--navy);
 //       -webkit-font-smoothing: antialiased;
@@ -1258,7 +1258,7 @@
 //             <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--green)', position: 'relative', zIndex: 1 }} />
 //           </div>
 //           <Award style={{ width: 13, height: 13, color: 'var(--green)' }} />
-//           <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFFFFF', fontFamily: 'Inter, sans-serif' }}>Academic Leader</span>
+//           <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFFFFF', fontFamily: 'var(--font-app)' }}>Academic Leader</span>
 //         </div>
 //       </motion.div>
 //       <motion.div
@@ -1617,7 +1617,7 @@
 //                     initial={{ opacity: 0, y: 16 }}
 //                     animate={{ opacity: 1, y: 0 }}
 //                     transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-//                     style={{ fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.02em', margin: 0 }}
+//                     style={{ fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: 'var(--tracking-normal)', margin: 0 }}
 //                   >
 //                     <span style={{ color: 'var(--navy)', display: 'block' }}>Dr. Baburam</span>
 //                     <span className="name-underline" style={{ background: 'linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'inline-block', paddingBottom: 6 }}>Timsina</span>
@@ -1641,7 +1641,7 @@
 //                 {/* Quote Card */}
 //                 <motion.div variants={fadeInRight} style={{ position: 'relative', padding: 'clamp(28px, 4vw, 44px)', borderRadius: 24, background: '#FFFFFF', border: '1.5px solid rgba(0,184,148,0.18)', boxShadow: '0 12px 48px rgba(11,37,69,0.10)', overflow: 'hidden' }}>
 //                   <div style={{ position: 'absolute', left: 0, top: 32, bottom: 32, width: 4, background: 'linear-gradient(to bottom, var(--green), rgba(0,184,148,0.20))', borderRadius: '0 4px 4px 0' }} />
-//                   <div style={{ position: 'absolute', top: -20, right: -20, opacity: 0.04, fontSize: 160, lineHeight: 1, fontFamily: 'Georgia, serif', color: 'var(--green)', pointerEvents: 'none', userSelect: 'none' }}>&ldquo;</div>
+//                   <div style={{ position: 'absolute', top: -20, right: -20, opacity: 0.04, fontSize: 160, lineHeight: 1, fontFamily: 'var(--font-app)', color: 'var(--green)', pointerEvents: 'none', userSelect: 'none' }}>&ldquo;</div>
 //                   <div style={{ width: 44, height: 44, borderRadius: 12, background: 'linear-gradient(135deg, rgba(0,184,148,0.15), rgba(0,184,148,0.06))', border: '1px solid rgba(0,184,148,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
 //                     <Quote style={{ width: 18, height: 18, color: 'var(--green)' }} />
 //                   </div>
@@ -1697,7 +1697,7 @@
 //                             <Star style={{ width: 20, height: 20, color: 'var(--green)', fill: 'var(--green)', filter: 'drop-shadow(0 2px 8px rgba(0,184,148,0.4))' }} />
 //                           </div>
 //                         )}
-//                         <div style={{ fontSize: stat.accent ? 32 : 26, fontWeight: 800, lineHeight: 1, color: stat.accent ? 'var(--green)' : 'var(--gray-800)', textShadow: stat.accent ? '0 2px 8px rgba(0,0,0,0.20)' : 'none', letterSpacing: '-0.5px' }}>{stat.value}</div>
+//                         <div style={{ fontSize: stat.accent ? 32 : 26, fontWeight: 800, lineHeight: 1, color: stat.accent ? 'var(--green)' : 'var(--gray-800)', textShadow: stat.accent ? '0 2px 8px rgba(0,0,0,0.20)' : 'none', letterSpacing: 'var(--tracking-normal)' }}>{stat.value}</div>
 //                         <div style={{ fontSize: stat.accent ? 10.5 : 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: stat.accent ? 'rgba(255,255,255,0.75)' : 'var(--gray-400)', marginTop: 10 }}>{stat.label}</div>
 //                       </div>
 //                     </motion.div>
@@ -1773,7 +1773,7 @@ const GlobalStyles = () => (
     * { box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-app);
       background-color: var(--off-white);
       color: var(--navy);
       -webkit-font-smoothing: antialiased;
@@ -1941,7 +1941,7 @@ function ProfileImage() {
             <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--green)', position: 'relative', zIndex: 1 }} />
           </div>
           <Award style={{ width: 13, height: 13, color: 'var(--green)' }} />
-          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFFFFF', fontFamily: 'Inter, sans-serif' }}>Academic Leader</span>
+          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFFFFF', fontFamily: 'var(--font-app)' }}>Academic Leader</span>
         </div>
       </motion.div>
       <motion.div
@@ -2143,7 +2143,7 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-                    style={{ fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.02em', margin: 0 }}
+                    style={{ fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: 'var(--tracking-normal)', margin: 0 }}
                   >
                     <div className="flex items-center gap-2">
   <span className="text-[var(--navy)]">
@@ -2183,7 +2183,7 @@ export function HeroSection() {
                 {/* Quote Card */}
                 <motion.div variants={fadeInRight} style={{ position: 'relative', padding: 'clamp(28px, 4vw, 44px)', borderRadius: 24, background: '#FFFFFF', border: '1.5px solid rgba(0,184,148,0.18)', boxShadow: '0 12px 48px rgba(11,37,69,0.10)', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', left: 0, top: 32, bottom: 32, width: 4, background: 'linear-gradient(to bottom, var(--green), rgba(0,184,148,0.20))', borderRadius: '0 4px 4px 0' }} />
-                  <div style={{ position: 'absolute', top: -20, right: -20, opacity: 0.04, fontSize: 160, lineHeight: 1, fontFamily: 'Georgia, serif', color: 'var(--green)', pointerEvents: 'none', userSelect: 'none' }}>&ldquo;</div>
+                  <div style={{ position: 'absolute', top: -20, right: -20, opacity: 0.04, fontSize: 160, lineHeight: 1, fontFamily: 'var(--font-app)', color: 'var(--green)', pointerEvents: 'none', userSelect: 'none' }}>&ldquo;</div>
                   <div style={{ width: 44, height: 44, borderRadius: 12, background: 'linear-gradient(135deg, rgba(0,184,148,0.15), rgba(0,184,148,0.06))', border: '1px solid rgba(0,184,148,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
                     <Quote style={{ width: 18, height: 18, color: 'var(--green)' }} />
                   </div>
@@ -2239,7 +2239,7 @@ export function HeroSection() {
                             <Star style={{ width: 20, height: 20, color: 'var(--green)', fill: 'var(--green)', filter: 'drop-shadow(0 2px 8px rgba(0,184,148,0.4))' }} />
                           </div>
                         )}
-                        <div style={{ fontSize: stat.accent ? 32 : 26, fontWeight: 800, lineHeight: 1, color: stat.accent ? 'var(--green)' : 'var(--gray-800)', textShadow: stat.accent ? '0 2px 8px rgba(0,0,0,0.20)' : 'none', letterSpacing: '-0.5px' }}>{stat.value}</div>
+                        <div style={{ fontSize: stat.accent ? 32 : 26, fontWeight: 800, lineHeight: 1, color: stat.accent ? 'var(--green)' : 'var(--gray-800)', textShadow: stat.accent ? '0 2px 8px rgba(0,0,0,0.20)' : 'none', letterSpacing: 'var(--tracking-normal)' }}>{stat.value}</div>
                         <div style={{ fontSize: stat.accent ? 10.5 : 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: stat.accent ? 'rgba(255,255,255,0.75)' : 'var(--gray-400)', marginTop: 10 }}>{stat.label}</div>
                       </div>
                     </motion.div>

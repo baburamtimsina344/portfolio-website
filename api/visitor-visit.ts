@@ -1,29 +1,36 @@
-import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import type { VercelRequest, VercelResponse } from '@vercel/node'
+import { createClient } from '@supabase/supabase-js'
 
-export async function GET() {
+const supabaseUrl = process.env.SUPABASE_URL || 'https://etcmysdhiieegwdwrkxd.supabase.co'
+const supabaseKey =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||
+  process.env.SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV0Y215c2RoaWllZWd3ZHdya3hkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyNjgwMDEsImV4cCI6MjA5ODg0NDAwMX0.nH0f0HU1n2YHq9IY5YKby1pBE7rjYfvAcLKhjbjBEmE'
+
+const supabaseAdmin = createClient(supabaseUrl, supabaseKey, {
+  auth: { persistSession: false },
+})
+
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
   try {
     const [{ data: totals, error: totalsErr }, { data: countries, error: countriesErr }] =
       await Promise.all([
-        supabaseAdmin.from("visitor_totals").select("total_count").eq("id", 1).single(),
+        supabaseAdmin.from('visitor_totals').select('total_count').eq('id', 1).single(),
         supabaseAdmin
-          .from("country_visits")
-          .select("*")
-          .order("visit_count", { ascending: false }),
-      ]);
+          .from('country_visits')
+          .select('country_code,country_name,visit_count')
+          .order('visit_count', { ascending: false }),
+      ])
 
-    if (totalsErr) throw totalsErr;
-    if (countriesErr) throw countriesErr;
+    if (totalsErr) throw totalsErr
+    if (countriesErr) throw countriesErr
 
-    return NextResponse.json({
-      total: totals?.total_count ?? 10000,
+    res.status(200).json({
+      total: Number(totals?.total_count ?? 10000),
       countries: countries ?? [],
-    });
-  } catch (err) {
-    console.error("visitor-stats error:", err);
-    return NextResponse.json(
-      { total: 10000, countries: [] },
-      { status: 500 }
-    );
+    })
+  } catch (error) {
+    console.error('visitor stats error:', error)
+    res.status(200).json({ total: 10000, countries: [] })
   }
 }

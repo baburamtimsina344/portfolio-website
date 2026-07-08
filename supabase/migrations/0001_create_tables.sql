@@ -122,7 +122,9 @@ begin
     last_visit_at = now(),
     country_name = excluded.country_name;
 end;
-$$ language plpgsql;
+$$ language plpgsql security definer set search_path = public;
+
+grant execute on function increment_visit(text, text) to anon, authenticated;
 
 -- Optional: enable Row Level Security and allow public read (writes go through
 -- the API route using the service role key, so they bypass RLS).

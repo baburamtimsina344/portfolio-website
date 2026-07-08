@@ -70,7 +70,7 @@
 //         <div className="border-b border-[#0F7A5A]/10 bg-[#F8F9FA]">
 //           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
 //             <div className="flex items-center justify-between">
-//               <span className="text-xs font-semibold tracking-[0.15em] uppercase text-[#0F7A5A]">
+//               <span className="text-xs font-semibold tracking-[var(--tracking-kicker)] uppercase text-[#0F7A5A]">
 //                 Connect with me
 //               </span>
 //               <div className="flex items-center gap-4">
@@ -191,7 +191,7 @@
 //                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0F7A5A] to-[#0B6A4E] flex items-center justify-center shadow-md">
 //                       <Sparkles className="w-4 h-4 text-white" />
 //                     </div>
-//                     <span className="font-serif text-xl">{SITE_CONFIG.name}</span>
+//                     <span className="font-sans text-xl">{SITE_CONFIG.name}</span>
 //                   </SheetTitle>
 //                 </SheetHeader>
 //                 <div className="mt-6 flex flex-col gap-1.5">
@@ -257,7 +257,7 @@
 //                 </div>
 //                 <div className="absolute bottom-6 left-6 right-6 border-t border-[#0F7A5A]/10 pt-4">
 //                   <div className="flex items-center justify-between">
-//                     <span className="text-xs font-semibold tracking-[0.15em] uppercase text-[#0F7A5A]">
+//                     <span className="text-xs font-semibold tracking-[var(--tracking-kicker)] uppercase text-[#0F7A5A]">
 //                       Connect
 //                     </span>
 //                     <div className="flex items-center gap-4">
@@ -400,7 +400,7 @@ export function Navbar() {
           <div className="container mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5">
             <div className="flex items-center justify-between gap-2">
               {/* Hide label on very small screens to free up space for icons + search */}
-              <span className="hidden xs:block sm:block text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.15em] uppercase text-[#0F7A5A] truncate">
+              <span className="type-kicker hidden xs:block sm:block text-[#0F7A5A] truncate">
                 Connect with me
               </span>
               <div className="flex items-center gap-2 sm:gap-4 ml-auto shrink-0">
@@ -528,7 +528,7 @@ export function Navbar() {
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0F7A5A] to-[#0B6A4E] flex items-center justify-center shadow-md shrink-0">
                       <Sparkles className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-serif text-lg sm:text-xl truncate">
+                    <span className="font-sans text-lg sm:text-xl truncate">
                       {SITE_CONFIG.name}
                     </span>
                   </SheetTitle>
@@ -596,7 +596,7 @@ export function Navbar() {
                 </div>
                 <div className="absolute bottom-6 left-6 right-6 border-t border-[#0F7A5A]/10 pt-4">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs font-semibold tracking-[0.15em] uppercase text-[#0F7A5A] shrink-0">
+                    <span className="type-kicker text-[#0F7A5A] shrink-0">
                       Connect
                     </span>
                     <div className="flex items-center gap-3 sm:gap-4">

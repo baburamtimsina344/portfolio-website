@@ -161,7 +161,7 @@ export function ContactSection() {
                         <span style={{
                             fontSize: 10.5, fontWeight: 700,
                             letterSpacing: '0.22em', textTransform: 'uppercase',
-                            color: 'var(--navy)', fontFamily: 'Inter, sans-serif',
+                            color: 'var(--navy)', fontFamily: 'var(--font-app)',
                         }}>
                             Get In Touch
                         </span>
@@ -172,11 +172,11 @@ export function ContactSection() {
                     <h2 style={{
                         fontSize: 'clamp(30px, 4.5vw, 48px)',
                         fontWeight: 700,
-                        letterSpacing: '-0.02em',
+                        letterSpacing: 'var(--tracking-normal)',
                         lineHeight: 1.1,
                         color: 'var(--navy)',
                         margin: 0,
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'var(--font-app)',
                     }}>
                         Let&apos;s{' '}
                         <span style={{
@@ -196,7 +196,7 @@ export function ContactSection() {
                         color: 'var(--gray-600)',
                         margin: '20px auto 0',
                         fontWeight: 400,
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'var(--font-app)',
                         maxWidth: 480,
                     }}>
                         For academic collaborations, speaking engagements, research inquiries, or simply to discuss ideas.
@@ -267,7 +267,7 @@ export function ContactSection() {
                                     fontSize: 10.5, fontWeight: 700,
                                     letterSpacing: '0.20em', textTransform: 'uppercase',
                                     color: 'rgba(11,37,69,0.40)',
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                 }}>
                                     Contact Info
                                 </span>
@@ -279,9 +279,9 @@ export function ContactSection() {
                                 fontWeight: 700,
                                 color: 'var(--navy)',
                                 lineHeight: 1.2,
-                                letterSpacing: '-0.02em',
+                                letterSpacing: 'var(--tracking-normal)',
                                 marginBottom: 28,
-                                fontFamily: 'Inter, sans-serif',
+                                fontFamily: 'var(--font-app)',
                             }}>
                                 Reach Out
                             </h3>
@@ -306,7 +306,7 @@ export function ContactSection() {
                                             fontSize: 12, fontWeight: 700,
                                             letterSpacing: '0.08em', textTransform: 'uppercase',
                                             color: 'rgba(11,37,69,0.40)',
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             margin: '0 0 6px 0',
                                         }}>
                                             Kirtipur, Nepal
@@ -314,7 +314,7 @@ export function ContactSection() {
                                         <p style={{
                                             fontSize: 14, fontWeight: 500,
                                             color: 'var(--navy)',
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             margin: 0,
                                             lineHeight: 1.5,
                                         }}>
@@ -323,7 +323,7 @@ export function ContactSection() {
                                         <p style={{
                                             fontSize: 13, fontWeight: 400,
                                             color: 'var(--gray-600)',
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             margin: '4px 0 0 0',
                                         }}>
                                             {SITE_CONFIG.location}
@@ -338,7 +338,7 @@ export function ContactSection() {
                                     fontSize: 12, fontWeight: 700,
                                     letterSpacing: '0.08em', textTransform: 'uppercase',
                                     color: 'rgba(11,37,69,0.40)',
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                     margin: '0 0 12px 0',
                                 }}>
                                     Email
@@ -364,7 +364,7 @@ export function ContactSection() {
                                                     fontSize: 12.5,
                                                     color: 'var(--navy)',
                                                     textDecoration: 'none',
-                                                    fontFamily: 'Inter, sans-serif',
+                                                    fontFamily: 'var(--font-app)',
                                                     fontWeight: 500,
                                                     wordBreak: 'break-all',
                                                 }}
@@ -422,7 +422,7 @@ export function ContactSection() {
                                     fontSize: 13, fontWeight: 600,
                                     letterSpacing: '0.02em',
                                     textDecoration: 'none',
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                     boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
                                     transition: 'box-shadow 0.25s',
                                     width: '100%',
@@ -475,7 +475,7 @@ export function ContactSection() {
                                     fontSize: 10.5, fontWeight: 700,
                                     letterSpacing: '0.20em', textTransform: 'uppercase',
                                     color: 'rgba(11,37,69,0.40)',
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                 }}>
                                     Send Message
                                 </span>
@@ -487,9 +487,9 @@ export function ContactSection() {
                                 fontWeight: 700,
                                 color: 'var(--navy)',
                                 lineHeight: 1.2,
-                                letterSpacing: '-0.02em',
+                                letterSpacing: 'var(--tracking-normal)',
                                 marginBottom: 28,
-                                fontFamily: 'Inter, sans-serif',
+                                fontFamily: 'var(--font-app)',
                             }}>
                                 Send a
                                 
@@ -526,7 +526,7 @@ export function ContactSection() {
                                                 fontSize: 14, fontWeight: 600,
                                                 color: 'var(--navy)',
                                                 margin: '0 0 4px 0',
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                             }}>
                                                 Message sent successfully!
                                             </p>
@@ -534,7 +534,7 @@ export function ContactSection() {
                                                 fontSize: 13, fontWeight: 400,
                                                 color: 'var(--gray-600)',
                                                 margin: 0,
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                                 lineHeight: 1.5,
                                             }}>
                                                 Thank you for reaching out. Your message has been sent and you will receive a response as soon as possible.
@@ -577,7 +577,7 @@ export function ContactSection() {
                                                 fontSize: 14, fontWeight: 600,
                                                 color: '#DC2626',
                                                 margin: '0 0 4px 0',
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                             }}>
                                                 Error
                                             </p>
@@ -585,7 +585,7 @@ export function ContactSection() {
                                                 fontSize: 13, fontWeight: 400,
                                                 color: 'var(--gray-600)',
                                                 margin: 0,
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                             }}>
                                                 {error}
                                             </p>
@@ -609,7 +609,7 @@ export function ContactSection() {
                                             fontSize: 12, fontWeight: 600,
                                             letterSpacing: '0.08em', textTransform: 'uppercase',
                                             color: 'rgba(11,37,69,0.50)',
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             marginBottom: 8,
                                         }}>
                                             Full Name
@@ -622,7 +622,7 @@ export function ContactSection() {
                                                 width: '100%',
                                                 padding: 'clamp(10px, 1.5vw, 12px) 14px',
                                                 fontSize: 14,
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                                 border: '1.5px solid rgba(0,184,148,0.15)',
                                                 borderRadius: 12,
                                                 background: 'rgba(0,184,148,0.04)',
@@ -644,7 +644,7 @@ export function ContactSection() {
                                         {form.formState.errors.name && (
                                             <p style={{
                                                 fontSize: 11, color: '#DC2626',
-                                                marginTop: 6, fontFamily: 'Inter, sans-serif',
+                                                marginTop: 6, fontFamily: 'var(--font-app)',
                                             }}>
                                                 {form.formState.errors.name.message}
                                             </p>
@@ -658,7 +658,7 @@ export function ContactSection() {
                                             fontSize: 12, fontWeight: 600,
                                             letterSpacing: '0.08em', textTransform: 'uppercase',
                                             color: 'rgba(11,37,69,0.50)',
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             marginBottom: 8,
                                         }}>
                                             Email
@@ -671,7 +671,7 @@ export function ContactSection() {
                                                 width: '100%',
                                                 padding: 'clamp(10px, 1.5vw, 12px) 14px',
                                                 fontSize: 14,
-                                                fontFamily: 'Inter, sans-serif',
+                                                fontFamily: 'var(--font-app)',
                                                 border: '1.5px solid rgba(0,184,148,0.15)',
                                                 borderRadius: 12,
                                                 background: 'rgba(0,184,148,0.04)',
@@ -693,7 +693,7 @@ export function ContactSection() {
                                         {form.formState.errors.email && (
                                             <p style={{
                                                 fontSize: 11, color: '#DC2626',
-                                                marginTop: 6, fontFamily: 'Inter, sans-serif',
+                                                marginTop: 6, fontFamily: 'var(--font-app)',
                                             }}>
                                                 {form.formState.errors.email.message}
                                             </p>
@@ -708,7 +708,7 @@ export function ContactSection() {
                                         fontSize: 12, fontWeight: 600,
                                         letterSpacing: '0.08em', textTransform: 'uppercase',
                                         color: 'rgba(11,37,69,0.50)',
-                                        fontFamily: 'Inter, sans-serif',
+                                        fontFamily: 'var(--font-app)',
                                         marginBottom: 8,
                                     }}>
                                         Subject
@@ -721,7 +721,7 @@ export function ContactSection() {
                                             width: '100%',
                                             padding: 'clamp(10px, 1.5vw, 12px) 14px',
                                             fontSize: 14,
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             border: '1.5px solid rgba(0,184,148,0.15)',
                                             borderRadius: 12,
                                             background: 'rgba(0,184,148,0.04)',
@@ -743,7 +743,7 @@ export function ContactSection() {
                                     {form.formState.errors.subject && (
                                         <p style={{
                                             fontSize: 11, color: '#DC2626',
-                                            marginTop: 6, fontFamily: 'Inter, sans-serif',
+                                            marginTop: 6, fontFamily: 'var(--font-app)',
                                         }}>
                                             {form.formState.errors.subject.message}
                                         </p>
@@ -757,7 +757,7 @@ export function ContactSection() {
                                         fontSize: 12, fontWeight: 600,
                                         letterSpacing: '0.08em', textTransform: 'uppercase',
                                         color: 'rgba(11,37,69,0.50)',
-                                        fontFamily: 'Inter, sans-serif',
+                                        fontFamily: 'var(--font-app)',
                                         marginBottom: 8,
                                     }}>
                                         Message
@@ -770,7 +770,7 @@ export function ContactSection() {
                                             width: '100%',
                                             padding: 'clamp(10px, 1.5vw, 12px) 14px',
                                             fontSize: 14,
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             border: '1.5px solid rgba(0,184,148,0.15)',
                                             borderRadius: 12,
                                             background: 'rgba(0,184,148,0.04)',
@@ -793,7 +793,7 @@ export function ContactSection() {
                                     {form.formState.errors.message && (
                                         <p style={{
                                             fontSize: 11, color: '#DC2626',
-                                            marginTop: 6, fontFamily: 'Inter, sans-serif',
+                                            marginTop: 6, fontFamily: 'var(--font-app)',
                                         }}>
                                             {form.formState.errors.message.message}
                                         </p>
@@ -819,7 +819,7 @@ export function ContactSection() {
                                         color: isSending ? 'rgba(255,255,255,0.60)' : '#FFFFFF',
                                         fontSize: 13, fontWeight: 600,
                                         letterSpacing: '0.02em',
-                                        fontFamily: 'Inter, sans-serif',
+                                        fontFamily: 'var(--font-app)',
                                         boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
                                         transition: 'all 0.25s',
                                         cursor: isSending ? 'not-allowed' : 'pointer',

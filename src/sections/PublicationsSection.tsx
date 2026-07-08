@@ -107,7 +107,7 @@
 //                         display: 'inline-flex', alignItems: 'center', gap: 5,
 //                         fontSize: 11.5, fontWeight: 500,
 //                         color: 'var(--gray-400)',
-//                         fontFamily: 'Inter, sans-serif',
+//                         fontFamily: 'var(--font-app)',
 //                     }}>
 //                         <Calendar style={{ width: 12, height: 12, color: 'var(--green)' }} />
 //                         {pub.year}
@@ -124,7 +124,7 @@
 //               background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
 //               color: '#FFFFFF',
 //               border: '1px solid rgba(0,184,148,0.30)',
-//               fontFamily: 'Inter, sans-serif',
+//               fontFamily: 'var(--font-app)',
 //               boxShadow: '0 2px 8px rgba(11,37,69,0.20)',
 //             }}>
 //               <Unlock style={{ width: 9, height: 9, color: 'var(--green)' }} />
@@ -141,7 +141,7 @@
 //               background: 'rgba(11,37,69,0.05)',
 //               color: 'var(--gray-600)',
 //               border: '1px solid rgba(11,37,69,0.10)',
-//               fontFamily: 'Inter, sans-serif',
+//               fontFamily: 'var(--font-app)',
 //             }}>
 //               <Lock style={{ width: 9, height: 9 }} />
 //               Subscription
@@ -157,7 +157,7 @@
 //                             background: 'rgba(0,184,148,0.08)',
 //                             color: 'var(--navy)',
 //                             border: '1px solid rgba(0,184,148,0.20)',
-//                             fontFamily: 'Inter, sans-serif',
+//                             fontFamily: 'var(--font-app)',
 //                         }}>
 //                             <Quote style={{ width: 9, height: 9, color: 'var(--green)' }} />
 //                             {pub.citations} cited
@@ -177,14 +177,14 @@
 //                     fontWeight: 700,
 //                     color: 'var(--navy)',
 //                     lineHeight: 1.38,
-//                     letterSpacing: '-0.01em',
+//                     letterSpacing: 'var(--tracking-normal)',
 //                     marginBottom: 12,
 //                     display: '-webkit-box',
 //                     WebkitLineClamp: 3,
 //                     WebkitBoxOrient: 'vertical',
 //                     overflow: 'hidden',
 //                     transition: 'color 0.25s',
-//                     fontFamily: 'Inter, sans-serif',
+//                     fontFamily: 'var(--font-app)',
 //                 }}>
 //                     {pub.title}
 //                 </h3>
@@ -196,7 +196,7 @@
 //                     color: 'var(--gray-600)',
 //                     margin: 0,
 //                     fontWeight: 500,
-//                     fontFamily: 'Inter, sans-serif',
+//                     fontFamily: 'var(--font-app)',
 //                 }}>
 //                     {pub.authors}
 //                 </p>
@@ -206,7 +206,7 @@
 //                     fontSize: 12.5,
 //                     fontStyle: 'italic',
 //                     color: 'var(--navy)',
-//                     fontFamily: 'Inter, sans-serif',
+//                     fontFamily: 'var(--font-app)',
 //                     opacity: 0.60,
 //                     marginTop: 4,
 //                     marginBottom: 16,
@@ -233,7 +233,7 @@
 //                             fontSize: 12, fontWeight: 600,
 //                             color: 'var(--green)',
 //                             textDecoration: 'none',
-//                             fontFamily: 'Inter, sans-serif',
+//                             fontFamily: 'var(--font-app)',
 //                             opacity: 0.7,
 //                             marginBottom: 4,
 //                             transition: 'opacity 0.2s',
@@ -263,7 +263,7 @@
 //                             color: 'var(--navy)',
 //                             background: 'none', border: 'none',
 //                             padding: 0, cursor: 'pointer',
-//                             fontFamily: 'Inter, sans-serif',
+//                             fontFamily: 'var(--font-app)',
 //                             borderBottom: '1.5px solid rgba(0,184,148,0.40)',
 //                             paddingBottom: 2,
 //                             transition: 'color 0.22s, border-color 0.22s',
@@ -412,7 +412,7 @@
 //                         <span style={{
 //                             fontSize: 10.5, fontWeight: 700,
 //                             letterSpacing: '0.22em', textTransform: 'uppercase',
-//                             color: 'var(--navy)', fontFamily: 'Inter, sans-serif',
+//                             color: 'var(--navy)', fontFamily: 'var(--font-app)',
 //                         }}>
 //                             Research Output
 //                         </span>
@@ -423,11 +423,11 @@
 //                     <h2 style={{
 //                         fontSize: 'clamp(30px, 4.5vw, 48px)',
 //                         fontWeight: 700,
-//                         letterSpacing: '-0.02em',
+//                         letterSpacing: 'var(--tracking-normal)',
 //                         lineHeight: 1.1,
 //                         color: 'var(--navy)',
 //                         margin: 0,
-//                         fontFamily: 'Inter, sans-serif',
+//                         fontFamily: 'var(--font-app)',
 //                     }}>
 //                         Scholarly{' '}
 //                         <span style={{
@@ -558,7 +558,7 @@
 //                     textAlign: 'center',
 //                     fontSize: 12.5, fontWeight: 500,
 //                     color: 'var(--gray-400)',
-//                     fontFamily: 'Inter, sans-serif',
+//                     fontFamily: 'var(--font-app)',
 //                     marginTop: 28,
 //                     letterSpacing: '0.04em',
 //                 }}>
@@ -598,15 +598,15 @@
 //                                     fontWeight: 700,
 //                                     color: 'var(--navy)',
 //                                     lineHeight: 1.35,
-//                                     letterSpacing: '-0.01em',
-//                                     fontFamily: 'Inter, sans-serif',
+//                                     letterSpacing: 'var(--tracking-normal)',
+//                                     fontFamily: 'var(--font-app)',
 //                                 }}>
 //                                     {selectedPub.title}
 //                                 </DialogTitle>
 //                                 <DialogDescription style={{
 //                                     fontSize: 13, fontWeight: 500,
 //                                     color: 'var(--gray-600)',
-//                                     fontFamily: 'Inter, sans-serif',
+//                                     fontFamily: 'var(--font-app)',
 //                                     marginTop: 8,
 //                                 }}>
 //                                     {selectedPub.authors}
@@ -617,7 +617,7 @@
 //                                 <p style={{
 //                                     fontSize: 13.5, fontStyle: 'italic',
 //                                     color: 'var(--navy)', opacity: 0.65,
-//                                     fontFamily: 'Inter, sans-serif',
+//                                     fontFamily: 'var(--font-app)',
 //                                     borderLeft: '2.5px solid rgba(0,184,148,0.40)',
 //                                     paddingLeft: 14,
 //                                     margin: 0,
@@ -633,7 +633,7 @@
 //                                         background: 'rgba(0,184,148,0.08)',
 //                                         color: 'var(--navy)',
 //                                         border: '1px solid rgba(0,184,148,0.20)',
-//                                         fontFamily: 'Inter, sans-serif',
+//                                         fontFamily: 'var(--font-app)',
 //                                     }}>
 //                                         {selectedPub.year}
 //                                     </span>
@@ -646,7 +646,7 @@
 //                             background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
 //                             color: '#FFFFFF',
 //                             border: '1px solid rgba(0,184,148,0.20)',
-//                             fontFamily: 'Inter, sans-serif',
+//                             fontFamily: 'var(--font-app)',
 //                         }}>
 //                             <Unlock style={{ width: 10, height: 10, color: 'var(--green)' }} />
 //                             Open Access
@@ -661,7 +661,7 @@
 //                                             background: 'rgba(0,184,148,0.08)',
 //                                             color: 'var(--navy)',
 //                                             border: '1px solid rgba(0,184,148,0.20)',
-//                                             fontFamily: 'Inter, sans-serif',
+//                                             fontFamily: 'var(--font-app)',
 //                                         }}>
 //                                             <Quote style={{ width: 10, height: 10, color: 'var(--green)' }} />
 //                                             {selectedPub.citations} Citations
@@ -686,7 +686,7 @@
 //                                             color: '#FFFFFF',
 //                                             fontSize: 13, fontWeight: 600,
 //                                             textDecoration: 'none',
-//                                             fontFamily: 'Inter, sans-serif',
+//                                             fontFamily: 'var(--font-app)',
 //                                             boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
 //                                             alignSelf: 'flex-start',
 //                                             transition: 'box-shadow 0.25s',
@@ -816,7 +816,7 @@ function PublicationCard({
                         display: 'inline-flex', alignItems: 'center', gap: 5,
                         fontSize: 11.5, fontWeight: 500,
                         color: 'var(--gray-400)',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'var(--font-app)',
                     }}>
                         <Calendar style={{ width: 12, height: 12, color: 'var(--green)' }} />
                         {pub.year}
@@ -833,7 +833,7 @@ function PublicationCard({
               background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
               color: '#FFFFFF',
               border: '1px solid rgba(0,184,148,0.30)',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'var(--font-app)',
               boxShadow: '0 2px 8px rgba(11,37,69,0.20)',
             }}>
               {/* <Unlock style={{ width: 9, height: 9, color: 'var(--green)' }} /> */}
@@ -850,7 +850,7 @@ function PublicationCard({
               background: 'rgba(11,37,69,0.05)',
               color: 'var(--gray-600)',
               border: '1px solid rgba(11,37,69,0.10)',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'var(--font-app)',
             }}>
               {/* <Lock style={{ width: 9, height: 9 }} /> */}
               {/* Subscription */}
@@ -866,7 +866,7 @@ function PublicationCard({
                             background: 'rgba(0,184,148,0.08)',
                             color: 'var(--navy)',
                             border: '1px solid rgba(0,184,148,0.20)',
-                            fontFamily: 'Inter, sans-serif',
+                            fontFamily: 'var(--font-app)',
                         }}>
                             <Quote style={{ width: 9, height: 9, color: 'var(--green)' }} />
                             {pub.citations} cited
@@ -886,14 +886,14 @@ function PublicationCard({
                     fontWeight: 700,
                     color: 'var(--navy)',
                     lineHeight: 1.38,
-                    letterSpacing: '-0.01em',
+                    letterSpacing: 'var(--tracking-normal)',
                     marginBottom: 12,
                     display: '-webkit-box',
                     WebkitLineClamp: 3,
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden',
                     transition: 'color 0.25s',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'var(--font-app)',
                 }}>
                     {pub.title}
                 </h3>
@@ -905,7 +905,7 @@ function PublicationCard({
                     color: 'var(--gray-600)',
                     margin: 0,
                     fontWeight: 500,
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'var(--font-app)',
                 }}>
                     {pub.authors}
                 </p>
@@ -915,7 +915,7 @@ function PublicationCard({
                     fontSize: 12.5,
                     fontStyle: 'italic',
                     color: 'var(--navy)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'var(--font-app)',
                     opacity: 0.60,
                     marginTop: 4,
                     marginBottom: 16,
@@ -942,7 +942,7 @@ function PublicationCard({
                             fontSize: 12, fontWeight: 600,
                             color: 'var(--green)',
                             textDecoration: 'none',
-                            fontFamily: 'Inter, sans-serif',
+                            fontFamily: 'var(--font-app)',
                             opacity: 0.7,
                             marginBottom: 4,
                             transition: 'opacity 0.2s',
@@ -978,7 +978,7 @@ function PublicationCard({
                             color: 'var(--navy)',
                             background: 'none', border: 'none',
                             padding: 0, cursor: 'pointer',
-                            fontFamily: 'Inter, sans-serif',
+                            fontFamily: 'var(--font-app)',
                             borderBottom: '1.5px solid rgba(0,184,148,0.40)',
                             paddingBottom: 2,
                             textDecoration: 'none',
@@ -1128,7 +1128,7 @@ export function PublicationsSection() {
                         <span style={{
                             fontSize: 10.5, fontWeight: 700,
                             letterSpacing: '0.22em', textTransform: 'uppercase',
-                            color: 'var(--navy)', fontFamily: 'Inter, sans-serif',
+                            color: 'var(--navy)', fontFamily: 'var(--font-app)',
                         }}>
                             Research Output
                         </span>
@@ -1139,11 +1139,11 @@ export function PublicationsSection() {
                     <h2 style={{
                         fontSize: 'clamp(30px, 4.5vw, 48px)',
                         fontWeight: 700,
-                        letterSpacing: '-0.02em',
+                        letterSpacing: 'var(--tracking-normal)',
                         lineHeight: 1.1,
                         color: 'var(--navy)',
                         margin: 0,
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'var(--font-app)',
                     }}>
                         Scholarly{' '}
                         <span style={{
@@ -1274,7 +1274,7 @@ export function PublicationsSection() {
                     textAlign: 'center',
                     fontSize: 12.5, fontWeight: 500,
                     color: 'var(--gray-400)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'var(--font-app)',
                     marginTop: 28,
                     letterSpacing: '0.04em',
                 }}>

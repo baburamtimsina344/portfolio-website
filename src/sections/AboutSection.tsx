@@ -164,7 +164,7 @@ export function AboutSection() {
                             <div aria-hidden style={{
                                 position: 'absolute', top: -8, right: 20,
                                 fontSize: 180, lineHeight: 1,
-                                fontFamily: 'Georgia, serif',
+                                fontFamily: 'var(--font-app)',
                                 color: 'var(--navy)',
                                 opacity: 0.025,
                                 pointerEvents: 'none', userSelect: 'none',
@@ -191,7 +191,7 @@ export function AboutSection() {
                                     color: 'var(--text-secondary)',
                                     margin: 0,
                                     fontWeight: 500,
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                     letterSpacing: '0.3px',
                                 }}>
                                     Biography
@@ -205,9 +205,9 @@ export function AboutSection() {
                                     fontWeight: 700,
                                     color: 'var(--navy)',
                                     lineHeight: 1.2,
-                                    letterSpacing: '-0.02em',
+                                    letterSpacing: 'var(--tracking-normal)',
                                     marginBottom: 20,
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                 }}
                             >
                                 About{' '}
@@ -233,7 +233,7 @@ export function AboutSection() {
                                     color: 'var(--text-secondary)',
                                     margin: 0,
                                     fontWeight: 500,
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                     letterSpacing: '0.3px',
                                     textAlign: 'justify',
                                 }}> */}
@@ -249,7 +249,7 @@ export function AboutSection() {
     leading-relaxed 
     text-slate-700 
     font-medium 
-    tracking-[0.2px] 
+    tracking-normal 
     text-justify 
     m-0
   ">
@@ -269,7 +269,7 @@ export function AboutSection() {
                                             padding: '5px 14px',
                                             borderRadius: 100,
                                             fontSize: 11.5, fontWeight: 500,
-                                            fontFamily: 'Inter, sans-serif',
+                                            fontFamily: 'var(--font-app)',
                                             color: 'var(--navy)',
                                             background: 'rgba(0,184,148,0.08)',
                                             border: '1px solid rgba(0,184,148,0.22)',
@@ -311,7 +311,7 @@ export function AboutSection() {
             fontWeight: 600,
             letterSpacing: '0.02em',
             textDecoration: 'none',
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'var(--font-app)',
             boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
             transition: 'box-shadow 0.25s',
         }}
@@ -364,7 +364,7 @@ export function AboutSection() {
                                 <span style={{
                                     fontSize: 9.5, fontWeight: 700,
                                     letterSpacing: '0.20em', textTransform: 'uppercase',
-                                    color: '#FFFFFF', fontFamily: 'Inter, sans-serif',
+                                    color: '#FFFFFF', fontFamily: 'var(--font-app)',
                                 }}>
                                     Latest News
                                 </span>
@@ -376,9 +376,9 @@ export function AboutSection() {
                                     fontWeight: 700,
                                     color: 'var(--navy)',
                                     lineHeight: 1.3,
-                                    letterSpacing: '-0.01em',
+                                    letterSpacing: 'var(--tracking-normal)',
                                     marginBottom: 14,
-                                    fontFamily: 'Inter, sans-serif',
+                                    fontFamily: 'var(--font-app)',
                                 }}
                             >
                                 Keynote Address at International Conference on Sustainable Business
@@ -390,7 +390,7 @@ export function AboutSection() {
                                 color: 'var(--text-secondary)',
                                 margin: 0,
                                 fontWeight: 500,
-                                fontFamily: 'Inter, sans-serif',
+                                fontFamily: 'var(--font-app)',
                                 letterSpacing: '0.3px',
                                 textAlign: 'justify',
                             }}>
@@ -409,7 +409,7 @@ export function AboutSection() {
                                         fontSize: 12.5, fontWeight: 600,
                                         color: 'var(--navy)',
                                         textDecoration: 'none',
-                                        fontFamily: 'Inter, sans-serif',
+                                        fontFamily: 'var(--font-app)',
                                         letterSpacing: '0.03em',
                                         borderBottom: '1.5px solid rgba(0,184,148,0.45)',
                                         paddingBottom: 2,
@@ -467,7 +467,7 @@ export function AboutSection() {
                                                             textAlign: 'center',
                                                             textShadow: '0 2px 8px rgba(0,0,0,0.30)',
                                                             position: 'relative', zIndex: 1,
-                                                            fontFamily: 'Inter, sans-serif',
+                                                            fontFamily: 'var(--font-app)',
                                                         }}
                                                     >
                                                         {slide.title}
@@ -497,7 +497,7 @@ export function AboutSection() {
                                                             fontSize: 9, fontWeight: 700,
                                                             letterSpacing: '0.22em', textTransform: 'uppercase',
                                                             color: 'rgba(0,184,148,0.70)',
-                                                            fontFamily: 'Inter, sans-serif',
+                                                            fontFamily: 'var(--font-app)',
                                                             marginBottom: 6,
                                                         }}>
                                                             Role
@@ -506,7 +506,7 @@ export function AboutSection() {
                                                             fontSize: 'clamp(11px, 1.5vw, 14px)',
                                                             fontWeight: 700,
                                                             color: '#FFFFFF',
-                                                            fontFamily: 'Inter, sans-serif',
+                                                            fontFamily: 'var(--font-app)',
                                                             lineHeight: 1.3,
                                                             textAlign: 'center',
                                                             letterSpacing: '0.04em',
