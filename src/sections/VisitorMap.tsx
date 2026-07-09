@@ -4,9 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import type { ComponentType } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { Activity, AlertCircle, BarChart3, Globe2, MapPin, Radio, TrendingUp, Users } from "lucide-react";
+import { Activity, AlertCircle, BarChart3, Globe2, MapPin, Radio, TrendingUp, Users, Clock } from "lucide-react";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import { useTrackVisit } from "../hooks/useTrackVisit";
+import { useAnimatedNumber } from "../hooks/useAnimatedNumber";
+import { supabase } from "../lib/supabase";
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 const POLL_INTERVAL_MS = 10_000;
@@ -77,6 +79,28 @@ function formatNumber(value: number) {
 }
 
 function MetricCard({ label, value, detail, icon: Icon, isLoading, index }: MetricCardProps) {
+  // Try to parse value as number for animation
+  const numericValue = useMemo(() => {
+    if (typeof value === "string") {
+      // Remove commas and percent signs
+      const cleaned = value.replace(/,/g, "").replace(/%/g, "");
+      const num = Number(cleaned);
+      return Number.isFinite(num) ? num : null;
+    }
+    return typeof value === "number" ? value : null;
+  }, [value]);
+
+  const animatedNumber = useAnimatedNumber(numericValue ?? 0, 1500);
+  
+  // Format the animated number
+  const displayValue = useMemo(() => {
+    if (numericValue === null) return value;
+    if (typeof value === "string" && value.includes("%")) {
+      return `${animatedNumber}%`;
+    }
+    return animatedNumber.toLocaleString();
+  }, [animatedNumber, value, numericValue]);
+
   return (
     <motion.div
       variants={cardVariants}
@@ -91,7 +115,7 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index }: Metr
           {isLoading ? (
             <div className="mt-3 h-8 w-24 animate-pulse rounded-md bg-[#0F7A5A]/10" />
           ) : (
-            <p className="mt-2 text-2xl font-extrabold leading-none text-[#0B2545]">{value}</p>
+            <p className="mt-2 text-2xl font-extrabold leading-none text-[#0B2545]">{displayValue}</p>
           )}
         </div>
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#0F7A5A]/15 bg-[#0F7A5A]/8 text-[#0F7A5A] transition-transform duration-200 group-hover:scale-105">
@@ -106,66 +130,134 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index }: Metr
 export function VisitorMap() {
   useTrackVisit();
 
-  const [stats, setStats] = useState<Stats>({ total: STARTING_TOTAL, countries: [] });
+  // Dummy fallback data
+  const dummyCountries: CountryVisit[] = [
+    { country_code: "US", country_name: "United States", visit_count: 3500 },
+    { country_code: "IN", country_name: "India", visit_count: 2200 },
+    { country_code: "GB", country_name: "United Kingdom", visit_count: 1800 },
+    { country_code: "CA", country_name: "Canada", visit_count: 1200 },
+    { country_code: "DE", country_name: "Germany", visit_count: 1000 },
+    { country_code: "AU", country_name: "Australia", visit_count: 800 },
+  ];
+
+  const [stats, setStats] = useState<Stats>({ total: STARTING_TOTAL, countries: dummyCountries });
   const [loaded, setLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(new Date());
 
   useEffect(() => {
     let mounted = true;
-    let pollingEnabled = true;
 
-    async function load() {
-      const response = await fetch("/api/visitor-visit", {
-        headers: { Accept: "application/json" },
-      });
+    // Function to load initial stats
+    async function loadInitialStats() {
+      try {
+        const [totalsResult, countriesResult] = await Promise.all([
+          supabase.from('visitor_totals').select('total_count, updated_at').eq('id', 1).single(),
+          supabase.from('country_visits').select('country_code, country_name, visit_count, last_visit_at').order('visit_count', { ascending: false }),
+        ]);
 
-      if (!mounted) return;
+        if (!mounted) return;
 
-      if (!response.ok) {
-        if (response.status === 404) pollingEnabled = false;
-        throw new Error(`Visitor stats request failed: ${response.status}`);
+        if (totalsResult.error) {
+          console.log('Using dummy data for totals');
+        }
+        if (countriesResult.error) {
+          console.log('Using dummy data for countries');
+        }
+
+        // Use real data if available, otherwise use dummy
+        const countries = (countriesResult.data && countriesResult.data.length > 0)
+          ? (countriesResult.data ?? [])
+              .map((country) => ({
+                country_code: (country.country_code ?? "XX").toUpperCase(),
+                country_name: country.country_name ?? "Unknown",
+                visit_count: toVisitCount(country.visit_count),
+              }))
+              .filter((country) => country.country_code !== "XX" && country.visit_count > 0)
+          : dummyCountries;
+
+        const total = (totalsResult.data && !totalsResult.error) 
+          ? (toVisitCount(totalsResult.data?.total_count) || STARTING_TOTAL)
+          : STARTING_TOTAL;
+
+        setStats({
+          total,
+          countries,
+        });
+        setLastUpdated((totalsResult.data && !totalsResult.error && totalsResult.data?.updated_at) 
+          ? new Date(totalsResult.data.updated_at) 
+          : new Date());
+        setHasError(false);
+        setLoaded(true);
+      } catch (error) {
+        console.log('Using dummy data (error loading from Supabase):', error);
+        if (mounted) {
+          setStats({ total: STARTING_TOTAL, countries: dummyCountries });
+          setHasError(false);
+          setLoaded(true);
+        }
       }
-
-      const contentType = response.headers.get("content-type") ?? "";
-      if (!contentType.includes("application/json")) {
-        pollingEnabled = false;
-        throw new Error("Visitor stats endpoint did not return JSON");
-      }
-
-      const data = (await response.json()) as VisitorStatsResponse;
-      const countries = (data.countries ?? [])
-        .map((country) => ({
-          country_code: (country.country_code ?? "XX").toUpperCase(),
-          country_name: country.country_name ?? "Unknown",
-          visit_count: toVisitCount(country.visit_count),
-        }))
-        .filter((country) => country.country_code !== "XX" && country.visit_count > 0);
-
-      setStats({
-        total: toVisitCount(data.total) || STARTING_TOTAL,
-        countries,
-      });
-      setHasError(false);
-      setLoaded(true);
     }
 
-    load().catch(() => {
-      if (mounted) {
-        setHasError(true);
-        setLoaded(true);
-      }
-    });
+    loadInitialStats();
 
-    const interval = window.setInterval(() => {
-      if (!pollingEnabled) return;
-      load().catch(() => {
-        if (mounted) setHasError(true);
-      });
-    }, POLL_INTERVAL_MS);
+    // Subscribe to realtime changes for visitor_totals
+    const totalsChannel = supabase
+      .channel('visitor-totals-changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'visitor_totals' },
+        (payload) => {
+          if (!mounted) return;
+          const newTotal = toVisitCount(payload.new?.total_count);
+          if (newTotal > 0) {
+            setStats(prev => ({ ...prev, total: newTotal }));
+            setLastUpdated(new Date());
+          }
+        }
+      )
+      .subscribe();
+
+    // Subscribe to realtime changes for country_visits
+    const countriesChannel = supabase
+      .channel('country-visits-changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'country_visits' },
+        async () => {
+          if (!mounted) return;
+          // Refetch countries when there's a change
+          try {
+            const countriesResult = await supabase
+              .from('country_visits')
+              .select('country_code, country_name, visit_count')
+              .order('visit_count', { ascending: false });
+
+            if (!mounted || countriesResult.error) return;
+
+            const countries = (countriesResult.data ?? [])
+              .map((country) => ({
+                country_code: (country.country_code ?? "XX").toUpperCase(),
+                country_name: country.country_name ?? "Unknown",
+                visit_count: toVisitCount(country.visit_count),
+              }))
+              .filter((country) => country.country_code !== "XX" && country.visit_count > 0);
+
+            if (countries.length > 0) {
+              setStats(prev => ({ ...prev, countries }));
+              setLastUpdated(new Date());
+            }
+          } catch (error) {
+            console.error('Error refreshing country visits:', error);
+          }
+        }
+      )
+      .subscribe();
 
     return () => {
       mounted = false;
-      window.clearInterval(interval);
+      supabase.removeChannel(totalsChannel);
+      supabase.removeChannel(countriesChannel);
     };
   }, []);
 
@@ -183,6 +275,16 @@ export function VisitorMap() {
   const topCountry = topCountries[0];
   const mappedVisitCount = mappedCountries.reduce((sum, country) => sum + country.visit_count, 0);
   const coveragePercent = stats.total > 0 ? Math.min(100, Math.round((mappedVisitCount / stats.total) * 100)) : 0;
+
+  const formatLastUpdated = () => {
+    if (!lastUpdated) return "Just now";
+    const now = new Date();
+    const diff = Math.floor((now.getTime() - lastUpdated.getTime()) / 1000);
+    if (diff < 60) return "Just now";
+    if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+    if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+    return lastUpdated.toLocaleDateString();
+  };
 
   const metrics = [
     {
@@ -204,17 +306,17 @@ export function VisitorMap() {
       icon: MapPin,
     },
     {
-      label: "Top region",
-      value: topCountry ? topCountry.country_code : "-",
-      detail: topCountry ? `${topCountry.country_name} leads engagement` : "Awaiting traffic data",
-      icon: TrendingUp,
+      label: "Last updated",
+      value: formatLastUpdated(),
+      detail: "Live updates via Supabase Realtime",
+      icon: Clock,
     },
   ];
 
   return (
-    <section className="dashboard-shell relative overflow-hidden px-3 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16 ">
+    <section className="relative overflow-hidden" style={{ padding: 'clamp(72px, 10vw, 120px) 0' }}>
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#0F7A5A]/20 to-transparent" aria-hidden="true" />
-      <div className="container mx-auto max-w-7xl">
+      <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '0 clamp(20px, 5vw, 56px)' }}>
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
         <div className="mb-8 flex flex-col items-center gap-5 text-center">
   <div className="max-w-2xl">

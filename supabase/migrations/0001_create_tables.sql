@@ -136,3 +136,7 @@ create policy "Public read access - totals"
 
 create policy "Public read access - countries"
   on country_visits for select using (true);
+
+-- Enable Realtime for visitor tables
+alter publication supabase_realtime add table visitor_totals;
+alter publication supabase_realtime add table country_visits;

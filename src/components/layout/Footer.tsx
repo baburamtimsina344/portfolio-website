@@ -403,23 +403,40 @@ import {
   ShieldCheck,
   Sparkles,
   User,
+  GraduationCap,
+  BriefcaseBusiness,
+  Award,
+  FileText,
+  Newspaper,
 } from "lucide-react";
-import { SITE_CONFIG, SOCIAL_LINKS } from "@/data/profile";
+import { useNavigate, useLocation } from "react-router-dom";
+import { SITE_CONFIG, SOCIAL_LINKS, NAV_ITEMS, RESEARCH_INTERESTS } from "@/data/profile";
 import { SocialLinks } from "@/components/common/SocialLinks";
 import { scrollToSection } from "@/lib/utils";
 import { VisitorMap } from "@/sections/VisitorMap";
 
 const footerLinks = ["Privacy Policy", "Terms of Use"];
 
-const quickLinks = [
-  { label: "Home", id: "home", icon: Home },
-  { label: "About", id: "about", icon: User },
-  { label: "Publications", id: "publications", icon: BookOpen },
-  { label: "Contact", id: "contact", icon: Mail },
-];
+const getNavIcon = (label: string) => {
+  switch (label.toLowerCase()) {
+    case "home": return Home;
+    case "about": return User;
+    case "research": return Newspaper;
+    case "publications": return BookOpen;
+    case "teaching": return GraduationCap;
+    case "editorial & academic service ": return BriefcaseBusiness;
+    case "projects ": return BriefcaseBusiness;
+    case "awards & certifications  ": return Award;
+    case "cv": return FileText;
+    case "contact": return Mail;
+    default: return ChevronRight;
+  }
+};
 
 export function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -427,6 +444,18 @@ export function Footer() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (item: typeof NAV_ITEMS[0]) => {
+    if (item.path) {
+      navigate(item.path);
+      return;
+    }
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: item.id } });
+      return;
+    }
+    scrollToSection(item.id);
+  };
 
   return (
     <footer className="relative overflow-hidden border-t nav-surface">
@@ -448,11 +477,11 @@ export function Footer() {
         />
 
         <div className="container relative mx-auto px-3 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
-          <div className="grid gap-10 lg:grid-cols-[1.3fr_0.9fr_0.9fr]">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
             {/* Brand */}
             <div className="flex flex-col gap-4">
               <div className="flex items-start gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--navy)] to-[var(--navy-light)] from-[#0F7A5A] to-[#0B6A4E] shadow-lg shadow-[#0F7A5A]/20">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0F7A5A] to-[#0B6A4E] shadow-lg shadow-[#0F7A5A]/20">
                   <Sparkles className="h-5 w-5 text-white" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
@@ -480,45 +509,40 @@ export function Footer() {
                 Quick Links
               </p>
               <ul className="mt-4 flex flex-col gap-2.5">
-                {quickLinks.map(({ label, id, icon: Icon }) => (
-                  <li key={id}>
-                    <button
-                      type="button"
-                      onClick={() => scrollToSection(id)}
-                      className="group inline-flex items-center gap-2 type-caption text-[#4A5A6A] transition-colors duration-200 hover:text-[#0F7A5A]"
-                    >
-                      <Icon className="h-3.5 w-3.5 text-[#0F7A5A]/70 transition-colors duration-200 group-hover:text-[#0F7A5A]" aria-hidden="true" />
-                      {label}
-                      <ChevronRight className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true" />
-                    </button>
-                  </li>
-                ))}
+                {NAV_ITEMS.map((item) => {
+                  const Icon = getNavIcon(item.label);
+                  return (
+                    <li key={item.id}>
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick(item)}
+                        className="group inline-flex items-center gap-2 type-caption text-[#4A5A6A] transition-colors duration-200 hover:text-[#0F7A5A]"
+                      >
+                        <Icon className="h-3.5 w-3.5 text-[#0F7A5A]/70 transition-colors duration-200 group-hover:text-[#0F7A5A]" aria-hidden="true" />
+                        {item.label}
+                        <ChevronRight className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true" />
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Core Research Areas */}
             <div>
               <p className="type-caption font-semibold uppercase tracking-[0.14em] text-[#0B2545]/60">
-                Get in Touch
+                Core Research Areas
               </p>
-              <div className="mt-4 flex flex-col gap-3">
-                <a
-                  href={`mailto:${SITE_CONFIG.emails[0]}`}
-                  aria-label={`Email ${SITE_CONFIG.name}`}
-                  className="group inline-flex items-center gap-2.5 rounded-lg border border-[#0F7A5A]/12 bg-white/70 px-3 py-2.5 type-caption text-[#0B2545] shadow-soft transition-all duration-200 hover:border-[#0F7A5A]/30 hover:shadow-md"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0F7A5A]/10 text-[#0F7A5A] transition-transform duration-200 group-hover:scale-105">
-                    <Mail className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                  <span className="min-w-0 truncate font-medium">
-                    {SITE_CONFIG.emails[0]}
-                  </span>
-                </a>
-                <p className="type-caption text-[#4A5A6A]">
-                  Available for research collaboration, academic advising, and
-                  speaking engagements.
-                </p>
-              </div>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {RESEARCH_INTERESTS.map((interest, index) => (
+                  <li key={index}>
+                    <span className="inline-flex items-center gap-2 type-caption font-medium text-[#0F7A5A]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#0F7A5A]" aria-hidden="true" />
+                      {interest}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
