@@ -4,50 +4,41 @@ import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
   name: "Baburam Timsina",
-  title: "Academic Researcher | Educator | Scholar",
+  title: "PhD Scholar | Higher Education & Leadership Researcher | Educator",
   description:
-    "Baburam Timsina is an academic researcher, educator, and scholar specializing in management, entrepreneurship, and sustainable development at Tribhuvan University, Nepal.",
+    "Advancing scholarship in higher education, educational leadership, and institutional transformation through research, teaching, and academic service.",
   url: "https://baburamtimsina.edu.np",
   ogImage: "/og-image.jpg",
   emails: ["brtimsina05@gmail.com", "baburam.timsina@som.tu.edu.np"],
-  // institution: "School of Management, Tribhuvan University",
-  // location: "Kathmandu, Nepal",
+  institution: "Tribhuvan University",
+  location: "Kathmandu, Nepal",
 };
 
 export const NAV_ITEMS: NavItem[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "news", label: "Research" }, //pahila news page ho yo
+  { id: "news", label: "Research" },
   { id: "publications", label: "Publications" },
-  // {
-  //   id: "knowledge-exchange",
-  //   label: "Knowledge Exchange",
-  //   path: "/knowledge-exchange",   // ✅ Added this line
-  // },
   { id: "teaching", 
     label: "Teaching",
     path:"/teaching"
-
    },
   { id: "editorial-roles", 
-    label: "Editorial & Academic Service ",
+    label: "Editorial & Academic Service",
     path:"/editorial-roles"
    },
    { id: "projects", 
-    label: "Projects ",
+    label: "Projects",
     path:"/projects"
    },
-   { id: "awards&certifications ", 
-    label: "Awards & Certifications  ",
+   { id: "awards&certifications", 
+    label: "Awards & Certifications",
     path:"/awards&certifications"
    },
    { id: "cv", 
     label: "CV",
     path:"/cv"
    },
-  // { id: "leadership", 
-  //   label: "External / Leadership Roles",
-  // path:"/leadershipSection" },
   { id: "contact",
     label: "Contact" },
 ];
@@ -94,19 +85,25 @@ export const RESEARCH_STATS: Stat[] = [
 export const GOOGLE_SCHOLAR_URL =
   "https://scholar.google.com/citations?hl=en&authuser=1&user=st9Ym1kAAAAJ";
 
-export const BIOGRAPHY = `Dr. Baburam Timsina is a distinguished academic researcher, educator, and scholar at the School of Management, Tribhuvan University, Nepal. With extensive expertise in management sciences, entrepreneurship, sustainable development, and organizational behavior, he has contributed significantly to advancing knowledge in business education and research in South Asia.
+export const BIOGRAPHY = `Advancing scholarship through research, leadership, and academic service, I am committed to fostering transformative learning and evidence-based practices in higher education.
 
-His scholarly work spans empirical research in small and medium enterprises, innovation ecosystems, sustainable business practices, and policy-oriented studies that bridge academia with real-world impact. Dr. Timsina is committed to fostering evidence-based decision-making among policymakers, industry leaders, and the next generation of business professionals.`;
+Based in Kathmandu, Nepal, I serve as Scholar and Educator at Tribhuvan University while pursuing doctoral research in higher education and leadership. My scholarly work explores the intersection of higher education, leadership, organizational behavior, governance, and corporate social responsibility, particularly within emerging economies.
+
+My research investigates how educational institutions, governance structures, service quality, ethical practices, and leadership approaches influence organizational effectiveness and individual decision-making. Through interdisciplinary and collaborative scholarship, I seek to contribute to the development of responsive, inclusive, and sustainable educational systems.
+
+Beyond research and teaching, I actively contribute to the academic community through editorial leadership, peer review, and scholarly networking. I currently serve as Chair of the Journal Management Committee (JMC) at MSSRNPRESS.ORG and as an editorial board member of several peer-reviewed journals.
+
+My broader academic mission is to bridge research, policy, and practice to strengthen higher education systems and promote impactful scholarship at both national and international levels.`;
 
 export const RESEARCH_INTERESTS = [
-  "Entrepreneurship & SME Development",
-  "Sustainable Business Practices",
-  "Innovation & Technology Management",
-  "Organizational Behavior",
-  "Policy Research & Knowledge Translation",
-  "Higher Education Management",
-  "Research Methodology",
-  "Community-Based Participatory Research",
+  "Higher Education and Educational Leadership",
+  "Higher Education Policy and Governance",
+  "Organizational Behavior and Leadership",
+  "Corporate Social Responsibility (CSR)",
+  "Service Quality and Graduate Decision-Making",
+  "Strategic Management and Organizational Development",
+  "Ethics, Governance, and Emerging Economies",
+  "Institutional Transformation and Academic Leadership",
 ];
 
 export const EDUCATION: import("@/types").TimelineItem[] = [
@@ -171,7 +168,7 @@ export const EXPERIENCE: import("@/types").TimelineItem[] = [
   },
 ];
 
-export const TEACHING_PHILOSOPHY = `I believe education should transform learners into critical thinkers, ethical leaders, and responsible citizens. My teaching philosophy centers on experiential learning, research-informed pedagogy, and fostering intellectual curiosity. I strive to create inclusive classroom environments where students engage with real-world business challenges and develop the analytical skills needed for scholarly and professional excellence.`;
+export const TEACHING_PHILOSOPHY = `I believe that education should transcend the transmission of knowledge and inspire learners to question, innovate, collaborate, and contribute meaningfully to society. My pedagogical approach integrates theoretical rigor with practical relevance, fostering critical thinking, ethical awareness, and transformative leadership among students.`;
 
 export const MENTORSHIP = [
   "Supervised 15+ Master's thesis projects in management and entrepreneurship",

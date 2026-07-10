@@ -2,6 +2,13 @@ import type { EditorialRole } from "@/types";
 
 export const EDITORIAL_ROLES: EditorialRole[] = [
   {
+    id: "ed-0",
+    role: "Chair, Journal Management Committee (JMC)",
+    journal: "MSSRNPRESS.ORG",
+    period: "Present",
+    type: "editor",
+  },
+  {
     id: "ed-1",
     role: "Associate Editor",
     journal: "Journal of Nepalese Business Studies",

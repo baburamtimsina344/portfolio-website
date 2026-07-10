@@ -10,12 +10,14 @@ const BIOGRAPHY =
     "Advancing scholarship through research, leadership, and academic service, I am committed to fostering transformative learning and evidence-based practices in higher education.Based in Kathmandu, Nepal, I serve as Scholar and Educator at Tribhuvan University while pursuing doctoral research in higher education and leadership. My scholarly work explores the intersection of higher education, leadership, organizational behavior, governance, and corporate social responsibility, particularly within emerging economies.My research investigates how educational institutions, governance structures, service quality, ethical practices, and leadership approaches influence organizational effectiveness and individual decision-making. Through interdisciplinary and collaborative scholarship, I seek to contribute to the development of responsive, inclusive, and sustainable educational systems.Beyond research and teaching, I actively contribute to the academic community through editorial leadership, peer review, and scholarly networking. I currently serve as Chair of the Journal Management Committee (JMC) at MSSRNPRESS.ORG and as an editorial board member of several peer-reviewed journals.My broader academic mission is to bridge research, policy, and practice to strengthen higher education systems and promote impactful scholarship at both national and international levels."
 
 const RESEARCH_INTERESTS = [
-    'Sustainable Development',
-    'Entrepreneurship',
-    'Management Strategy',
-    'Innovation Systems',
-    'Organizational Behavior',
-    'Knowledge Transfer',
+  'Higher Education and Educational Leadership',
+  'Higher Education Policy and Governance',
+  'Organizational Behavior and Leadership',
+  'Corporate Social Responsibility (CSR)',
+  'Service Quality and Graduate Decision-Making',
+  'Strategic Management and Organizational Development',
+  'Ethics, Governance, and Emerging Economies',
+  'Institutional Transformation and Academic Leadership',
 ]
 
 const carouselSlides = [
