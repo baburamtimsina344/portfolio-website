@@ -630,27 +630,56 @@ export function VisitorMap() {
   const [hasError, setHasError] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(new Date());
 
+  // Add a state to track whether we should try to load real data
+  // Set to true ONLY after running the migration in Supabase!
+  const [useRealData, setUseRealData] = useState(false); // <-- CHANGE THIS TO TRUE AFTER RUNNING THE MIGRATION!
+
   useEffect(() => {
     let mounted = true;
+    let totalsChannel: any = null;
+    let countriesChannel: any = null;
 
     async function loadInitialStats() {
+      if (!useRealData) {
+        // Just use dummy data - NO NETWORK REQUESTS!
+        if (mounted) {
+          setStats({ total: STARTING_TOTAL, countries: dummyCountries });
+          setHasError(true); // This is just to indicate we're using dummy data
+          setLoaded(true);
+        }
+        return;
+      }
+
       try {
-        const [totalsResult, countriesResult] = await Promise.all([
-          supabase.from('visitor_totals').select('total_count, updated_at').eq('id', 1).single(),
-          supabase.from('country_visits').select('country_code, country_name, visit_count, last_visit_at').order('visit_count', { ascending: false }),
-        ]);
+        let totalsData = null;
+        let countriesData = null;
+        let hasTableError = false;
+
+        try {
+          const [totalsResult, countriesResult] = await Promise.all([
+            supabase.from('visitor_totals').select('total_count,updated_at').eq('id', 1).maybeSingle(),
+            supabase.from('country_visits').select('country_code,country_name,visit_count,last_visit_at').order('visit_count', { ascending: false }),
+          ]);
+
+          if (!totalsResult.error) {
+            totalsData = totalsResult.data;
+          } else {
+            hasTableError = true;
+          }
+          
+          if (!countriesResult.error) {
+            countriesData = countriesResult.data;
+          } else {
+            hasTableError = true;
+          }
+        } catch {
+          hasTableError = true;
+        }
 
         if (!mounted) return;
 
-        if (totalsResult.error) {
-          console.log('Using dummy data for totals');
-        }
-        if (countriesResult.error) {
-          console.log('Using dummy data for countries');
-        }
-
-        const countries = (countriesResult.data && countriesResult.data.length > 0)
-          ? (countriesResult.data ?? [])
+        const countries = (countriesData && countriesData.length > 0)
+          ? (countriesData ?? [])
               .map((country) => ({
                 country_code: (country.country_code ?? "XX").toUpperCase(),
                 country_name: country.country_name ?? "Unknown",
@@ -659,87 +688,98 @@ export function VisitorMap() {
               .filter((country) => country.country_code !== "XX" && country.visit_count > 0)
           : dummyCountries;
 
-        const total = (totalsResult.data && !totalsResult.error) 
-          ? (toVisitCount(totalsResult.data?.total_count) || STARTING_TOTAL)
+        const total = totalsData 
+          ? (toVisitCount(totalsData?.total_count) || STARTING_TOTAL)
           : STARTING_TOTAL;
 
         setStats({
           total,
           countries,
         });
-        setLastUpdated((totalsResult.data && !totalsResult.error && totalsResult.data?.updated_at) 
-          ? new Date(totalsResult.data.updated_at) 
+        setLastUpdated(totalsData?.updated_at 
+          ? new Date(totalsData.updated_at) 
           : new Date());
-        setHasError(false);
+        setHasError(hasTableError);
         setLoaded(true);
-      } catch (error) {
-        console.log('Using dummy data (error loading from Supabase):', error);
+      } catch {
         if (mounted) {
           setStats({ total: STARTING_TOTAL, countries: dummyCountries });
-          setHasError(false);
+          setHasError(true);
           setLoaded(true);
         }
       }
     }
 
+    // Load initial stats - no table check to avoid 404s!
     loadInitialStats();
 
-    const totalsChannel = supabase
-      .channel('visitor-totals-changes')
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'visitor_totals' },
-        (payload) => {
-          if (!mounted) return;
-          const newTotal = toVisitCount(payload.new?.total_count);
-          if (newTotal > 0) {
-            setStats(prev => ({ ...prev, total: newTotal }));
-            setLastUpdated(new Date());
-          }
-        }
-      )
-      .subscribe();
-
-    const countriesChannel = supabase
-      .channel('country-visits-changes')
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'country_visits' },
-        async () => {
-          if (!mounted) return;
-          try {
-            const countriesResult = await supabase
-              .from('country_visits')
-              .select('country_code, country_name, visit_count')
-              .order('visit_count', { ascending: false });
-
-            if (!mounted || countriesResult.error) return;
-
-            const countries = (countriesResult.data ?? [])
-              .map((country) => ({
-                country_code: (country.country_code ?? "XX").toUpperCase(),
-                country_name: country.country_name ?? "Unknown",
-                visit_count: toVisitCount(country.visit_count),
-              }))
-              .filter((country) => country.country_code !== "XX" && country.visit_count > 0);
-
-            if (countries.length > 0) {
-              setStats(prev => ({ ...prev, countries }));
-              setLastUpdated(new Date());
+    // Only set up realtime subscriptions if we're using real data
+    if (useRealData) {
+      try {
+        totalsChannel = supabase
+          .channel('visitor-totals-changes')
+          .on(
+            'postgres_changes',
+            { event: '*', schema: 'public', table: 'visitor_totals' },
+            (payload) => {
+              if (!mounted) return;
+              const newTotal = toVisitCount(payload.new?.total_count);
+              if (newTotal > 0) {
+                setStats(prev => ({ ...prev, total: newTotal }));
+                setLastUpdated(new Date());
+              }
             }
-          } catch (error) {
-            console.error('Error refreshing country visits:', error);
-          }
-        }
-      )
-      .subscribe();
+          )
+          .subscribe();
+
+        countriesChannel = supabase
+          .channel('country-visits-changes')
+          .on(
+            'postgres_changes',
+            { event: '*', schema: 'public', table: 'country_visits' },
+            async () => {
+              if (!mounted) return;
+              try {
+                const countriesResult = await supabase
+                  .from('country_visits')
+                  .select('country_code,country_name,visit_count')
+                  .order('visit_count', { ascending: false });
+
+                if (!mounted || countriesResult.error) return;
+
+                const countries = (countriesResult.data ?? [])
+                  .map((country) => ({
+                    country_code: (country.country_code ?? "XX").toUpperCase(),
+                    country_name: country.country_name ?? "Unknown",
+                    visit_count: toVisitCount(country.visit_count),
+                  }))
+                  .filter((country) => country.country_code !== "XX" && country.visit_count > 0);
+
+                if (countries.length > 0) {
+                  setStats(prev => ({ ...prev, countries }));
+                  setLastUpdated(new Date());
+                }
+              } catch {
+                // Ignore errors on realtime updates
+              }
+            }
+          )
+          .subscribe();
+      } catch {
+        // Ignore realtime subscription errors
+      }
+    }
 
     return () => {
       mounted = false;
-      supabase.removeChannel(totalsChannel);
-      supabase.removeChannel(countriesChannel);
+      if (totalsChannel) {
+        supabase.removeChannel(totalsChannel);
+      }
+      if (countriesChannel) {
+        supabase.removeChannel(countriesChannel);
+      }
     };
-  }, []);
+  }, [useRealData]);
 
   const maxCount = useMemo(
     () => Math.max(1, ...stats.countries.map((country) => country.visit_count)),

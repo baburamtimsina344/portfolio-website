@@ -39,6 +39,10 @@ export const NAV_ITEMS: NavItem[] = [
     label: "CV",
     path:"/cv"
    },
+   { id: "visitorMap", 
+    label: "Visitor Map",
+    path:"/visitorMap"
+   },
   { id: "contact",
     label: "Contact" },
 ];
