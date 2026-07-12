@@ -65,8 +65,10 @@
 // layouts/MainLayout.tsx
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { useTrackVisit } from "@/hooks/useTrackVisit";
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
+  useTrackVisit(); // Track visit on every page!
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />

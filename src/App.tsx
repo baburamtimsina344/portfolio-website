@@ -73,6 +73,9 @@ function HomeContent() {
         <LeadershipSection />
       </Suspense> */}
       <Suspense fallback={<SectionFallback />}>
+        <VisitorMap />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
         <ContactSection />
       </Suspense>
     </>
