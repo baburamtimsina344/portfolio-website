@@ -222,7 +222,6 @@ export function Footer() {
         className="absolute inset-x-0 top-0 h-0.5 dashboard-accent-line"
         aria-hidden="true"
       />
-      <VisitorMap />
 
       <div className="relative z-10 overflow-hidden border-t nav-subtle-surface">
         {/* Decorative backdrop, echoes Hero/VisitorMap sections */}
