@@ -358,7 +358,7 @@ function ProfileImage() {
           }}
         />
         <motion.img
-          src="/images/profile.jpg"
+          src="/images/profile.jpeg"
           alt="Baburam Timsina — Professor and Academic Leader"
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
