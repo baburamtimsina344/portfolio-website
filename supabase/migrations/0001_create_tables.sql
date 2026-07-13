@@ -4,7 +4,9 @@ CREATE TABLE IF NOT EXISTS academic_stats (
     google_scholar_citations INT DEFAULT 0,
     google_scholar_h_index INT DEFAULT 0,
     google_scholar_i10_index INT DEFAULT 0,
-    researchgate_publications INT DEFAULT 0,
+    -- researchgate_publications INT DEFAULT 0,
+        researchgate_publications NUMERIC(10,2) DEFAULT 0, -- Changed from INT to NUMERIC
+
     researchgate_reads INT DEFAULT 0,
     researchgate_citations INT DEFAULT 0,
     last_updated TIMESTAMPTZ DEFAULT NOW(),
