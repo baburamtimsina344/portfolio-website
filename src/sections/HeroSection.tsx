@@ -358,7 +358,7 @@ function ProfileImage() {
           }}
         />
         <motion.img
-          src="/images/profile.jpg"
+          src="/images/profile.png"
           alt="Baburam Timsina — Professor and Academic Leader"
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -933,8 +933,7 @@ export function HeroSection() {
                         color: "var(--navy)",
                       }}
                     >
-                      Professor · Director · HOD
-                    </span>
+PhD Scholar| Higher Ed & Leadership Researcher |                    </span>
                     <Star
                       style={{ width: 11, height: 11, color: "var(--green)" }}
                     />
