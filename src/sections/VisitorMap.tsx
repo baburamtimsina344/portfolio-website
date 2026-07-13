@@ -819,12 +819,12 @@ export function VisitorMap() {
       detail: "Active regions",
       icon: Globe2,
     },
-    {
-      label: "Map Coverage",
-      value: `${coveragePercent}%`,
-      detail: `${formatNumber(mappedVisitCount)} mapped visits`,
-      icon: MapPin,
-    },
+    // {
+    //   label: "Map Coverage",
+    //   value: `${coveragePercent}%`,
+    //   detail: `${formatNumber(mappedVisitCount)} mapped visits`,
+    //   icon: MapPin,
+    // },
   ];
 
   return (
@@ -863,9 +863,9 @@ export function VisitorMap() {
                   Visitor Analytics
                 </span>
               </h2>
-              <p className="mx-auto max-w-2xl text-lg text-[#4A5A6A]">
+              {/* <p className="mx-auto max-w-2xl text-lg text-[#4A5A6A]">
                 Real-time insights into your audience reach across regions, powered by Supabase Realtime
-              </p>
+              </p> */}
             </motion.div>
           </div>
 

@@ -601,7 +601,7 @@ function AcademicProfileCards() {
       borderColor: "rgba(0,184,148,0.18)",
       ringColor: "rgba(0,184,148,0.35)",
       stats: [
-        { value: fmt(stats?.researchgate_publications), label: "Publications" },
+        { value: fmt(stats?.researchgate_publications), label: "RI Score" },
         { value: fmt(stats?.researchgate_reads), label: "Reads" },
         { value: fmt(stats?.researchgate_citations), label: "Citations" },
       ],
