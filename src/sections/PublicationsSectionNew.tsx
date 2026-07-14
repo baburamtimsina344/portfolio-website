@@ -593,7 +593,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
         <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid rgba(11,37,69,0.06)" }}>
           {pub.doi ? (
             <motion.a
-              href={`https://doi.org/${pub.doi}`}
+              href={pub.doi.startsWith('http://') || pub.doi.startsWith('https://') ? pub.doi : `https://doi.org/${pub.doi}`}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 4 }}

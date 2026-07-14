@@ -1,3 +1,4 @@
+
 // import { motion } from "framer-motion";
 // import {
 //   Award,
@@ -103,29 +104,41 @@
 //   return (
 //     <section
 //       id="projects"
-//       className="py-24 px-6 bg-[#F8F9FA] text-[#0B2545] font-sans"
+//       className="bg-[#F8F9FA] text-[#0B2545] font-sans"
 //     >
-//       <div className="max-w-7xl mx-auto">
-//         {/* ── Section Header ── */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 20 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           viewport={{ once: true }}
-//           transition={{ duration: 0.6, ease: "easeOut" }}
-//           className="mb-4 text-center md:text-left"
-//         >
-//           <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-//             <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
-//             <h2 className="text-3xl md:text-4xl font-bold text-[#0B2545]">
-//               Awards & <span className="text-[#0F7A5A]">Certifications</span>
-//             </h2>
+//       {/* ── Hero Banner ── */}
+//       <div
+//         className="relative h-[360px] md:h-[420px] overflow-hidden bg-cover bg-center"
+//         style={{ backgroundImage: "url('/images/awards-hero.jpg')" }}
+//       >
+//         <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/85 via-[#0F7A5A]/50 to-transparent" />
+//         <div className="absolute inset-0 flex items-center px-8 lg:px-16">
+//           <div className="max-w-2xl">
+//             <motion.div
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6, ease: "easeOut" }}
+//               className="flex items-center gap-3 mb-3"
+//             >
+//               <div className="w-1 h-10 bg-[#00B894] rounded-full" />
+//               <h2 className="text-3xl md:text-5xl font-bold text-white">
+//                 Awards & <span className="text-[#00B894]">Certifications</span>
+//               </h2>
+//             </motion.div>
+//             <motion.p
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
+//               className="text-white/80 max-w-xl"
+//             >
+//               Certifications, honors, professional memberships, and ongoing academic
+//               development.
+//             </motion.p>
 //           </div>
-//           <p className="text-[#4A5A6A]/80 max-w-2xl mx-auto md:mx-0">
-//             Certifications, honors, professional memberships, and ongoing academic
-//             development.
-//           </p>
-//         </motion.div>
+//         </div>
+//       </div>
 
+//       <div className="max-w-7xl mx-auto px-6 py-16">
 //         {/* ── In-section Nav ── */}
 //         <div className="sticky top-0 z-20 bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#0F7A5A]/20 mb-12">
 //           <nav className="flex flex-wrap items-center gap-2 md:gap-4 py-4">
@@ -338,7 +351,8 @@
 // }
 
 
-import { motion } from "framer-motion";
+
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Award,
   BookOpen,
@@ -347,7 +361,10 @@ import {
   Users,
   Briefcase,
   Star,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 
 // ─── DATA (from BRT Website Content) ─────────────────────────────────────────
 const certifications = [
@@ -421,6 +438,134 @@ export const awardsNavLinks = [
   { label: "Professional Development", href: "#development" },
 ];
 
+// ─── BACKGROUND CAROUSEL ────────────────────────────────────────────────────
+function BackgroundCarousel() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const goTo = useCallback((next: number) => {
+    setDirection(next > index ? 1 : -1);
+    setIndex((next + 2) % 2);
+  }, [index]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setIndex((prev) => (prev + 1) % 2);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const backgroundImages = [
+    { src: "/images/award1.jpeg", alt: "Awards background 1" },
+    { src: "/images/award2.jpeg", alt: "Awards background 2" },
+  ];
+
+  const imageVariants = {
+    enter: (dir: number) => ({ 
+      opacity: 0, 
+      scale: 1.08,
+      x: dir > 0 ? 40 : -40 
+    }),
+    center: { 
+      opacity: 1, 
+      scale: 1, 
+      x: 0 
+    },
+    exit: (dir: number) => ({ 
+      opacity: 0, 
+      scale: 1.02,
+      x: dir > 0 ? -40 : 40 
+    }),
+  };
+
+  return (
+    // ✅ Height updated to match TeachingSection and ResearchProjects
+    <div className="relative h-[500px] lg:h-[600px] overflow-hidden">
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={index}
+          custom={direction}
+          variants={imageVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0"
+        >
+          <img
+            src={backgroundImages[index].src}
+            alt={backgroundImages[index].alt}
+            className="w-full h-full object-contain object-center bg-[#0B2545]"
+          />
+          {/* Gradient overlay matches other components */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/85 via-[#0F7A5A]/40 to-transparent" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Content overlay on background */}
+      <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-16 z-10">
+        <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex items-center gap-3 mb-3"
+          >
+            <div className="w-1 h-10 bg-[#00B894] rounded-full" />
+            <h2 className="text-3xl md:text-5xl font-bold text-white">
+              Awards & <span className="text-[#00B894]">Certifications</span>
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
+            className="text-white/80 max-w-xl"
+          >
+            Certifications, honors, professional memberships, and ongoing academic
+            development.
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Carousel Controls */}
+      <button
+        aria-label="Previous background"
+        onClick={() => goTo(index - 1)}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <button
+        aria-label="Next background"
+        onClick={() => goTo(index + 1)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+      >
+        <ChevronRight size={20} />
+      </button>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+        {[0, 1].map((i) => (
+          <button
+            key={i}
+            aria-label={`Go to background ${i + 1}`}
+            onClick={() => goTo(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === index ? "w-8 bg-[#00B894]" : "w-1.5 bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
+      </div>
+
+      <div className="absolute bottom-3 left-3 z-10 bg-black/40 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+        Awards
+      </div>
+    </div>
+  );
+}
+
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
 export default function AwardsAndCertifications() {
   const containerVariants = {
@@ -445,37 +590,8 @@ export default function AwardsAndCertifications() {
       id="projects"
       className="bg-[#F8F9FA] text-[#0B2545] font-sans"
     >
-      {/* ── Hero Banner ── */}
-      <div
-        className="relative h-[360px] md:h-[420px] overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/awards-hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/85 via-[#0F7A5A]/50 to-transparent" />
-        <div className="absolute inset-0 flex items-center px-8 lg:px-16">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="flex items-center gap-3 mb-3"
-            >
-              <div className="w-1 h-10 bg-[#00B894] rounded-full" />
-              <h2 className="text-3xl md:text-5xl font-bold text-white">
-                Awards & <span className="text-[#00B894]">Certifications</span>
-              </h2>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
-              className="text-white/80 max-w-xl"
-            >
-              Certifications, honors, professional memberships, and ongoing academic
-              development.
-            </motion.p>
-          </div>
-        </div>
-      </div>
+      {/* ── Hero Banner with Carousel ── */}
+      <BackgroundCarousel />
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* ── In-section Nav ── */}
