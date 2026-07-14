@@ -35,10 +35,10 @@ export const NAV_ITEMS: NavItem[] = [
     label: "Awards & Certifications",
     path:"/awards&certifications"
    },
-   { id: "cv", 
-    label: "CV",
-    path:"/cv"
-   },
+  //  { id: "cv", 
+  //   label: "CV",
+  //   path:"/cv"
+  //  },
   //  { id: "visitorMap", 
   //   label: "Visitor Map",
   //   path:"/visitorMap"

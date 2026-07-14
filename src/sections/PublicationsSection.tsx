@@ -218,11 +218,11 @@ function PublicationCard({
                 }}>
                     {pub.journal}
                 </p>
-
+//
                 {/* DOI link */}
                 {pub.doi && (
                     <motion.a
-                        href={pub.doi.includes('.') ? `https://doi.org/${pub.doi}` : `https://www.researchgate.net/profile/Baburam-Timsina-3`}
+                        href={pub.doi.startsWith('http://') || pub.doi.startsWith('https://') ? pub.doi : (pub.doi.includes('.') ? `https://doi.org/${pub.doi}` : `https://www.researchgate.net/profile/Baburam-Timsina-3`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -469,7 +469,14 @@ export function PublicationsSection() {
                                         alignItems: 'stretch',
                                     }}>
                                         {slide.map((pub) => (
-                                            <motion.div key={pub.id} variants={itemVariants} className="pub-card" style={{ height: '100%' }}>
+                                            <motion.div 
+                                                key={pub.id}
+                                                initial="hidden"
+                                                whileInView="visible"
+                                                viewport={{ once: true }}
+                                                className="pub-card" 
+                                                style={{ height: '100%' }}
+                                            >
                                                 <PublicationCard pub={pub} onSelect={setSelectedPub} />
                                             </motion.div>
                                         ))}
@@ -672,7 +679,7 @@ export function PublicationsSection() {
                                 {/* CTA */}
                                 {selectedPub.doi && (
                                     <motion.a
-                                        href={selectedPub.doi.includes('.') ? `https://doi.org/${selectedPub.doi}` : `https://www.researchgate.net/profile/Baburam-Timsina-3`}
+                                        href={selectedPub.doi.startsWith('http://') || selectedPub.doi.startsWith('https://') ? selectedPub.doi : (selectedPub.doi.includes('.') ? `https://doi.org/${selectedPub.doi}` : `https://www.researchgate.net/profile/Baburam-Timsina-3`)}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(11,37,69,0.28)' }}
