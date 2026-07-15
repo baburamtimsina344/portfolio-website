@@ -986,7 +986,7 @@ PhD Scholar| Higher Ed & Leadership Researcher |                    </span>
                     <MapPin
                       style={{ width: 13, height: 13, color: "var(--green)" }}
                     />
-                    Teacher Educator &amp; Academic Leader
+                    Educator &amp; Academic Leader
                   </motion.p>
                   <div
                     style={{
