@@ -3,8 +3,8 @@
 import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
-  name: "Baburam Timsina",
-  title: "PhD Scholar | Higher Education & Leadership Researcher | Educator",
+  name: "Baburam Timsin",
+  title: "Baburam Timsina | Higher Education & Leadership Researcher Higher Education & Leadership Researcher | Institutional Development & Organizational Scholarship in Emerging Economies | JMC Chair – MSSRNPRESS.ORG |  Editorial Member (JINA | JHROS | JSMS | JISS )",
   description:
     "Advancing scholarship in higher education, educational leadership, and institutional transformation through research, teaching, and academic service.",
   url: "https://baburamtimsina.edu.np",
