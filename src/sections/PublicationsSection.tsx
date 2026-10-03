@@ -218,7 +218,7 @@ function PublicationCard({
                 }}>
                     {pub.journal}
                 </p>
-//
+
                 {/* DOI link */}
                 {pub.doi && (
                     <motion.a
