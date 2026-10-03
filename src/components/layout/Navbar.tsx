@@ -193,7 +193,7 @@ export function Navbar() {
             <div className="flex items-center justify-between gap-2">
               {/* Hide label on very small screens to free up space for icons + search */}
               <span className="type-kicker hidden xs:block sm:block text-[#0F7A5A] truncate">
-                Connect with me
+                {/* Connect with me */}
               </span>
               <div className="flex items-center gap-2 sm:gap-4 ml-auto shrink-0">
                 {/* Social icons – responsive size */}
