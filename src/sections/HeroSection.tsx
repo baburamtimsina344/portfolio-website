@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -14,7 +13,6 @@ import {
   Fingerprint,
 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-
 
 // ─── Global Styles ──────────────────────────────────────────────────
 const GlobalStyles = () => (
@@ -124,21 +122,17 @@ const GlobalStyles = () => (
       padding: clamp(72px, 10vw, 120px) clamp(16px, 5vw, 56px);
     }
 
-    /* Right column overlap: only where the 2-column layout is safe. */
+    /* Right column: no overlap / negative margins — every block shares
+       the same width and top margin; spacing comes from the flex gap. */
     .hero-right-col { margin-top: 0; }
-    @media (min-width: 880px) and (max-width: 1199px) {
-      .hero-right-col { margin-top: -140px; }
-    }
-    @media (min-width: 1200px) {
-      .hero-right-col { margin-top: -380px; }
-    }
 
     /* Academic profile cards */
     .hero-cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
       gap: 16px;
-      margin-top: 10px;
+      margin-top: 0;
+      width: 100%;
     }
 
     .hero-metrics-grid { display: grid; gap: 8px; }
@@ -195,7 +189,8 @@ const GlobalStyles = () => (
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 0;
+      width: 100%;
     }
     .hero-count {
       text-align: center;
@@ -235,9 +230,9 @@ const GlobalStyles = () => (
 
     /* ── Small screens ───────────────────────────────────────────────── */
     @media (max-width: 879px) {
-      .hero-inner { padding-bottom: 128px; }
+      .hero-inner { padding-bottom: 48px; }
       .hero-photo { max-width: 420px; margin-inline: auto; }
-      .hero-counts-grid { gap: 10px; margin-top: 20px; }
+      .hero-counts-grid { gap: 10px; }
       .hero-count { padding: 16px 6px; }
       .hero-count[data-accent="true"] { padding: 20px 6px; }
       .hero-count-value { font-size: 22px; }
@@ -297,6 +292,14 @@ const fadeInRight = {
 };
 const staggerContainer = {
   animate: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+
+// ─── Shared block layout (same width + same top margin everywhere) ──
+const blockLayout = {
+  width: "100%",
+  marginTop: 0,
+  marginBottom: 0,
+  boxSizing: "border-box" as const,
 };
 
 // ─── BackgroundCanvas ──────────────────────────────────────────────
@@ -504,7 +507,7 @@ function ProfileImage() {
           backgroundColor: "white",
           boxShadow:
             "0 20px 60px rgba(11,37,69,0.18), 0 4px 16px rgba(11,37,69,0.10)",
-          aspectRatio: "3 / 4",
+          aspectRatio: "3 / 3",
         }}
       >
         <div
@@ -648,9 +651,8 @@ function ProfessionalTitle() {
         />
       </div>
 
-
-     <p
-  className="
+      <p
+        className="
     text-[clamp(14px,1.6vw,16px)]
     leading-[1.8]
     m-0
@@ -669,10 +671,9 @@ function ProfessionalTitle() {
     overflow-hidden
     transform-none
     text-white
-    justify-between items-center
-    
+    text-justify
   "
->
+      >
         Higher Education Leadership Scholar | Institutional Transformation &
         Internationalization Researcher | Higher Education Futures Strategist
       </p>
@@ -769,7 +770,7 @@ function AcademicProfileCards() {
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
+  useEffect(() => {
     async function fetchStats() {
       try {
         const { supabase } = await import("../lib/supabase");
@@ -854,9 +855,7 @@ useEffect(() => {
         },
         { value: fmt(stats?.semantic_scholar_citations), label: "Citations" },
         {
-          value: fmt(
-            stats?.semantic_scholar_highly_influential_citations,
-          ),
+          value: fmt(stats?.semantic_scholar_highly_influential_citations),
           label: "Highly Influential Citations",
         },
       ],
@@ -864,10 +863,7 @@ useEffect(() => {
   ];
 
   return (
-    <motion.div
-      variants={fadeInUp}
-      className="hero-cards-grid"
-    >
+    <motion.div variants={fadeInUp} className="hero-cards-grid">
       {profiles.map((p) => (
         <motion.a
           key={p.name}
@@ -976,7 +972,7 @@ function CTAButtons() {
   return (
     <motion.div
       variants={fadeInUp}
-      style={{ display: "flex", flexWrap: "wrap", gap: 12 }}
+      style={{ ...blockLayout, display: "flex", flexWrap: "wrap", gap: 12 }}
     >
       <motion.a
         href="#publications"
@@ -1039,10 +1035,7 @@ export function HeroSection() {
     async function fetchHeroStats() {
       try {
         const { supabase } = await import("../lib/supabase");
-        const { data } = await supabase
-          .from("hero_stats")
-          .select("*")
-          .single();
+        const { data } = await supabase.from("hero_stats").select("*").single();
         if (data) setHeroStats(data);
       } catch (err) {
         console.error("Error fetching hero stats:", err);
@@ -1123,8 +1116,8 @@ export function HeroSection() {
                       margin: 0,
                     }}
                   >
-                    <div className="flex  items-center justify-center gap-2">
-                      <span className="text-(--navy)">Baburam</span>
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-[var(--navy)]">Baburam</span>
 
                       <span
                         className="name-underline inline-block pb-1"
@@ -1143,190 +1136,202 @@ export function HeroSection() {
 
                   <ProfessionalTitle />
                 </motion.div>
-
-                <AcademicProfileCards />
               </motion.div>
 
               {/* RIGHT COLUMN */}
               <motion.div
                 variants={staggerContainer}
-                className="hero-right-col"
-                style={{ display: "flex", flexDirection: "column", gap: 24 }}
+                className="hero-right-col flex w-full flex-col gap-6 mt-0"
               >
-                 <motion.div
+                {/* Quote card */}
+                <motion.div
                   variants={fadeInRight}
-                  style={{
-                    position: "relative",
-                    padding: "clamp(28px, 4vw, 44px)",
-                    borderRadius: 24,
-                    background: "#FFFFFF",
-                    border: "1.5px solid rgba(0,184,148,0.18)",
-                    boxShadow: "0 12px 48px rgba(11,37,69,0.10)",
-                    overflow: "hidden",
-                  }}
+                  className="
+      relative
+      w-full
+      overflow-hidden
+      rounded-[18px]
+      border-[1.5px]
+      border-[rgba(0,184,148,0.18)]
+      bg-white
+      p-[clamp(20px,3vw,28px)]
+      shadow-[0_12px_48px_rgba(11,37,69,0.10)]
+    "
                 >
+                  {/* Green vertical line */}
                   <div
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      top: 32,
-                      bottom: 32,
-                      width: 4,
-                      background:
-                        "linear-gradient(to bottom, var(--green), rgba(0,184,148,0.20))",
-                      borderRadius: "0 4px 4px 0",
-                    }}
+                    className="
+        absolute
+        left-0
+        top-8
+        bottom-8
+        w-1
+        rounded-r-[4px]
+        bg-[linear-gradient(to_bottom,var(--green),rgba(0,184,148,0.20))]
+      "
                   />
+
+                  {/* Decorative quote */}
                   <div
-                    style={{
-                      position: "absolute",
-                      top: -20,
-                      right: -20,
-                      opacity: 0.04,
-                      fontSize: 160,
-                      lineHeight: 1,
-                      fontFamily: "var(--font-app)",
-                      color: "var(--green)",
-                      pointerEvents: "none",
-                      userSelect: "none",
-                    }}
+                    className="
+        pointer-events-none
+        absolute
+        -right-2.5
+        -top-2.5
+        select-none
+        font-[var(--font-app)]
+        text-[120px]
+        leading-none
+        text-[var(--green)]
+        opacity-[0.04]
+      "
                   >
                     &ldquo;
                   </div>
+
+                  {/* Quote icon */}
                   <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 12,
-                      background:
-                        "linear-gradient(135deg, rgba(0,184,148,0.15), rgba(0,184,148,0.06))",
-                      border: "1px solid rgba(0,184,148,0.22)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginBottom: 24,
-                    }}
+                    className="
+        mb-4
+        flex
+        h-[28px]
+        w-[28px]
+        items-center
+        justify-center
+        rounded-[10px]
+        border
+        border-[rgba(0,184,148,0.22)]
+        bg-[linear-gradient(135deg,rgba(0,184,148,0.15),rgba(0,184,148,0.06))]
+      "
                   >
-                    <Quote
-                      style={{ width: 18, height: 18, color: "var(--green)" }}
-                    />
+                    <Quote className="h-4 w-4 text-[var(--green)]" />
                   </div>
-                  <motion.blockquote
-                    variants={fadeInUp}
-                    style={{ margin: 0, paddingLeft: 16 }}
-                  >
+
+                  {/* Quote */}
+                  <motion.blockquote variants={fadeInUp} className="m-0 pl-3">
                     <p
-                      style={{
-                        fontSize: "clamp(17px, 2.2vw, 22px)",
-                        lineHeight: 1.65,
-                        color: "rgba(11,37,69,0.88)",
-                        fontStyle: "italic",
-                        fontWeight: 400,
-                        margin: 0,
-                      }}
+                      className="
+        text-justify
+          m-0
+          text-[clamp(15px,1.8vw,18px)]
+          font-medium
+          italic
+          leading-[1.5]
+          text-[rgba(11,37,69,0.88)]
+        "
                     >
                       &ldquo;Advancing scholarship in higher education,
                       educational leadership, and institutional transformation
                       through research, teaching, and academic service.&rdquo;
                     </p>
+
+                    {/* Bottom line */}
                     <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 12,
-                        marginTop: 20,
-                      }}
+                      className="
+          mt-4
+          flex
+          items-center
+          gap-3
+        "
                     >
                       <div
-                        style={{
-                          height: 1,
-                          flex: 1,
-                          background:
-                            "linear-gradient(to right, rgba(0,184,148,0.45), transparent)",
-                        }}
+                        className="
+            h-px
+            flex-1
+            bg-[linear-gradient(to_right,rgba(0,184,148,0.45),transparent)]
+          "
                       />
                     </div>
                   </motion.blockquote>
                 </motion.div>
+
                 {/* About teaser */}
                 <motion.div
                   variants={fadeInRight}
-                  whileHover={{ borderColor: "rgba(0,184,148,0.30)" }}
-                  transition={{ duration: 0.3 }}
-                  style={{
-                    position: "relative",
-                    padding: "24px 28px",
-                    borderRadius: 20,
-                    background: "rgba(11,37,69,0.03)",
-                    border: "1.5px solid rgba(11,37,69,0.07)",
-                    backdropFilter: "blur(8px)",
-                    WebkitBackdropFilter: "blur(8px)",
-                    transition: "border-color 0.3s",
+                  whileHover={{
+                    borderColor: "rgba(0,184,148,0.30)",
                   }}
+                  transition={{ duration: 0.3 }}
+                  className="
+      relative
+      rounded-[16px]
+      border-[1.5px]
+      border-[rgba(11,37,69,0.07)]
+      bg-[rgba(11,37,69,0.03)]
+      px-[22px]
+      py-[18px]
+      backdrop-blur-[8px]
+      transition-[border-color]
+      duration-300
+    "
                 >
+                  {/* About heading */}
                   <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 10,
-                      marginBottom: 18,
-                    }}
+                    className="
+        mb-4
+        flex
+        items-center
+        gap-2.5
+      "
                   >
+                    {/* Book icon */}
                     <div
-                      style={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: 12,
-                        background:
-                          "linear-gradient(135deg, rgba(0,184,148,0.18), rgba(0,184,148,0.08))",
-                        border: "1.5px solid rgba(0,184,148,0.35)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        boxShadow: "0 4px 16px rgba(0,184,148,0.12)",
-                      }}
+                      className="
+          flex
+          h-[36px]
+          w-[36px]
+          items-center
+          justify-center
+          rounded-[10px]
+          border
+          border-[rgba(0,184,148,0.30)]
+          bg-[linear-gradient(135deg,rgba(0,184,148,0.18),rgba(0,184,148,0.08))]
+          shadow-[0_4px_16px_rgba(0,184,148,0.12)]
+        "
                     >
-                      <BookOpen
-                        style={{ width: 16, height: 16, color: "var(--green)" }}
-                      />
+                      <BookOpen className="h-[15px] w-[15px] text-[var(--green)]" />
                     </div>
+
                     <span
-                      style={{
-                        fontSize: 12,
-                        fontWeight: 800,
-                        letterSpacing: "0.22em",
-                        textTransform: "uppercase",
-                        backgroundImage:
-                          "linear-gradient(135deg, var(--gray-800), var(--navy-light))",
-                        backgroundClip: "text",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
+                      className="
+          bg-[linear-gradient(135deg,var(--gray-800),var(--navy-light))]
+          bg-clip-text
+          text-[11px]
+          font-semibold
+          uppercase
+          tracking-[0.18em]
+          text-transparent
+        "
                     >
                       About
                     </span>
                   </div>
+
+                  {/* About content */}
                   <div
-                    style={{
-                      borderLeft: "3px solid var(--green)",
-                      paddingLeft: 20,
-                      paddingTop: 4,
-                      paddingBottom: 4,
-                    }}
+                    className="
+        border-l-[3px]
+        border-[var(--green)]
+        py-1
+        pl-4
+      "
                   >
                     <p
-                      style={{
-                        fontSize: "clamp(14px, 1.6vw, 16px)",
-                        lineHeight: 1.8,
-                        color: "var(--gray-600)",
-                        margin: 0,
-                        fontWeight: 500,
-                        letterSpacing: "0.3px",
-                      }}
+                      className="
+          m-0
+          text-[clamp(13px,1.4vw,15px)]
+          font-normal
+          leading-[1.6]
+          tracking-[0.1px]
+          text-[var(--gray-600)]
+        "
                     >
                       With a deep commitment to{" "}
                       <strong
-                        style={{ fontWeight: 700, color: "var(--gray-800)" }}
+                        className="
+            font-semibold
+            text-[var(--gray-800)]
+          "
                       >
                         academic excellence
                       </strong>{" "}
@@ -1335,32 +1340,42 @@ export function HeroSection() {
                       fostering transformative learning environments.
                     </p>
                   </div>
+
+                  {/* Learn more */}
                   <motion.a
                     href="#about"
-                    whileHover={{ x: 6, color: "var(--green)" }}
-                    transition={{ duration: 0.25 }}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 8,
-                      marginTop: 22,
-                      fontSize: 13,
-                      fontWeight: 700,
-                      color: "var(--gray-800)",
-                      textDecoration: "none",
-                      letterSpacing: "0.04em",
-                      textTransform: "uppercase",
-                      padding: "8px 0",
+                    whileHover={{
+                      x: 6,
+                      color: "var(--green)",
                     }}
+                    transition={{ duration: 0.25 }}
+                    className="
+        mt-4
+        inline-flex
+        items-center
+        gap-2
+        py-1.5
+        text-[12px]
+        font-semibold
+        uppercase
+        tracking-[0.04em]
+        text-[var(--gray-800)]
+        no-underline
+      "
                   >
-                    Learn more <ArrowDown style={{ width: 14, height: 14 }} />
+                    Learn more
+                    <ArrowDown className="h-3.5 w-3.5" />
                   </motion.a>
                 </motion.div>
 
                 {/* Stats row */}
                 <motion.div
                   variants={fadeInRight}
-                  className="hero-counts-grid"
+                  className="
+      hero-counts-grid
+      w-full
+    "
+                  style={blockLayout}
                 >
                   {[
                     {
@@ -1383,7 +1398,10 @@ export function HeroSection() {
                       key={i}
                       className="accent-shimmer hero-count"
                       data-accent={stat.accent ? "true" : "false"}
-                      whileHover={{ y: -6, scale: stat.accent ? 1.04 : 1.02 }}
+                      whileHover={{
+                        y: -5,
+                        scale: stat.accent ? 1.03 : 1.02,
+                      }}
                       transition={{
                         duration: 0.32,
                         type: "spring",
@@ -1394,55 +1412,56 @@ export function HeroSection() {
                         background: stat.accent
                           ? "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)"
                           : "linear-gradient(135deg, #FFFFFF 0%, #FAFAF8 100%)",
-                        border: `2px solid ${stat.accent ? "var(--green)" : "rgba(0,184,148,0.15)"}`,
+                        border: `2px solid ${
+                          stat.accent ? "var(--green)" : "rgba(0,184,148,0.15)"
+                        }`,
                         boxShadow: stat.accent
                           ? "0 20px 48px rgba(0,184,148,0.28), 0 8px 20px rgba(11,37,69,0.16)"
                           : "0 8px 24px rgba(11,37,69,0.10)",
                         cursor: "default",
                       }}
                     >
+                      {/* Accent glow */}
                       {stat.accent && (
                         <div
-                          style={{
-                            position: "absolute",
-                            top: "-50%",
-                            right: "-50%",
-                            width: "200%",
-                            height: "200%",
-                            background:
-                              "radial-gradient(circle, rgba(0,184,148,0.15) 0%, transparent 70%)",
-                            pointerEvents: "none",
-                            animation: "pulse 4s ease-in-out infinite",
-                          }}
+                          className="
+              pointer-events-none
+              absolute
+              -right-1/2
+              -top-1/2
+              h-[200%]
+              w-[200%]
+              animate-[pulse_4s_ease-in-out_infinite]
+              bg-[radial-gradient(circle,rgba(0,184,148,0.15)_0%,transparent_70%)]
+            "
                         />
                       )}
-                      <div style={{ position: "relative", zIndex: 1 }}>
+
+                      <div className="relative z-[1]">
+                        {/* Star */}
                         {stat.accent && (
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              marginBottom: 8,
-                            }}
-                          >
+                          <div className="mb-2 flex justify-center">
                             <Star
-                              style={{
-                                width: 20,
-                                height: 20,
-                                color: "var(--green)",
-                                fill: "var(--green)",
-                                filter:
-                                  "drop-shadow(0 2px 8px rgba(0,184,148,0.4))",
-                              }}
+                              className="
+                  h-5
+                  w-5
+                  fill-[var(--green)]
+                  text-[var(--green)]
+                  drop-shadow-[0_2px_8px_rgba(0,184,148,0.4)]
+                "
                             />
                           </div>
                         )}
+
+                        {/* Value */}
                         <div
                           className="hero-count-value"
                           data-accent={stat.accent ? "true" : "false"}
                         >
                           {stat.value}
                         </div>
+
+                        {/* Label */}
                         <div
                           className="hero-count-label"
                           data-accent={stat.accent ? "true" : "false"}
@@ -1458,6 +1477,21 @@ export function HeroSection() {
               </motion.div>
             </motion.div>
           </div>
+        </div>
+
+        {/* Academic profile cards — same width/padding as the hero content */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 10,
+            width: "100%",
+            maxWidth: 1200,
+            margin: "0 auto",
+            padding: "0 clamp(16px, 5vw, 56px) 96px",
+            boxSizing: "border-box",
+          }}
+        >
+          <AcademicProfileCards />
         </div>
 
         {/* Scroll indicator */}

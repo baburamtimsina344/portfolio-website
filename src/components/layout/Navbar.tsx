@@ -14,7 +14,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Card, CardContent } from "@/components/ui/card";
 import { cn, scrollToSection } from "@/lib/utils";
 import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/data/profile";
 import { PUBLICATIONS } from "@/data/publications";
