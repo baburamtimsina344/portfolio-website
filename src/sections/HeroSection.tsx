@@ -789,7 +789,21 @@ useEffect(() => {
     fetchStats();
   }, []);
 
-  const fmt = (v: any) => (loading ? "…" : (v || 0).toLocaleString());
+  const fmt = (v: any) => {
+    if (loading) return "…";
+    const n = Number(v);
+    return Number.isFinite(n) ? n.toLocaleString() : "—";
+  };
+
+  const fmtScore = (v: any) => {
+    if (loading) return "…";
+    const n = Number(v);
+    if (!Number.isFinite(n)) return "—";
+    return n.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
 
   const profiles = [
     {
@@ -813,7 +827,10 @@ useEffect(() => {
       borderColor: "rgba(0,184,148,0.18)",
       ringColor: "rgba(0,184,148,0.35)",
       stats: [
-        { value: fmt(stats?.researchgate_publications), label: "RI Score" },
+        {
+          value: fmtScore(stats?.researchgate_publications),
+          label: "Score",
+        },
         { value: fmt(stats?.researchgate_reads), label: "Reads" },
         { value: fmt(stats?.researchgate_citations), label: "Citations" },
       ],
@@ -837,7 +854,9 @@ useEffect(() => {
         },
         { value: fmt(stats?.semantic_scholar_citations), label: "Citations" },
         {
-          value: fmt(stats?.semantic_scholar_influential_citations),
+          value: fmt(
+            stats?.semantic_scholar_highly_influential_citations,
+          ),
           label: "Highly Influential Citations",
         },
       ],
@@ -1104,8 +1123,8 @@ export function HeroSection() {
                       margin: 0,
                     }}
                   >
-                    <div className="flex flex-wrap items-center justify-center gap-2">
-                      <span className="text-[var(--navy)]">Baburam</span>
+                    <div className="flex  items-center justify-center gap-2">
+                      <span className="text-(--navy)">Baburam</span>
 
                       <span
                         className="name-underline inline-block pb-1"
