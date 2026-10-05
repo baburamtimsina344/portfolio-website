@@ -85,8 +85,6 @@
 //   award: "Award",
 // };
 
-
-
 import type { NewsItem } from "@/types";
 
 export const NEWS_ITEMS: NewsItem[] = [
@@ -203,7 +201,8 @@ export const NEWS_ITEMS: NewsItem[] = [
   },
   {
     id: "prof-5",
-    title: "Author and Co‑Author of Research on Higher Education, CSR, Leadership, and Entrepreneurship",
+    title:
+      "Author and Co‑Author of Research on Higher Education, CSR, Leadership, and Entrepreneurship",
     excerpt:
       "Published and co‑published numerous articles and book chapters on higher education, corporate social responsibility, leadership, and entrepreneurship.",
     date: "",
