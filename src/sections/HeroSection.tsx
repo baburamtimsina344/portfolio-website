@@ -111,6 +111,165 @@ const GlobalStyles = () => (
       to { transform: rotate(360deg); }
     }
 
+    /* ── Hero responsive system ──────────────────────────────────────── */
+    .hero-section {
+      min-height: 100vh;
+      min-height: 100svh;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(72px, 10vw, 120px) clamp(16px, 5vw, 56px);
+    }
+
+    /* Right column overlap: only where the 2-column layout is safe. */
+    .hero-right-col { margin-top: 0; }
+    @media (min-width: 880px) and (max-width: 1199px) {
+      .hero-right-col { margin-top: -140px; }
+    }
+    @media (min-width: 1200px) {
+      .hero-right-col { margin-top: -380px; }
+    }
+
+    /* Academic profile cards */
+    .hero-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .hero-metrics-grid { display: grid; gap: 8px; }
+    .hero-metrics-grid[data-cols="3"] {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .hero-metrics-grid[data-cols="2"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-metric {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 6px;
+      border-radius: 12px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      min-height: 66px;
+      min-width: 0;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+    .hero-metric-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      font-variant-numeric: tabular-nums;
+      max-width: 100%;
+    }
+    .hero-metric-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--gray-400);
+      margin-top: 5px;
+      line-height: 1.3;
+      text-align: center;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .hero-metric-label[data-link="true"] {
+      color: var(--royal);
+      text-decoration: underline dotted;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
+    /* Hero counters */
+    .hero-counts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .hero-count {
+      text-align: center;
+      padding: 22px 14px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .hero-count[data-accent="true"] { padding: 26px 16px; }
+    .hero-count-value {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--gray-800);
+      letter-spacing: var(--tracking-normal);
+    }
+    .hero-count-value[data-accent="true"] {
+      font-size: 32px;
+      color: var(--green);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .hero-count-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-top: 10px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .hero-count-label[data-accent="true"] {
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* ── Small screens ───────────────────────────────────────────────── */
+    @media (max-width: 879px) {
+      .hero-inner { padding-bottom: 128px; }
+      .hero-photo { max-width: 420px; margin-inline: auto; }
+      .hero-counts-grid { gap: 10px; margin-top: 20px; }
+      .hero-count { padding: 16px 6px; }
+      .hero-count[data-accent="true"] { padding: 20px 6px; }
+      .hero-count-value { font-size: 22px; }
+      .hero-count-value[data-accent="true"] { font-size: 26px; }
+      .hero-count-label {
+        font-size: 9px;
+        letter-spacing: 0.06em;
+        margin-top: 8px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-photo { max-width: 320px; }
+      .hero-cards-grid { gap: 12px; }
+      .hero-inner { padding-left: clamp(14px, 4vw, 40px); padding-right: clamp(14px, 4vw, 40px); }
+    }
+
+    @media (max-width: 420px) {
+      .hero-cards-grid { grid-template-columns: 1fr; }
+      .hero-metrics-grid { gap: 6px; }
+      .hero-metric { padding: 10px 4px; min-height: 58px; }
+      .hero-metric-value { font-size: 16px; }
+      .hero-metric-label {
+        font-size: 8.5px;
+        letter-spacing: 0.04em;
+      }
+      .hero-counts-grid { gap: 7px; }
+      .hero-count { padding: 14px 4px; }
+      .hero-count-value { font-size: 20px; }
+      .hero-count-value[data-accent="true"] { font-size: 24px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -310,6 +469,7 @@ function ProfileImage() {
   return (
     <motion.div
       variants={fadeInScale}
+      className="hero-photo"
       style={{ position: "relative", width: "100%", margin: "0 auto" }}
     >
       <div
@@ -687,12 +847,7 @@ useEffect(() => {
   return (
     <motion.div
       variants={fadeInUp}
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        gap: 16,
-        marginTop: 10,
-      }}
+      className="hero-cards-grid"
     >
       {profiles.map((p) => (
         <motion.a
@@ -743,6 +898,8 @@ useEffect(() => {
                 fontWeight: 700,
                 color: "var(--navy)",
                 flex: 1,
+                minWidth: 0,
+                overflowWrap: "anywhere",
                 letterSpacing: "-0.01em",
               }}
             >
@@ -758,40 +915,15 @@ useEffect(() => {
             />
           </div>
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: `repeat(${p.stats.length === 4 ? 2 : p.stats.length}, 1fr)`,
-              gap: 8,
-            }}
+            className="hero-metrics-grid"
+            data-cols={p.stats.length === 4 ? "2" : "3"}
           >
             {p.stats.map((s) => (
-              <div
-                key={s.label}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "12px 6px",
-                  borderRadius: 12,
-                  background: "var(--gray-50)",
-                  border: "1px solid var(--gray-100)",
-                  minHeight: 66,
-                }}
-              >
+              <div key={s.label} className="hero-metric">
+                <span className="hero-metric-value">{s.value}</span>
                 <span
-                  style={{
-                    fontSize: 18,
-                    fontWeight: 800,
-                    color: "var(--navy)",
-                    lineHeight: 1,
-                    letterSpacing: "-0.01em",
-                    fontVariantNumeric: "tabular-nums",
-                  }}
-                >
-                  {s.value}
-                </span>
-                <span
+                  className="hero-metric-label"
+                  data-link={(s as any).href ? "true" : "false"}
                   onClick={
                     (s as any).href
                       ? (e) => {
@@ -808,20 +940,6 @@ useEffect(() => {
                   title={
                     (s as any).href ? "Learn what this metric means" : undefined
                   }
-                  style={{
-                    fontSize: 9,
-                    fontWeight: 600,
-                    letterSpacing: "0.08em",
-                    color: (s as any).href ? "var(--royal)" : "var(--gray-400)",
-                    marginTop: 5,
-                    textAlign: "center",
-                    lineHeight: 1.3,
-                    textDecoration: (s as any).href
-                      ? "underline dotted"
-                      : "none",
-                    textUnderlineOffset: 2,
-                    cursor: (s as any).href ? "pointer" : "default",
-                  }}
                 >
                   {s.label}
                 </span>
@@ -928,9 +1046,9 @@ export function HeroSection() {
         id="home"
         ref={containerRef}
         aria-label="Hero — Baburam Timsina"
+        className="hero-section"
         style={{
           position: "relative",
-          minHeight: "100vh",
           overflow: "hidden",
           background: "var(--off-white)",
         }}
@@ -940,23 +1058,16 @@ export function HeroSection() {
         </motion.div>
 
         <div
+          className="hero-section"
           style={{
             position: "relative",
             zIndex: 10,
-            minHeight: "100vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <div
-            style={{
-              width: "100%",
-              maxWidth: 1200,
-              margin: "0 auto",
-              padding: "clamp(80px, 10vw, 120px) clamp(20px, 5vw, 56px)",
-            }}
-          >
+          <div className="hero-inner">
             <motion.div
               initial="initial"
               animate="animate"
@@ -986,14 +1097,14 @@ export function HeroSection() {
                       ease: [0.22, 1, 0.36, 1],
                     }}
                     style={{
-                      fontSize: "clamp(36px, 6vw, 60px)",
+                      fontSize: "clamp(28px, 7vw, 60px)",
                       fontWeight: 700,
                       lineHeight: 1.08,
                       letterSpacing: "var(--tracking-normal)",
                       margin: 0,
                     }}
                   >
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex flex-wrap items-center justify-center gap-2">
                       <span className="text-[var(--navy)]">Baburam</span>
 
                       <span
@@ -1020,13 +1131,13 @@ export function HeroSection() {
               {/* RIGHT COLUMN */}
               <motion.div
                 variants={staggerContainer}
+                className="hero-right-col"
                 style={{ display: "flex", flexDirection: "column", gap: 24 }}
               >
                  <motion.div
                   variants={fadeInRight}
                   style={{
                     position: "relative",
-                    marginTop: "-380px",
                     padding: "clamp(28px, 4vw, 44px)",
                     borderRadius: 24,
                     background: "#FFFFFF",
@@ -1230,12 +1341,7 @@ export function HeroSection() {
                 {/* Stats row */}
                 <motion.div
                   variants={fadeInRight}
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: 14,
-                    marginTop: 28,
-                  }}
+                  className="hero-counts-grid"
                 >
                   {[
                     {
@@ -1256,7 +1362,8 @@ export function HeroSection() {
                   ].map((stat, i) => (
                     <motion.div
                       key={i}
-                      className="accent-shimmer"
+                      className="accent-shimmer hero-count"
+                      data-accent={stat.accent ? "true" : "false"}
                       whileHover={{ y: -6, scale: stat.accent ? 1.04 : 1.02 }}
                       transition={{
                         duration: 0.32,
@@ -1265,9 +1372,6 @@ export function HeroSection() {
                         damping: 20,
                       }}
                       style={{
-                        textAlign: "center",
-                        padding: stat.accent ? "26px 16px" : "22px 14px",
-                        borderRadius: 18,
                         background: stat.accent
                           ? "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)"
                           : "linear-gradient(135deg, #FFFFFF 0%, #FAFAF8 100%)",
@@ -1276,8 +1380,6 @@ export function HeroSection() {
                           ? "0 20px 48px rgba(0,184,148,0.28), 0 8px 20px rgba(11,37,69,0.16)"
                           : "0 8px 24px rgba(11,37,69,0.10)",
                         cursor: "default",
-                        position: "relative",
-                        overflow: "hidden",
                       }}
                     >
                       {stat.accent && (
@@ -1317,32 +1419,14 @@ export function HeroSection() {
                           </div>
                         )}
                         <div
-                          style={{
-                            fontSize: stat.accent ? 32 : 26,
-                            fontWeight: 800,
-                            lineHeight: 1,
-                            color: stat.accent
-                              ? "var(--green)"
-                              : "var(--gray-800)",
-                            textShadow: stat.accent
-                              ? "0 2px 8px rgba(0,0,0,0.20)"
-                              : "none",
-                            letterSpacing: "var(--tracking-normal)",
-                          }}
+                          className="hero-count-value"
+                          data-accent={stat.accent ? "true" : "false"}
                         >
                           {stat.value}
                         </div>
                         <div
-                          style={{
-                            fontSize: stat.accent ? 10.5 : 10,
-                            fontWeight: 700,
-                            letterSpacing: "0.12em",
-                            textTransform: "uppercase",
-                            color: stat.accent
-                              ? "rgba(255,255,255,0.75)"
-                              : "var(--gray-400)",
-                            marginTop: 10,
-                          }}
+                          className="hero-count-label"
+                          data-accent={stat.accent ? "true" : "false"}
                         >
                           {stat.label}
                         </div>
