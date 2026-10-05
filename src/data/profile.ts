@@ -1,7 +1,7 @@
 import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
-  name: "Baburam Timsin",
+  name: "Baburam Timsina",
   title:
     "Baburam Timsina | Higher Education & Leadership Researcher Higher Education & Leadership Researcher | Institutional Development & Organizational Scholarship in Emerging Economies | JMC Chair – MSSRNPRESS.ORG |  Editorial Member (JINA | JHROS | JSMS | JISS )",
   description:
