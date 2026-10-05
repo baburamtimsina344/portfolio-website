@@ -8,22 +8,33 @@ import { Skeleton } from "@/components/ui/skeleton";
 // import KnowledgeExchange from "./sections/KnowledgeExchangeSection";
 import { HeroSection } from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
-import { NewsSection } from "./sections/NewsSection";
-import { PublicationsSection } from "./sections/PublicationsSection";
-import TeachingSection from "./sections/TeachingSection";
-
-
-import  EditorialRolesSection  from "./sections/EditorialRolesSection";
-import { ContactSection } from "./sections/ContactSection";
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { scrollToSection } from "@/lib/utils";
-import Login from "./pages/Login";
-import Admin from "./pages/Admin";
-import Projects from "./sections/Projects";
-import AwardsAndCertifications from "./sections/awards&certifications";
-import CV from "./sections/cv";
-import { VisitorMap } from "./sections/VisitorMap";
+
+const NewsSection = lazy(() =>
+  import("./sections/NewsSection").then((m) => ({ default: m.NewsSection })),
+);
+const PublicationsSection = lazy(() =>
+  import("./sections/PublicationsSection").then((m) => ({
+    default: m.PublicationsSection,
+  })),
+);
+const VisitorMap = lazy(() =>
+  import("./sections/VisitorMap").then((m) => ({ default: m.VisitorMap })),
+);
+const ContactSection = lazy(() =>
+  import("./sections/ContactSection").then((m) => ({ default: m.ContactSection })),
+);
+const TeachingSection = lazy(() => import("./sections/TeachingSection"));
+const EditorialRolesSection = lazy(() =>
+  import("./sections/EditorialRolesSection"),
+);
+const Projects = lazy(() => import("./sections/Projects"));
+const AwardsAndCertifications = lazy(() => import("./sections/awards&certifications"));
+const CV = lazy(() => import("./sections/cv"));
+const Login = lazy(() => import("./pages/Login"));
+const Admin = lazy(() => import("./pages/Admin"));
 
 function SectionFallback() {
   return (
@@ -82,24 +93,34 @@ function HomeContent() {
   );
 }
 
+function PageFallback() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <Skeleton className="h-10 w-10 rounded-full" />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <TooltipProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainLayout><HomeContent /></MainLayout>} />
-          {/* <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} /> */}
-          <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
-          <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
-                    <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
-                    <Route path="/awards&certifications" element={<MainLayout><AwardsAndCertifications /></MainLayout>} />
-                    <Route path="/cv" element={<MainLayout><CV /></MainLayout>} />
-                    <Route path="/visitorMap" element={<MainLayout><VisitorMap /></MainLayout>} />
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<MainLayout><HomeContent /></MainLayout>} />
+            {/* <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} /> */}
+            <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
+            <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
+            <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
+            <Route path="/awards&certifications" element={<MainLayout><AwardsAndCertifications /></MainLayout>} />
+            <Route path="/cv" element={<MainLayout><CV /></MainLayout>} />
+            <Route path="/visitorMap" element={<MainLayout><VisitorMap /></MainLayout>} />
 
-          {/* <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
+            {/* <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   );

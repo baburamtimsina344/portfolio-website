@@ -11,6 +11,8 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseKey, {
   auth: { persistSession: false },
 })
 
+const DEFAULT_TOTAL = 50000
+
 export default async function handler(_req: VercelRequest, res: VercelResponse) {
   res.setHeader('Cache-Control', 'no-store')
 
@@ -28,11 +30,11 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
     if (countriesErr) throw countriesErr
 
     res.status(200).json({
-      total: Number(totals?.total_count ?? 10000),
+      total: Number(totals?.total_count ?? DEFAULT_TOTAL),
       countries: countries ?? [],
     })
   } catch (error) {
     console.error('visitor stats error:', error)
-    res.status(200).json({ total: 10000, countries: [] })
+    res.status(200).json({ total: DEFAULT_TOTAL, countries: [] })
   }
 }

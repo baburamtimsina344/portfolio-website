@@ -169,10 +169,8 @@ import {
   Newspaper,
 } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { SITE_CONFIG, SOCIAL_LINKS, NAV_ITEMS, RESEARCH_INTERESTS } from "@/data/profile";
-import { SocialLinks } from "@/components/common/SocialLinks";
+import { SITE_CONFIG, NAV_ITEMS } from "@/data/profile";
 import { scrollToSection } from "@/lib/utils";
-import { VisitorMap } from "@/sections/VisitorMap";
 
 const footerLinks = ["Privacy Policy", "Terms of Use"];
 

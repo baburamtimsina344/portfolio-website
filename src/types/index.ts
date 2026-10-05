@@ -39,11 +39,20 @@ export interface Publication {
   authors: string;
   journal: string;
   year: number;
-  category: "journal" | "conference" | "book" | "report";
-  citations?: number;
-  doi?: string;
-  link?: string;
-  openAccess?: boolean;
+  open_access: boolean;
+  citations: number;
+  doi: string;
+  abstract?: string;
+  keywords?: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  publisher?: string;
+  citation?: string;
+  download_url?: string;
+  google_scholar_url?: string;
+  researchgate_url?: string;
+  related_research?: string;
 }
 
 export interface KnowledgeItem {

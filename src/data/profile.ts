@@ -1,10 +1,9 @@
-
-
 import type { NavItem, SocialLink, Stat } from "@/types";
 
 export const SITE_CONFIG = {
   name: "Baburam Timsin",
-  title: "Baburam Timsina | Higher Education & Leadership Researcher Higher Education & Leadership Researcher | Institutional Development & Organizational Scholarship in Emerging Economies | JMC Chair – MSSRNPRESS.ORG |  Editorial Member (JINA | JHROS | JSMS | JISS )",
+  title:
+    "Baburam Timsina | Higher Education & Leadership Researcher Higher Education & Leadership Researcher | Institutional Development & Organizational Scholarship in Emerging Economies | JMC Chair – MSSRNPRESS.ORG |  Editorial Member (JINA | JHROS | JSMS | JISS )",
   description:
     "Advancing scholarship in higher education, educational leadership, and institutional transformation through research, teaching, and academic service.",
   url: "https://baburamtimsina.edu.np",
@@ -19,32 +18,27 @@ export const NAV_ITEMS: NavItem[] = [
   { id: "about", label: "About" },
   { id: "news", label: "Research" },
   { id: "publications", label: "Publications" },
-  { id: "teaching", 
-    label: "Teaching",
-    path:"/teaching"
-   },
-  { id: "editorial-roles", 
+  { id: "teaching", label: "Teaching", path: "/teaching" },
+  {
+    id: "editorial-roles",
     label: "Editorial & Academic Service",
-    path:"/editorial-roles"
-   },
-   { id: "projects", 
-    label: "Projects",
-    path:"/projects"
-   },
-   { id: "awards&certifications", 
+    path: "/editorial-roles",
+  },
+  { id: "projects", label: "Projects", path: "/projects" },
+  {
+    id: "awards&certifications",
     label: "Awards & Certifications",
-    path:"/awards&certifications"
-   },
-  //  { id: "cv", 
+    path: "/awards&certifications",
+  },
+  //  { id: "cv",
   //   label: "CV",
   //   path:"/cv"
   //  },
-  //  { id: "visitorMap", 
+  //  { id: "visitorMap",
   //   label: "Visitor Map",
   //   path:"/visitorMap"
   //  },
-  { id: "contact",
-    label: "Contact" },
+  { id: "contact", label: "Contact" },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
