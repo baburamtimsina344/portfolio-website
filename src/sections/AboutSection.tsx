@@ -4,22 +4,9 @@ import { ChevronLeft, ChevronRight, BookOpen, Sparkles, Newspaper } from 'lucide
 import { useRef, useState, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import { BIOGRAPHY } from '@/data/profile'
 
 // ─── Content ─────────────────────────────────────────────────────────
-const BIOGRAPHY =
-    "Advancing scholarship through research, leadership, and academic service, I am committed to fostering transformative learning and evidence-based practices in higher education.Based in Kathmandu, Nepal, I serve as Scholar and Educator at Tribhuvan University while pursuing doctoral research in higher education and leadership. My scholarly work explores the intersection of higher education, leadership, organizational behavior, governance, and corporate social responsibility, particularly within emerging economies.My research investigates how educational institutions, governance structures, service quality, ethical practices, and leadership approaches influence organizational effectiveness and individual decision-making. Through interdisciplinary and collaborative scholarship, I seek to contribute to the development of responsive, inclusive, and sustainable educational systems.Beyond research and teaching, I actively contribute to the academic community through editorial leadership, peer review, and scholarly networking. I currently serve as Chair of the Journal Management Committee (JMC) at MSSRNPRESS.ORG and as an editorial board member of several peer-reviewed journals.My broader academic mission is to bridge research, policy, and practice to strengthen higher education systems and promote impactful scholarship at both national and international levels."
-
-const RESEARCH_INTERESTS = [
-  'Higher Education and Educational Leadership',
-  'Higher Education Policy and Governance',
-  'Organizational Behavior and Leadership',
-  'Corporate Social Responsibility (CSR)',
-  'Service Quality and Graduate Decision-Making',
-  'Strategic Management and Organizational Development',
-  'Ethics, Governance, and Emerging Economies',
-  'Institutional Transformation and Academic Leadership',
-]
-
 const carouselSlides = [
     {
         id: 1,
@@ -223,67 +210,11 @@ export function AboutSection() {
                                 </span>
                             </h3>
 
-                            {/* Bio text */}
-                            {/* <div style={{
-                                borderLeft: '2.5px solid rgba(15,122,90,0.30)',
-                                paddingLeft: 18,
-                                marginBottom: 28,
-                            }}>
-                                <p style={{
-                                    fontSize: 'clamp(14px, 1.6vw, 16px)',
-                                    lineHeight: 1.8,
-                                    color: '#000000',
-                                    margin: 0,
-                                    fontWeight: 500,
-                                    fontFamily: 'var(--font-app)',
-                                    letterSpacing: '0.3px',
-                                    textAlign: 'justify',
-                                }}> */}
-
-                          <div className="
-  border-l-[2.5px] border-green-400/30 
-  pl-5 mb-7 
-  transition-all duration-300 
-  hover:border-green-500/60 hover:pl-6
-">
-  <p className="
-    text-[clamp(12px,1.2vw,14px)] 
-    leading-relaxed 
-    text-black 
-    font-medium 
-    tracking-normal 
-    text-justify 
-    m-0
-  ">
-    {BIOGRAPHY}
-  </p>
-</div>
-                                  
-
-                            {/* Research Interest Tags */}
-                            {/* <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
-                                {RESEARCH_INTERESTS.map((interest) => (
-                                    <motion.span
-                                        key={interest}
-                                        whileHover={{ y: -2, backgroundColor: 'rgba(15,122,90,0.14)' }}
-                                        transition={{ duration: 0.2 }}
-                                        style={{
-                                            padding: '5px 14px',
-                                            borderRadius: 100,
-                                            fontSize: 11.5, fontWeight: 500,
-                                            fontFamily: 'var(--font-app)',
-                                            color: '#000000',
-                                            background: 'rgba(15,122,90,0.08)',
-                                            border: '1px solid rgba(15,122,90,0.22)',
-                                            cursor: 'default',
-                                            transition: 'background 0.2s',
-                                            display: 'inline-block',
-                                        }}
-                                    >
-                                        {interest}
-                                    </motion.span>
-                                ))}
-                            </div> */}
+<div className="border-l-[2.5px] border-green-400/30 pl-5 mb-7   hover:border-green-500/60 ">
+                              <p className="m-0  font-medium  text-black text-justify">
+                                {BIOGRAPHY}
+                              </p>
+                            </div>
 
                             {/* CTA Button */}
                            <div
@@ -298,25 +229,27 @@ export function AboutSection() {
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(11,37,69,0.28)' }}
-        whileTap={{ scale: 0.97 }}
-        transition={{ duration: 0.25 }}
-        style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            padding: '11px 24px',
-            borderRadius: 100,
-            background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)',
-            border: '1px solid rgba(15,122,90,0.22)',
-            color: 'white',
-            fontSize: 13,
-            fontWeight: 600,
-            letterSpacing: '0.02em',
-            textDecoration: 'none',
-            fontFamily: 'var(--font-app)',
-            boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
-            transition: 'box-shadow 0.25s',
-        }}
+        // whileTap={{ scale: 0.97 }}
+        // transition={{ duration: 0.25 }}
+        // style={{
+        //     display: 'inline-flex',
+        //     alignItems: 'center',
+        //     gap: 8,
+        //     padding: '11px 24px',
+        //     borderRadius: 100,
+        //     background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)',
+        //     border: '1px solid rgba(15,122,90,0.22)',
+        //     color: 'white',
+        //     fontSize: 13,
+        //     fontWeight: 600,
+        //     letterSpacing: '0.02em',
+        //     textDecoration: 'none',
+        //     fontFamily: 'var(--font-app)',
+        //     boxShadow: '0 4px 18px rgba(11,37,69,0.28)',
+        //     transition: 'box-shadow 0.25s',
+        // }}
+                className="btn btn-outline btn-pill px-6 py-3 text-sm"
+
     >
         More About Me
         <ChevronRight style={{ width: 15, height: 15, opacity: 0.8 }} />
@@ -394,8 +327,8 @@ export function AboutSection() {
                                 fontWeight: 500,
                                 fontFamily: 'var(--font-app)',
                                 letterSpacing: '0.3px',
-                                textAlign: 'justify',
-                            }}>
+                            }}
+                            className='text-justify'>
                                 Timsina delivered a keynote presentation on sustainable
                                 entrepreneurship and SME development in South Asian economies at the
                                 International Conference on Sustainable Business, Kathmandu.

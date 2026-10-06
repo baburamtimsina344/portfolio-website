@@ -322,7 +322,6 @@ export function NewsSection() {
                                                 fontWeight: 500,
                                                 fontFamily: 'var(--font-app)',
                                                 letterSpacing: '0.3px',
-                                                textAlign: 'justify',
                                             }}>
                                                 {item.excerpt}
                                             </p>
