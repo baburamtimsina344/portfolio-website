@@ -304,7 +304,7 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index, isPrim
 
       <div className="relative flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
-          <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${isPrimary ? "text-[#0F7A5A]" : "text-[#4A5A6A]/80"}`}>
+          <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${isPrimary ? "text-[#0F7A5A]" : "text-black"}`}>
             {label}
           </p>
           {isLoading ? (
@@ -312,7 +312,7 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index, isPrim
           ) : (
             <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <p
-                className={`truncate font-extrabold leading-none tracking-tight tabular-nums text-[#0B2545] ${
+                className={`truncate font-extrabold leading-none tracking-tight tabular-nums text-black ${
                   isPrimary ? "text-5xl sm:text-6xl" : "text-3xl"
                 }`}
               >
@@ -333,7 +333,7 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index, isPrim
         </div>
       </div>
 
-      <p className="relative mt-5 border-t border-[#0B2545]/8 pt-4 text-sm leading-relaxed text-[#4A5A6A]">{detail}</p>
+      <p className="relative mt-5 border-t border-[#0B2545]/8 pt-4 text-sm leading-relaxed text-black">{detail}</p>
     </motion.div>
   );
 }
@@ -573,7 +573,7 @@ export function VisitorMap() {
       value: formatCompactCount(animatedTotal),
       detail: (
         <>
-          {formatNumber(lifetimeTotal)} visits across {formatNumber(stats.countries.length)} regions
+          {/* {formatNumber(lifetimeTotal)} visits across {formatNumber(stats.countries.length)} regions */}
           <span className="mx-2 text-[#0F7A5A]/40">•</span>
           updates live
         </>
@@ -619,7 +619,7 @@ export function VisitorMap() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F6FAF8]/70 to-white py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F6FAF8]/70 to-white py-12 lg:py-16">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0F7A5A]/20 to-transparent" aria-hidden="true" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-16 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(15,122,90,0.10)_0%,transparent_70%)]" />
@@ -643,17 +643,17 @@ export function VisitorMap() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {/* Header */}
-          <div className="mx-auto mb-14 max-w-3xl text-center">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#0F7A5A]/20 bg-white/90 px-4 py-2 shadow-sm backdrop-blur">
               <PulseDot />
               <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0F7A5A]">Live global analytics</span>
             </div>
 
-            <h2 className="mb-5 text-4xl font-bold tracking-tight text-[#0B2545] sm:text-5xl">
+            <h2 className="mb-5 text-4xl font-bold tracking-tight text-black sm:text-5xl">
               Global{" "}
-              <span className="bg-gradient-to-r from-[#0F7A5A] to-[#13A677] bg-clip-text text-transparent">
+              {/* <span className="bg-gradient-to-r from-[#0F7A5A] to-[#13A677] bg-clip-text text-transparent"> */}
                 Visitor Analytics
-              </span>
+              {/* </span> */}
             </h2>
 
             <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-[#0F7A5A]/40 to-transparent" aria-hidden="true" />
@@ -933,7 +933,7 @@ export function VisitorMap() {
                             type="button"
                             onClick={() => setQuery("")}
                             aria-label="Clear search"
-                            className="absolute right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-md text-white/50 transition hover:bg-white/10 hover:text-white"
+                            className="btn btn-icon btn-pill absolute right-2 top-1/2 h-5 w-5 -translate-y-1/2 text-white/50 hover:bg-white/10 hover:text-white"
                           >
                             <X className="h-3.5 w-3.5" aria-hidden />
                           </button>
@@ -944,7 +944,7 @@ export function VisitorMap() {
                         type="button"
                         onClick={() => setSortMode((mode) => (mode === "visits" ? "name" : "visits"))}
                         title={sortMode === "visits" ? "Sorted by visits — click to sort A–Z" : "Sorted A–Z — click to sort by visits"}
-                        className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 text-xs font-medium text-white/75 transition hover:border-[#3FE0A2]/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FE0A2]/40"
+                        className="btn btn-glass h-9 shrink-0 gap-1.5 px-3 text-xs text-white/75 hover:text-white"
                       >
                         <ArrowDownUp className="h-3.5 w-3.5" aria-hidden />
                         {sortMode === "visits" ? "Visits" : "A–Z"}
@@ -973,7 +973,7 @@ export function VisitorMap() {
                               onMouseLeave={() => setHovered(null)}
                               onFocus={() => setHovered(country)}
                               onBlur={() => setHovered(null)}
-                              className={`group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-visible:outline-none sm:px-5 ${
+                              className={`group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#3FE0A2]/60 sm:px-5 ${
                                 isActive ? "bg-[#3FE0A2]/10" : "hover:bg-white/[0.04] focus-visible:bg-white/[0.06]"
                               }`}
                             >
@@ -1362,7 +1362,7 @@ export function VisitorMap() {
 
 //       <div className="relative flex items-start justify-between gap-4">
 //         <div className="min-w-0 flex-1">
-//           <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${isPrimary ? "text-[#0F7A5A]" : "text-[#4A5A6A]/80"}`}>
+//           <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${isPrimary ? "text-[#0F7A5A]" : "text-black"}`}>
 //             {label}
 //           </p>
 //           {isLoading ? (
@@ -1370,7 +1370,7 @@ export function VisitorMap() {
 //           ) : (
 //             <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
 //               <p
-//                 className={`truncate font-extrabold leading-none tracking-tight tabular-nums text-[#0B2545] ${
+//                 className={`truncate font-extrabold leading-none tracking-tight tabular-nums text-black ${
 //                   isPrimary ? "text-5xl sm:text-6xl" : "text-3xl"
 //                 }`}
 //               >
@@ -1391,7 +1391,7 @@ export function VisitorMap() {
 //         </div>
 //       </div>
 
-//       <p className="relative mt-5 border-t border-[#0B2545]/8 pt-4 text-sm leading-relaxed text-[#4A5A6A]">{detail}</p>
+//       <p className="relative mt-5 border-t border-[#0B2545]/8 pt-4 text-sm leading-relaxed text-black">{detail}</p>
 //     </motion.div>
 //   );
 // }
@@ -1698,7 +1698,7 @@ export function VisitorMap() {
 //               <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0F7A5A]">Live global analytics</span>
 //             </div>
 
-//             <h2 className="mb-5 text-4xl font-bold tracking-tight text-[#0B2545] sm:text-5xl">
+//             <h2 className="mb-5 text-4xl font-bold tracking-tight text-black sm:text-5xl">
 //               Global{" "}
 //               <span className="bg-gradient-to-r from-[#0F7A5A] to-[#13A677] bg-clip-text text-transparent">
 //                 Visitor Analytics
@@ -1982,7 +1982,7 @@ export function VisitorMap() {
 //                             type="button"
 //                             onClick={() => setQuery("")}
 //                             aria-label="Clear search"
-//                             className="absolute right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-md text-white/50 transition hover:bg-white/10 hover:text-white"
+//                             className="btn btn-icon btn-pill absolute right-2 top-1/2 h-5 w-5 -translate-y-1/2 text-white/50 hover:bg-white/10 hover:text-white"
 //                           >
 //                             <X className="h-3.5 w-3.5" aria-hidden />
 //                           </button>
@@ -1993,7 +1993,7 @@ export function VisitorMap() {
 //                         type="button"
 //                         onClick={() => setSortMode((mode) => (mode === "visits" ? "name" : "visits"))}
 //                         title={sortMode === "visits" ? "Sorted by visits — click to sort A–Z" : "Sorted A–Z — click to sort by visits"}
-//                         className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 text-xs font-medium text-white/75 transition hover:border-[#3FE0A2]/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FE0A2]/40"
+//                         className="btn btn-glass h-9 shrink-0 gap-1.5 px-3 text-xs text-white/75 hover:text-white"
 //                       >
 //                         <ArrowDownUp className="h-3.5 w-3.5" aria-hidden />
 //                         {sortMode === "visits" ? "Visits" : "A–Z"}
@@ -2022,7 +2022,7 @@ export function VisitorMap() {
 //                               onMouseLeave={() => setHovered(null)}
 //                               onFocus={() => setHovered(country)}
 //                               onBlur={() => setHovered(null)}
-//                               className={`group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-visible:outline-none sm:px-5 ${
+//                               className={`group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#3FE0A2]/60 sm:px-5 ${
 //                                 isActive ? "bg-[#3FE0A2]/10" : "hover:bg-white/[0.04] focus-visible:bg-white/[0.06]"
 //                               }`}
 //                             >

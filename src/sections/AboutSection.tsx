@@ -39,7 +39,7 @@ const carouselSlides = [
         id: 3,
         title: 'Sustainable Development in Education',
         role: 'ASSOCIATE EDITOR',
-        leftGradient: 'linear-gradient(135deg, #00B894 0%, #00856A 100%)', // Changed to green shades
+        leftGradient: 'linear-gradient(135deg, #0F7A5A 0%, #00856A 100%)', // Changed to green shades
         rightGradient: 'linear-gradient(135deg, #0B2545 0%, #1A4080 100%)',
     },
 ]
@@ -82,7 +82,7 @@ export function AboutSection() {
             aria-label="About Baburam Timsina"
             style={{
                 position: 'relative',
-                padding: 'clamp(72px, 10vw, 120px) 0',
+                    padding: 'clamp(48px, 7vw, 80px) 0',
                 background: 'var(--off-white)',
                 overflow: 'hidden',
             }}
@@ -90,7 +90,7 @@ export function AboutSection() {
             {/* ── Section Divider ─────────────────────────────── */}
             <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, height: 1,
-                background: 'linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(11,37,69,0.12), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(15,122,90,0.30), rgba(11,37,69,0.12), transparent)',
             }} />
 
             {/* ── Background Orbs ─────────────────────────────── */}
@@ -98,7 +98,7 @@ export function AboutSection() {
                 <div style={{
                     position: 'absolute', top: '-15%', right: '-15%',
                     width: 600, height: 600, borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,184,148,0.07) 0%, rgba(26,64,128,0.05) 50%, transparent 75%)',
+                    background: 'radial-gradient(circle, rgba(15,122,90,0.07) 0%, rgba(26,64,128,0.05) 50%, transparent 75%)',
                 }} />
                 <div style={{
                     position: 'absolute', bottom: '-20%', left: '-15%',
@@ -147,7 +147,7 @@ export function AboutSection() {
                                 position: 'relative',
                                 background: '#FFFFFF',
                                 borderRadius: 24,
-                                border: '1.5px solid rgba(0,184,148,0.15)',
+                                border: '1.5px solid rgba(15,122,90,0.15)',
                                 boxShadow: '0 8px 32px rgba(11,37,69,0.09), 0 2px 8px rgba(11,37,69,0.05)',
                                 padding: 'clamp(28px, 4vw, 44px)',
                                 overflow: 'hidden',
@@ -158,7 +158,7 @@ export function AboutSection() {
                             <div style={{
                                 position: 'absolute', top: 0, left: 0,
                                 width: 4, height: 96,
-                                background: 'linear-gradient(to bottom, var(--green), rgba(0,184,148,0.10))',
+                                background: 'linear-gradient(to bottom, var(--green), rgba(15,122,90,0.10))',
                                 borderRadius: '0 0 4px 0',
                             }} />
 
@@ -167,7 +167,7 @@ export function AboutSection() {
                                 position: 'absolute', top: -8, right: 20,
                                 fontSize: 180, lineHeight: 1,
                                 fontFamily: 'var(--font-app)',
-                                color: 'var(--navy)',
+                                color: '#000000',
                                 opacity: 0.025,
                                 pointerEvents: 'none', userSelect: 'none',
                                 transform: 'rotate(180deg)',
@@ -181,8 +181,8 @@ export function AboutSection() {
                             }}>
                                 <div style={{
                                     width: 38, height: 38, borderRadius: 12,
-                                    background: 'linear-gradient(135deg, rgba(0,184,148,0.14), rgba(0,184,148,0.05))',
-                                    border: '1px solid rgba(0,184,148,0.22)',
+                                    background: 'linear-gradient(135deg, rgba(15,122,90,0.14), rgba(15,122,90,0.05))',
+                                    border: '1px solid rgba(15,122,90,0.22)',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 }}>
                                     <BookOpen style={{ width: 16, height: 16, color: 'var(--green)' }} />
@@ -190,7 +190,7 @@ export function AboutSection() {
                                 <span style={{
                                     fontSize: 'clamp(14px, 1.6vw, 16px)',
                                     lineHeight: 1.8,
-                                    color: 'var(--text-secondary)',
+                                    color: '#000000',
                                     margin: 0,
                                     fontWeight: 500,
                                     fontFamily: 'var(--font-app)',
@@ -205,11 +205,11 @@ export function AboutSection() {
                                 style={{
                                     fontSize: 'clamp(22px, 3vw, 30px)',
                                     fontWeight: 700,
-                                    color: 'var(--navy)',
+                                    color: '#000000',
                                     lineHeight: 1.2,
-                                    letterSpacing: 'var(--tracking-normal)',
+                                    letterSpacing: 'var(--tracking-heading)',
                                     marginBottom: 20,
-                                    fontFamily: 'var(--font-app)',
+                                    fontFamily: 'var(--font-heading)',
                                 }}
                             >
                                 About{' '}
@@ -225,14 +225,14 @@ export function AboutSection() {
 
                             {/* Bio text */}
                             {/* <div style={{
-                                borderLeft: '2.5px solid rgba(0,184,148,0.30)',
+                                borderLeft: '2.5px solid rgba(15,122,90,0.30)',
                                 paddingLeft: 18,
                                 marginBottom: 28,
                             }}>
                                 <p style={{
                                     fontSize: 'clamp(14px, 1.6vw, 16px)',
                                     lineHeight: 1.8,
-                                    color: 'var(--text-secondary)',
+                                    color: '#000000',
                                     margin: 0,
                                     fontWeight: 500,
                                     fontFamily: 'var(--font-app)',
@@ -249,7 +249,7 @@ export function AboutSection() {
   <p className="
     text-[clamp(12px,1.2vw,14px)] 
     leading-relaxed 
-    text-slate-700 
+    text-black 
     font-medium 
     tracking-normal 
     text-justify 
@@ -265,16 +265,16 @@ export function AboutSection() {
                                 {RESEARCH_INTERESTS.map((interest) => (
                                     <motion.span
                                         key={interest}
-                                        whileHover={{ y: -2, backgroundColor: 'rgba(0,184,148,0.14)' }}
+                                        whileHover={{ y: -2, backgroundColor: 'rgba(15,122,90,0.14)' }}
                                         transition={{ duration: 0.2 }}
                                         style={{
                                             padding: '5px 14px',
                                             borderRadius: 100,
                                             fontSize: 11.5, fontWeight: 500,
                                             fontFamily: 'var(--font-app)',
-                                            color: 'var(--navy)',
-                                            background: 'rgba(0,184,148,0.08)',
-                                            border: '1px solid rgba(0,184,148,0.22)',
+                                            color: '#000000',
+                                            background: 'rgba(15,122,90,0.08)',
+                                            border: '1px solid rgba(15,122,90,0.22)',
                                             cursor: 'default',
                                             transition: 'background 0.2s',
                                             display: 'inline-block',
@@ -307,8 +307,8 @@ export function AboutSection() {
             padding: '11px 24px',
             borderRadius: 100,
             background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)',
-            border: '1px solid rgba(0,184,148,0.22)',
-            color: '#FFFFFF',
+            border: '1px solid rgba(15,122,90,0.22)',
+            color: 'white',
             fontSize: 13,
             fontWeight: 600,
             letterSpacing: '0.02em',
@@ -348,7 +348,7 @@ export function AboutSection() {
                             {/* Green top accent bar */}
                             <div style={{
                                 position: 'absolute', top: 0, left: 32, right: 32, height: 3,
-                                background: 'linear-gradient(90deg, transparent, var(--green), rgba(0,184,148,0.20), transparent)',
+                                background: 'linear-gradient(90deg, transparent, var(--green), rgba(15,122,90,0.20), transparent)',
                                 borderRadius: '0 0 4px 4px',
                             }} />
 
@@ -359,14 +359,14 @@ export function AboutSection() {
                                 padding: '6px 14px',
                                 borderRadius: 100,
                                 background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
-                                border: '1px solid rgba(0,184,148,0.20)',
+                                border: '1px solid rgba(15,122,90,0.20)',
                                 boxShadow: '0 3px 12px rgba(11,37,69,0.22)',
                             }}>
                                 <Newspaper style={{ width: 12, height: 12, color: 'var(--green)' }} />
                                 <span style={{
                                     fontSize: 9.5, fontWeight: 700,
                                     letterSpacing: '0.20em', textTransform: 'uppercase',
-                                    color: '#FFFFFF', fontFamily: 'var(--font-app)',
+                                    color: 'white', fontFamily: 'var(--font-app)',
                                 }}>
                                     Latest News
                                 </span>
@@ -376,11 +376,11 @@ export function AboutSection() {
                                 style={{
                                     fontSize: 'clamp(17px, 2.2vw, 22px)',
                                     fontWeight: 700,
-                                    color: 'var(--navy)',
+                                    color: '#000000',
                                     lineHeight: 1.3,
-                                    letterSpacing: 'var(--tracking-normal)',
+                                    letterSpacing: 'var(--tracking-heading)',
                                     marginBottom: 14,
-                                    fontFamily: 'var(--font-app)',
+                                    fontFamily: 'var(--font-heading)',
                                 }}
                             >
                                 Keynote Address at International Conference on Sustainable Business
@@ -389,7 +389,7 @@ export function AboutSection() {
                             <p style={{
                                 fontSize: 'clamp(14px, 1.6vw, 16px)',
                                 lineHeight: 1.8,
-                                color: 'var(--text-secondary)',
+                                color: '#000000',
                                 margin: 0,
                                 fontWeight: 500,
                                 fontFamily: 'var(--font-app)',
@@ -409,11 +409,11 @@ export function AboutSection() {
                                     style={{
                                         display: 'inline-flex', alignItems: 'center', gap: 6,
                                         fontSize: 12.5, fontWeight: 600,
-                                        color: 'var(--navy)',
+                                        color: '#000000',
                                         textDecoration: 'none',
                                         fontFamily: 'var(--font-app)',
                                         letterSpacing: '0.03em',
-                                        borderBottom: '1.5px solid rgba(0,184,148,0.45)',
+                                        borderBottom: '1.5px solid rgba(15,122,90,0.45)',
                                         paddingBottom: 2,
                                     }}
                                 >
@@ -469,7 +469,7 @@ export function AboutSection() {
                                                             textAlign: 'center',
                                                             textShadow: '0 2px 8px rgba(0,0,0,0.30)',
                                                             position: 'relative', zIndex: 1,
-                                                            fontFamily: 'var(--font-app)',
+                                                            fontFamily: 'var(--font-heading)',
                                                         }}
                                                     >
                                                         {slide.title}
@@ -488,8 +488,8 @@ export function AboutSection() {
                                                     {/* Green accent icon */}
                                                     <div style={{
                                                         width: 40, height: 40, borderRadius: 12,
-                                                        background: 'rgba(0,184,148,0.15)',
-                                                        border: '1px solid rgba(0,184,148,0.30)',
+                                                        background: 'rgba(15,122,90,0.15)',
+                                                        border: '1px solid rgba(15,122,90,0.30)',
                                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                                     }}>
                                                         <Sparkles style={{ width: 18, height: 18, color: 'var(--green)' }} />
@@ -498,7 +498,7 @@ export function AboutSection() {
                                                         <p style={{
                                                             fontSize: 9, fontWeight: 700,
                                                             letterSpacing: '0.22em', textTransform: 'uppercase',
-                                                            color: 'rgba(0,184,148,0.70)',
+                                                            color: 'rgba(15,122,90,0.70)',
                                                             fontFamily: 'var(--font-app)',
                                                             marginBottom: 6,
                                                         }}>
@@ -528,21 +528,21 @@ export function AboutSection() {
                                 onClick={scrollPrev}
                                 whileHover={{ scale: 1.08, boxShadow: '0 8px 24px rgba(11,37,69,0.22)' }}
                                 whileTap={{ scale: 0.94 }}
-                                aria-label="Previous slide"
+                                aria-label="Previous slide" className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F7A5A]"
                                 style={{
                                     position: 'absolute', left: -18, top: '50%',
                                     transform: 'translateY(-50%)',
                                     width: 40, height: 40,
                                     borderRadius: '50%',
                                     background: '#FFFFFF',
-                                    border: '1.5px solid rgba(0,184,148,0.30)',
+                                    border: '1.5px solid rgba(15,122,90,0.30)',
                                     boxShadow: '0 4px 16px rgba(11,37,69,0.16)',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                                     cursor: 'pointer', zIndex: 10,
                                     transition: 'box-shadow 0.25s',
                                 }}
                             >
-                                <ChevronLeft style={{ width: 18, height: 18, color: 'var(--navy)' }} />
+                                <ChevronLeft style={{ width: 18, height: 18, color: '#000000' }} />
                             </motion.button>
 
                             {/* Next button */}
@@ -550,21 +550,21 @@ export function AboutSection() {
                                 onClick={scrollNext}
                                 whileHover={{ scale: 1.08, boxShadow: '0 8px 24px rgba(11,37,69,0.22)' }}
                                 whileTap={{ scale: 0.94 }}
-                                aria-label="Next slide"
+                                aria-label="Next slide" className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F7A5A]"
                                 style={{
                                     position: 'absolute', right: -18, top: '50%',
                                     transform: 'translateY(-50%)',
                                     width: 40, height: 40,
                                     borderRadius: '50%',
                                     background: '#FFFFFF',
-                                    border: '1.5px solid rgba(0,184,148,0.30)',
+                                    border: '1.5px solid rgba(15,122,90,0.30)',
                                     boxShadow: '0 4px 16px rgba(11,37,69,0.16)',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                                     cursor: 'pointer', zIndex: 10,
                                     transition: 'box-shadow 0.25s',
                                 }}
                             >
-                                <ChevronRight style={{ width: 18, height: 18, color: 'var(--navy)' }} />
+                                <ChevronRight style={{ width: 18, height: 18, color: '#000000' }} />
                             </motion.button>
 
                             {/* Dot indicators */}
@@ -599,7 +599,7 @@ export function AboutSection() {
             {/* ── Bottom section divider ───────────────────────── */}
             <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0, height: 1,
-                background: 'linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(0,184,148,0.20), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(15,122,90,0.20), transparent)',
             }} />
         </section>
     )

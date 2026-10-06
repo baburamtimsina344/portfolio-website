@@ -102,7 +102,7 @@
 //                     <TypeIcon className="h-3.5 w-3.5" strokeWidth={2} />
 //                     {label}
 //                   </span>
-//                   <span className="text-xs font-semibold text-[#4A5A6A]">{project.year}</span>
+//                   <span className="text-xs font-semibold text-black">{project.year}</span>
 //                 </div>
 
 //                 {/* Title */}
@@ -111,7 +111,7 @@
 //                 </h3>
 
 //                 {/* Description */}
-//                 <p className="text-sm text-[#4A5A6A] leading-relaxed mb-5">
+//                 <p className="text-sm text-black leading-relaxed mb-5">
 //                   {project.description}
 //                 </p>
 
@@ -130,7 +130,7 @@
 //                 {/* Collaborators */}
 //                 <div className="mt-auto flex items-start gap-2 pt-4 border-t border-[#0F7A5A]/10">
 //                   <Users className="h-4 w-4 text-[#0F7A5A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-//                   <p className="text-xs text-[#4A5A6A]">
+//                   <p className="text-xs text-black">
 //                     <span className="font-semibold text-[#0B5E4A]">Co-authors: </span>
 //                     {project.collaborators.join(", ")}
 //                   </p>
@@ -286,7 +286,7 @@ function BackgroundCarousel() {
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Research <br />
-              <span className="text-[#00B894]">Projects</span>
+              <span className="text-[#0F7A5A]">Projects</span>
             </h1>
             <p className="mt-4 text-lg text-white/80 max-w-xl">
               Exploring critical issues in entrepreneurship, policy, and organizational development
@@ -299,14 +299,14 @@ function BackgroundCarousel() {
       <button
         aria-label="Previous background"
         onClick={() => goTo(index - 1)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 btn btn-glass btn-icon btn-pill h-10 w-10 text-white z-10"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         aria-label="Next background"
         onClick={() => goTo(index + 1)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 btn btn-glass btn-icon btn-pill h-10 w-10 text-white z-10"
       >
         <ChevronRight size={20} />
       </button>
@@ -319,7 +319,7 @@ function BackgroundCarousel() {
             aria-label={`Go to background ${i + 1}`}
             onClick={() => goTo(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === index ? "w-8 bg-[#00B894]" : "w-1.5 bg-white/50 hover:bg-white/80"
+              i === index ? "w-8 bg-[#0F7A5A]" : "w-1.5 bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}
@@ -353,27 +353,27 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans">
+    <section id="projects" className="bg-[#F8F9FA] text-black font-sans">
       {/* Background Carousel - Full width at top */}
       <BackgroundCarousel />
 
       {/* Project Information - Below the carousel */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
         {/* Section header with teaching component styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-12"
+          className="mb-8"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
             <div>
-              <h2 className="text-2xl font-bold text-[#0B2545]">
+              <h2 className="text-2xl font-bold text-black">
                 Publications &amp; <span className="text-[#0F7A5A]">Preprints</span>
               </h2>
-              <p className="text-sm text-[#4A5A6A]/70">Featured Research</p>
+              <p className="text-sm text-black">Featured Research</p>
             </div>
           </div>
         </motion.div>
@@ -404,16 +404,16 @@ export default function Projects() {
                     <TypeIcon className="h-3.5 w-3.5" strokeWidth={2} />
                     {label}
                   </span>
-                  <span className="text-xs font-semibold text-[#4A5A6A]">{project.year}</span>
+                  <span className="text-xs font-semibold text-black">{project.year}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-[#0B5E4A] leading-snug mb-3 group-hover:text-[#0B2545] transition-colors">
+                <h3 className="text-lg font-bold text-[#0B5E4A] leading-snug mb-3 group-hover:text-black transition-colors">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-[#4A5A6A] leading-relaxed mb-5">
+                <p className="text-sm text-black leading-relaxed mb-5">
                   {project.description}
                 </p>
 
@@ -432,7 +432,7 @@ export default function Projects() {
                 {/* Collaborators */}
                 <div className="mt-auto flex items-start gap-2 pt-4 border-t border-[#0F7A5A]/10">
                   <Users className="h-4 w-4 text-[#0F7A5A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                  <p className="text-xs text-[#4A5A6A]">
+                  <p className="text-xs text-black">
                     <span className="font-semibold text-[#0B5E4A]">Co-authors: </span>
                     {project.collaborators.join(", ")}
                   </p>

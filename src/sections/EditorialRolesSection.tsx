@@ -82,7 +82,7 @@
 //   return (
 //     <div
 //       id="editorial-roles"
-//       className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
+//       className="min-h-screen bg-[#F8F9FA] text-black font-sans"
 //     >
 //       {/* ── Hero ── */}
 //       <div
@@ -100,7 +100,7 @@
 //               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
 //             >
 //               Editorial <br />
-//               <span className="text-[#00B894]">Roles</span>
+//               <span className="text-[#0F7A5A]">Roles</span>
 //             </motion.h1>
 //             <motion.p
 //               initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@
 //       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
 //         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
 //           <div className="py-3 md:py-4 flex-shrink-0">
-//             <h2 className="text-2xl font-bold text-[#0B2545]">
+//             <h2 className="text-2xl font-bold text-black">
 //               Editorial <span className="text-[#0F7A5A]">Roles</span>
 //             </h2>
 //           </div>
@@ -129,7 +129,7 @@
 //             {navLinks.map((link) => (
 //               <button
 //                 key={link}
-//                 className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+//                 className="btn btn-ghost btn-pill group gap-1.5 px-4 py-2 text-sm"
 //               >
 //                 {link}
 //                 <ChevronRight size={16} className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -153,10 +153,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Journal Editing
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Associate & Board Memberships</p>
+//                 <p className="text-sm text-black">Associate & Board Memberships</p>
 //               </div>
 //             </div>
 
@@ -165,7 +165,7 @@
 //                 {editorialData.journalEditing.map((item, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
 //                     <Edit className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <span>{item}</span>
@@ -180,10 +180,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Reviewing
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Peer Review Contributions</p>
+//                 <p className="text-sm text-black">Peer Review Contributions</p>
 //               </div>
 //             </div>
 
@@ -192,7 +192,7 @@
 //                 {editorialData.reviewing.map((item, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
 //                     <FileText className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <span>{item}</span>
@@ -207,10 +207,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Editorial Boards
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Advisory & Review Boards</p>
+//                 <p className="text-sm text-black">Advisory & Review Boards</p>
 //               </div>
 //             </div>
 
@@ -219,9 +219,9 @@
 //                 {editorialData.editorialBoards.map((item, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
-//                     <Users className="h-5 w-5 text-[#00B894] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+//                     <Users className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <span>{item}</span>
 //                   </li>
 //                 ))}
@@ -414,7 +414,7 @@ export default function ProfessionalAchievements() {
   return (
     <div
       id="editorial-roles"
-      className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
+      className="bg-[#F8F9FA] text-black font-sans"
     >
       {/* ── Hero ── */}
       <div
@@ -431,7 +431,7 @@ export default function ProfessionalAchievements() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
               Professional <br />
-              <span className="text-[#00B894]">Achievements</span>
+              <span className="text-[#0F7A5A]">Achievements</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -452,7 +452,7 @@ export default function ProfessionalAchievements() {
       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
           <div className="py-3 md:py-4 flex-shrink-0">
-            <h2 className="text-2xl font-bold text-[#0B2545]">
+            <h2 className="text-2xl font-bold text-black">
               Professional <span className="text-[#0F7A5A]">Highlights</span>
             </h2>
           </div>
@@ -460,7 +460,7 @@ export default function ProfessionalAchievements() {
             {navLinks.map((link) => (
               <button
                 key={link}
-                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+                className="btn btn-ghost btn-pill group gap-1.5 px-4 py-2 text-sm"
               >
                 {link}
                 <ChevronRight
@@ -479,18 +479,18 @@ export default function ProfessionalAchievements() {
         whileInView="visible"
         viewport={{ once: true, margin: "-40px" }}
         variants={containerVariants}
-        className="max-w-7xl mx-auto px-6 lg:px-10 py-16"
+        className="max-w-7xl mx-auto px-6 lg:px-10 py-10"
       >
-        <div className="space-y-16">
+        <div className="space-y-10">
           {/* ── 1. Certifications ── */}
           <motion.div variants={listItemVariants}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Professional Certifications
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">LinkedIn Learning (2020)</p>
+                <p className="text-sm text-black">LinkedIn Learning (2020)</p>
               </div>
             </div>
 
@@ -499,7 +499,7 @@ export default function ProfessionalAchievements() {
                 {certifications.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+                    className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
                   >
                     <CheckCircle className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span>{item}</span>
@@ -514,10 +514,10 @@ export default function ProfessionalAchievements() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Awards & Memberships
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">Recognition & Professional Affiliations</p>
+                <p className="text-sm text-black">Recognition & Professional Affiliations</p>
               </div>
             </div>
 
@@ -527,16 +527,16 @@ export default function ProfessionalAchievements() {
                 <div className="flex items-start gap-4">
                   <Award className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-lg font-semibold text-[#0B2545]">{award.title}</h4>
-                    <p className="text-sm text-[#4A5A6A]/80">{award.institution}</p>
-                    <p className="text-sm text-[#4A5A6A] mt-1">{award.description}</p>
+                    <h4 className="text-lg font-semibold text-black">{award.title}</h4>
+                    <p className="text-sm text-black">{award.institution}</p>
+                    <p className="text-sm text-black mt-1">{award.description}</p>
                   </div>
                 </div>
               </div>
 
               {/* Associations */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <Users className="h-5 w-5 text-[#0F7A5A]" />
                   Professional Associations
                 </h4>
@@ -544,12 +544,12 @@ export default function ProfessionalAchievements() {
                   {associations.map((assoc, i) => (
                     <li key={i} className="border-b border-[#0B2545]/5 last:border-0 pb-3 last:pb-0">
                       <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
-                        <span className="font-medium text-[#0B2545]">{assoc.name}</span>
+                        <span className="font-medium text-black">{assoc.name}</span>
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0F7A5A]/10 text-[#0F7A5A] w-fit">
                           {assoc.status}
                         </span>
                       </div>
-                      <p className="text-sm text-[#4A5A6A]/80 mt-0.5">{assoc.focus}</p>
+                      <p className="text-sm text-black mt-0.5">{assoc.focus}</p>
                     </li>
                   ))}
                 </ul>
@@ -562,17 +562,17 @@ export default function ProfessionalAchievements() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Professional Development & Engagements
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">Lifelong Learning & Academic Leadership</p>
+                <p className="text-sm text-black">Lifelong Learning & Academic Leadership</p>
               </div>
             </div>
 
             <div className="space-y-6">
               {/* International Courses */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
                   International Courses & Certifications
                 </h4>
@@ -580,7 +580,7 @@ export default function ProfessionalAchievements() {
                   {internationalCourses.map((course, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-[#4A5A6A] hover:text-[#0B2545] transition-colors"
+                      className="flex items-start gap-3 text-black hover:text-black transition-colors"
                     >
                       <CheckCircle className="h-4 w-4 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
                       <span>{course}</span>
@@ -591,27 +591,27 @@ export default function ProfessionalAchievements() {
 
               {/* Conferences */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-[#0F7A5A]" />
                   Conferences, Workshops & Scholarly Events
                 </h4>
-                <p className="text-[#4A5A6A] leading-relaxed whitespace-pre-line">
+                <p className="text-black leading-relaxed whitespace-pre-line">
                   {conferencesDescription}
                 </p>
               </div>
 
               {/* Resource Person */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Briefcase className="h-5 w-5 text-[#0F7A5A]" />
                   Resource Person & Invited Engagements
                 </h4>
-                <p className="text-[#4A5A6A] leading-relaxed mb-3">
+                <p className="text-black leading-relaxed mb-3">
                   Served as Resource Person, Facilitator, Judge, and Invited Speaker in various academic and professional development programs focusing on:
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {resourcePersonTopics.map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#4A5A6A]">
+                    <li key={i} className="flex items-start gap-2 text-sm text-black">
                       <span className="text-[#0F7A5A]">•</span>
                       <span>{topic}</span>
                     </li>
@@ -621,26 +621,26 @@ export default function ProfessionalAchievements() {
 
               {/* Statistics */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <Star className="h-5 w-5 text-[#0F7A5A]" />
                   Curriculum Innovation & Evaluation Statistics
                 </h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.events}</p>
-                    <p className="text-xs text-[#4A5A6A]">Scholarly Events</p>
+                    <p className="text-xs text-black">Scholarly Events</p>
                   </div>
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.certifications}</p>
-                    <p className="text-xs text-[#4A5A6A]">Certifications Earned</p>
+                    <p className="text-xs text-black">Certifications Earned</p>
                   </div>
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.platforms}</p>
-                    <p className="text-xs text-[#4A5A6A]">International Platforms</p>
+                    <p className="text-xs text-black">International Platforms</p>
                   </div>
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.engagements}</p>
-                    <p className="text-xs text-[#4A5A6A]">Facilitation Engagements</p>
+                    <p className="text-xs text-black">Facilitation Engagements</p>
                   </div>
                 </div>
               </div>
@@ -655,9 +655,9 @@ export default function ProfessionalAchievements() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-[#0B5E4A] mt-12"
+        className="bg-[#0B5E4A] mt-8"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
           <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
             Explore <span className="text-[#A8E6CF]">Achievement Areas</span>
           </h3>

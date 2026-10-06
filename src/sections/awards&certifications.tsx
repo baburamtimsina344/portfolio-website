@@ -104,7 +104,7 @@
 //   return (
 //     <section
 //       id="projects"
-//       className="bg-[#F8F9FA] text-[#0B2545] font-sans"
+//       className="bg-[#F8F9FA] text-black font-sans"
 //     >
 //       {/* ── Hero Banner ── */}
 //       <div
@@ -120,9 +120,9 @@
 //               transition={{ duration: 0.6, ease: "easeOut" }}
 //               className="flex items-center gap-3 mb-3"
 //             >
-//               <div className="w-1 h-10 bg-[#00B894] rounded-full" />
+//               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <h2 className="text-3xl md:text-5xl font-bold text-white">
-//                 Awards & <span className="text-[#00B894]">Certifications</span>
+//                 Awards & <span className="text-[#0F7A5A]">Certifications</span>
 //               </h2>
 //             </motion.div>
 //             <motion.p
@@ -146,7 +146,7 @@
 //               <a
 //                 key={link.href}
 //                 href={link.href}
-//                 className="px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200"
+//                 className="btn btn-ghost btn-pill px-4 py-2 text-sm"
 //               >
 //                 {link.label}
 //               </a>
@@ -166,10 +166,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Professional Certifications
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">LinkedIn Learning (2020)</p>
+//                 <p className="text-sm text-black">LinkedIn Learning (2020)</p>
 //               </div>
 //             </div>
 
@@ -178,7 +178,7 @@
 //                 {certifications.map((item, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
 //                     <CheckCircle className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <span>{item}</span>
@@ -193,8 +193,8 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">Awards & Honors</h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Recognition for academic excellence</p>
+//                 <h3 className="text-2xl font-bold text-black">Awards & Honors</h3>
+//                 <p className="text-sm text-black">Recognition for academic excellence</p>
 //               </div>
 //             </div>
 
@@ -202,9 +202,9 @@
 //               <div className="flex items-start gap-4">
 //                 <Award className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
 //                 <div>
-//                   <h4 className="text-lg font-semibold text-[#0B2545]">{award.title}</h4>
-//                   <p className="text-sm text-[#4A5A6A]/80">{award.institution}</p>
-//                   <p className="text-sm text-[#4A5A6A] mt-1">{award.description}</p>
+//                   <h4 className="text-lg font-semibold text-black">{award.title}</h4>
+//                   <p className="text-sm text-black">{award.institution}</p>
+//                   <p className="text-sm text-black mt-1">{award.description}</p>
 //                 </div>
 //               </div>
 //             </div>
@@ -215,17 +215,17 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Professional Associations & Memberships
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">
+//                 <p className="text-sm text-black">
 //                   Scholarly collaboration & academic advancement
 //                 </p>
 //               </div>
 //             </div>
 
 //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-//               <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+//               <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
 //                 <Users className="h-5 w-5 text-[#0F7A5A]" />
 //                 Associations
 //               </h4>
@@ -236,12 +236,12 @@
 //                     className="border-b border-[#0B2545]/5 last:border-0 pb-3 last:pb-0"
 //                   >
 //                     <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
-//                       <span className="font-medium text-[#0B2545]">{assoc.name}</span>
+//                       <span className="font-medium text-black">{assoc.name}</span>
 //                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0F7A5A]/10 text-[#0F7A5A] w-fit">
 //                         {assoc.status}
 //                       </span>
 //                     </div>
-//                     <p className="text-sm text-[#4A5A6A]/80 mt-0.5">{assoc.focus}</p>
+//                     <p className="text-sm text-black mt-0.5">{assoc.focus}</p>
 //                   </li>
 //                 ))}
 //               </ul>
@@ -253,10 +253,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Professional Development & Engagements
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">
+//                 <p className="text-sm text-black">
 //                   Lifelong learning & academic leadership
 //                 </p>
 //               </div>
@@ -265,7 +265,7 @@
 //             <div className="space-y-6">
 //               {/* International Courses */}
 //               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-//                 <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+//                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
 //                   <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
 //                   International Courses & Certifications
 //                 </h4>
@@ -273,7 +273,7 @@
 //                   {internationalCourses.map((course, i) => (
 //                     <li
 //                       key={i}
-//                       className="flex items-start gap-3 text-[#4A5A6A] hover:text-[#0B2545] transition-colors"
+//                       className="flex items-start gap-3 text-black hover:text-black transition-colors"
 //                     >
 //                       <CheckCircle className="h-4 w-4 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
 //                       <span>{course}</span>
@@ -284,26 +284,26 @@
 
 //               {/* Conferences */}
 //               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-//                 <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+//                 <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
 //                   <Calendar className="h-5 w-5 text-[#0F7A5A]" />
 //                   Conferences, Workshops & Scholarly Events
 //                 </h4>
-//                 <p className="text-[#4A5A6A] leading-relaxed">{conferencesDescription}</p>
+//                 <p className="text-black leading-relaxed">{conferencesDescription}</p>
 //               </div>
 
 //               {/* Resource Person */}
 //               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-//                 <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+//                 <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
 //                   <Briefcase className="h-5 w-5 text-[#0F7A5A]" />
 //                   Resource Person & Invited Engagements
 //                 </h4>
-//                 <p className="text-[#4A5A6A] leading-relaxed mb-3">
+//                 <p className="text-black leading-relaxed mb-3">
 //                   Served as Resource Person, Facilitator, Judge, and Invited Speaker in
 //                   various academic and professional development programs focusing on:
 //                 </p>
 //                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
 //                   {resourcePersonTopics.map((topic, i) => (
-//                     <li key={i} className="flex items-start gap-2 text-sm text-[#4A5A6A]">
+//                     <li key={i} className="flex items-start gap-2 text-sm text-black">
 //                       <span className="text-[#0F7A5A]">•</span>
 //                       <span>{topic}</span>
 //                     </li>
@@ -313,32 +313,32 @@
 
 //               {/* Statistics */}
 //               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-//                 <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+//                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
 //                   <Star className="h-5 w-5 text-[#0F7A5A]" />
 //                   Curriculum Innovation & Evaluation Statistics
 //                 </h4>
 //                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 //                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
 //                     <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.events}</p>
-//                     <p className="text-xs text-[#4A5A6A]">Scholarly Events</p>
+//                     <p className="text-xs text-black">Scholarly Events</p>
 //                   </div>
 //                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
 //                     <p className="text-2xl font-bold text-[#0F7A5A]">
 //                       {statistics.certifications}
 //                     </p>
-//                     <p className="text-xs text-[#4A5A6A]">Certifications Earned</p>
+//                     <p className="text-xs text-black">Certifications Earned</p>
 //                   </div>
 //                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
 //                     <p className="text-2xl font-bold text-[#0F7A5A]">
 //                       {statistics.platforms}
 //                     </p>
-//                     <p className="text-xs text-[#4A5A6A]">International Platforms</p>
+//                     <p className="text-xs text-black">International Platforms</p>
 //                   </div>
 //                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
 //                     <p className="text-2xl font-bold text-[#0F7A5A]">
 //                       {statistics.engagements}
 //                     </p>
-//                     <p className="text-xs text-[#4A5A6A]">Facilitation Engagements</p>
+//                     <p className="text-xs text-black">Facilitation Engagements</p>
 //                   </div>
 //                 </div>
 //               </div>
@@ -512,9 +512,9 @@ function BackgroundCarousel() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex items-center gap-3 mb-3"
           >
-            <div className="w-1 h-10 bg-[#00B894] rounded-full" />
+            <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Awards & <span className="text-[#00B894]">Certifications</span>
+              Awards & <span className="text-[#0F7A5A]">Certifications</span>
             </h2>
           </motion.div>
           <motion.p
@@ -533,14 +533,14 @@ function BackgroundCarousel() {
       <button
         aria-label="Previous background"
         onClick={() => goTo(index - 1)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 btn btn-glass btn-icon btn-pill h-10 w-10 text-white z-10"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         aria-label="Next background"
         onClick={() => goTo(index + 1)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 btn btn-glass btn-icon btn-pill h-10 w-10 text-white z-10"
       >
         <ChevronRight size={20} />
       </button>
@@ -553,7 +553,7 @@ function BackgroundCarousel() {
             aria-label={`Go to background ${i + 1}`}
             onClick={() => goTo(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === index ? "w-8 bg-[#00B894]" : "w-1.5 bg-white/50 hover:bg-white/80"
+              i === index ? "w-8 bg-[#0F7A5A]" : "w-1.5 bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}
@@ -588,20 +588,20 @@ export default function AwardsAndCertifications() {
   return (
     <section
       id="projects"
-      className="bg-[#F8F9FA] text-[#0B2545] font-sans"
+      className="bg-[#F8F9FA] text-black font-sans"
     >
       {/* ── Hero Banner with Carousel ── */}
       <BackgroundCarousel />
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         {/* ── In-section Nav ── */}
-        <div className="sticky top-0 z-20 bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#0F7A5A]/20 mb-12">
+        <div className="sticky top-0 z-20 bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#0F7A5A]/20 mb-8">
           <nav className="flex flex-wrap items-center gap-2 md:gap-4 py-4">
             {awardsNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200"
+                className="btn btn-ghost btn-pill px-4 py-2 text-sm"
               >
                 {link.label}
               </a>
@@ -614,17 +614,17 @@ export default function AwardsAndCertifications() {
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
           variants={containerVariants}
-          className="space-y-16"
+          className="space-y-10"
         >
           {/* ── Certifications ── */}
           <motion.div id="certifications" variants={itemVariants} className="scroll-mt-24">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Professional Certifications
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">LinkedIn Learning (2020)</p>
+                <p className="text-sm text-black">LinkedIn Learning (2020)</p>
               </div>
             </div>
 
@@ -633,7 +633,7 @@ export default function AwardsAndCertifications() {
                 {certifications.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+                    className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
                   >
                     <CheckCircle className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span>{item}</span>
@@ -648,8 +648,8 @@ export default function AwardsAndCertifications() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">Awards & Honors</h3>
-                <p className="text-sm text-[#4A5A6A]/70">Recognition for academic excellence</p>
+                <h3 className="text-2xl font-bold text-black">Awards & Honors</h3>
+                <p className="text-sm text-black">Recognition for academic excellence</p>
               </div>
             </div>
 
@@ -657,9 +657,9 @@ export default function AwardsAndCertifications() {
               <div className="flex items-start gap-4">
                 <Award className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-lg font-semibold text-[#0B2545]">{award.title}</h4>
-                  <p className="text-sm text-[#4A5A6A]/80">{award.institution}</p>
-                  <p className="text-sm text-[#4A5A6A] mt-1">{award.description}</p>
+                  <h4 className="text-lg font-semibold text-black">{award.title}</h4>
+                  <p className="text-sm text-black">{award.institution}</p>
+                  <p className="text-sm text-black mt-1">{award.description}</p>
                 </div>
               </div>
             </div>
@@ -670,17 +670,17 @@ export default function AwardsAndCertifications() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Professional Associations & Memberships
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">
+                <p className="text-sm text-black">
                   Scholarly collaboration & academic advancement
                 </p>
               </div>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-              <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+              <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                 <Users className="h-5 w-5 text-[#0F7A5A]" />
                 Associations
               </h4>
@@ -691,12 +691,12 @@ export default function AwardsAndCertifications() {
                     className="border-b border-[#0B2545]/5 last:border-0 pb-3 last:pb-0"
                   >
                     <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
-                      <span className="font-medium text-[#0B2545]">{assoc.name}</span>
+                      <span className="font-medium text-black">{assoc.name}</span>
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0F7A5A]/10 text-[#0F7A5A] w-fit">
                         {assoc.status}
                       </span>
                     </div>
-                    <p className="text-sm text-[#4A5A6A]/80 mt-0.5">{assoc.focus}</p>
+                    <p className="text-sm text-black mt-0.5">{assoc.focus}</p>
                   </li>
                 ))}
               </ul>
@@ -708,10 +708,10 @@ export default function AwardsAndCertifications() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Professional Development & Engagements
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">
+                <p className="text-sm text-black">
                   Lifelong learning & academic leadership
                 </p>
               </div>
@@ -720,7 +720,7 @@ export default function AwardsAndCertifications() {
             <div className="space-y-6">
               {/* International Courses */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
                   International Courses & Certifications
                 </h4>
@@ -728,7 +728,7 @@ export default function AwardsAndCertifications() {
                   {internationalCourses.map((course, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-[#4A5A6A] hover:text-[#0B2545] transition-colors"
+                      className="flex items-start gap-3 text-black hover:text-black transition-colors"
                     >
                       <CheckCircle className="h-4 w-4 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
                       <span>{course}</span>
@@ -739,26 +739,26 @@ export default function AwardsAndCertifications() {
 
               {/* Conferences */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-[#0F7A5A]" />
                   Conferences, Workshops & Scholarly Events
                 </h4>
-                <p className="text-[#4A5A6A] leading-relaxed">{conferencesDescription}</p>
+                <p className="text-black leading-relaxed">{conferencesDescription}</p>
               </div>
 
               {/* Resource Person */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-3 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Briefcase className="h-5 w-5 text-[#0F7A5A]" />
                   Resource Person & Invited Engagements
                 </h4>
-                <p className="text-[#4A5A6A] leading-relaxed mb-3">
+                <p className="text-black leading-relaxed mb-3">
                   Served as Resource Person, Facilitator, Judge, and Invited Speaker in
                   various academic and professional development programs focusing on:
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {resourcePersonTopics.map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#4A5A6A]">
+                    <li key={i} className="flex items-start gap-2 text-sm text-black">
                       <span className="text-[#0F7A5A]">•</span>
                       <span>{topic}</span>
                     </li>
@@ -768,32 +768,32 @@ export default function AwardsAndCertifications() {
 
               {/* Statistics */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
-                <h4 className="text-lg font-semibold text-[#0B2545] mb-4 flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <Star className="h-5 w-5 text-[#0F7A5A]" />
                   Curriculum Innovation & Evaluation Statistics
                 </h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">{statistics.events}</p>
-                    <p className="text-xs text-[#4A5A6A]">Scholarly Events</p>
+                    <p className="text-xs text-black">Scholarly Events</p>
                   </div>
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">
                       {statistics.certifications}
                     </p>
-                    <p className="text-xs text-[#4A5A6A]">Certifications Earned</p>
+                    <p className="text-xs text-black">Certifications Earned</p>
                   </div>
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">
                       {statistics.platforms}
                     </p>
-                    <p className="text-xs text-[#4A5A6A]">International Platforms</p>
+                    <p className="text-xs text-black">International Platforms</p>
                   </div>
                   <div className="bg-[#0F7A5A]/5 rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-[#0F7A5A]">
                       {statistics.engagements}
                     </p>
-                    <p className="text-xs text-[#4A5A6A]">Facilitation Engagements</p>
+                    <p className="text-xs text-black">Facilitation Engagements</p>
                   </div>
                 </div>
               </div>

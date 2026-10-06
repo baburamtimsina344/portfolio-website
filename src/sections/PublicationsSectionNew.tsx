@@ -63,7 +63,7 @@ export function PublicationsSection() {
           right: 0,
           height: 1,
           background:
-            "linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(11,37,69,0.12), transparent)",
+            "linear-gradient(90deg, transparent, rgba(15,122,90,0.30), rgba(11,37,69,0.12), transparent)",
         }}
       />
 
@@ -86,7 +86,7 @@ export function PublicationsSection() {
             height: 560,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(0,184,148,0.07) 0%, rgba(26,64,128,0.04) 50%, transparent 75%)",
+              "radial-gradient(circle, rgba(15,122,90,0.07) 0%, rgba(26,64,128,0.04) 50%, transparent 75%)",
           }}
         />
         <div
@@ -141,8 +141,8 @@ export function PublicationsSection() {
               marginBottom: 20,
               padding: "7px 20px",
               borderRadius: 100,
-              background: "rgba(0,184,148,0.08)",
-              border: "1px solid rgba(0,184,148,0.22)",
+              background: "rgba(15,122,90,0.08)",
+              border: "1px solid rgba(15,122,90,0.22)",
             }}
           >
             <BookMarked style={{ width: 12, height: 12, color: "var(--green)" }} />
@@ -152,7 +152,7 @@ export function PublicationsSection() {
                 fontWeight: 700,
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
-                color: "var(--navy)",
+                color: "#000000",
                 fontFamily: "var(--font-app)",
               }}
             >
@@ -166,11 +166,11 @@ export function PublicationsSection() {
             style={{
               fontSize: "clamp(30px, 4.5vw, 48px)",
               fontWeight: 700,
-              letterSpacing: "var(--tracking-normal)",
+              letterSpacing: "var(--tracking-display)",
               lineHeight: 1.1,
-              color: "var(--navy)",
+              color: "#000000",
               margin: 0,
-              fontFamily: "var(--font-app)",
+              fontFamily: "var(--font-heading)",
             }}
           >
             Scholarly{" "}
@@ -201,7 +201,7 @@ export function PublicationsSection() {
                 height: 1,
                 width: 64,
                 background:
-                  "linear-gradient(to right, transparent, rgba(0,184,148,0.50))",
+                  "linear-gradient(to right, transparent, rgba(15,122,90,0.50))",
               }}
             />
             <div
@@ -218,7 +218,7 @@ export function PublicationsSection() {
                 height: 1,
                 width: 64,
                 background:
-                  "linear-gradient(to left, transparent, rgba(0,184,148,0.50))",
+                  "linear-gradient(to left, transparent, rgba(15,122,90,0.50))",
               }}
             />
           </div>
@@ -248,7 +248,7 @@ export function PublicationsSection() {
             }}
           >
             <Filter
-              style={{ width: 16, height: 16, color: "var(--navy)", opacity: 0.6 }}
+              style={{ width: 16, height: 16, color: "#000000", opacity: 0.6 }}
             />
             {CATEGORIES.map((cat) => (
               <button
@@ -266,7 +266,7 @@ export function PublicationsSection() {
                   color: selectedCategory === cat.value ? "#FFFFFF" : "var(--navy)",
                   border:
                     selectedCategory === cat.value
-                      ? "1px solid rgba(0,184,148,0.20)"
+                      ? "1px solid rgba(15,122,90,0.20)"
                       : "1px solid rgba(11,37,69,0.10)",
                   cursor: "pointer",
                   transition: "all 0.2s ease",
@@ -288,7 +288,7 @@ export function PublicationsSection() {
             }}
           >
             <Calendar
-              style={{ width: 16, height: 16, color: "var(--navy)", opacity: 0.6 }}
+              style={{ width: 16, height: 16, color: "#000000", opacity: 0.6 }}
             />
             <button
               onClick={() => setSelectedYear("all")}
@@ -304,7 +304,7 @@ export function PublicationsSection() {
                 color: selectedYear === "all" ? "#FFFFFF" : "var(--navy)",
                 border:
                   selectedYear === "all"
-                    ? "1px solid rgba(0,184,148,0.20)"
+                    ? "1px solid rgba(15,122,90,0.20)"
                     : "1px solid rgba(11,37,69,0.10)",
                 cursor: "pointer",
                 transition: "all 0.2s ease",
@@ -329,7 +329,7 @@ export function PublicationsSection() {
                   color: selectedYear === year ? "#FFFFFF" : "var(--navy)",
                   border:
                     selectedYear === year
-                      ? "1px solid rgba(0,184,148,0.20)"
+                      ? "1px solid rgba(15,122,90,0.20)"
                       : "1px solid rgba(11,37,69,0.10)",
                   cursor: "pointer",
                   transition: "all 0.2s ease",
@@ -360,7 +360,7 @@ export function PublicationsSection() {
                 gridColumn: "1 / -1",
                 textAlign: "center",
                 padding: "60px 20px",
-                color: "var(--text-secondary)",
+                color: "#000000",
                 fontFamily: "var(--font-app)",
               }}
             >
@@ -386,7 +386,7 @@ export function PublicationsSection() {
             textAlign: "center",
             fontSize: 12.5,
             fontWeight: 500,
-            color: "var(--text-secondary)",
+            color: "#000000",
             fontFamily: "var(--font-app)",
             marginTop: 36,
             letterSpacing: "0.04em",
@@ -405,7 +405,7 @@ export function PublicationsSection() {
           right: 0,
           height: 1,
           background:
-            "linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(0,184,148,0.20), transparent)",
+            "linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(15,122,90,0.20), transparent)",
         }}
       />
     </section>
@@ -415,7 +415,7 @@ export function PublicationsSection() {
 function PublicationCard({ pub }: { pub: Publication }) {
   return (
     <motion.div
-      whileHover={{ y: -6, boxShadow: "0 24px 64px rgba(11,37,69,0.14), 0 8px 24px rgba(0,184,148,0.08)" }}
+      whileHover={{ y: -6, boxShadow: "0 24px 64px rgba(11,37,69,0.14), 0 8px 24px rgba(15,122,90,0.08)" }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       style={{
         position: "relative",
@@ -441,7 +441,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
           width: 4,
           height: 56,
           background:
-            "linear-gradient(to bottom, var(--green), rgba(0,184,148,0.08))",
+            "linear-gradient(to bottom, var(--green), rgba(15,122,90,0.08))",
           borderRadius: "20px 0 0 0",
         }}
       />
@@ -455,7 +455,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
           right: 0,
           height: 3,
           background:
-            "linear-gradient(90deg, var(--green), rgba(0,184,148,0.20), transparent)",
+            "linear-gradient(90deg, var(--green), rgba(15,122,90,0.20), transparent)",
           borderRadius: "20px 20px 0 0",
           opacity: 0,
           transition: "opacity 0.35s",
@@ -470,7 +470,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
           inset: 0,
           borderRadius: 20,
           background:
-            "radial-gradient(circle at top left, rgba(0,184,148,0.04) 0%, transparent 60%)",
+            "radial-gradient(circle at top left, rgba(15,122,90,0.04) 0%, transparent 60%)",
           opacity: 0,
           transition: "opacity 0.35s",
           pointerEvents: "none",
@@ -497,7 +497,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
               gap: 6,
               fontSize: 12,
               fontWeight: 600,
-              color: "var(--text-secondary)",
+              color: "#000000",
               fontFamily: "var(--font-app)",
             }}
           >
@@ -512,9 +512,9 @@ function PublicationCard({ pub }: { pub: Publication }) {
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              background: "rgba(0,184,148,0.09)",
-              color: "var(--navy)",
-              border: "1px solid rgba(0,184,148,0.22)",
+              background: "rgba(15,122,90,0.09)",
+              color: "#000000",
+              border: "1px solid rgba(15,122,90,0.22)",
               fontFamily: "var(--font-app)",
             }}
           >
@@ -528,7 +528,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
             height: 1,
             marginBottom: 14,
             background:
-              "linear-gradient(to right, rgba(0,184,148,0.25), transparent)",
+              "linear-gradient(to right, rgba(15,122,90,0.25), transparent)",
           }}
         />
 
@@ -537,16 +537,16 @@ function PublicationCard({ pub }: { pub: Publication }) {
           style={{
             fontSize: "clamp(16px, 1.8vw, 19px)",
             fontWeight: 700,
-            color: "var(--navy)",
+            color: "#000000",
             lineHeight: 1.35,
-            letterSpacing: "var(--tracking-normal)",
+            letterSpacing: "var(--tracking-heading)",
             marginBottom: 12,
             display: "-webkit-box",
             WebkitLineClamp: 3,
             WebkitBoxOrient: "vertical",
             overflow: "hidden",
             transition: "color 0.25s",
-            fontFamily: "var(--font-app)",
+            fontFamily: "var(--font-heading)",
           }}
         >
           {pub.title}
@@ -557,7 +557,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
           style={{
             fontSize: "clamp(13px, 1.4vw, 15px)",
             lineHeight: 1.6,
-            color: "var(--text-secondary)",
+            color: "#000000",
             margin: 0,
             fontWeight: 500,
             fontFamily: "var(--font-app)",
@@ -573,7 +573,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
             style={{
               fontSize: 12.5,
               fontStyle: "italic",
-              color: "var(--navy)",
+              color: "#000000",
               opacity: 0.6,
               fontFamily: "var(--font-app)",
               marginTop: 4,
@@ -606,10 +606,10 @@ function PublicationCard({ pub }: { pub: Publication }) {
                 fontWeight: 700,
                 letterSpacing: "0.09em",
                 textTransform: "uppercase",
-                color: "var(--navy)",
+                color: "#000000",
                 textDecoration: "none",
                 fontFamily: "var(--font-app)",
-                borderBottom: "1.5px solid rgba(0,184,148,0.40)",
+                borderBottom: "1.5px solid rgba(15,122,90,0.40)",
                 paddingBottom: 2,
                 transition: "color 0.22s, border-color 0.22s",
               }}
@@ -621,7 +621,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.color = "var(--navy)";
                 (e.currentTarget as HTMLElement).style.borderBottomColor =
-                  "rgba(0,184,148,0.40)";
+                  "rgba(15,122,90,0.40)";
               }}
             >
               View Document
@@ -642,10 +642,10 @@ function PublicationCard({ pub }: { pub: Publication }) {
                 fontWeight: 700,
                 letterSpacing: "0.09em",
                 textTransform: "uppercase",
-                color: "var(--navy)",
+                color: "#000000",
                 textDecoration: "none",
                 fontFamily: "var(--font-app)",
-                borderBottom: "1.5px solid rgba(0,184,148,0.40)",
+                borderBottom: "1.5px solid rgba(15,122,90,0.40)",
                 paddingBottom: 2,
                 transition: "color 0.22s, border-color 0.22s",
               }}
@@ -657,7 +657,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.color = "var(--navy)";
                 (e.currentTarget as HTMLElement).style.borderBottomColor =
-                  "rgba(0,184,148,0.40)";
+                  "rgba(15,122,90,0.40)";
               }}
             >
               View on Google Scholar
@@ -670,7 +670,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
       <style>{`
         .pub-card:hover .pub-top-bar { opacity: 1 !important; }
         .pub-card:hover .pub-hover-glow { opacity: 1 !important; }
-        .pub-card:hover { border-color: rgba(0,184,148,0.15) !important; }
+        .pub-card:hover { border-color: rgba(15,122,90,0.15) !important; }
       `}</style>
     </motion.div>
   );

@@ -90,9 +90,9 @@
 //           <div className="mt-10 h-px bg-linear-to-r from-transparent via-[#0F7A5A]/25 to-transparent" />
 
 //           <div className="flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
-//             <p className="type-caption text-[#4A5A6A]">
+//             <p className="type-caption text-black">
 //               &copy; {currentYear}{" "}
-//               <span className="font-semibold text-[#0B2545]">
+//               <span className="font-semibold text-black">
 //                 {SITE_CONFIG.name}
 //               </span>
 //               . All rights reserved.
@@ -138,7 +138,7 @@
 //               transition={{ duration: 0.22 }}
 //               onClick={() => scrollToSection("home")}
 //               aria-label="Back to top"
-//               className="relative flex h-11 w-11 items-center justify-center rounded-full border border-[#0F7A5A]/20 bg-white/95 text-[#0B2545] shadow-lg shadow-[#0B2545]/10 backdrop-blur-md transition-all duration-200 hover:border-[#0F7A5A]/35 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/30"
+//               className="btn btn-outline btn-icon btn-pill relative h-11 w-11"
 //             >
 //               <span className="absolute inset-0 rounded-full border border-[#0F7A5A]/20 opacity-0 transition-opacity duration-300 hover:opacity-100" aria-hidden="true" />
 //               <ArrowUp className="h-5 w-5" aria-hidden="true" />
@@ -238,9 +238,9 @@ export function Footer() {
           <div className="bg-linear-to-r from-transparent via-[#0F7A5A]/25 to-transparent" />
 
           <div className="flex flex-col gap-3 pt-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="type-caption text-[#4A5A6A]">
+            <p className="type-caption text-black">
               &copy; {currentYear}{" "}
-              <span className="font-semibold text-[#0B2545]">
+              <span className="font-semibold text-black">
                 {SITE_CONFIG.name}
               </span>
               . All rights reserved.
@@ -286,7 +286,7 @@ export function Footer() {
               transition={{ duration: 0.22 }}
               onClick={() => scrollToSection("home")}
               aria-label="Back to top"
-              className="relative flex h-11 w-11 items-center justify-center rounded-full border border-[#0F7A5A]/20 bg-white/95 text-[#0B2545] shadow-lg shadow-[#0B2545]/10 backdrop-blur-md transition-all duration-200 hover:border-[#0F7A5A]/35 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/30"
+              className="btn btn-outline btn-icon btn-pill relative h-11 w-11"
             >
               <span className="absolute inset-0 rounded-full border border-[#0F7A5A]/20 opacity-0 transition-opacity duration-300 hover:opacity-100" aria-hidden="true" />
               <ArrowUp className="h-5 w-5" aria-hidden="true" />

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme inline {
@@ -9,13 +8,13 @@
   --color-accent: #7a9e7e;
   --color-accent-foreground: #ffffff;
   --color-background: #faf8f5;
-  --color-foreground: #1a1a2e;
+  --color-foreground: #000000;
   --color-muted: #64748b;
-  --color-muted-foreground: #64748b;
+  --color-muted-foreground: #000000;
   --color-card: #ffffff;
-  --color-card-foreground: #1a1a2e;
+  --color-card-foreground: #000000;
   --color-popover: #ffffff;
-  --color-popover-foreground: #1a1a2e;
+  --color-popover-foreground: #000000;
   --color-border: #e5e7eb;
   --color-input: #e5e7eb;
   --color-ring: #c9a84c;
@@ -31,13 +30,30 @@
   --shadow-soft: 0 4px 24px -4px rgb(15 23 42 / 0.08);
   --shadow-glow: 0 0 40px -8px rgb(201 168 76 / 0.25);
   --shadow-card: 0 1px 3px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(15 23 42 / 0.1);
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-soft: pulse-soft 3s ease-in-out infinite;
 }
 
 :root {
-  --font-app: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  /* Typography system: Inter for body/UI, Manrope for headings */
+  --font-app: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Manrope", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Brand palette (originally declared in HeroSection <GlobalStyles>) */
+  --navy: #0b2545;
+  --navy-mid: #0f2f56;
+  --navy-light: #1a4080;
+  --royal: #1a5cb8;
+  --green: #0F7A5A;
+  --green-light: #66d9a0;
+  --white: #ffffff;
+  --off-white: #fafaf8;
+  --gray-50: #f7f8fa;
+  --gray-100: #eef0f4;
+  --gray-200: #dce0e8;
+  --gray-400: #8a93a6;
+  --gray-600: #4a5568;
+  --gray-800: #1a202c;
 
   --text-display: clamp(2.25rem, 5vw, 3.75rem);
   --text-section-title: clamp(1.875rem, 4.5vw, 3rem);
@@ -56,38 +72,14 @@
   --tracking-normal: 0;
   --tracking-label: 0.08em;
   --tracking-kicker: 0.14em;
+  --tracking-display: -0.02em;
+  --tracking-heading: -0.01em;
 
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
   --font-extrabold: 800;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-@keyframes gradient-x {
-  0%, 100% { transform: translateX(-100%); }
-  50% { transform: translateX(100%); }
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
 }
 
 @layer base {
@@ -101,12 +93,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-app);
     font-size: var(--text-body);
     line-height: var(--leading-body);
     letter-spacing: var(--tracking-normal);
-    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    font-synthesis-weight: none;
   }
 
   h1,
@@ -115,8 +108,8 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-app);
-    letter-spacing: var(--tracking-normal);
+    font-family: var(--font-heading);
+    letter-spacing: var(--tracking-heading);
     line-height: var(--leading-heading);
     font-weight: var(--font-bold);
   }
@@ -124,14 +117,28 @@
   h1 {
     font-size: var(--text-display);
     line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    font-weight: var(--font-extrabold);
   }
 
   h2 {
     font-size: var(--text-section-title);
+    letter-spacing: var(--tracking-display);
+    font-weight: var(--font-bold);
   }
 
   h3 {
     font-size: var(--text-card-title);
+    font-weight: var(--font-bold);
+  }
+
+  h4 {
+    font-weight: var(--font-bold);
+  }
+
+  h5,
+  h6 {
+    font-weight: var(--font-semibold);
   }
 
   p,
@@ -153,70 +160,32 @@
     background: linear-gradient(135deg, #0f172a 0%, #c9a84c 50%, #7a9e7e 100%);
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #0f172a, #c9a84c, #7a9e7e);
-  }
-
   .glass {
     @apply border border-white/20 bg-white/70 backdrop-blur-xl;
   }
 
-  .glass-card {
-    @apply border border-white/30 bg-white/80 backdrop-blur-md shadow-card;
-  }
-
   .section-padding {
-    @apply px-4 py-16 sm:px-6 md:py-24 lg:px-8 lg:py-28;
+    @apply px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-16;
   }
 
   .container-wide {
     @apply mx-auto w-full max-w-7xl;
   }
 
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
-  }
-
-  .animate-gradient-x {
-    animation: gradient-x 3s ease-in-out infinite;
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
-
-  .delay-1000 {
-    animation-delay: 1s;
-  }
-
-  .type-display {
-    font-family: var(--font-app);
-    font-size: var(--text-display);
-    font-weight: var(--font-bold);
-    line-height: var(--leading-display);
-    letter-spacing: var(--tracking-normal);
-  }
-
   .type-section-title {
-    font-family: var(--font-app);
+    font-family: var(--font-heading);
     font-size: var(--text-section-title);
     font-weight: var(--font-bold);
     line-height: var(--leading-heading);
-    letter-spacing: var(--tracking-normal);
+    letter-spacing: var(--tracking-display);
   }
 
   .type-card-title {
-    font-family: var(--font-app);
+    font-family: var(--font-heading);
     font-size: var(--text-card-title);
     font-weight: var(--font-bold);
     line-height: var(--leading-heading);
-    letter-spacing: var(--tracking-normal);
+    letter-spacing: var(--tracking-heading);
   }
 
   .type-body {
@@ -238,7 +207,7 @@
   .type-kicker {
     font-family: var(--font-app);
     font-size: var(--text-kicker);
-    font-weight: var(--font-bold);
+    font-weight: var(--font-semibold);
     line-height: var(--leading-ui);
     letter-spacing: var(--tracking-kicker);
     text-transform: uppercase;
@@ -247,7 +216,7 @@
   .type-caption {
     font-family: var(--font-app);
     font-size: var(--text-caption);
-    font-weight: var(--font-normal);
+    font-weight: var(--font-medium);
     line-height: var(--leading-ui);
     letter-spacing: var(--tracking-normal);
   }
@@ -260,33 +229,62 @@
     @apply bg-[#F8F9FA] border-[#0F7A5A]/10;
   }
 
-  .premium-card {
-    @apply rounded-lg border border-[#0F7A5A]/15 bg-white/90 shadow-card;
-  }
-
-  .premium-card-muted {
-    @apply rounded-lg border border-[#0F7A5A]/10 bg-[#F8F9FA]/80 shadow-soft;
-  }
-
   .footer-link {
-    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-[#4A5A6A] transition-all duration-200 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/30;
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-black transition-all duration-200 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/30;
     font-family: var(--font-app);
     font-size: var(--text-caption);
-    font-weight: var(--font-normal);
+    font-weight: var(--font-medium);
     line-height: var(--leading-ui);
     letter-spacing: var(--tracking-normal);
   }
 
-  .dashboard-shell {
-    @apply bg-[#F8F9FA] text-[#0B2545];
+  /* ── Button system ─────────────────────────────────────────────
+     Base .btn sets shape, type and focus ring.
+     Colour comes from one of: primary | secondary | accent |
+     outline | ghost | glass | destructive.
+     Shape: .btn-pill (pill) and .btn-icon (square, no padding). */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer select-none font-semibold tracking-[0.01em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    line-height: var(--leading-ui);
   }
 
-  .dashboard-panel {
-    @apply rounded-lg border border-[#0F7A5A]/15 bg-white shadow-card;
+  .btn-primary {
+    @apply bg-[#0B2545] text-white shadow-sm hover:bg-[#0F7A5A] hover:shadow-md active:scale-[0.98];
   }
 
-  .dashboard-panel-soft {
-    @apply rounded-lg border border-[#0F7A5A]/10 bg-white/80 shadow-soft;
+  .btn-secondary {
+    @apply bg-[#c9a84c] text-[#0B2545] shadow-sm hover:bg-[#b8963f] active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply bg-[#0F7A5A] text-white shadow-sm hover:bg-[#0B5E4A] hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-destructive {
+    @apply bg-[#DC2626] text-white shadow-sm hover:bg-[#B91C1C] active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border-[#0B2545]/25 bg-white text-black shadow-sm hover:border-[#0F7A5A] hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-[#0F7A5A]/10 hover:text-[#0F7A5A];
+  }
+
+  .btn-glass {
+    @apply border-white/30 bg-white/15 backdrop-blur-sm hover:border-white/50 hover:bg-white/25 focus-visible:ring-white/60;
+  }
+
+  .btn-pill {
+    border-radius: 9999px;
+  }
+
+  .btn-icon {
+    padding: 0;
+    justify-content: center;
   }
 
   .dashboard-accent-line {
@@ -294,18 +292,10 @@
   }
 }
 
-.glass-premium {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-input[type="text"]::-webkit-search-decoration,
-input[type="text"]::-webkit-search-cancel-button,
-input[type="text"]::-webkit-search-results-button,
-input[type="text"]::-webkit-search-results-decoration {
-  display: none;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 ::-webkit-scrollbar {

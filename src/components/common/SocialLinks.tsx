@@ -38,7 +38,7 @@
 //                   whileHover={{ scale: 1.1, y: -2 }}
 //                   whileTap={{ scale: 0.95 }}
 //                   className={cn(
-//                     "inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-colors hover:bg-primary hover:text-white hover:border-primary",
+//                     "inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-black transition-colors hover:bg-primary hover:text-white hover:border-primary",
 //                     sizeClasses[size]
 //                   )}
 //                 >
@@ -98,7 +98,7 @@ export function SocialLinks({ links, className, size = "md" }: SocialLinksProps)
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className={cn(
-                    "inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-colors hover:bg-primary hover:text-white hover:border-primary",
+                    "inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-black transition-colors hover:bg-primary hover:text-white hover:border-primary",
                     sizeClasses[size]
                   )}
                 >

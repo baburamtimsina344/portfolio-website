@@ -91,7 +91,7 @@
 // //   return (
 // //     <div
 // //       id="teaching"
-// //       className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
+// //       className="min-h-screen bg-[#F8F9FA] text-black font-sans"
 // //     >
 // //       {/* ── Hero ── */}
 // //       <div
@@ -109,7 +109,7 @@
 // //               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
 // //             >
 // //               Teaching & <br />
-// //               <span className="text-[#00B894]">Mentorship</span>
+// //               <span className="text-[#0F7A5A]">Mentorship</span>
 // //             </motion.h1>
 // //             <motion.p
 // //               initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@
 // //       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
 // //         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
 // //           <div className="py-3 md:py-4 flex-shrink-0">
-// //             <h2 className="text-2xl font-bold text-[#0B2545]">
+// //             <h2 className="text-2xl font-bold text-black">
 // //               Teaching <span className="text-[#0F7A5A]">Overview</span>
 // //             </h2>
 // //           </div>
@@ -138,7 +138,7 @@
 // //             {navLinks.map((link) => (
 // //               <button
 // //                 key={link}
-// //                 className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+// //                 className="btn btn-ghost btn-pill group gap-1.5 px-4 py-2 text-sm"
 // //               >
 // //                 {link}
 // //                 <ChevronRight size={16} className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -162,10 +162,10 @@
 // //             <div className="flex items-center gap-3 mb-6">
 // //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 // //               <div>
-// //                 <h3 className="text-2xl font-bold text-[#0B2545]">
+// //                 <h3 className="text-2xl font-bold text-black">
 // //                   Courses Taught
 // //                 </h3>
-// //                 <p className="text-sm text-[#4A5A6A]/70">Postgraduate Level</p>
+// //                 <p className="text-sm text-black">Postgraduate Level</p>
 // //               </div>
 // //             </div>
 
@@ -174,7 +174,7 @@
 // //                 {teachingData.courses.map((item, i) => (
 // //                   <li
 // //                     key={i}
-// //                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+// //                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 // //                   >
 // //                     <CheckCircle className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 // //                     <span>{item}</span>
@@ -189,10 +189,10 @@
 // //             <div className="flex items-center gap-3 mb-6">
 // //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 // //               <div>
-// //                 <h3 className="text-2xl font-bold text-[#0B2545]">
+// //                 <h3 className="text-2xl font-bold text-black">
 // //                   Supervision
 // //                 </h3>
-// //                 <p className="text-sm text-[#4A5A6A]/70">Postgraduate Level</p>
+// //                 <p className="text-sm text-black">Postgraduate Level</p>
 // //               </div>
 // //             </div>
 
@@ -201,7 +201,7 @@
 // //                 {teachingData.supervision.map((item, i) => (
 // //                   <li
 // //                     key={i}
-// //                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+// //                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 // //                   >
 // //                     <Users className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 // //                     <span>{item}</span>
@@ -216,10 +216,10 @@
 // //             <div className="flex items-center gap-3 mb-6">
 // //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 // //               <div>
-// //                 <h3 className="text-2xl font-bold text-[#0B2545]">
+// //                 <h3 className="text-2xl font-bold text-black">
 // //                   Assessor & Mentor
 // //                 </h3>
-// //                 <p className="text-sm text-[#4A5A6A]/70">HEA Fellowship</p>
+// //                 <p className="text-sm text-black">HEA Fellowship</p>
 // //               </div>
 // //             </div>
 
@@ -228,9 +228,9 @@
 // //                 {teachingData.mentorship.map((item, i) => (
 // //                   <li
 // //                     key={i}
-// //                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+// //                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 // //                   >
-// //                     <Award className="h-5 w-5 text-[#00B894] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+// //                     <Award className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 // //                     <span>{item}</span>
 // //                   </li>
 // //                 ))}
@@ -415,7 +415,7 @@
 //   return (
 //     <div
 //       id="teaching"
-//       className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
+//       className="min-h-screen bg-[#F8F9FA] text-black font-sans"
 //     >
 //       {/* ── Hero ── */}
 //       <div
@@ -432,7 +432,7 @@
 //               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
 //             >
 //               Teaching & <br />
-//               <span className="text-[#00B894]">Mentorship</span>
+//               <span className="text-[#0F7A5A]">Mentorship</span>
 //             </motion.h1>
 //             <motion.p
 //               initial={{ opacity: 0, y: 20 }}
@@ -454,7 +454,7 @@
 //       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
 //         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
 //           <div className="py-3 md:py-4 flex-shrink-0">
-//             <h2 className="text-2xl font-bold text-[#0B2545]">
+//             <h2 className="text-2xl font-bold text-black">
 //               Teaching <span className="text-[#0F7A5A]">Overview</span>
 //             </h2>
 //           </div>
@@ -462,7 +462,7 @@
 //             {navLinks.map((link) => (
 //               <button
 //                 key={link}
-//                 className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+//                 className="btn btn-ghost btn-pill group gap-1.5 px-4 py-2 text-sm"
 //               >
 //                 {link}
 //                 <ChevronRight
@@ -489,15 +489,15 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Teaching Philosophy
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Core principles</p>
+//                 <p className="text-sm text-black">Core principles</p>
 //               </div>
 //             </div>
 //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300 relative">
 //               <Quote className="absolute top-4 right-4 h-8 w-8 text-[#0F7A5A]/20" />
-//               <p className="text-[#4A5A6A] leading-relaxed text-lg italic">
+//               <p className="text-black leading-relaxed text-lg italic">
 //                 {teachingData.philosophy}
 //               </p>
 //             </div>
@@ -508,10 +508,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Areas of Expertise
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Teaching and Supervision</p>
+//                 <p className="text-sm text-black">Teaching and Supervision</p>
 //               </div>
 //             </div>
 //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
@@ -519,7 +519,7 @@
 //                 {teachingData.areas.map((item, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
 //                     <BookOpen className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <span>{item}</span>
@@ -534,10 +534,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Current Academic Appointments
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Present roles</p>
+//                 <p className="text-sm text-black">Present roles</p>
 //               </div>
 //             </div>
 //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
@@ -545,11 +545,11 @@
 //                 {teachingData.currentAppointments.map((app, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-4 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-4 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
 //                     <Building className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <div>
-//                       <span className="font-semibold text-[#0B2545] block">
+//                       <span className="font-semibold text-black block">
 //                         {app.institution}
 //                       </span>
 //                       <span>{app.description}</span>
@@ -565,10 +565,10 @@
 //             <div className="flex items-center gap-3 mb-6">
 //               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
 //               <div>
-//                 <h3 className="text-2xl font-bold text-[#0B2545]">
+//                 <h3 className="text-2xl font-bold text-black">
 //                   Previous Teaching Engagements
 //                 </h3>
-//                 <p className="text-sm text-[#4A5A6A]/70">Diverse institutions</p>
+//                 <p className="text-sm text-black">Diverse institutions</p>
 //               </div>
 //             </div>
 //             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
@@ -576,7 +576,7 @@
 //                 {teachingData.previousEngagements.map((item, i) => (
 //                   <li
 //                     key={i}
-//                     className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+//                     className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
 //                   >
 //                     <Briefcase className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 //                     <span>{item}</span>
@@ -783,7 +783,7 @@ function HeroCarousel() {
   };
 
   return (
-    <div className="relative h-[500px] lg:h-[600px] overflow-hidden mt-40 lg:mt-20">
+    <div className="relative h-[500px] lg:h-[600px] overflow-hidden">
       {/* ── Sliding backgrounds with full image ── */}
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -834,7 +834,7 @@ function HeroCarousel() {
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 {slide.title} <br />
-                <span className="text-[#00B894]">{slide.highlight}</span>
+                <span className="text-[#0F7A5A]">{slide.highlight}</span>
               </h1>
               <p className="mt-4 text-lg text-white/80 max-w-xl">
                 {slide.subtitle}
@@ -848,14 +848,14 @@ function HeroCarousel() {
       <button
         aria-label="Previous slide"
         onClick={() => goTo(index - 1)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 btn btn-glass btn-icon btn-pill h-10 w-10 text-white z-10"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         aria-label="Next slide"
         onClick={() => goTo(index + 1)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 btn btn-glass btn-icon btn-pill h-10 w-10 text-white z-10"
       >
         <ChevronRight size={20} />
       </button>
@@ -868,7 +868,7 @@ function HeroCarousel() {
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => goTo(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === index ? "w-8 bg-[#00B894]" : "w-1.5 bg-white/50 hover:bg-white/80"
+              i === index ? "w-8 bg-[#0F7A5A]" : "w-1.5 bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}
@@ -904,7 +904,7 @@ export default function TeachingSection() {
   return (
     <div
       id="teaching"
-      className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
+      className="bg-[#F8F9FA] text-black font-sans"
     >
       {/* ── Hero Carousel ── */}
       <HeroCarousel />
@@ -913,7 +913,7 @@ export default function TeachingSection() {
       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
           <div className="py-3 md:py-4 flex-shrink-0">
-            <h2 className="text-2xl font-bold text-[#0B2545]">
+            <h2 className="text-2xl font-bold text-black">
               Teaching <span className="text-[#0F7A5A]">Overview</span>
             </h2>
           </div>
@@ -921,7 +921,7 @@ export default function TeachingSection() {
             {navLinks.map((link) => (
               <button
                 key={link}
-                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+                className="btn btn-ghost btn-pill group gap-1.5 px-4 py-2 text-sm"
               >
                 {link}
                 <ChevronRight
@@ -940,23 +940,23 @@ export default function TeachingSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-40px" }}
         variants={containerVariants}
-        className="max-w-7xl mx-auto px-6 lg:px-10 py-16"
+        className="max-w-7xl mx-auto px-6 lg:px-10 py-10"
       >
-        <div className="space-y-16">
+        <div className="space-y-10">
           {/* Teaching Philosophy */}
           <motion.div variants={listItemVariants} className="relative">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Teaching Philosophy
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">Core principles</p>
+                <p className="text-sm text-black">Core principles</p>
               </div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300 relative">
               <Quote className="absolute top-4 right-4 h-8 w-8 text-[#0F7A5A]/20" />
-              <p className="text-[#4A5A6A] leading-relaxed text-lg italic">
+              <p className="text-black leading-relaxed text-lg italic">
                 {teachingData.philosophy}
               </p>
             </div>
@@ -967,10 +967,10 @@ export default function TeachingSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Areas of Expertise
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">Teaching and Supervision</p>
+                <p className="text-sm text-black">Teaching and Supervision</p>
               </div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
@@ -978,7 +978,7 @@ export default function TeachingSection() {
                 {teachingData.areas.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+                    className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
                   >
                     <BookOpen className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span>{item}</span>
@@ -993,10 +993,10 @@ export default function TeachingSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Current Academic Appointments
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">Present roles</p>
+                <p className="text-sm text-black">Present roles</p>
               </div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
@@ -1004,11 +1004,11 @@ export default function TeachingSection() {
                 {teachingData.currentAppointments.map((app, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-4 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+                    className="flex items-start gap-4 text-black leading-relaxed group hover:text-black transition-colors"
                   >
                     <Building className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <div>
-                      <span className="font-semibold text-[#0B2545] block">
+                      <span className="font-semibold text-black block">
                         {app.institution}
                       </span>
                       <span>{app.description}</span>
@@ -1024,10 +1024,10 @@ export default function TeachingSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2545]">
+                <h3 className="text-2xl font-bold text-black">
                   Previous Teaching Engagements
                 </h3>
-                <p className="text-sm text-[#4A5A6A]/70">Diverse institutions</p>
+                <p className="text-sm text-black">Diverse institutions</p>
               </div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
@@ -1035,7 +1035,7 @@ export default function TeachingSection() {
                 {teachingData.previousEngagements.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-[#4A5A6A] leading-relaxed group hover:text-[#0B2545] transition-colors"
+                    className="flex items-start gap-3 text-black leading-relaxed group hover:text-black transition-colors"
                   >
                     <Briefcase className="h-5 w-5 text-[#0F7A5A] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span>{item}</span>
@@ -1053,9 +1053,9 @@ export default function TeachingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-[#0B5E4A] mt-12"
+        className="bg-[#0B5E4A] mt-8"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
           <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
             Explore <span className="text-[#A8E6CF]">Teaching Highlights</span>
           </h3>
