@@ -76,7 +76,7 @@ export function NewsSection() {
             aria-label="News and Events"
             style={{
                 position: 'relative',
-                padding: 'clamp(72px, 10vw, 120px) 0',
+                    padding: 'clamp(48px, 7vw, 80px) 0',
                 background: 'var(--off-white)',
                 overflow: 'hidden',
             }}
@@ -84,7 +84,7 @@ export function NewsSection() {
             {/* ── Top divider ──────────────────────────────────── */}
             <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, height: 1,
-                background: 'linear-gradient(90deg, transparent, rgba(0,184,148,0.30), rgba(11,37,69,0.12), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(15,122,90,0.30), rgba(11,37,69,0.12), transparent)',
             }} />
 
             {/* ── Background Orbs ──────────────────────────────── */}
@@ -92,7 +92,7 @@ export function NewsSection() {
                 <div style={{
                     position: 'absolute', top: '-10%', right: '-10%',
                     width: 560, height: 560, borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,184,148,0.07) 0%, rgba(26,64,128,0.04) 50%, transparent 75%)',
+                    background: 'radial-gradient(circle, rgba(15,122,90,0.07) 0%, rgba(26,64,128,0.04) 50%, transparent 75%)',
                 }} />
                 <div style={{
                     position: 'absolute', bottom: '-15%', left: '-10%',
@@ -129,14 +129,14 @@ export function NewsSection() {
                         marginBottom: 20,
                         padding: '7px 20px',
                         borderRadius: 100,
-                        background: 'rgba(0,184,148,0.08)',
-                        border: '1px solid rgba(0,184,148,0.22)',
+                        background: 'rgba(15,122,90,0.08)',
+                        border: '1px solid rgba(15,122,90,0.22)',
                     }}>
                         <Newspaper style={{ width: 12, height: 12, color: 'var(--green)' }} />
                         <span style={{
                             fontSize: 10.5, fontWeight: 700,
                             letterSpacing: '0.22em', textTransform: 'uppercase',
-                            color: 'var(--navy)', fontFamily: 'var(--font-app)',
+                            color: '#000000', fontFamily: 'var(--font-app)',
                         }}>
                             Research
                         </span>
@@ -147,11 +147,11 @@ export function NewsSection() {
                     <h2 style={{
                         fontSize: 'clamp(30px, 4.5vw, 48px)',
                         fontWeight: 700,
-                        letterSpacing: 'var(--tracking-normal)',
+                        letterSpacing: 'var(--tracking-display)',
                         lineHeight: 1.1,
-                        color: 'var(--navy)',
+                        color: '#000000',
                         margin: 0,
-                        fontFamily: 'var(--font-app)',
+                        fontFamily: 'var(--font-heading)',
                     }}>
                       Core  Research Areas
                         <span style={{
@@ -169,9 +169,9 @@ export function NewsSection() {
                         display: 'flex', alignItems: 'center',
                         justifyContent: 'center', gap: 12, marginTop: 22,
                     }}>
-                        <div style={{ height: 1, width: 64, background: 'linear-gradient(to right, transparent, rgba(0,184,148,0.50))' }} />
+                        <div style={{ height: 1, width: 64, background: 'linear-gradient(to right, transparent, rgba(15,122,90,0.50))' }} />
                         <div style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: 'var(--green)', opacity: 0.7 }} />
-                        <div style={{ height: 1, width: 64, background: 'linear-gradient(to left, transparent, rgba(0,184,148,0.50))' }} />
+                        <div style={{ height: 1, width: 64, background: 'linear-gradient(to left, transparent, rgba(15,122,90,0.50))' }} />
                     </div>
                 </motion.div>
 
@@ -222,7 +222,7 @@ export function NewsSection() {
                                         <div style={{
                                             position: 'absolute', top: 0, left: 0, right: 0,
                                             height: 3,
-                                            background: 'linear-gradient(90deg, var(--green), rgba(0,184,148,0.20), transparent)',
+                                            background: 'linear-gradient(90deg, var(--green), rgba(15,122,90,0.20), transparent)',
                                             borderRadius: '20px 20px 0 0',
                                             opacity: 0,
                                             transition: 'opacity 0.32s',
@@ -241,7 +241,7 @@ export function NewsSection() {
                                         {/* Hover glow overlay */}
                                         <div style={{
                                             position: 'absolute', inset: 0, borderRadius: 20,
-                                            background: 'linear-gradient(135deg, rgba(0,184,148,0.04) 0%, transparent 60%)',
+                                            background: 'linear-gradient(135deg, rgba(15,122,90,0.04) 0%, transparent 60%)',
                                             opacity: 0, transition: 'opacity 0.32s',
                                             pointerEvents: 'none',
                                         }}
@@ -265,7 +265,7 @@ export function NewsSection() {
                                                         background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
                                                         color: '#FFFFFF',
                                                         borderRadius: 100,
-                                                        border: '1px solid rgba(0,184,148,0.20)',
+                                                        border: '1px solid rgba(15,122,90,0.20)',
                                                         fontFamily: 'var(--font-app)',
                                                         boxShadow: '0 2px 8px rgba(11,37,69,0.22)',
                                                     }}>
@@ -276,10 +276,10 @@ export function NewsSection() {
                                                     padding: '4px 12px',
                                                     fontSize: 9.5, fontWeight: 600,
                                                     letterSpacing: '0.12em', textTransform: 'uppercase',
-                                                    background: 'rgba(0,184,148,0.09)',
-                                                    color: 'var(--navy)',
+                                                    background: 'rgba(15,122,90,0.09)',
+                                                    color: '#000000',
                                                     borderRadius: 100,
-                                                    border: '1px solid rgba(0,184,148,0.22)',
+                                                    border: '1px solid rgba(15,122,90,0.22)',
                                                     fontFamily: 'var(--font-app)',
                                                 }}>
                                                     {NEWS_CATEGORY_LABELS[item.category]}
@@ -290,7 +290,7 @@ export function NewsSection() {
                                             {/* Divider */}
                                             <div style={{
                                                 height: 1, marginBottom: 14,
-                                                background: 'linear-gradient(to right, rgba(0,184,148,0.25), transparent)',
+                                                background: 'linear-gradient(to right, rgba(15,122,90,0.25), transparent)',
                                             }} />
 
                                             {/* Title */}
@@ -298,16 +298,16 @@ export function NewsSection() {
                                                 style={{
                                                     fontSize: 'clamp(16px, 2vw, 19px)',
                                                     fontWeight: 700,
-                                                    color: 'var(--navy)',
+                                                    color: '#000000',
                                                     lineHeight: 1.35,
-                                                    letterSpacing: 'var(--tracking-normal)',
+                                                    letterSpacing: 'var(--tracking-heading)',
                                                     marginBottom: 12,
                                                     display: '-webkit-box',
                                                     WebkitLineClamp: 3,
                                                     WebkitBoxOrient: 'vertical',
                                                     overflow: 'hidden',
                                                     transition: 'color 0.25s',
-                                                    fontFamily: 'var(--font-app)',
+                                                    fontFamily: 'var(--font-heading)',
                                                 }}
                                             >
                                                 {item.title}
@@ -317,7 +317,7 @@ export function NewsSection() {
                                             <p style={{
                                                 fontSize: 'clamp(14px, 1.6vw, 16px)',
                                                 lineHeight: 1.8,
-                                                color: 'var(--text-secondary)',
+                                                color: '#000000',
                                                 margin: 0,
                                                 fontWeight: 500,
                                                 fontFamily: 'var(--font-app)',
@@ -341,10 +341,10 @@ export function NewsSection() {
                                                         display: 'inline-flex', alignItems: 'center', gap: 6,
                                                         fontSize: 12, fontWeight: 700,
                                                         letterSpacing: '0.08em', textTransform: 'uppercase',
-                                                        color: 'var(--navy)',
+                                                        color: '#000000',
                                                         textDecoration: 'none',
                                                         fontFamily: 'var(--font-app)',
-                                                        borderBottom: '1.5px solid rgba(0,184,148,0.40)',
+                                                        borderBottom: '1.5px solid rgba(15,122,90,0.40)',
                                                         paddingBottom: 2,
                                                         transition: 'color 0.22s, border-color 0.22s',
                                                     }}
@@ -354,7 +354,7 @@ export function NewsSection() {
                                                     }}
                                                     onMouseLeave={(e) => {
                                                         (e.currentTarget as HTMLElement).style.color = 'var(--navy)'
-                                                        ;(e.currentTarget as HTMLElement).style.borderBottomColor = 'rgba(0,184,148,0.40)'
+                                                        ;(e.currentTarget as HTMLElement).style.borderBottomColor = 'rgba(15,122,90,0.40)'
                                                     }}
                                                 >
                                                     Read More
@@ -373,20 +373,20 @@ export function NewsSection() {
                         onClick={scrollPrev}
                         whileHover={{ scale: 1.10, boxShadow: '0 8px 28px rgba(11,37,69,0.20)' }}
                         whileTap={{ scale: 0.93 }}
-                        aria-label="Previous news"
+                        aria-label="Previous news" className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F7A5A]"
                         style={{
                             position: 'absolute', left: -20, top: '50%',
                             transform: 'translateY(-50%)',
                             width: 44, height: 44, borderRadius: '50%',
                             background: '#FFFFFF',
-                            border: '1.5px solid rgba(0,184,148,0.28)',
+                            border: '1.5px solid rgba(15,122,90,0.28)',
                             boxShadow: '0 4px 16px rgba(11,37,69,0.14)',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             cursor: 'pointer', zIndex: 10, padding: 0,
                             transition: 'box-shadow 0.25s',
                         }}
                     >
-                        <ChevronLeft style={{ width: 20, height: 20, color: 'var(--navy)' }} />
+                        <ChevronLeft style={{ width: 20, height: 20, color: '#000000' }} />
                     </motion.button>
 
                     {/* ── Nav: Next ───────────────────────────── */}
@@ -394,20 +394,20 @@ export function NewsSection() {
                         onClick={scrollNext}
                         whileHover={{ scale: 1.10, boxShadow: '0 8px 28px rgba(11,37,69,0.20)' }}
                         whileTap={{ scale: 0.93 }}
-                        aria-label="Next news"
+                        aria-label="Next news" className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F7A5A]"
                         style={{
                             position: 'absolute', right: -20, top: '50%',
                             transform: 'translateY(-50%)',
                             width: 44, height: 44, borderRadius: '50%',
                             background: '#FFFFFF',
-                            border: '1.5px solid rgba(0,184,148,0.28)',
+                            border: '1.5px solid rgba(15,122,90,0.28)',
                             boxShadow: '0 4px 16px rgba(11,37,69,0.14)',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             cursor: 'pointer', zIndex: 10, padding: 0,
                             transition: 'box-shadow 0.25s',
                         }}
                     >
-                        <ChevronRight style={{ width: 20, height: 20, color: 'var(--navy)' }} />
+                        <ChevronRight style={{ width: 20, height: 20, color: '#000000' }} />
                     </motion.button>
 
                     {/* ── Dot Indicators ──────────────────────── */}
@@ -432,7 +432,7 @@ export function NewsSection() {
                                         border: 'none', cursor: 'pointer', padding: 0,
                                         transition: 'width 0.35s ease, background 0.35s ease',
                                         boxShadow: index === selectedIndex
-                                            ? '0 2px 8px rgba(0,184,148,0.35)'
+                                            ? '0 2px 8px rgba(15,122,90,0.35)'
                                             : 'none',
                                     }}
                                 />
@@ -444,7 +444,7 @@ export function NewsSection() {
             {/* ── Bottom divider ───────────────────────────────── */}
             <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0, height: 1,
-                background: 'linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(0,184,148,0.20), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(15,122,90,0.20), transparent)',
             }} />
 
             {/* ── Responsive slide widths ──────────────────────── */}

@@ -524,7 +524,7 @@ export function Admin() {
                     ? "Fetching..."
                     : "Fetch from Semantic Scholar"}
                 </Button>
-                <span className="text-sm text-gray-500 self-center">
+                <span className="text-sm text-black self-center">
                   Auto-fetches and saves Semantic Scholar stats
                 </span>
               </div>

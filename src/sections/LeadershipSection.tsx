@@ -57,7 +57,7 @@ const leadershipRoles = [
 ];
 
 const typeConfig = {
-  leadership: { label: "Leadership", icon: Crown, color: "#00B894" },
+  leadership: { label: "Leadership", icon: Crown, color: "#0F7A5A" },
   membership: { label: "Membership", icon: Users, color: "#0F7A5A" },
   advisory: { label: "Advisory", icon: Lightbulb, color: "#0B2545" },
   institutional: { label: "Institutional", icon: Building, color: "#4A6A8F" },
@@ -118,7 +118,7 @@ export default function LeadershipSection() {
   return (
     <div
       id="leadership"
-      className="min-h-screen bg-[#F8F9FA] text-[#0B2545] font-sans"
+      className="bg-[#F8F9FA] text-black font-sans"
     >
       {/* ── Hero ── */}
       <div
@@ -136,7 +136,7 @@ export default function LeadershipSection() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
               Leadership & <br />
-              <span className="text-[#00B894]">External Roles</span>
+              <span className="text-[#0F7A5A]">External Roles</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export default function LeadershipSection() {
       <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-[#0F7A5A]/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-stretch md:items-center justify-between py-4 md:py-0">
           <div className="py-3 md:py-4 flex-shrink-0">
-            <h2 className="text-2xl font-bold text-[#0B2545]">
+            <h2 className="text-2xl font-bold text-black">
               Leadership <span className="text-[#0F7A5A]">Roles</span>
             </h2>
           </div>
@@ -165,7 +165,7 @@ export default function LeadershipSection() {
             {navLinks.map((link) => (
               <button
                 key={link}
-                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#0B2545] hover:text-[#0F7A5A] hover:bg-[#0F7A5A]/10 rounded-full transition-all duration-200 group"
+                className="btn btn-ghost btn-pill group gap-1.5 px-4 py-2 text-sm"
               >
                 {link}
                 <ChevronRight size={16} className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -181,11 +181,11 @@ export default function LeadershipSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-40px" }}
         variants={containerVariants}
-        className="max-w-7xl mx-auto px-6 lg:px-10 py-16"
+        className="max-w-7xl mx-auto px-6 lg:px-10 py-10"
       >
         <div className="relative">
           {/* Vertical timeline line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0F7A5A] via-[#00B894]/50 to-transparent" />
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0F7A5A] via-[#0F7A5A]/50 to-transparent" />
 
           <div className="space-y-8">
             {leadershipRoles.map((role) => {
@@ -209,19 +209,19 @@ export default function LeadershipSection() {
                           <span className="text-xs font-medium text-[#0F7A5A] bg-[#0F7A5A]/10 px-3 py-1 rounded-full border border-[#0F7A5A]/20">
                             {config.label}
                           </span>
-                          <span className="flex items-center gap-1.5 text-xs text-[#4A5A6A]/70">
+                          <span className="flex items-center gap-1.5 text-xs text-black">
                             <Calendar className="h-3.5 w-3.5" />
                             {role.period}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-[#0B2545] group-hover:text-[#0F7A5A] transition-colors">
+                        <h3 className="text-xl font-bold text-black group-hover:text-[#0F7A5A] transition-colors">
                           {role.title}
                         </h3>
-                        <p className="text-sm font-medium text-[#4A5A6A] mt-1">
+                        <p className="text-sm font-medium text-black mt-1">
                           {role.organization}
                         </p>
                         {role.description && (
-                          <p className="text-sm text-[#4A5A6A]/80 leading-relaxed mt-3 border-l-2 border-[#0F7A5A]/30 pl-3">
+                          <p className="text-sm text-black leading-relaxed mt-3 border-l-2 border-[#0F7A5A]/30 pl-3">
                             {role.description}
                           </p>
                         )}
@@ -241,9 +241,9 @@ export default function LeadershipSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-[#0B5E4A] mt-12"
+        className="bg-[#0B5E4A] mt-8"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
           <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
             Explore <span className="text-[#A8E6CF]">Leadership Areas</span>
           </h3>
