@@ -240,7 +240,7 @@
 
   /* ── Button system ─────────────────────────────────────────────
      Base .btn sets shape, type and focus ring.
-     Colour comes from one of: primary | secondary | accent |
+     Colour comes from one of: primary | secondary |
      outline | ghost | glass | destructive.
      Shape: .btn-pill (pill) and .btn-icon (square, no padding). */
   .btn {
@@ -256,10 +256,6 @@
 
   .btn-secondary {
     @apply bg-[#c9a84c] text-[#0B2545] shadow-sm hover:bg-[#b8963f] active:scale-[0.98];
-  }
-
-  .btn-accent {
-    @apply bg-[#0F7A5A] text-white shadow-sm hover:bg-[#0B5E4A] hover:shadow-md active:scale-[0.98];
   }
 
   .btn-destructive {
@@ -289,12 +285,6 @@
 
   .dashboard-accent-line {
     @apply bg-linear-to-r from-transparent via-[#0F7A5A] to-transparent;
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
   }
 }
 
