@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { MainLayout } from "@/layouts/MainLayout";
 import { SEO } from "@/components/common/SEO";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Container } from "@/components/common/Container";
 // import KnowledgeExchange from "./sections/KnowledgeExchangeSection";
 import { HeroSection } from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
@@ -66,28 +67,46 @@ function HomeContent() {
   return (
     <>
       <SEO />
-      <HeroSection />
-      <AboutSection />
+      <Container as="section">
+        <HeroSection />
+      </Container>
+      <Container as="section">
+        <AboutSection />
+      </Container>
       <Suspense fallback={<SectionFallback />}>
-        <NewsSection />
+        <Container as="section">
+          <NewsSection />
+        </Container>
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
-        <PublicationsSection />
+        <Container as="section">
+          <PublicationsSection />
+        </Container>
       </Suspense>
       {/* <Suspense fallback={<SectionFallback />}>
-        <TeachingSection />
+        <Container as="section">
+          <TeachingSection />
+        </Container>
       </Suspense> */}
       {/* <Suspense fallback={<SectionFallback />}>
-        <EditorialRolesSection />
+        <Container as="section">
+          <EditorialRolesSection />
+        </Container>
       </Suspense> */}
       {/* <Suspense fallback={<SectionFallback />}>
-        <LeadershipSection />
+        <Container as="section">
+          <LeadershipSection />
+        </Container>
       </Suspense> */}
       <Suspense fallback={<SectionFallback />}>
-        <VisitorMap />
+        <Container as="section">
+          <VisitorMap />
+        </Container>
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
-        <ContactSection />
+        <Container as="section">
+          <ContactSection />
+        </Container>
       </Suspense>
     </>
   );
