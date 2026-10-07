@@ -22,10 +22,10 @@ export function Timeline({ items, className }: TimelineProps) {
             className="relative pl-12 md:pl-16"
           >
             <div className="absolute left-2.5 md:left-4 top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background ring-4 ring-primary/10" />
-            <span className="inline-block text-xs font-semibold uppercase tracking-wider text-black mb-1">
+            <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-wider text-black mb-1">
               {item.year}
             </span>
-            <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>
+            <h4 className="text-base sm:text-lg font-semibold text-foreground">{item.title}</h4>
             <p className="text-sm font-medium text-secondary mt-0.5">{item.organization}</p>
             {item.description && (
               <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.description}</p>

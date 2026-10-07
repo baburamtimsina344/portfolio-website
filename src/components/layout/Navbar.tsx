@@ -1555,7 +1555,7 @@ export function Navbar() {
         >
 
           {/* Desktop navigation */}
-          <div className="hidden xl:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
 
             {NAV_ITEMS.map((item, index) => {
 
@@ -1569,7 +1569,7 @@ export function Navbar() {
                     to={item.path}
                     className={({ isActive: routeActive }) =>
                       cn(
-                        "relative px-4 py-2.5 text-[15px] font-semibold tracking-[0.01em] transition-all duration-200 cursor-pointer rounded-lg",
+                        "relative whitespace-nowrap px-2.5 py-2.5 text-[13px] font-semibold tracking-[0.01em] transition-all duration-200 cursor-pointer rounded-lg xl:text-[14px] 2xl:px-4 2xl:text-[15px]",
 
                         routeActive
                           ? "text-black bg-[#0F7A5A]/8 font-bold"
@@ -1617,7 +1617,7 @@ export function Navbar() {
                     delay: index * 0.03,
                   }}
                   className={cn(
-                    "relative px-4 py-2.5 text-[15px] font-semibold tracking-[0.01em] transition-all duration-200 cursor-pointer rounded-lg",
+                    "relative whitespace-nowrap px-2.5 py-2.5 text-[13px] font-semibold tracking-[0.01em] transition-all duration-200 cursor-pointer rounded-lg xl:text-[14px] 2xl:px-4 2xl:text-[15px]",
 
                     isActive
                       ? "text-black bg-[#0F7A5A]/8 font-bold"
@@ -1649,7 +1649,7 @@ export function Navbar() {
           {/* MOBILE MENU */}
           {/* --------------------------------------------- */}
 
-          <div className="flex items-center gap-1 xl:ml-auto">
+          <div className="flex items-center gap-1 ml-auto">
 
             <Sheet
               open={open}
@@ -1682,7 +1682,7 @@ export function Navbar() {
               {/* Mobile drawer */}
               <SheetContent
                 side="right"
-                className="w-[85vw] max-w-[320px] sm:max-w-[380px] bg-white/95 backdrop-blur-md border-l border-[#0F7A5A]/20 shadow-2xl"
+                className="w-[85vw] max-w-[320px] sm:max-w-[380px] overflow-y-auto bg-white/95 backdrop-blur-md border-l border-[#0F7A5A]/20 shadow-2xl"
               >
 
                 <SheetHeader className="border-b border-[#0F7A5A]/10 pb-4">

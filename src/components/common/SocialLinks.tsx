@@ -84,7 +84,7 @@ export function SocialLinks({ links, className, size = "md" }: SocialLinksProps)
 
   return (
     <TooltipProvider delayDuration={200}>
-      <div className={cn("flex items-center gap-3", className)}>
+      <div className={cn("flex flex-wrap items-center gap-3", className)}>
         {links.map((link) => {
           const Icon = iconMap[link.icon];
           return (

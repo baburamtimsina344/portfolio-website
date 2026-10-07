@@ -11,6 +11,7 @@ import { HeroSection } from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
 import { Suspense, lazy, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import { scrollToSection } from "@/lib/utils";
 
 const NewsSection = lazy(() =>
@@ -123,24 +124,26 @@ function PageFallback() {
 export default function App() {
   return (
     <TooltipProvider>
-      <BrowserRouter>
-        <Suspense fallback={<PageFallback />}>
-          <Routes>
-            <Route path="/" element={<MainLayout><HomeContent /></MainLayout>} />
-            {/* <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} /> */}
-            <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
-            <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
-            <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
-            <Route path="/awards&certifications" element={<MainLayout><AwardsAndCertifications /></MainLayout>} />
-            <Route path="/cv" element={<MainLayout><CV /></MainLayout>} />
-            <Route path="/visitorMap" element={<MainLayout><VisitorMap /></MainLayout>} />
+      <MotionConfig reducedMotion="user">
+        <BrowserRouter>
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
+              <Route path="/" element={<MainLayout><HomeContent /></MainLayout>} />
+              {/* <Route path="/knowledge-exchange" element={<MainLayout><KnowledgeExchange /></MainLayout>} /> */}
+              <Route path="/teaching" element={<MainLayout><TeachingSection /></MainLayout>} />
+              <Route path="/editorial-roles" element={<MainLayout><EditorialRolesSection /></MainLayout>} />
+              <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
+              <Route path="/awards&certifications" element={<MainLayout><AwardsAndCertifications /></MainLayout>} />
+              <Route path="/cv" element={<MainLayout><CV /></MainLayout>} />
+              <Route path="/visitorMap" element={<MainLayout><VisitorMap /></MainLayout>} />
 
-            {/* <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} /> */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+              {/* <Route path="/leadershipSection" element={<MainLayout><LeadershipSection /></MainLayout>} /> */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={<Admin />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </MotionConfig>
     </TooltipProvider>
   );
 }

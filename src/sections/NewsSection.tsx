@@ -260,7 +260,7 @@ export function NewsSection() {
                                                 {item.featured && (
                                                     <span style={{
                                                         padding: '4px 12px',
-                                                        fontSize: 9.5, fontWeight: 700,
+                                                        fontSize: 10, fontWeight: 700,
                                                         letterSpacing: '0.15em', textTransform: 'uppercase',
                                                         background: 'linear-gradient(135deg, var(--navy), var(--navy-light))',
                                                         color: '#FFFFFF',
@@ -274,7 +274,7 @@ export function NewsSection() {
                                                 )}
                                                 <span style={{
                                                     padding: '4px 12px',
-                                                    fontSize: 9.5, fontWeight: 600,
+                                                    fontSize: 10, fontWeight: 600,
                                                     letterSpacing: '0.12em', textTransform: 'uppercase',
                                                     background: 'rgba(15,122,90,0.09)',
                                                     color: '#000000',
@@ -421,6 +421,7 @@ export function NewsSection() {
                                     onClick={() => emblaApi.scrollTo(index)}
                                     whileHover={{ scale: 1.2 }}
                                     aria-label={`Go to slide group ${index + 1}`}
+                                    className="relative after:absolute after:-inset-4 after:content-[''] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F7A5A]"
                                     style={{
                                         height: 8,
                                         width: index === selectedIndex ? 32 : 8,

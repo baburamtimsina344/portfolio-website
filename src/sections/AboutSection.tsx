@@ -211,7 +211,7 @@ export function AboutSection() {
                             </h3>
 
 <div className="border-l-[2.5px] border-green-400/30 pl-5 mb-7   hover:border-green-500/60 ">
-                              <p className="m-0  font-medium  text-black text-justify">
+                              <p className="m-0 font-medium text-black text-justify text-sm sm:text-base">
                                 {BIOGRAPHY}
                               </p>
                             </div>
@@ -297,7 +297,7 @@ export function AboutSection() {
                             }}>
                                 <Newspaper style={{ width: 12, height: 12, color: 'var(--green)' }} />
                                 <span style={{
-                                    fontSize: 9.5, fontWeight: 700,
+                                    fontSize: 10, fontWeight: 700,
                                     letterSpacing: '0.20em', textTransform: 'uppercase',
                                     color: 'white', fontFamily: 'var(--font-app)',
                                 }}>
@@ -307,7 +307,7 @@ export function AboutSection() {
 
                             <h3
                                 style={{
-                                    fontSize: 'clamp(17px, 2.2vw, 22px)',
+                                    fontSize: 'clamp(18px, 2.2vw, 22px)',
                                     fontWeight: 700,
                                     color: '#000000',
                                     lineHeight: 1.3,
@@ -384,8 +384,9 @@ export function AboutSection() {
                                                 <div style={{
                                                     background: slide.leftGradient,
                                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                    padding: 'clamp(20px, 3vw, 32px)',
+                                                    padding: 'clamp(14px, 3vw, 32px)',
                                                     position: 'relative',
+                                                    minWidth: 0,
                                                 }}>
                                                     {/* Diagonal shimmer */}
                                                     <div style={{
@@ -414,9 +415,10 @@ export function AboutSection() {
                                                     background: slide.rightGradient,
                                                     display: 'flex', flexDirection: 'column',
                                                     alignItems: 'center', justifyContent: 'center',
-                                                    padding: 'clamp(20px, 3vw, 32px)',
+                                                    padding: 'clamp(14px, 3vw, 32px)',
                                                     position: 'relative',
                                                     gap: 14,
+                                                    minWidth: 0,
                                                 }}>
                                                     {/* Green accent icon */}
                                                     <div style={{
@@ -429,7 +431,7 @@ export function AboutSection() {
                                                     </div>
                                                     <div style={{ textAlign: 'center' }}>
                                                         <p style={{
-                                                            fontSize: 9, fontWeight: 700,
+                                                            fontSize: 10, fontWeight: 700,
                                                             letterSpacing: '0.22em', textTransform: 'uppercase',
                                                             color: 'rgba(15,122,90,0.70)',
                                                             fontFamily: 'var(--font-app)',
@@ -511,6 +513,7 @@ export function AboutSection() {
                                         onClick={() => emblaApi?.scrollTo(index)}
                                         whileHover={{ scale: 1.2 }}
                                         aria-label={`Go to slide ${index + 1}`}
+                                        className="relative after:absolute after:-inset-4 after:content-[''] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F7A5A]"
                                         style={{
                                             height: 8,
                                             width: selectedIndex === index ? 32 : 8,

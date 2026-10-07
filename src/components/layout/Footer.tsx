@@ -235,7 +235,7 @@ export function Footer() {
         <div className="container relative mx-auto px-3 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
           {/* SocialLinks and NavItems are omitted here for brevity – keep your existing JSX */}
 
-          <div className="bg-linear-to-r from-transparent via-[#0F7A5A]/25 to-transparent" />
+          <div className="mt-6 h-px bg-linear-to-r from-transparent via-[#0F7A5A]/25 to-transparent" />
 
           <div className="flex flex-col gap-3 pt-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="type-caption text-black">

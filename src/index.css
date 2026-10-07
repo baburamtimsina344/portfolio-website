@@ -89,7 +89,14 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    /* Clear the fixed navbar (social bar + main nav) when anchoring */
+    scroll-padding-top: 7rem;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 8.75rem;
+    }
   }
 
   body {
@@ -100,6 +107,8 @@
     letter-spacing: var(--tracking-normal);
     text-rendering: optimizeLegibility;
     font-synthesis-weight: none;
+    /* Safety net: long words/URLs never widen the viewport */
+    overflow-wrap: break-word;
   }
 
   h1,
@@ -112,6 +121,11 @@
     letter-spacing: var(--tracking-heading);
     line-height: var(--leading-heading);
     font-weight: var(--font-bold);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   h1 {
@@ -302,4 +316,20 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary/50;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
