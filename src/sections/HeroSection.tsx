@@ -43,7 +43,7 @@ function ProfileImage() {
   return (
     <motion.div
       variants={fadeUp}
-      className="relative mx-auto w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none mt-20"
+      className="relative mx-auto w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none mt-2 sm:mt-4"
     >
       <div className="absolute inset-0 translate-x-2 translate-y-2.5 rounded-3xl bg-gradient-to-br from-[#1A4080] to-[#1A5CB8] opacity-15" />
       <div className="relative aspect-square overflow-hidden rounded-3xl border border-[#0F7A5A]/30 bg-white shadow-[0_20px_50px_rgba(11,37,69,0.18)]">
@@ -81,7 +81,7 @@ function Identity() {
         </span>
       </h1>
 
-      <p className="w-full rounded-2xl border border-[#0F7A5A] bg-gradient-to-br from-[#0B2545] to-[#1A4080] px-5 py-5 text-center text-3xl leading-relaxed text-white shadow-[0_14px_36px_rgba(15,122,90,0.22)] sm:text-base text-justify">
+      <p className="w-full rounded-2xl border border-[#0F7A5A] bg-gradient-to-br from-[#0B2545] to-[#1A4080] px-5 py-5 text-center text-base leading-relaxed text-white shadow-[0_14px_36px_rgba(15,122,90,0.22)] sm:px-6 sm:text-lg sm:leading-relaxed lg:text-xl">
         Higher Education Leadership Scholar | Institutional Transformation &amp;
         Internationalization Researcher | Higher Education Futures Strategist
       </p>
