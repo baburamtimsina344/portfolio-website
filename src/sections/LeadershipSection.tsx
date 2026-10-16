@@ -187,7 +187,7 @@ export default function LeadershipSection() {
           {/* Vertical timeline line */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0F7A5A] via-[#0F7A5A]/50 to-transparent" />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {leadershipRoles.map((role) => {
               const config = typeConfig[role.type];
               const Icon = config.icon;
@@ -202,7 +202,7 @@ export default function LeadershipSection() {
                     <Icon className="h-5 w-5" style={{ color: config.color }} />
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 hover:border-[#0F7A5A]/30 transition-all duration-300 group">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 hover:border-[#0F7A5A]/30 transition-all duration-300 group">
                     <div className="flex flex-wrap items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -244,7 +244,7 @@ export default function LeadershipSection() {
         className="bg-[#0B5E4A] mt-8"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center md:text-left">
             Explore <span className="text-[#A8E6CF]">Leadership Areas</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,7 +255,7 @@ export default function LeadershipSection() {
                 transition={{ duration: 0.3 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
               >
-                <div className="p-6">
+                <div className="p-4 md:p-5">
                   <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
                     {cat.title}

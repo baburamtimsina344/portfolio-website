@@ -10,7 +10,7 @@ interface TimelineProps {
 export function Timeline({ items, className }: TimelineProps) {
   return (
     <div className={cn("relative", className)}>
-      <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent" />
+      <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-border" />
       <div className="space-y-8">
         {items.map((item, index) => (
           <motion.div
@@ -21,12 +21,12 @@ export function Timeline({ items, className }: TimelineProps) {
             transition={{ delay: index * 0.1, duration: 0.5 }}
             className="relative pl-12 md:pl-16"
           >
-            <div className="absolute left-2.5 md:left-4 top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background ring-4 ring-primary/10" />
-            <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-wider text-black mb-1">
+            <div className="absolute left-2.5 md:left-4 top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-background" />
+            <span className="mb-1 inline-block text-sm font-semibold text-accent">
               {item.year}
             </span>
             <h4 className="text-base sm:text-lg font-semibold text-foreground">{item.title}</h4>
-            <p className="text-sm font-medium text-secondary mt-0.5">{item.organization}</p>
+            <p className="mt-0.5 text-sm font-medium text-muted-foreground">{item.organization}</p>
             {item.description && (
               <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.description}</p>
             )}

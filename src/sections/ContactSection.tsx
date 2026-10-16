@@ -101,7 +101,7 @@
 //             aria-label="Contact Section"
 //             style={{
 //                 position: 'relative',
-//                     padding: 'clamp(48px, 7vw, 80px) 0',
+//                     padding: 'var(--section-y) 0',
 //                 background: 'var(--off-white)',
 //                 overflow: 'hidden',
 //             }}
@@ -991,7 +991,7 @@ export function ContactSection() {
       aria-label="Contact Section"
       style={{
         position: "relative",
-        padding: "clamp(48px, 7vw, 80px) 0",
+        padding: "var(--section-y) 0",
         background: "var(--off-white)",
         overflow: "hidden",
       }}
@@ -1005,58 +1005,10 @@ export function ContactSection() {
           right: 0,
           height: 1,
           background:
-            "linear-gradient(90deg, transparent, rgba(15,122,90,0.30), rgba(11,37,69,0.12), transparent)",
+            "var(--line)",
         }}
       />
 
-      {/* ── Background Orbs ─────────────────────────────── */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          overflow: "hidden",
-          pointerEvents: "none",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "-15%",
-            right: "-15%",
-            width: 600,
-            height: 600,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(15,122,90,0.07) 0%, rgba(26,64,128,0.05) 50%, transparent 75%)",
-          }}
-        />
-
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-20%",
-            left: "-15%",
-            width: 700,
-            height: 700,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(11,37,69,0.07) 0%, rgba(26,92,184,0.04) 50%, transparent 70%)",
-          }}
-        />
-
-        {/* Dot grid */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            opacity: 0.022,
-            backgroundImage:
-              "radial-gradient(circle, #0B2545 1px, transparent 1px)",
-            backgroundSize: "36px 36px",
-          }}
-        />
-      </div>
 
       {/* ── Container ───────────────────────────────────── */}
       <div
@@ -1076,53 +1028,22 @@ export function ContactSection() {
           viewport={{ once: true }}
           variants={fadeInUp}
           style={{
-            marginBottom: 64,
+            marginBottom: 32,
             textAlign: "center",
           }}
         >
-          {/* Eyebrow */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              marginBottom: 20,
-              padding: "7px 20px",
-              borderRadius: 100,
-              background: "rgba(15,122,90,0.08)",
-              border: "1px solid rgba(15,122,90,0.22)",
-            }}
-          >
-            <div
-              style={{
-                width: 5,
-                height: 5,
-                borderRadius: "50%",
-                backgroundColor: "var(--green)",
-              }}
-            />
-
+          {/* Section label */}
+          <div style={{ marginBottom: 14 }}>
             <span
               style={{
-                fontSize: 10.5,
-                fontWeight: 700,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "#000000",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "var(--green)",
                 fontFamily: "var(--font-app)",
               }}
             >
               Get In Touch
             </span>
-
-            <div
-              style={{
-                width: 5,
-                height: 5,
-                borderRadius: "50%",
-                backgroundColor: "var(--green)",
-              }}
-            />
           </div>
 
           {/* Main heading */}
@@ -1132,7 +1053,7 @@ export function ContactSection() {
               fontWeight: 700,
               letterSpacing: "var(--tracking-display)",
               lineHeight: 1.1,
-              color: "#000000",
+              color: "var(--ink)",
               margin: 0,
               fontFamily: "var(--font-heading)",
             }}
@@ -1145,8 +1066,8 @@ export function ContactSection() {
             style={{
               fontSize: "clamp(13.5px, 1.5vw, 15px)",
               lineHeight: 1.75,
-              color: "#000000",
-              margin: "20px auto 0",
+              color: "var(--ink)",
+              margin: "16px auto 0",
               fontWeight: 400,
               fontFamily: "var(--font-app)",
               maxWidth: 480,
@@ -1156,44 +1077,6 @@ export function ContactSection() {
             inquiries, or simply to discuss ideas.
           </p>
 
-          {/* Green rule */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 12,
-              marginTop: 22,
-            }}
-          >
-            <div
-              style={{
-                height: 1,
-                width: 64,
-                background:
-                  "linear-gradient(to right, transparent, rgba(15,122,90,0.50))",
-              }}
-            />
-
-            <div
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                backgroundColor: "var(--green)",
-                opacity: 0.7,
-              }}
-            />
-
-            <div
-              style={{
-                height: 1,
-                width: 64,
-                background:
-                  "linear-gradient(to left, transparent, rgba(15,122,90,0.50))",
-              }}
-            />
-          </div>
         </motion.div>
 
         {/* ── Two-column grid ─────────────────────────── */}
@@ -1206,26 +1089,22 @@ export function ContactSection() {
             display: "grid",
             gridTemplateColumns:
               "repeat(auto-fit, minmax(min(100%, 380px), 1fr))",
-            gap: "clamp(32px, 4vw, 56px)",
+            gap: "clamp(24px, 3vw, 32px)",
             alignItems: "start",
           }}
         >
           {/* ── LEFT: Contact Info ──────────────────────── */}
           <motion.div variants={fadeInUp}>
             <motion.div
-              whileHover={{
-                y: -4,
-                boxShadow: "0 20px 56px rgba(11,37,69,0.14)",
-              }}
+              whileHover={{ boxShadow: '0 8px 24px -10px rgba(15,27,45,0.18)' }}
               transition={{ duration: 0.35 }}
               style={{
                 position: "relative",
                 background: "#FFFFFF",
-                borderRadius: 24,
-                border: "1.5px solid rgba(15,122,90,0.15)",
-                boxShadow:
-                  "0 8px 32px rgba(11,37,69,0.09), 0 2px 8px rgba(11,37,69,0.05)",
-                padding: "clamp(28px, 4vw, 44px)",
+                borderRadius: 12,
+                border: "1px solid var(--line)",
+                boxShadow: "0 1px 2px 0 rgba(15,27,45,0.05)",
+                padding: "clamp(20px, 3vw, 24px)",
                 overflow: "hidden",
                 transition: "box-shadow 0.35s",
                 height: "100%",
@@ -1233,19 +1112,6 @@ export function ContactSection() {
                 flexDirection: "column",
               }}
             >
-              {/* Green left accent bar */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: 4,
-                  height: 96,
-                  background:
-                    "linear-gradient(to bottom, var(--green), rgba(15,122,90,0.10))",
-                  borderRadius: "0 0 4px 0",
-                }}
-              />
 
               {/* Icon label */}
               <div
@@ -1253,7 +1119,7 @@ export function ContactSection() {
                   display: "flex",
                   alignItems: "center",
                   gap: 10,
-                  marginBottom: 24,
+                  marginBottom: 16,
                 }}
               >
                 <div
@@ -1262,8 +1128,8 @@ export function ContactSection() {
                     height: 38,
                     borderRadius: 12,
                     background:
-                      "linear-gradient(135deg, rgba(15,122,90,0.14), rgba(15,122,90,0.05))",
-                    border: "1px solid rgba(15,122,90,0.22)",
+                      "rgba(11,37,69,0.05)",
+                    border: "1px solid var(--line)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -1280,11 +1146,10 @@ export function ContactSection() {
 
                 <span
                   style={{
-                    fontSize: 10.5,
-                    fontWeight: 700,
-                    letterSpacing: "0.20em",
-                    textTransform: "uppercase",
-                    color: "#000000",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    letterSpacing: "0",
+                    color: "var(--ink)",
                     fontFamily: "var(--font-app)",
                   }}
                 >
@@ -1297,10 +1162,10 @@ export function ContactSection() {
                 style={{
                   fontSize: "clamp(22px, 3vw, 28px)",
                   fontWeight: 700,
-                  color: "#000000",
+                  color: "var(--ink)",
                   lineHeight: 1.2,
                   letterSpacing: "var(--tracking-heading)",
-                  marginBottom: 28,
+                  marginBottom: 20,
                   fontFamily: "var(--font-heading)",
                 }}
               >
@@ -1308,7 +1173,7 @@ export function ContactSection() {
               </h3>
 
               {/* Location */}
-              <div style={{ marginBottom: 28 }}>
+              <div style={{ marginBottom: 20 }}>
                 <div
                   style={{
                     display: "flex",
@@ -1323,8 +1188,8 @@ export function ContactSection() {
                       height: 32,
                       borderRadius: 10,
                       background:
-                        "linear-gradient(135deg, rgba(15,122,90,0.10), rgba(15,122,90,0.05))",
-                      border: "1px solid rgba(15,122,90,0.20)",
+                        "rgba(11,37,69,0.05)",
+                      border: "1px solid var(--line)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -1343,11 +1208,10 @@ export function ContactSection() {
                   <div>
                     <p
                       style={{
-                        fontSize: 12,
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "#000000",
+                        fontSize: 13,
+                        fontWeight: 600,
+                        letterSpacing: "0",
+                        color: "var(--ink)",
                         fontFamily: "var(--font-app)",
                         margin: "0 0 6px 0",
                       }}
@@ -1359,7 +1223,7 @@ export function ContactSection() {
                       style={{
                         fontSize: 14,
                         fontWeight: 500,
-                        color: "#000000",
+                        color: "var(--ink)",
                         fontFamily: "var(--font-app)",
                         margin: 0,
                         lineHeight: 1.5,
@@ -1372,7 +1236,7 @@ export function ContactSection() {
                       style={{
                         fontSize: 13,
                         fontWeight: 400,
-                        color: "#000000",
+                        color: "var(--ink)",
                         fontFamily: "var(--font-app)",
                         margin: "4px 0 0 0",
                       }}
@@ -1386,17 +1250,16 @@ export function ContactSection() {
               {/* Email addresses */}
               <div
                 style={{
-                  marginBottom: 28,
+                  marginBottom: 20,
                   flex: 1,
                 }}
               >
                 <p
                   style={{
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "#000000",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    letterSpacing: "0",
+                    color: "var(--ink)",
                     fontFamily: "var(--font-app)",
                     margin: "0 0 12px 0",
                   }}
@@ -1414,8 +1277,6 @@ export function ContactSection() {
                   {SITE_CONFIG.emails.map((email) => (
                     <motion.div
                       key={email}
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
                       style={{
                         display: "flex",
                         alignItems: "center",
@@ -1423,7 +1284,7 @@ export function ContactSection() {
                         padding: 12,
                         borderRadius: 14,
                         background: "rgba(15,122,90,0.06)",
-                        border: "1px solid rgba(15,122,90,0.15)",
+                        border: "1px solid var(--line)",
                         transition: "all 0.3s",
                       }}
                     >
@@ -1431,7 +1292,7 @@ export function ContactSection() {
                         href={`mailto:${email}`}
                         style={{
                           fontSize: 12.5,
-                          color: "#000000",
+                          color: "var(--ink)",
                           textDecoration: "none",
                           fontFamily: "var(--font-app)",
                           fontWeight: 500,
@@ -1485,7 +1346,7 @@ export function ContactSection() {
               </div>
 
               {/* Social Links */}
-              <div style={{ marginBottom: 24 }}>
+              <div style={{ marginBottom: 16 }}>
                 {/* <SocialLinks links={SOCIAL_LINKS} /> */}
                 <div className="flex items-center gap-1.5 sm:gap-2 ml-auto">
                   {/* LinkedIn */}
@@ -1603,36 +1464,19 @@ export function ContactSection() {
           {/* ── RIGHT: Contact Form ──────────────────────── */}
           <motion.div variants={fadeInUp}>
             <motion.div
-              whileHover={{
-                y: -4,
-                boxShadow: "0 20px 56px rgba(11,37,69,0.14)",
-              }}
+              whileHover={{ boxShadow: '0 8px 24px -10px rgba(15,27,45,0.18)' }}
               transition={{ duration: 0.35 }}
               style={{
                 position: "relative",
                 background: "#FFFFFF",
-                borderRadius: 24,
-                border: "1.5px solid rgba(15,122,90,0.15)",
-                boxShadow:
-                  "0 8px 32px rgba(11,37,69,0.09), 0 2px 8px rgba(11,37,69,0.05)",
-                padding: "clamp(28px, 4vw, 44px)",
+                borderRadius: 12,
+                border: "1px solid var(--line)",
+                boxShadow: "0 1px 2px 0 rgba(15,27,45,0.05)",
+                padding: "clamp(20px, 3vw, 24px)",
                 overflow: "hidden",
                 transition: "box-shadow 0.35s",
               }}
             >
-              {/* Green left accent bar */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: 4,
-                  height: 96,
-                  background:
-                    "linear-gradient(to bottom, var(--green), rgba(15,122,90,0.10))",
-                  borderRadius: "0 0 4px 0",
-                }}
-              />
 
               {/* Icon label */}
               <div
@@ -1640,7 +1484,7 @@ export function ContactSection() {
                   display: "flex",
                   alignItems: "center",
                   gap: 10,
-                  marginBottom: 24,
+                  marginBottom: 16,
                 }}
               >
                 <div
@@ -1649,8 +1493,8 @@ export function ContactSection() {
                     height: 38,
                     borderRadius: 12,
                     background:
-                      "linear-gradient(135deg, rgba(15,122,90,0.14), rgba(15,122,90,0.05))",
-                    border: "1px solid rgba(15,122,90,0.22)",
+                      "rgba(11,37,69,0.05)",
+                    border: "1px solid var(--line)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -1667,11 +1511,10 @@ export function ContactSection() {
 
                 <span
                   style={{
-                    fontSize: 10.5,
-                    fontWeight: 700,
-                    letterSpacing: "0.20em",
-                    textTransform: "uppercase",
-                    color: "#000000",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    letterSpacing: "0",
+                    color: "var(--ink)",
                     fontFamily: "var(--font-app)",
                   }}
                 >
@@ -1684,10 +1527,10 @@ export function ContactSection() {
                 style={{
                   fontSize: "clamp(22px, 3vw, 28px)",
                   fontWeight: 700,
-                  color: "#000000",
+                  color: "var(--ink)",
                   lineHeight: 1.2,
                   letterSpacing: "var(--tracking-heading)",
-                  marginBottom: 28,
+                  marginBottom: 20,
                   fontFamily: "var(--font-heading)",
                 }}
               >
@@ -1702,11 +1545,10 @@ export function ContactSection() {
                   exit={{ opacity: 0, y: -12 }}
                   style={{
                     padding: 16,
-                    borderRadius: 16,
-                    background:
-                      "linear-gradient(135deg, rgba(15,122,90,0.10), rgba(15,122,90,0.05))",
-                    border: "1px solid rgba(15,122,90,0.30)",
-                    marginBottom: 20,
+                    borderRadius: 12,
+                    background: "#F0FAF5",
+                    border: "1px solid var(--line)",
+                    marginBottom: 16,
                   }}
                 >
                   <div
@@ -1742,7 +1584,7 @@ export function ContactSection() {
                         style={{
                           fontSize: 14,
                           fontWeight: 600,
-                          color: "#000000",
+                          color: "var(--ink)",
                           margin: "0 0 4px 0",
                           fontFamily: "var(--font-app)",
                         }}
@@ -1754,7 +1596,7 @@ export function ContactSection() {
                         style={{
                           fontSize: 13,
                           fontWeight: 400,
-                          color: "#000000",
+                          color: "var(--ink)",
                           margin: 0,
                           fontFamily: "var(--font-app)",
                           lineHeight: 1.5,
@@ -1776,11 +1618,10 @@ export function ContactSection() {
                   exit={{ opacity: 0, y: -12 }}
                   style={{
                     padding: 16,
-                    borderRadius: 16,
-                    background:
-                      "linear-gradient(135deg, rgba(220,38,38,0.10), rgba(220,38,38,0.05))",
+                    borderRadius: 12,
+                    background: "#FEF2F2",
                     border: "1px solid rgba(220,38,38,0.30)",
-                    marginBottom: 20,
+                    marginBottom: 16,
                   }}
                 >
                   <div
@@ -1830,7 +1671,7 @@ export function ContactSection() {
                         style={{
                           fontSize: 13,
                           fontWeight: 400,
-                          color: "#000000",
+                          color: "var(--ink)",
                           margin: 0,
                           fontFamily: "var(--font-app)",
                         }}
@@ -1848,7 +1689,7 @@ export function ContactSection() {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: 18,
+                  gap: 16,
                 }}
               >
                 {/* Name & Email Row */}
@@ -1856,19 +1697,19 @@ export function ContactSection() {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-                    gap: 14,
+                    gap: 12,
                   }}
                 >
                   {/* Name Field */}
                   <div>
                     <label
+                      htmlFor="contact-name"
                       style={{
                         display: "block",
-                        fontSize: 12,
+                        fontSize: 13,
                         fontWeight: 600,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "#000000",
+                        letterSpacing: "0",
+                        color: "var(--ink)",
                         fontFamily: "var(--font-app)",
                         marginBottom: 8,
                       }}
@@ -1879,36 +1720,41 @@ export function ContactSection() {
                     <input
                       type="text"
                       placeholder="Your name"
+                      id="contact-name"
+                      aria-invalid={!!form.formState.errors.name}
+                      aria-describedby={form.formState.errors.name ? "contact-name-error" : undefined}
                       {...form.register("name")}
                       style={{
                         width: "100%",
                         padding: "clamp(10px, 1.5vw, 12px) 14px",
                         fontSize: 14,
                         fontFamily: "var(--font-app)",
-                        border: "1.5px solid rgba(15,122,90,0.15)",
-                        borderRadius: 12,
-                        background: "rgba(15,122,90,0.04)",
-                        color: "#000000",
+                        border: "1px solid var(--gray-400)",
+                        borderRadius: 8,
+                        background: "#FFFFFF",
+                        color: "var(--ink)",
                         transition: "all 0.25s",
                         boxSizing: "border-box",
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = "rgba(15,122,90,0.40)";
-                        e.target.style.background = "rgba(15,122,90,0.08)";
+                        e.target.style.borderColor = "var(--green)";
+                        e.target.style.background = "#FFFFFF";
                         e.target.style.boxShadow =
-                          "0 0 0 3px rgba(15,122,90,0.08)";
+                          "0 0 0 3px rgba(15,122,90,0.22)";
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = "rgba(15,122,90,0.15)";
-                        e.target.style.background = "rgba(15,122,90,0.04)";
+                        e.target.style.borderColor = "#8A93A6";
+                        e.target.style.background = "#FFFFFF";
                         e.target.style.boxShadow = "none";
                       }}
                     />
 
                     {form.formState.errors.name && (
                       <p
+                        id="contact-name-error"
+                        role="alert"
                         style={{
-                          fontSize: 11,
+                          fontSize: 13,
                           color: "#DC2626",
                           marginTop: 6,
                           fontFamily: "var(--font-app)",
@@ -1922,13 +1768,13 @@ export function ContactSection() {
                   {/* Email Field */}
                   <div>
                     <label
+                      htmlFor="contact-email"
                       style={{
                         display: "block",
-                        fontSize: 12,
+                        fontSize: 13,
                         fontWeight: 600,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "#000000",
+                        letterSpacing: "0",
+                        color: "var(--ink)",
                         fontFamily: "var(--font-app)",
                         marginBottom: 8,
                       }}
@@ -1939,36 +1785,41 @@ export function ContactSection() {
                     <input
                       type="email"
                       placeholder="your@email.com"
+                      id="contact-email"
+                      aria-invalid={!!form.formState.errors.email}
+                      aria-describedby={form.formState.errors.email ? "contact-email-error" : undefined}
                       {...form.register("email")}
                       style={{
                         width: "100%",
                         padding: "clamp(10px, 1.5vw, 12px) 14px",
                         fontSize: 14,
                         fontFamily: "var(--font-app)",
-                        border: "1.5px solid rgba(15,122,90,0.15)",
-                        borderRadius: 12,
-                        background: "rgba(15,122,90,0.04)",
-                        color: "#000000",
+                        border: "1px solid var(--gray-400)",
+                        borderRadius: 8,
+                        background: "#FFFFFF",
+                        color: "var(--ink)",
                         transition: "all 0.25s",
                         boxSizing: "border-box",
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = "rgba(15,122,90,0.40)";
-                        e.target.style.background = "rgba(15,122,90,0.08)";
+                        e.target.style.borderColor = "var(--green)";
+                        e.target.style.background = "#FFFFFF";
                         e.target.style.boxShadow =
-                          "0 0 0 3px rgba(15,122,90,0.08)";
+                          "0 0 0 3px rgba(15,122,90,0.22)";
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = "rgba(15,122,90,0.15)";
-                        e.target.style.background = "rgba(15,122,90,0.04)";
+                        e.target.style.borderColor = "#8A93A6";
+                        e.target.style.background = "#FFFFFF";
                         e.target.style.boxShadow = "none";
                       }}
                     />
 
                     {form.formState.errors.email && (
                       <p
+                        id="contact-email-error"
+                        role="alert"
                         style={{
-                          fontSize: 11,
+                          fontSize: 13,
                           color: "#DC2626",
                           marginTop: 6,
                           fontFamily: "var(--font-app)",
@@ -1983,13 +1834,13 @@ export function ContactSection() {
                 {/* Subject Field */}
                 <div>
                   <label
+                    htmlFor="contact-subject"
                     style={{
                       display: "block",
-                      fontSize: 12,
+                      fontSize: 13,
                       fontWeight: 600,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#000000",
+                      letterSpacing: "0",
+                      color: "var(--ink)",
                       fontFamily: "var(--font-app)",
                       marginBottom: 8,
                     }}
@@ -2000,36 +1851,41 @@ export function ContactSection() {
                   <input
                     type="text"
                     placeholder="Subject of your message"
-                    {...form.register("subject")}
+                    id="contact-subject"
+                      aria-invalid={!!form.formState.errors.subject}
+                      aria-describedby={form.formState.errors.subject ? "contact-subject-error" : undefined}
+                      {...form.register("subject")}
                     style={{
                       width: "100%",
                       padding: "clamp(10px, 1.5vw, 12px) 14px",
                       fontSize: 14,
                       fontFamily: "var(--font-app)",
-                      border: "1.5px solid rgba(15,122,90,0.15)",
-                      borderRadius: 12,
-                      background: "rgba(15,122,90,0.04)",
-                      color: "#000000",
+                      border: "1px solid var(--gray-400)",
+                      borderRadius: 8,
+                      background: "#FFFFFF",
+                      color: "var(--ink)",
                       transition: "all 0.25s",
                       boxSizing: "border-box",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "rgba(15,122,90,0.40)";
-                      e.target.style.background = "rgba(15,122,90,0.08)";
+                      e.target.style.borderColor = "var(--green)";
+                      e.target.style.background = "#FFFFFF";
                       e.target.style.boxShadow =
-                        "0 0 0 3px rgba(15,122,90,0.08)";
+                        "0 0 0 3px rgba(15,122,90,0.22)";
                     }}
                     onBlur={(e) => {
-                      e.target.style.borderColor = "rgba(15,122,90,0.15)";
-                      e.target.style.background = "rgba(15,122,90,0.04)";
+                      e.target.style.borderColor = "#8A93A6";
+                      e.target.style.background = "#FFFFFF";
                       e.target.style.boxShadow = "none";
                     }}
                   />
 
                   {form.formState.errors.subject && (
                     <p
+                      id="contact-subject-error"
+                      role="alert"
                       style={{
-                        fontSize: 11,
+                        fontSize: 13,
                         color: "#DC2626",
                         marginTop: 6,
                         fontFamily: "var(--font-app)",
@@ -2043,13 +1899,13 @@ export function ContactSection() {
                 {/* Message Field */}
                 <div>
                   <label
+                    htmlFor="contact-message"
                     style={{
                       display: "block",
-                      fontSize: 12,
+                      fontSize: 13,
                       fontWeight: 600,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#000000",
+                      letterSpacing: "0",
+                      color: "var(--ink)",
                       fontFamily: "var(--font-app)",
                       marginBottom: 8,
                     }}
@@ -2060,37 +1916,42 @@ export function ContactSection() {
                   <textarea
                     placeholder="Write your message here..."
                     rows={5}
-                    {...form.register("message")}
+                    id="contact-message"
+                      aria-invalid={!!form.formState.errors.message}
+                      aria-describedby={form.formState.errors.message ? "contact-message-error" : undefined}
+                      {...form.register("message")}
                     style={{
                       width: "100%",
                       padding: "clamp(10px, 1.5vw, 12px) 14px",
                       fontSize: 14,
                       fontFamily: "var(--font-app)",
-                      border: "1.5px solid rgba(15,122,90,0.15)",
-                      borderRadius: 12,
-                      background: "rgba(15,122,90,0.04)",
-                      color: "#000000",
+                      border: "1px solid var(--gray-400)",
+                      borderRadius: 8,
+                      background: "#FFFFFF",
+                      color: "var(--ink)",
                       transition: "all 0.25s",
                       resize: "none",
                       boxSizing: "border-box",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "rgba(15,122,90,0.40)";
-                      e.target.style.background = "rgba(15,122,90,0.08)";
+                      e.target.style.borderColor = "var(--green)";
+                      e.target.style.background = "#FFFFFF";
                       e.target.style.boxShadow =
-                        "0 0 0 3px rgba(15,122,90,0.08)";
+                        "0 0 0 3px rgba(15,122,90,0.22)";
                     }}
                     onBlur={(e) => {
-                      e.target.style.borderColor = "rgba(15,122,90,0.15)";
-                      e.target.style.background = "rgba(15,122,90,0.04)";
+                      e.target.style.borderColor = "#8A93A6";
+                      e.target.style.background = "#FFFFFF";
                       e.target.style.boxShadow = "none";
                     }}
                   />
 
                   {form.formState.errors.message && (
                     <p
+                      id="contact-message-error"
+                      role="alert"
                       style={{
-                        fontSize: 11,
+                        fontSize: 13,
                         color: "#DC2626",
                         marginTop: 6,
                         fontFamily: "var(--font-app)",
@@ -2141,18 +2002,6 @@ export function ContactSection() {
         </motion.div>
       </div>
 
-      {/* ── Bottom section divider ───────────────────────── */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 1,
-          background:
-            "linear-gradient(90deg, transparent, rgba(11,37,69,0.10), rgba(15,122,90,0.20), transparent)",
-        }}
-      />
     </section>
   );
 }

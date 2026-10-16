@@ -365,9 +365,9 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8"
+          className="mb-6"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
             <div>
               <h2 className="text-2xl font-bold text-black">
@@ -396,10 +396,10 @@ export default function Projects() {
                   y: -4, 
                   boxShadow: "0 16px 40px rgba(15,122,90,0.14)" 
                 }}
-                className="group flex flex-col rounded-2xl border border-[#0F7A5A]/10 bg-white/80 backdrop-blur-sm p-7 transition-all hover:border-[#0F7A5A]/30 hover:shadow-lg"
+                className="group flex flex-col rounded-2xl border border-[#0F7A5A]/10 bg-white/80 backdrop-blur-sm p-4 md:p-6 transition-all hover:border-[#0F7A5A]/30 hover:shadow-lg"
               >
                 {/* Type badge + year */}
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center justify-between mb-4">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0B5E4A] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#A8E6CF]">
                     <TypeIcon className="h-3.5 w-3.5" strokeWidth={2} />
                     {label}
@@ -413,12 +413,12 @@ export default function Projects() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-black leading-relaxed mb-5">
+                <p className="text-sm text-black leading-relaxed mb-4">
                   {project.description}
                 </p>
 
                 {/* Focus areas */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.focusAreas.map((area) => (
                     <span
                       key={area}

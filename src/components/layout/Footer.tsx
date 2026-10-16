@@ -215,32 +215,15 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden border-t nav-surface">
-      <div
-        className="absolute inset-x-0 top-0 h-0.5 dashboard-accent-line"
-        aria-hidden="true"
-      />
-
-      <div className="relative z-10 overflow-hidden border-t nav-subtle-surface">
-        {/* Decorative backdrop, echoes Hero/VisitorMap sections */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              "radial-gradient(circle at 8% 0%, rgba(15,122,90,0.06), transparent 45%), radial-gradient(circle at 95% 100%, rgba(11,37,69,0.05), transparent 50%)",
-          }}
-          aria-hidden="true"
-        />
-
-        <div className="container relative mx-auto px-3 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+    <footer className="border-t border-border bg-white">
+      <div>
+        <div className="container mx-auto px-4 py-5 sm:px-6 lg:px-8">
           {/* SocialLinks and NavItems are omitted here for brevity – keep your existing JSX */}
 
-          <div className="mt-6 h-px bg-linear-to-r from-transparent via-[#0F7A5A]/25 to-transparent" />
-
-          <div className="flex flex-col gap-3 pt-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="type-caption text-black">
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="type-caption text-[color:var(--ink-soft)]">
               &copy; {currentYear}{" "}
-              <span className="font-semibold text-black">
+              <span className="font-semibold text-[color:var(--ink)]">
                 {SITE_CONFIG.name}
               </span>
               . All rights reserved.
@@ -251,7 +234,6 @@ export function Footer() {
                 <motion.button
                   key={label}
                   type="button"
-                  whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.15 }}
                   className="footer-link"
@@ -260,7 +242,7 @@ export function Footer() {
                   {label}
                   {i === 0 && (
                     <span
-                      className="mx-1 h-3.5 w-px bg-[#0F7A5A]/15"
+                      className="mx-1 h-3.5 w-px bg-border"
                       aria-hidden="true"
                     />
                   )}
@@ -281,14 +263,12 @@ export function Footer() {
             className="fixed bottom-6 right-6 z-50"
           >
             <motion.button
-              whileHover={{ y: -3 }}
               whileTap={{ scale: 0.93 }}
               transition={{ duration: 0.22 }}
               onClick={() => scrollToSection("home")}
               aria-label="Back to top"
-              className="btn btn-outline btn-icon btn-pill relative h-11 w-11"
+              className="btn btn-outline btn-icon btn-pill h-11 w-11 shadow-sm"
             >
-              <span className="absolute inset-0 rounded-full border border-[#0F7A5A]/20 opacity-0 transition-opacity duration-300 hover:opacity-100" aria-hidden="true" />
               <ArrowUp className="h-5 w-5" aria-hidden="true" />
             </motion.button>
           </motion.div>
