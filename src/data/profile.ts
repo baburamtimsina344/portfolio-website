@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   title:
     "Baburam Timsina | Higher Education & Leadership Researcher Higher Education & Leadership Researcher | Institutional Development & Organizational Scholarship in Emerging Economies | JMC Chair – MSSRNPRESS.ORG |  Editorial Member (JINA | JHROS | JSMS | JISS )",
   description:
-    "Advancing scholarship in higher education, educational leadership, and institutional transformation through research, teaching, and academic service.",
+    "Shaping the future of higher education through scholarship in leadership, institutional transformation, internationalization, and emerging higher education ecosystems.",
   url: "https://baburamtimsina.edu.np",
   ogImage: "/og-image.jpg",
   emails: ["brtimsina05@gmail.com", "baburam.timsina@som.tu.edu.np"],
@@ -83,15 +83,17 @@ export const RESEARCH_STATS: Stat[] = [
 export const GOOGLE_SCHOLAR_URL =
   "https://scholar.google.com/citations?hl=en&authuser=1&user=st9Ym1kAAAAJ";
 
-export const BIOGRAPHY = `Advancing scholarship through research, leadership, and academic service, I am committed to fostering transformative learning and evidence-based practices in higher education.
+// export const BIOGRAPHY = `Advancing scholarship and institutional transformation in higher education, I work at the intersection of higher education leadership, governance, internationalization, and organizational development. My scholarly interests focus on how leadership, institutional structures, governance, and strategic decision-making shape the effectiveness, inclusiveness, and future directions of higher education systems, particularly in emerging economies.
 
-Based in Kathmandu, Nepal, I serve as Scholar and Educator at Tribhuvan University while pursuing doctoral research in higher education and leadership. My scholarly work explores the intersection of higher education, leadership, organizational behavior, governance, and corporate social responsibility, particularly within emerging economies.
 
-My research investigates how educational institutions, governance structures, service quality, ethical practices, and leadership approaches influence organizational effectiveness and individual decision-making. Through interdisciplinary and collaborative scholarship, I seek to contribute to the development of responsive, inclusive, and sustainable educational systems.
+// My research extends across higher education leadership and management, institutional transformation, educational governance, organizational behavior, and corporate social responsibility. Through interdisciplinary inquiry, I seek to understand how universities can strengthen institutional capacity, advance international engagement, improve decision-making, and respond to the evolving demands of a knowledge-driven society. My broader research agenda connects institutional reform with the changing global higher education ecosystem, emphasizing evidence-informed leadership, sustainable development, and future-oriented educational systems.
 
-Beyond research and teaching, I actively contribute to the academic community through editorial leadership, peer review, and scholarly networking. I currently serve as Chair of the Journal Management Committee (JMC) at MSSRNPRESS.ORG and as an editorial board member of several peer-reviewed journals.
 
-My broader academic mission is to bridge research, policy, and practice to strengthen higher education systems and promote impactful scholarship at both national and international levels.`;
+
+// Beyond research and teaching, I contribute to scholarly publishing through editorial leadership, peer review, and academic collaboration. I serve as Chair of the Journal Management Committee at <a href="https://mssrnpress.org/" target="_blank" rel="noopener noreferrer">MSSRNPRESS.ORG</a> and contribute to the editorial and peer-review activities of several scholarly journals. Through these engagements, I support responsible scholarly communication, collaborative knowledge production, and the development of research communities.
+
+
+// My academic mission is to connect research, leadership, policy, and institutional practice to advance higher education transformation and internationalization. My overarching aim is to contribute to a more responsive, globally connected, and sustainable higher education ecosystem through scholarship that informs institutional change and shapes the future of universities.`;
 
 export const RESEARCH_INTERESTS = [
   "Higher Education and Educational Leadership",

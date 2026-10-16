@@ -2036,31 +2036,7 @@ export function PublicationsSection() {
           )}
         </div>
 
-        {/* ── Footer bar ── */}
-        {/* <motion.div
-          className="pubs-footbar"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="pubs-footbar-text">
-            <FileText size={15} aria-hidden />
-            Showing all {sortedPublications.length} publications
-            <span className="pubs-footbar-sep">•</span>
-            {openAccessCount} open access
-          </p>
-
-          <button
-            type="button"
-            className="pubs-all-btn"
-            onClick={handleDownloadAll}
-            disabled={sortedPublications.length === 0}
-          >
-            <Download size={14} aria-hidden />
-            Download All
-          </button>
-        </motion.div> */}
+        
       </div>
 
       <div className="pubs-divider-bottom" />
