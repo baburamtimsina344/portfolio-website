@@ -109,8 +109,8 @@ function Identity() {
 function QuoteCard() {
   return (
     <motion.div variants={fadeUp}>
-      <blockquote className="m-0 max-w-2xl border-l-2 border-[#0F7A5A] pl-5 font-[family-name:var(--font-heading)] text-xl italic leading-snug text-[color:var(--ink)] sm:text-2xl sm:leading-snug text-justify">
-        &ldquo;Shaping the future of higher education through scholarship in leadership, institutional transformation, internationalization, and emerging higher education ecosystems.&rdquo;
+      <blockquote className="m-0 max-w-2xl border-l-2 border-[#0F7A5A] pl-5 font-[family-name:var(--font-heading)] text-xl italic leading-snug text-[color:var(--ink)] sm:text-2xl sm:leading-snug ">
+        &ldquo;Shaping the future of higher education through scholarship in leadership,<br></br> institutional transformation, internationalization, and emerging higher education ecosystems.&rdquo;
       </blockquote>
     </motion.div>
   );
