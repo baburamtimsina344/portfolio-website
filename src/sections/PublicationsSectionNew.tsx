@@ -49,7 +49,8 @@ export function PublicationsSection() {
       aria-label="Publications"
       style={{
         position: "relative",
-        padding: "clamp(72px, 10vw, 120px) 0",
+        // padding: "clamp(72px, 10vw, 120px) 0",
+        padding: "24px 0 60px",
         background: "var(--gray-50)",
         overflow: "hidden",
       }}
@@ -130,7 +131,8 @@ export function PublicationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-          style={{ marginBottom: 48, textAlign: "center" }}
+          // style={{ marginBottom: 48, textAlign: "center" }}
+          style={{ marginBottom: 32, textAlign: "center" }}
         >
           {/* Eyebrow pill */}
           <div
@@ -138,7 +140,7 @@ export function PublicationsSection() {
               display: "inline-flex",
               alignItems: "center",
               gap: 10,
-              marginBottom: 20,
+              // marginBottom: 20,
               padding: "7px 20px",
               borderRadius: 100,
               background: "rgba(15,122,90,0.08)",

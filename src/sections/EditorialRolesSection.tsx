@@ -481,10 +481,10 @@ export default function ProfessionalAchievements() {
         variants={containerVariants}
         className="max-w-7xl mx-auto px-6 lg:px-10 py-10"
       >
-        <div className="space-y-10">
+        <div className="space-y-8">
           {/* ── 1. Certifications ── */}
           <motion.div variants={listItemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -494,7 +494,7 @@ export default function ProfessionalAchievements() {
               </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {certifications.map((item, i) => (
                   <li
@@ -511,7 +511,7 @@ export default function ProfessionalAchievements() {
 
           {/* ── 2. Awards & Memberships ── */}
           <motion.div variants={listItemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -521,9 +521,9 @@ export default function ProfessionalAchievements() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* Dean's Award */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <div className="flex items-start gap-4">
                   <Award className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
                   <div>
@@ -535,12 +535,12 @@ export default function ProfessionalAchievements() {
               </div>
 
               {/* Associations */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <Users className="h-5 w-5 text-[#0F7A5A]" />
                   Professional Associations
                 </h4>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {associations.map((assoc, i) => (
                     <li key={i} className="border-b border-[#0B2545]/5 last:border-0 pb-3 last:pb-0">
                       <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
@@ -559,7 +559,7 @@ export default function ProfessionalAchievements() {
 
           {/* ── 3. Professional Development ── */}
           <motion.div variants={listItemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -569,9 +569,9 @@ export default function ProfessionalAchievements() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* International Courses */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
                   International Courses & Certifications
@@ -590,7 +590,7 @@ export default function ProfessionalAchievements() {
               </div>
 
               {/* Conferences */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-[#0F7A5A]" />
                   Conferences, Workshops & Scholarly Events
@@ -601,7 +601,7 @@ export default function ProfessionalAchievements() {
               </div>
 
               {/* Resource Person */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Briefcase className="h-5 w-5 text-[#0F7A5A]" />
                   Resource Person & Invited Engagements
@@ -620,7 +620,7 @@ export default function ProfessionalAchievements() {
               </div>
 
               {/* Statistics */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <Star className="h-5 w-5 text-[#0F7A5A]" />
                   Curriculum Innovation & Evaluation Statistics
@@ -658,7 +658,7 @@ export default function ProfessionalAchievements() {
         className="bg-[#0B5E4A] mt-8"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center md:text-left">
             Explore <span className="text-[#A8E6CF]">Achievement Areas</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -669,7 +669,7 @@ export default function ProfessionalAchievements() {
                 transition={{ duration: 0.3 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
               >
-                <div className="p-6">
+                <div className="p-4 md:p-5">
                   <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
                     {cat.title}

@@ -1,53 +1,72 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────────────────────────
+   Design tokens
+   Palette  : ink navy text on a cool paper ground. Brand navy carries
+              structure (buttons, header text); brand green is reserved
+              for links, active states and focus.
+   Type     : Source Serif 4 (headings) + Inter (body / UI).
+   Surfaces : white, 1px hairline border, 12px radius, one soft shadow.
+   ────────────────────────────────────────────────────────────────── */
 @theme inline {
-  --color-primary: #0f172a;
+  --color-primary: #0b2545;
   --color-primary-foreground: #ffffff;
   --color-secondary: #c9a84c;
-  --color-secondary-foreground: #0f172a;
-  --color-accent: #7a9e7e;
+  --color-secondary-foreground: #0b2545;
+  --color-accent: #0f7a5a;
   --color-accent-foreground: #ffffff;
-  --color-background: #faf8f5;
-  --color-foreground: #000000;
+  --color-background: #f7f8fa;
+  --color-foreground: #0f1b2d;
   --color-muted: #64748b;
-  --color-muted-foreground: #000000;
+  --color-muted-foreground: #4a586b;
   --color-card: #ffffff;
-  --color-card-foreground: #000000;
+  --color-card-foreground: #0f1b2d;
   --color-popover: #ffffff;
-  --color-popover-foreground: #000000;
-  --color-border: #e5e7eb;
-  --color-input: #e5e7eb;
-  --color-ring: #c9a84c;
-  --color-success: #16a34a;
-  --color-destructive: #ef4444;
+  --color-popover-foreground: #0f1b2d;
+  --color-border: #e3e7ee;
+  --color-input: #cdd4df;
+  --color-ring: #0f7a5a;
+  --color-success: #15803d;
+  --color-destructive: #dc2626;
   --color-destructive-foreground: #ffffff;
+
+  /* Text that was authored as pure black now renders as ink navy. */
+  --color-black: #0f1b2d;
+
   --font-sans: var(--font-app);
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --shadow-soft: 0 4px 24px -4px rgb(15 23 42 / 0.08);
-  --shadow-glow: 0 0 40px -8px rgb(201 168 76 / 0.25);
-  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(15 23 42 / 0.1);
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1rem;
+  --shadow-soft: 0 1px 2px rgb(15 27 45 / 0.05), 0 4px 16px -6px rgb(15 27 45 / 0.08);
+  --shadow-glow: 0 1px 2px rgb(15 27 45 / 0.05);
+  --shadow-card: 0 1px 2px rgb(15 27 45 / 0.05);
 }
 
 :root {
-  /* Typography system: Inter for body/UI, Manrope for headings */
+  /* Typography system: Inter for body/UI, Source Serif 4 for headings */
   --font-app: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  --font-heading: "Manrope", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia,
+    "Times New Roman", serif;
 
-  /* Brand palette (originally declared in HeroSection <GlobalStyles>) */
+  /* Core colours */
+  --ink: #0f1b2d;
+  --ink-soft: #4a586b;
+  --line: #e3e7ee;
+  --line-strong: #cdd4df;
+  --paper: #f7f8fa;
+
+  /* Brand palette (kept: referenced by inline styles across sections) */
   --navy: #0b2545;
   --navy-mid: #0f2f56;
   --navy-light: #1a4080;
   --royal: #1a5cb8;
-  --green: #0F7A5A;
+  --green: #0f7a5a;
   --green-light: #66d9a0;
   --white: #ffffff;
-  --off-white: #fafaf8;
+  --off-white: #f7f8fa;
   --gray-50: #f7f8fa;
   --gray-100: #eef0f4;
   --gray-200: #dce0e8;
@@ -55,31 +74,38 @@
   --gray-600: #4a5568;
   --gray-800: #1a202c;
 
-  --text-display: clamp(2.25rem, 5vw, 3.75rem);
-  --text-section-title: clamp(1.875rem, 4.5vw, 3rem);
-  --text-card-title: clamp(1.125rem, 2.5vw, 1.5rem);
+  /* Elevation: used sparingly. Cards rest flat, raise a little on hover. */
+  --shadow-rest: 0 1px 2px rgb(15 27 45 / 0.05);
+  --shadow-raised: 0 8px 24px -10px rgb(15 27 45 / 0.18);
+
+  /* Section rhythm */
+  --section-y: clamp(40px, 5vw, 64px);
+
+  --text-display: clamp(2.5rem, 5.4vw, 4rem);
+  --text-section-title: clamp(1.875rem, 3.8vw, 2.75rem);
+  --text-card-title: clamp(1.125rem, 2.2vw, 1.375rem);
   --text-body: 1rem;
   --text-body-sm: 0.875rem;
   --text-caption: 0.8125rem;
-  --text-kicker: 0.75rem;
-  --text-micro: 0.6875rem;
+  --text-kicker: 0.8125rem;
+  --text-micro: 0.75rem;
 
-  --leading-display: 1.08;
-  --leading-heading: 1.18;
+  --leading-display: 1.05;
+  --leading-heading: 1.2;
   --leading-body: 1.65;
   --leading-ui: 1.4;
 
   --tracking-normal: 0;
-  --tracking-label: 0.08em;
-  --tracking-kicker: 0.14em;
-  --tracking-display: -0.02em;
-  --tracking-heading: -0.01em;
+  --tracking-label: 0.01em;
+  --tracking-kicker: 0.01em;
+  --tracking-display: -0.018em;
+  --tracking-heading: -0.008em;
 
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
-  --font-extrabold: 800;
+  --font-extrabold: 700; /* Source Serif 4 is loaded up to 700 */
 }
 
 @layer base {
@@ -89,14 +115,8 @@
 
   html {
     scroll-behavior: smooth;
-    /* Clear the fixed navbar (social bar + main nav) when anchoring */
+    /* Clear the fixed navbar (utility bar + main nav) when anchoring */
     scroll-padding-top: 7rem;
-  }
-
-  @media (min-width: 640px) {
-    html {
-      scroll-padding-top: 8.75rem;
-    }
   }
 
   body {
@@ -132,22 +152,15 @@
     font-size: var(--text-display);
     line-height: var(--leading-display);
     letter-spacing: var(--tracking-display);
-    font-weight: var(--font-extrabold);
   }
 
   h2 {
     font-size: var(--text-section-title);
     letter-spacing: var(--tracking-display);
-    font-weight: var(--font-bold);
   }
 
   h3 {
     font-size: var(--text-card-title);
-    font-weight: var(--font-bold);
-  }
-
-  h4 {
-    font-weight: var(--font-bold);
   }
 
   h5,
@@ -167,11 +180,23 @@
     font: inherit;
     letter-spacing: var(--tracking-normal);
   }
+
+  /* One consistent, always-visible keyboard focus indicator. Components that
+     draw their own ring (shadcn/ui, .btn) override this via utilities. */
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: rgb(15 122 90 / 0.18);
+  }
 }
 
 @layer utilities {
+  /* Solid brand accent (was a three-colour gradient) */
   .gradient-primary {
-    background: linear-gradient(135deg, #0f172a 0%, #c9a84c 50%, #7a9e7e 100%);
+    background: var(--green);
   }
 
   .glass {
@@ -179,13 +204,34 @@
   }
 
   .section-padding {
-    @apply px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-16;
+    @apply px-4 py-8 sm:px-6 md:py-12 lg:px-8 lg:py-14;
   }
 
   .container-wide {
     @apply mx-auto w-full max-w-7xl;
   }
 
+  /* ── Reusable surface pattern ─────────────────────────────────
+     .surface        flat white card: hairline border, 12px radius
+     .surface-hover  adds a border-colour response on hover/focus */
+  .surface {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-rest);
+  }
+
+  .surface-hover {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .surface-hover:hover,
+  .surface-hover:focus-visible {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-raised);
+  }
+
+  /* ── Type roles ─────────────────────────────────────────────── */
   .type-section-title {
     font-family: var(--font-heading);
     font-size: var(--text-section-title);
@@ -218,13 +264,14 @@
     letter-spacing: var(--tracking-label);
   }
 
+  /* Small section label: sentence case, brand green, no tracking */
   .type-kicker {
     font-family: var(--font-app);
     font-size: var(--text-kicker);
     font-weight: var(--font-semibold);
     line-height: var(--leading-ui);
     letter-spacing: var(--tracking-kicker);
-    text-transform: uppercase;
+    color: var(--green);
   }
 
   .type-caption {
@@ -236,15 +283,15 @@
   }
 
   .nav-surface {
-    @apply bg-white/90 backdrop-blur-md border-[#0F7A5A]/20 shadow-lg shadow-[#0B2545]/5;
+    @apply bg-white/95 backdrop-blur-md border-border;
   }
 
   .nav-subtle-surface {
-    @apply bg-[#F8F9FA] border-[#0F7A5A]/10;
+    @apply bg-background border-border;
   }
 
   .footer-link {
-    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-black transition-all duration-200 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/30;
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-[color:var(--ink-soft)] transition-colors duration-200 hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/40;
     font-family: var(--font-app);
     font-size: var(--text-caption);
     font-weight: var(--font-medium);
@@ -256,32 +303,33 @@
      Base .btn sets shape, type and focus ring.
      Colour comes from one of: primary | secondary |
      outline | ghost | glass | destructive.
-     Shape: .btn-pill (pill) and .btn-icon (square, no padding). */
+     Shape: .btn-pill (fully round, for icon buttons) and
+     .btn-icon (square, no padding). */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer select-none font-semibold tracking-[0.01em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer select-none font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F7A5A]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
     border: 1px solid transparent;
     border-radius: 8px;
     line-height: var(--leading-ui);
   }
 
   .btn-primary {
-    @apply bg-[#0B2545] text-white shadow-sm hover:bg-[#0F7A5A] hover:shadow-md active:scale-[0.98];
+    @apply bg-[#0B2545] text-white hover:bg-[#143560] active:bg-[#0B2545];
   }
 
   .btn-secondary {
-    @apply bg-[#c9a84c] text-[#0B2545] shadow-sm hover:bg-[#b8963f] active:scale-[0.98];
+    @apply bg-[#c9a84c] text-[#0B2545] hover:bg-[#b8963f];
   }
 
   .btn-destructive {
-    @apply bg-[#DC2626] text-white shadow-sm hover:bg-[#B91C1C] active:scale-[0.98];
+    @apply bg-[#DC2626] text-white hover:bg-[#B91C1C];
   }
 
   .btn-outline {
-    @apply border-[#0B2545]/25 bg-white text-black shadow-sm hover:border-[#0F7A5A] hover:bg-[#0F7A5A]/5 hover:text-[#0F7A5A] active:scale-[0.98];
+    @apply border-[#0B2545]/25 bg-white text-[color:var(--ink)] hover:border-[#0B2545]/60 hover:bg-[#0B2545]/[0.03] active:bg-[#0B2545]/[0.06];
   }
 
   .btn-ghost {
-    @apply bg-transparent hover:bg-[#0F7A5A]/10 hover:text-[#0F7A5A];
+    @apply bg-transparent hover:bg-[#0B2545]/[0.06] hover:text-[#0F7A5A];
   }
 
   .btn-glass {
@@ -298,12 +346,12 @@
   }
 
   .dashboard-accent-line {
-    @apply bg-linear-to-r from-transparent via-[#0F7A5A] to-transparent;
+    @apply bg-[#0F7A5A]/30;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -311,11 +359,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-primary/30;
+  @apply rounded-full bg-primary/25;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/50;
+  @apply bg-primary/45;
 }
 
 /* Respect users who prefer reduced motion */

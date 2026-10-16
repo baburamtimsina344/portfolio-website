@@ -11,9 +11,9 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ label, title, subtitle, className, align = "left" }: SectionHeadingProps) {
   return (
-    <ScrollReveal className={cn("mb-12 md:mb-16", align === "center" && "text-center", className)}>
+    <ScrollReveal className={cn("mb-6 md:mb-10", align === "center" && "text-center", className)}>
       {label && (
-        <span className="type-kicker inline-block text-black mb-3">
+        <span className="type-kicker mb-2 inline-block">
           {label}
         </span>
       )}
@@ -21,11 +21,11 @@ export function SectionHeading({ label, title, subtitle, className, align = "lef
         {title}
       </h2>
       {subtitle && (
-        <p className="type-body mt-4 text-muted-foreground max-w-2xl">
+        <p className={cn("type-body mt-3 max-w-2xl text-muted-foreground", align === "center" && "mx-auto")}>
           {subtitle}
         </p>
       )}
-      <div className={cn("mt-6 h-1 w-16 rounded-full gradient-primary", align === "center" && "mx-auto")} />
+      <div className={cn("mt-4 h-0.5 w-10 rounded-full gradient-primary", align === "center" && "mx-auto")} />
     </ScrollReveal>
   );
 }

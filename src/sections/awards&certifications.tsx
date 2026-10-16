@@ -595,7 +595,7 @@ export default function AwardsAndCertifications() {
 
       <div className="max-w-7xl mx-auto px-6 py-10">
         {/* ── In-section Nav ── */}
-        <div className="sticky top-0 z-20 bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#0F7A5A]/20 mb-8">
+        <div className="sticky top-0 z-20 bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#0F7A5A]/20 mb-6">
           <nav className="flex flex-wrap items-center gap-2 md:gap-4 py-4">
             {awardsNavLinks.map((link) => (
               <a
@@ -614,11 +614,11 @@ export default function AwardsAndCertifications() {
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
           variants={containerVariants}
-          className="space-y-10"
+          className="space-y-8"
         >
           {/* ── Certifications ── */}
           <motion.div id="certifications" variants={itemVariants} className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -628,7 +628,7 @@ export default function AwardsAndCertifications() {
               </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {certifications.map((item, i) => (
                   <li
@@ -645,7 +645,7 @@ export default function AwardsAndCertifications() {
 
           {/* ── Awards & Honors ── */}
           <motion.div id="awards" variants={itemVariants} className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">Awards & Honors</h3>
@@ -653,7 +653,7 @@ export default function AwardsAndCertifications() {
               </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <div className="flex items-start gap-4">
                 <Award className="h-6 w-6 text-[#0F7A5A] flex-shrink-0 mt-0.5" />
                 <div>
@@ -667,7 +667,7 @@ export default function AwardsAndCertifications() {
 
           {/* ── Associations & Memberships ── */}
           <motion.div id="associations" variants={itemVariants} className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -679,13 +679,13 @@ export default function AwardsAndCertifications() {
               </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                 <Users className="h-5 w-5 text-[#0F7A5A]" />
                 Associations
               </h4>
-              <ul className="space-y-4">
-                {associations.map((assoc, i) => (
+                <ul className="space-y-3">
+                  {associations.map((assoc, i) => (
                   <li
                     key={i}
                     className="border-b border-[#0B2545]/5 last:border-0 pb-3 last:pb-0"
@@ -705,7 +705,7 @@ export default function AwardsAndCertifications() {
 
           {/* ── Professional Development ── */}
           <motion.div id="development" variants={itemVariants} className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -717,9 +717,9 @@ export default function AwardsAndCertifications() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* International Courses */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-[#0F7A5A]" />
                   International Courses & Certifications
@@ -738,7 +738,7 @@ export default function AwardsAndCertifications() {
               </div>
 
               {/* Conferences */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-[#0F7A5A]" />
                   Conferences, Workshops & Scholarly Events
@@ -747,7 +747,7 @@ export default function AwardsAndCertifications() {
               </div>
 
               {/* Resource Person */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
                   <Briefcase className="h-5 w-5 text-[#0F7A5A]" />
                   Resource Person & Invited Engagements
@@ -767,7 +767,7 @@ export default function AwardsAndCertifications() {
               </div>
 
               {/* Statistics */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-5 hover:shadow-[#0B2545]/10 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
                   <Star className="h-5 w-5 text-[#0F7A5A]" />
                   Curriculum Innovation & Evaluation Statistics

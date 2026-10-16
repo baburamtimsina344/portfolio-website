@@ -942,10 +942,10 @@ export default function TeachingSection() {
         variants={containerVariants}
         className="max-w-7xl mx-auto px-6 lg:px-10 py-10"
       >
-        <div className="space-y-10">
+        <div className="space-y-8">
           {/* Teaching Philosophy */}
           <motion.div variants={listItemVariants} className="relative">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -954,7 +954,7 @@ export default function TeachingSection() {
                 <p className="text-sm text-black">Core principles</p>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300 relative">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-6 hover:shadow-[#0B2545]/10 transition-all duration-300 relative">
               <Quote className="absolute top-4 right-4 h-8 w-8 text-[#0F7A5A]/20" />
               <p className="text-black leading-relaxed text-lg italic">
                 {teachingData.philosophy}
@@ -964,7 +964,7 @@ export default function TeachingSection() {
 
           {/* Areas of Expertise */}
           <motion.div variants={listItemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -973,7 +973,7 @@ export default function TeachingSection() {
                 <p className="text-sm text-black">Teaching and Supervision</p>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {teachingData.areas.map((item, i) => (
                   <li
@@ -990,7 +990,7 @@ export default function TeachingSection() {
 
           {/* Current Roles */}
           <motion.div variants={listItemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -999,7 +999,7 @@ export default function TeachingSection() {
                 <p className="text-sm text-black">Present roles</p>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="grid grid-cols-1 gap-6">
                 {teachingData.currentAppointments.map((app, i) => (
                   <li
@@ -1021,7 +1021,7 @@ export default function TeachingSection() {
 
           {/* Previous Engagements */}
           <motion.div variants={listItemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-10 bg-[#0F7A5A] rounded-full" />
               <div>
                 <h3 className="text-2xl font-bold text-black">
@@ -1030,7 +1030,7 @@ export default function TeachingSection() {
                 <p className="text-sm text-black">Diverse institutions</p>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-8 hover:shadow-[#0B2545]/10 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg shadow-[#0B2545]/5 p-4 md:p-6 hover:shadow-[#0B2545]/10 transition-all duration-300">
               <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {teachingData.previousEngagements.map((item, i) => (
                   <li
@@ -1056,7 +1056,7 @@ export default function TeachingSection() {
         className="bg-[#0B5E4A] mt-8"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center md:text-left">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center md:text-left">
             Explore <span className="text-[#A8E6CF]">Teaching Highlights</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1067,7 +1067,7 @@ export default function TeachingSection() {
                 transition={{ duration: 0.3 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg hover:border-[#A8E6CF]/40 group"
               >
-                <div className="p-6">
+                <div className="p-4 md:p-5">
                   <div className="text-xs font-bold uppercase tracking-wider mb-4 text-[#A8E6CF] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#A8E6CF]" />
                     {cat.title}

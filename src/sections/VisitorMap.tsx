@@ -281,30 +281,23 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index, isPrim
     <motion.div
       variants={cardVariants}
       custom={index}
-      whileHover={{ y: -3, transition: { duration: 0.2 } }}
-      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border p-6 transition-all duration-300 sm:p-7 ${
+      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border p-6 transition-colors duration-200 sm:p-7 ${
         isPrimary
-          ? "border-[#0F7A5A]/25 bg-gradient-to-br from-[#0F7A5A]/10 via-white to-[#F4F8F6] shadow-lg shadow-[#0F7A5A]/10 hover:border-[#0F7A5A]/40 hover:shadow-xl hover:shadow-[#0F7A5A]/15"
-          : "border-[#0B2545]/10 bg-white shadow-sm shadow-[#0B2545]/5 hover:border-[#0F7A5A]/25 hover:shadow-md"
+          ? "border-[#0F7A5A]/30 bg-white shadow-sm hover:border-[#0F7A5A]/50"
+          : "border-border bg-white shadow-sm hover:border-[#cdd4df]"
       }`}
     >
       {/* Persistent accent rail */}
       <span
         aria-hidden="true"
-        className={`absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#13A677] to-[#0F7A5A] ${
-          isPrimary ? "opacity-100" : "opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className={`absolute inset-y-0 left-0 w-1 bg-[#0F7A5A] ${
+          isPrimary ? "opacity-100" : "hidden"
         }`}
       />
-      {isPrimary && (
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(19,166,119,0.16)_0%,transparent_70%)]"
-        />
-      )}
 
       <div className="relative flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
-          <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${isPrimary ? "text-[#0F7A5A]" : "text-black"}`}>
+          <p className={`text-sm font-semibold ${isPrimary ? "text-[#0F7A5A]" : "text-[color:var(--ink-soft)]"}`}>
             {label}
           </p>
           {isLoading ? (
@@ -312,7 +305,7 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index, isPrim
           ) : (
             <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <p
-                className={`truncate font-extrabold leading-none tracking-tight tabular-nums text-black ${
+                className={`truncate font-[family-name:var(--font-heading)] font-bold leading-none tracking-tight tabular-nums text-black ${
                   isPrimary ? "text-5xl sm:text-6xl" : "text-3xl"
                 }`}
               >
@@ -323,17 +316,17 @@ function MetricCard({ label, value, detail, icon: Icon, isLoading, index, isPrim
           )}
         </div>
         <div
-          className={`flex shrink-0 items-center justify-center rounded-xl border text-[#0F7A5A] transition-transform duration-300 group-hover:scale-105 ${
+          className={`flex shrink-0 items-center justify-center rounded-xl border text-[#0F7A5A] ${
             isPrimary
-              ? "h-14 w-14 border-[#0F7A5A]/25 bg-gradient-to-br from-[#0F7A5A]/20 to-[#0F7A5A]/5"
-              : "h-11 w-11 border-[#0F7A5A]/15 bg-gradient-to-br from-[#0F7A5A]/12 to-[#0F7A5A]/4"
+              ? "h-14 w-14 border-border bg-[#0B2545]/[0.05]"
+              : "h-11 w-11 border-border bg-[#0B2545]/[0.05]"
           }`}
         >
           <Icon className={isPrimary ? "h-7 w-7" : "h-5 w-5"} aria-hidden />
         </div>
       </div>
 
-      <p className="relative mt-5 border-t border-[#0B2545]/8 pt-4 text-sm leading-relaxed text-black">{detail}</p>
+      <p className="relative mt-4 border-t border-[#0B2545]/8 pt-3 text-sm leading-relaxed text-[color:var(--ink-soft)]">{detail}</p>
     </motion.div>
   );
 }
@@ -619,22 +612,7 @@ export function VisitorMap() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F6FAF8]/70 to-white py-12 lg:py-16">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0F7A5A]/20 to-transparent" aria-hidden="true" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-24 top-16 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(15,122,90,0.10)_0%,transparent_70%)]" />
-        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(11,37,69,0.08)_0%,transparent_70%)]" />
-        <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(11,37,69,0.10) 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-            maskImage: "radial-gradient(ellipse at 50% 40%, black 20%, transparent 72%)",
-            WebkitMaskImage: "radial-gradient(ellipse at 50% 40%, black 20%, transparent 72%)",
-          }}
-        />
-      </div>
-
+    <section className="relative overflow-hidden border-t border-border py-[var(--section-y)]">
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -643,10 +621,10 @@ export function VisitorMap() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {/* Header */}
-          <div className="mx-auto mb-8 max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#0F7A5A]/20 bg-white/90 px-4 py-2 shadow-sm backdrop-blur">
+          <div className="mx-auto mb-6 max-w-3xl text-center">
+            <div className="mb-3 inline-flex items-center gap-2.5">
               <PulseDot />
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0F7A5A]">Live global analytics</span>
+              <span className="text-sm font-semibold text-[#0F7A5A]">Live global analytics</span>
             </div>
 
             <h2 className="mb-5 text-4xl font-bold tracking-tight text-black sm:text-5xl">
@@ -656,12 +634,11 @@ export function VisitorMap() {
               {/* </span> */}
             </h2>
 
-            <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-[#0F7A5A]/40 to-transparent" aria-hidden="true" />
           </div>
 
           {/* Metrics */}
           <motion.div
-            className="mb-8 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5"
+            className="mb-6 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -680,7 +657,7 @@ export function VisitorMap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative overflow-hidden rounded-3xl border border-[#0B2545]/15 bg-[#04121F] shadow-2xl shadow-[#0B2545]/25 ring-1 ring-white/5"
+            className="relative overflow-hidden rounded-xl border border-[#0B2545]/15 bg-[#04121F] shadow-lg"
           >
             {/* Panel header */}
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-white/[0.03] px-5 py-4 sm:px-6 sm:py-5">
